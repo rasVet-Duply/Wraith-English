@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Listening: Practice Test</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root{--primary:#007bff;--bg:#f8f9fa;--card:#fff;--border:#e0e0e0;--neon-green:#39FF14;--neon-red:#ff3131;--dark:#2d3436;--text:#444;--font-size:1.05rem;}
+body.theme-dark{--bg:#1a1a2e;--card:#16213e;--border:#2d3561;--text:#c9d1d9;--dark:#e2e8f0;}
+body.theme-dark header,body.theme-dark .action-bar{background:#0f3460;}
+body.theme-dark .content-area{background:var(--bg);}
+body.theme-dark .q-card{background:var(--card);border-color:var(--border);}
+body.theme-dark .btn-opt{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-dark .timer{background:#0f3460;border-color:#2d3561;color:#60a5fa;}
+body.theme-dark .text-area{color:var(--text);background:var(--bg);}
+body.theme-dark .text-area h1{color:#e2e8f0;}
+body.theme-dark .input-summary{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-dark .settings-panel{background:#0f3460;border-color:#2d3561;}
+body.theme-dark #sideMenu{background:#16213e;}
+body.theme-dark .menu-body{background:#16213e;}
+body.theme-dark .bubbles-area{background:var(--card);border-color:var(--border);}
+body.theme-dark .menu-id-box,body.theme-dark .admin-cmd-box{background:#0f3460;color:#e2e8f0;border-color:#2d3561;}
+body.theme-dark .menu-star,body.theme-dark .menu-top-icon,body.theme-dark .admin-slash-icon{background:#0f3460;border-color:#2d3561;color:#94a3b8;}
+body.theme-dark #teacherAnswerBox{background:#0f3460;border-color:#2d3561;}
+body.theme-dark #teacherAnswerBox .drop-header{color:#e2e8f0;}
+body.theme-dark .ans-item{color:#94a3b8;border-color:#2d3561;}
+body.theme-dark .description{color:#e2e8f0;}
+body.theme-dark .attempt-tag{background:#0f3460;color:#94a3b8;border-color:#2d3561;}
+body.theme-dark .settings-label{color:#94a3b8;}
+body.theme-dark #menuBtn{background:#0f3460;border-color:#2d3561;color:#94a3b8;}
+body.theme-dark .theme-btn{background:#16213e;border-color:#2d3561;color:#94a3b8;}
+body.theme-dark .theme-btn.active{background:#0f3460;border-color:var(--primary);color:var(--primary);}
+body.theme-dark .btn-about{background:#16213e;border-color:#2d3561;color:#94a3b8;}
+body.theme-dark .passage-nav{background:#0f3460;border-color:#2d3561;}
+body.theme-dark .nav-btn{background:#16213e;border-color:#2d3561;color:#94a3b8;}
+body.theme-dark .nav-btn.active-arrow{color:#e2e8f0;border-color:#e2e8f0;}
+body.theme-dark .passage-label{color:#94a3b8;}
+body.theme-dark .modal-content{background:var(--card);}
+body.theme-dark .modal-body{background:var(--card);}
+body.theme-dark .modal-footer{background:#0f3460;}
+body.theme-dark .modal-col-title{background:#0f3460;color:#94a3b8;}
+body.theme-dark .about-card{background:var(--card);}
+body.theme-dark .about-body{background:var(--card);}
+body.theme-dark .about-body p{color:#94a3b8;}
+body.theme-dark .about-tag{background:#0f3460;color:#60a5fa;}
+body.theme-dark .menu-footer{background:#16213e;border-color:#2d3561;}
+body.theme-dark .tg-link{background:#0f3460;color:#60a5fa;}
+body.theme-sepia{--bg:#f4ecd8;--card:#fdf6e3;--border:#d4b896;--text:#5c4a1e;--dark:#3e2e10;}
+body.theme-sepia header,body.theme-sepia .action-bar{background:#ede0c8;}
+body.theme-sepia .content-area{background:var(--bg);}
+body.theme-sepia .q-card{background:var(--card);border-color:var(--border);}
+body.theme-sepia .timer{background:#ede0c8;border-color:#d4b896;color:#7b5e2a;}
+body.theme-sepia .text-area{color:var(--text);background:var(--bg);}
+body.theme-sepia .settings-panel{background:#ede0c8;border-color:#d4b896;}
+body.theme-sepia .bubbles-area{background:var(--card);border-color:var(--border);}
+body.theme-sepia .btn-opt{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-sepia .input-summary{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-sepia .passage-nav{background:#ede0c8;border-color:var(--border);}
+body.theme-sepia .nav-btn{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia .nav-btn.active-arrow{color:var(--dark);border-color:var(--dark);}
+body.theme-sepia .passage-label{color:var(--text);}
+body.theme-sepia .modal-content{background:var(--card);}
+body.theme-sepia .modal-body{background:var(--card);}
+body.theme-sepia .modal-footer{background:#ede0c8;}
+body.theme-sepia .modal-col-title{background:#ede0c8;color:#7b5e2a;}
+body.theme-sepia .about-card{background:var(--card);}
+body.theme-sepia .about-body{background:var(--card);}
+body.theme-sepia .about-body p{color:#7b5e2a;}
+body.theme-sepia #menuBtn{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia .theme-btn{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia .theme-btn.active{background:#ede0c8;border-color:#7b5e2a;color:#7b5e2a;}
+body.theme-sepia .btn-about{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia #sideMenu{background:var(--card);}
+body.theme-sepia .menu-body{background:var(--card);}
+body.theme-sepia .menu-footer{background:#ede0c8;border-color:var(--border);}
+body.theme-sepia .tg-link{background:#e8d5b5;color:#7b5e2a;}
+body.theme-sepia .menu-top-icon{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia .menu-star{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia .menu-id-box{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-sepia .heading-drop{border-color:var(--border);background:var(--card);}
+body.theme-sepia #teacherAnswerBox{background:#ede0c8;border-color:var(--border);}
+body.theme-sepia .ans-item{color:var(--text);border-color:var(--border);}
+body.theme-sepia .settings-label{color:#7b5e2a;}
+body.theme-sepia .attempt-tag{background:var(--card);border-color:var(--border);color:var(--text);}
+*{box-sizing:border-box;}
+body,html{margin:0;padding:0;height:100%;font-family:'Inter','Segoe UI',sans-serif;overflow:hidden;background:var(--bg);transition:background .3s,color .3s;}
+.wrapper{display:flex;flex-direction:column;height:100vh;}
+header{height:65px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 25px;flex-shrink:0;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:background .3s;}
+.logo{font-weight:800;font-size:1.2rem;color:var(--dark);display:flex;align-items:center;gap:10px;}
+.logo i{color:var(--primary);}
+.timer{font-weight:bold;background:#eef2ff;padding:8px 25px;border-radius:30px;border:1px solid #d1d9ff;color:var(--primary);font-size:1.2rem;min-width:110px;text-align:center;transition:.3s;}
+#menuBtn{width:38px;height:38px;border-radius:50%;border:2px solid #dee2e6;background:#fff;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#495057;transition:.2s;}
+#menuBtn:hover{background:#f0f7ff;border-color:var(--primary);color:var(--primary);}
+#proofingBtn{padding:8px 18px;border-radius:30px;border:2px solid #007bff;background:#007bff;color:#fff;font-weight:700;font-size:.85rem;cursor:pointer;transition:.2s;}
+#proofingBtn.active{background:#fff;color:#007bff;border-color:#007bff;}
+#proofingBtn:disabled{opacity:0.5;cursor:not-allowed;background:#ccc;border-color:#aaa;color:#666;}
+.main{display:flex;flex-direction:column;flex:1;overflow:hidden;}
+.content-area{flex:1;overflow-y:auto;padding:15px 30px 10px;background:#fff;transition:background .3s;}
+.text-area{line-height:1.8;color:var(--text);font-size:var(--font-size);transition:font-size .2s,color .3s;}
+.text-area h1{color:var(--dark);font-size:1.8rem;margin-bottom:8px;}
+.audio-player{margin-bottom:20px;background:var(--bg);padding:12px 20px;border-radius:12px;border:1px solid var(--border);min-height:56px;}
+.audio-player audio{width:100%;display:block;min-height:32px;}
+.bubbles-area{height:70px;border-top:1px solid var(--border);background:#fff;padding:8px 25px;overflow-y:auto;flex-shrink:0;transition:background .3s;}
+.bubbles-grid{display:flex;flex-wrap:wrap;gap:8px;}
+.bubble{width:32px;height:32px;border-radius:50%;border:2px solid #dee2e6;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#adb5bd;font-size:.8rem;transition:.3s;}
+.bubble.active{border-color:var(--primary);color:var(--primary);background:#eef2ff;}
+.bubble.solved{background:var(--primary);color:#fff;border-color:var(--primary);}
+.action-bar{background:#fff;border-bottom:1px solid var(--border);padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:15px;height:55px;flex-shrink:0;transition:background .3s;}
+.attempts-row{display:flex;gap:10px;overflow-x:auto;flex:1;min-width:0;align-items:center;height:100%;}
+.attempt-tag{background:#f8f9fa;border:1px solid #e9ecef;padding:4px 12px;border-radius:8px;font-size:.78rem;white-space:nowrap;color:#495057;font-weight:600;}
+.btn-submit{background:var(--primary);color:#fff;border:none;padding:10px 28px;border-radius:8px;font-weight:700;cursor:pointer;transition:.2s;box-shadow:0 4px 15px rgba(0,123,255,.3);}
+.btn-submit:hover{background:#0069d9;transform:translateY(-1px);}
+.questions-area{padding:10px 0 15px;font-size:var(--font-size);transition:font-size .2s;}
+.q-card{background:#fff;padding:18px 22px;border-radius:12px;border:1px solid #e9ecef;margin-bottom:18px;box-shadow:0 4px 6px rgba(0,0,0,.02);transition:background .3s;}
+.description{font-weight:800;color:#2d3436;margin-bottom:10px;display:block;font-size:.8rem;text-transform:uppercase;letter-spacing:.5px;border-left:5px solid var(--primary);padding-left:15px;}
+.btn-opt{padding:7px 14px;border:1.5px solid #dee2e6;border-radius:8px;cursor:pointer;margin:4px 6px 4px 0;display:inline-block;background:#fff;font-weight:500;transition:.2s;}
+.btn-opt.selected{border-color:var(--primary);color:var(--primary);background:#f0f7ff;}
+.correct-neon{border:2px solid var(--neon-green)!important;box-shadow:0 0 15px var(--neon-green)!important;background-color:#fafff5!important;pointer-events:none;}
+.wrong-neon{border:2px solid var(--neon-red)!important;box-shadow:0 0 15px var(--neon-red)!important;}
+.input-summary{border:none;border-bottom:2px solid #dee2e6;width:150px;text-align:center;outline:none;font-weight:700;padding:4px;transition:.3s;background:transparent;}
+.input-summary.correct-neon{border-bottom-color:var(--neon-green);box-shadow:0 0 10px var(--neon-green);}
+.input-summary.wrong-neon{border-bottom-color:var(--neon-red);box-shadow:0 0 10px var(--neon-red);}
+.correct-answer-hint{color:var(--neon-green);font-weight:700;font-size:.85rem;margin-left:10px;}
+.passage-nav{display:flex;align-items:center;justify-content:center;gap:16px;padding:10px 20px;border-top:1px solid #e9ecef;background:#fff;flex-shrink:0;transition:background .3s;}
+.nav-btn{width:36px;height:36px;border-radius:50%;border:2px solid #dee2e6;background:#fff;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;font-weight:bold;transition:.2s;}
+.nav-btn:hover:not(.disabled){background:#eef2ff;border-color:var(--primary);color:var(--primary);}
+.nav-btn.disabled{color:#dee2e6;border-color:#f1f3f5;cursor:default;pointer-events:none;}
+.nav-btn.active-arrow{color:#2d3436;border-color:#2d3436;}
+.passage-label{font-weight:700;font-size:.85rem;color:#495057;min-width:100px;text-align:center;}
+.tg-link-footer{display:inline-flex;align-items:center;gap:6px;color:var(--primary);font-weight:700;font-size:.85rem;text-decoration:none;padding:6px 16px;border-radius:20px;background:#eef2ff;transition:.2s;margin-left:15px;}
+.tg-link-footer:hover{background:#d1d9ff;}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:1000;justify-content:center;align-items:center;backdrop-filter:blur(5px);}
+.modal-content{background:#fff;border-radius:20px;width:95vw;max-width:1100px;text-align:center;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,.4);animation:modalIn .3s cubic-bezier(.34,1.56,.64,1);max-height:90vh;display:flex;flex-direction:column;}
+@keyframes modalIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-header{background:var(--dark);color:#fff;padding:16px 30px;flex-shrink:0;}
+.modal-header h2{margin:0;font-size:1.6rem;font-weight:900;}
+.modal-total{font-size:.9rem;opacity:.8;margin-top:3px;}
+.modal-body{padding:18px;background:#fff;flex:1;overflow:hidden;}
+.modal-cols{display:flex;gap:12px;height:100%;max-height:50vh;}
+.modal-col{flex:1;display:flex;flex-direction:column;min-width:0;}
+.modal-col-title{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#6c757d;margin-bottom:5px;text-align:center;padding:5px;background:#f8f9fa;border-radius:8px;}
+.res-list{text-align:left;overflow-y:auto;flex:1;}
+.res-card{display:flex;justify-content:space-between;align-items:center;padding:5px 10px;margin-bottom:3px;border-radius:8px;font-weight:700;font-size:.75rem;border:2px solid transparent;transition:.3s;}
+.res-card.correct-row{border-color:var(--neon-green);box-shadow:0 0 8px var(--neon-green);background:#fafff5;color:#2d6a4f;}
+.res-card.wrong-row{border-color:var(--neon-red);box-shadow:0 0 8px var(--neon-red);background:#fff5f5;color:#a4161a;}
+.modal-footer{padding:12px 25px;background:#f8f9fa;flex-shrink:0;}
+#overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:none;z-index:1500;backdrop-filter:blur(2px);}
+#overlay.show{display:block;}
+#sideMenu{position:fixed;top:0;right:-26%;width:25%;height:100%;background:#fff;z-index:1600;transition:right .3s cubic-bezier(.4,0,.2,1);padding:0;box-shadow:-5px 0 30px rgba(0,0,0,.2);display:flex;flex-direction:column;overflow:hidden;}
+#sideMenu.open{right:0;}
+.menu-header{background:var(--dark);color:#fff;padding:20px 20px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.menu-header h2{margin:0;font-size:1.1rem;font-weight:800;}
+#closeMenuBtn{background:none;border:none;color:#fff;font-size:1.3rem;cursor:pointer;padding:0;}
+.menu-body{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;}
+.settings-panel{background:#f8f9fa;border:1px solid #e9ecef;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:10px;transition:background .3s;}
+.settings-label{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#6c757d;margin-bottom:2px;}
+.font-slider-row{display:flex;align-items:center;gap:8px;}
+.font-slider-row span{font-size:.75rem;color:#adb5bd;min-width:16px;text-align:center;}
+input[type=range]{flex:1;-webkit-appearance:none;height:4px;border-radius:4px;background:#dee2e6;outline:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--primary);cursor:pointer;box-shadow:0 2px 6px rgba(0,123,255,.4);}
+.theme-row{display:flex;gap:5px;}
+.theme-btn{flex:1;padding:6px 3px;border-radius:10px;border:2px solid #dee2e6;cursor:pointer;font-size:.7rem;font-weight:700;transition:.2s;background:#fff;color:#495057;text-align:center;}
+.theme-btn:hover{border-color:var(--primary);color:var(--primary);}
+.theme-btn.active{border-color:var(--primary);background:#eef2ff;color:var(--primary);}
+#highlightMenu{display:none;position:fixed;background:#fff;padding:8px;border-radius:20px;box-shadow:0 0 15px rgba(0,0,0,.2);z-index:99999;gap:8px;align-items:center;}
+.hlColor{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;}
+#removeColor{width:28px;height:28px;border-radius:50%;background:white;border:2px solid #999;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;}
+body.theme-dark #highlightMenu{background:#16213e;box-shadow:0 0 15px rgba(0,0,0,.6);}
+body.theme-dark #removeColor{background:#0f3460;border-color:#2d3561;color:#ffffff;}
+body.theme-sepia #highlightMenu{background:var(--card);box-shadow:0 0 15px rgba(0,0,0,.3);}
+body.theme-sepia #removeColor{background:#e8cf9c;border-color:var(--border);color:#4a3320;}
+.theme-btn .tb-icon{font-size:1rem;display:block;margin-bottom:2px;}
+.btn-about{width:100%;padding:8px;border-radius:10px;border:2px solid #dee2e6;background:#fff;cursor:pointer;font-weight:700;font-size:.75rem;color:#495057;display:flex;align-items:center;justify-content:center;gap:6px;transition:.2s;}
+.btn-about:hover{border-color:var(--primary);color:var(--primary);background:#eef2ff;}
+#aboutModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:2000;justify-content:center;align-items:center;backdrop-filter:blur(4px);}
+#aboutModal.show{display:flex;}
+.about-card{background:#fff;border-radius:20px;width:320px;max-width:90%;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.35);animation:modalIn .3s cubic-bezier(.34,1.56,.64,1);text-align:center;}
+.about-top{background:linear-gradient(135deg,#007bff,#0056cc);padding:22px 20px 18px;color:#fff;}
+.about-avatar{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.25);border:3px solid rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 8px;}
+.about-top h3{margin:0 0 2px;font-size:1.2rem;font-weight:900;}
+.about-top p{margin:0;opacity:.8;font-size:.75rem;}
+.about-body{padding:16px;}
+.about-body p{color:#6c757d;font-size:.8rem;line-height:1.5;margin:0 0 10px;}
+.about-tag{display:inline-block;background:#eef2ff;color:var(--primary);border-radius:20px;padding:4px 12px;font-weight:700;font-size:.75rem;margin-bottom:12px;}
+.btn-close-about{width:100%;padding:10px;background:var(--primary);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;font-size:.8rem;}
+.menu-top-icon{width:38px;height:38px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:.95rem;color:#495057;cursor:pointer;transition:.2s;align-self:flex-start;}
+.menu-top-icon:hover{background:#eef2ff;border-color:var(--primary);color:var(--primary);}
+.menu-mid-row{display:flex;align-items:center;gap:6px;}
+.menu-star{width:38px;height:38px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#495057;font-weight:bold;flex-shrink:0;}
+.menu-id-box{flex:1;border:2px solid #dee2e6;border-radius:12px;padding:7px 10px;font-size:.9rem;font-weight:600;outline:none;transition:border-color .2s;letter-spacing:2px;}
+.menu-id-box:focus{border-color:var(--primary);}
+.menu-id-box::placeholder{letter-spacing:0;font-weight:400;color:#adb5bd;}
+.id-status{font-size:.75rem;color:#adb5bd;padding-left:4px;display:none;}
+.id-status.show{display:block;}
+.id-status.ok{color:#2d6a4f;}
+.id-status.err{color:#a4161a;}
+#teacherAnswerBox{background:#f8f9fa;border:1px solid #dee2e6;border-radius:12px;padding:8px;display:none;}
+#teacherAnswerBox .drop-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:.8rem;color:var(--dark);}
+#teacherAnswerBox .drop-content{max-height:140px;overflow-y:auto;margin-top:6px;display:none;}
+#teacherAnswerBox .drop-content.open{display:block;}
+.ans-item{padding:5px 8px;border-radius:6px;font-size:.75rem;font-weight:600;color:#495057;border-bottom:1px solid #e9ecef;}
+.ans-item:last-child{border-bottom:none;}
+#adminRow{display:none;margin-top:4px;}
+.admin-mid-row{display:flex;align-items:center;gap:6px;}
+.admin-slash-icon{width:38px;height:38px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#495057;font-weight:bold;flex-shrink:0;}
+.admin-cmd-box{flex:1;border:2px solid #dee2e6;border-radius:12px;padding:7px 10px;font-size:.85rem;font-weight:600;outline:none;transition:border-color .2s;}
+.admin-cmd-box:focus{border-color:#ff3131;}
+.admin-cmd-box::placeholder{font-weight:400;color:#adb5bd;}
+.btn-run-cmd{padding:7px 12px;background:var(--dark);color:#fff;border:none;border-radius:10px;cursor:pointer;font-weight:700;font-size:.75rem;transition:.2s;}
+.btn-run-cmd:hover{background:#ff3131;}
+#cmdFeedback{font-size:.75rem;padding-left:4px;color:#adb5bd;display:none;}
+#cmdFeedback.show{display:block;}
+#cmdFeedback.ok{color:#2d6a4f;}
+#cmdFeedback.err{color:#a4161a;}
+#adminAnswerBox .drop-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:.8rem;color:var(--dark);padding:3px 0;}
+#adminAnswerBox .drop-content{max-height:120px;overflow-y:auto;margin-top:4px;display:none;}
+#adminAnswerBox .drop-content.open{display:block;}
+.menu-footer{padding:10px 20px;border-top:1px solid #e9ecef;text-align:center;flex-shrink:0;}
+.tg-link{display:inline-flex;align-items:center;gap:6px;color:var(--primary);font-weight:700;font-size:.8rem;text-decoration:none;padding:6px 14px;border-radius:10px;background:#eef2ff;transition:.2s;}
+.tg-link:hover{background:#d1d9ff;}
+#toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--dark);color:#fff;padding:10px 20px;border-radius:30px;font-weight:700;font-size:.85rem;z-index:9999;transition:transform .3s;box-shadow:0 5px 20px rgba(0,0,0,.3);}
+#toast.show{transform:translateX(-50%) translateY(0);}
+.content-row{display:flex;flex:1;overflow:hidden;}
+.transcript-col{width:0;overflow:hidden;border-right:1px solid var(--border);background:var(--card);transition:width .25s ease;flex-shrink:0;}
+.transcript-col.open{width:33%;}
+.transcript-inner{padding:18px 20px;overflow-y:auto;height:100%;line-height:1.85;font-size:.92rem;color:var(--text);}
+.transcript-inner p{margin:0 0 14px;}
+.transcript-inner span.sent{cursor:pointer;padding:2px 1px;border-radius:4px;}
+.transcript-inner span.sent:hover{background:rgba(0,123,255,.12);}
+body.theme-dark .transcript-inner span.sent:hover{background:rgba(96,165,250,.18);}
+body.theme-sepia .transcript-inner span.sent:hover{background:rgba(123,94,42,.15);}
+.hl{background:#fff2a8;padding:1px 2px;border-radius:3px;}
+.badge{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;background:var(--primary);color:#fff;font-size:.65rem;font-weight:800;border-radius:4px;margin-left:4px;vertical-align:middle;}
+.proof-toast{position:fixed;bottom:40px;left:50%;transform:translateX(-50%);z-index:9999;opacity:0;pointer-events:none;transition:opacity .25s;}
+.proof-toast.show{opacity:1;}
+.proof-toast-box{background:var(--dark);color:#fff;padding:22px 34px;border-radius:20px;font-weight:600;font-size:1.05rem;max-width:520px;text-align:center;line-height:1.6;position:relative;overflow:visible;box-shadow:0 15px 45px rgba(0,0,0,.35);transition:background .8s ease,box-shadow .8s ease;}
+.snap-char{display:inline-block;transition:transform .9s cubic-bezier(.2,.8,.3,1),opacity .9s ease,filter .9s ease;}
+.sand-grain{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);pointer-events:none;transition:transform 1.1s ease,opacity 1.1s ease;}
+
+/* === universal theme & readability fixes (auto-appended) === */
+#sideMenu{ will-change: right; }
+#overlay, #highlightMenu, .modal { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+
+body.theme-dark { background: var(--bg) !important; }
+body.theme-dark .content-area, body.theme-dark .content-row,
+body.theme-dark .wrapper, body.theme-dark .main,
+body.theme-dark .left-side, body.theme-dark .right-side,
+body.theme-dark .transcript-col, body.theme-dark .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-dark header, body.theme-dark .action-bar, body.theme-dark .passage-nav {
+  background: #0f3460 !important; border-color:#2d3561 !important;
+}
+body.theme-dark .bubbles-area, body.theme-dark .q-card, body.theme-dark .modal-content,
+body.theme-dark .modal-body, body.theme-dark .about-card, body.theme-dark .about-body,
+body.theme-dark #sideMenu, body.theme-dark .menu-body, body.theme-dark .modal-footer,
+body.theme-dark .drop-content, body.theme-dark #teacherAnswerBox, body.theme-dark #adminAnswerBox,
+body.theme-dark #highlightMenu, body.theme-dark #removeColor, body.theme-dark #toast,
+body.theme-dark .menu-footer, body.theme-dark .modal-col, body.theme-dark .proof-toast-box,
+body.theme-dark .audio-player, body.theme-dark .settings-panel {
+  background: var(--card) !important;
+}
+body.theme-dark, body.theme-dark .text-area, body.theme-dark .questions-area,
+body.theme-dark .q-card, body.theme-dark .q-card p, body.theme-dark .q-card li,
+body.theme-dark .description, body.theme-dark .passage-label, body.theme-dark .nav-btn,
+body.theme-dark label, body.theme-dark .ans-item, body.theme-dark .attempt-tag,
+body.theme-dark .settings-label, body.theme-dark .about-body p, body.theme-dark .btn-opt,
+body.theme-dark .modal-header h2, body.theme-dark .modal-total, body.theme-dark .proof-note,
+body.theme-dark .modal-col-title, body.theme-dark .drop-header, body.theme-dark .menu-header h2,
+body.theme-dark .transcript-inner, body.theme-dark .transcript-inner p, body.theme-dark .badge,
+body.theme-dark .id-status, body.theme-dark #cmdFeedback, body.theme-dark .about-top h3,
+body.theme-dark .res-card {
+  color: #ffffff !important;
+}
+body.theme-dark .input-summary, body.theme-dark .input-match, body.theme-dark input[type=text] {
+  color: #ffffff !important; background: transparent !important;
+}
+body.theme-dark .btn-opt.selected, body.theme-dark .nav-btn.active-arrow { color: #60a5fa !important; }
+body.theme-sepia .btn-opt.selected, body.theme-sepia .nav-btn.active-arrow { color: #a13a1c !important; background: #f9e6c8 !important; border-color: #a13a1c !important; font-weight: 700 !important; }
+body.theme-dark .correct-neon { color:#0b3d19 !important; }
+body.theme-dark .wrong-row, body.theme-dark .correct-row { color: inherit !important; }
+
+body.theme-sepia .content-area, body.theme-sepia .content-row,
+body.theme-sepia .wrapper, body.theme-sepia .main,
+body.theme-sepia .left-side, body.theme-sepia .right-side,
+body.theme-sepia .transcript-col, body.theme-sepia .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-sepia header, body.theme-sepia .action-bar, body.theme-sepia .passage-nav {
+  background:#ede0c8 !important; border-color:#d4b896 !important;
+}
+body.theme-sepia .bubbles-area, body.theme-sepia .q-card, body.theme-sepia .modal-content,
+body.theme-sepia .modal-body, body.theme-sepia .about-card, body.theme-sepia .about-body,
+body.theme-sepia #sideMenu, body.theme-sepia .menu-body, body.theme-sepia .modal-footer,
+body.theme-sepia .drop-content, body.theme-sepia #teacherAnswerBox, body.theme-sepia #adminAnswerBox,
+body.theme-sepia #highlightMenu, body.theme-sepia #removeColor, body.theme-sepia #toast,
+body.theme-sepia .menu-footer, body.theme-sepia .modal-col, body.theme-sepia .proof-toast-box,
+body.theme-sepia .audio-player, body.theme-sepia .settings-panel {
+  background: var(--card) !important;
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <div class="logo"><i class="fas fa-headphones"></i> LISTENING · IELTS-style Test 5 (real VOA audio)</div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="timer" id="timer">00:00</div>
+      <button id="proofingBtn" onclick="toggleProofing()">Proofing</button>
+      <button id="menuBtn">⋮</button>
+    </div>
+  </header>
+  <div class="main">
+    <div class="action-bar">
+      <div class="attempts-row" id="attemptsRow"></div>
+      <button class="btn-submit" onclick="submitTest()">SUBMIT ANSWERS</button>
+    </div>
+    <div class="content-row">
+      <div class="transcript-col" id="transcriptCol"><div class="transcript-inner" id="transcriptInner"></div></div>
+      <div class="content-area" id="contentArea">
+        <div class="text-area" id="textArea"></div>
+        <div class="questions-area" id="questionsArea"></div>
+      </div>
+    </div>
+    <div class="bubbles-area">
+      <div style="font-weight:800;color:#adb5bd;font-size:.65rem;text-transform:uppercase;margin-bottom:4px;">Questions Navigation</div>
+      <div class="bubbles-grid" id="bubbleGrid"></div>
+    </div>
+    <div class="passage-nav">
+      <button class="nav-btn disabled" id="navLeft" onclick="goPassage(-1)">&#8592;</button>
+      <span class="passage-label" id="passageLabel">Section 1 / 4</span>
+      <button class="nav-btn active-arrow" id="navRight" onclick="goPassage(1)">&#8594;</button>
+      <a href="https://t.me/English_Wikipedia" target="_blank" class="tg-link-footer"><i class="fab fa-telegram-plane"></i> Telegram</a>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <div class="modal-header"><h2 id="mScore">0 / 40</h2><div class="modal-total" id="modalTotal">Total score across all sections</div></div>
+    <div class="modal-body">
+      <div class="modal-cols" id="modalCols"></div>
+    </div>
+    <div class="modal-footer"><button class="btn-submit" style="width:100%;" onclick="closeModal()">CLOSE RESULTS</button></div>
+  </div>
+</div>
+
+<div id="aboutModal">
+  <div class="about-card">
+    <div class="about-top"><div class="about-avatar">🌅</div><h3>rasVet</h3><p>Creator & Developer</p></div>
+    <div class="about-body"><p>IELTS Listening practice platform built by <strong>rasVet</strong>.</p><div class="about-tag">by: rasVet</div><button class="btn-close-about" onclick="closeAbout()">Close</button></div>
+  </div>
+</div>
+
+<div id="overlay"></div>
+<div id="sideMenu">
+  <div class="menu-header"><h2>Menu</h2><button id="closeMenuBtn">✕</button></div>
+  <div class="menu-body">
+    <div class="settings-panel">
+      <div><div class="settings-label">Font Size</div><div class="font-slider-row"><span style="font-size:.7rem;">A</span><input type="range" id="fontSlider" min="12" max="22" value="16" step="1" oninput="changeFontSize(this.value)"><span style="font-size:1.1rem;">A</span></div><div style="text-align:center;font-size:.7rem;color:#adb5bd;margin-top:2px;" id="fontSizeLabel">16px</div></div>
+      <div><div class="settings-label">Theme</div><div class="theme-row"><button class="theme-btn active" id="themeLight" onclick="setTheme('light')"><span class="tb-icon">☀️</span>Light</button><button class="theme-btn" id="themeDark" onclick="setTheme('dark')"><span class="tb-icon">🌙</span>Dark</button><button class="theme-btn" id="themeSepia" onclick="setTheme('sepia')"><span class="tb-icon">📖</span>Reading</button></div></div>
+      <button class="btn-about" onclick="openAbout()"><i class="fas fa-info-circle"></i> About</button>
+    </div>
+    <div class="menu-top-icon"><i class="fas fa-cog"></i></div>
+    <div class="menu-mid-row"><div class="menu-star">✱</div><input type="text" class="menu-id-box" id="idInput" placeholder="Enter ID" maxlength="6" oninput="handleIdInput()"></div>
+    <div class="id-status" id="idStatus"></div>
+    <div id="teacherAnswerBox">
+      <div class="drop-header" onclick="toggleDropdown(0)"><span>📋 Answers S1</span><span id="dropArrow0">▼</span></div>
+      <div class="drop-content" id="dropContent0"></div>
+      <div class="drop-header" style="margin-top:6px;" onclick="toggleDropdown(1)"><span>📋 Answers S2</span><span id="dropArrow1">▼</span></div>
+      <div class="drop-content" id="dropContent1"></div>
+      <div class="drop-header" style="margin-top:6px;" onclick="toggleDropdown(2)"><span>📋 Answers S3</span><span id="dropArrow2">▼</span></div>
+      <div class="drop-content" id="dropContent2"></div>
+      <div class="drop-header" style="margin-top:6px;" onclick="toggleDropdown(3)"><span>📋 Answers S4</span><span id="dropArrow3">▼</span></div>
+      <div class="drop-content" id="dropContent3"></div>
+    </div>
+    <div id="adminRow">
+      <div class="admin-mid-row"><div class="admin-slash-icon">/</div><input type="text" class="admin-cmd-box" id="cmdInput" placeholder="answers / autofill / more time"><button class="btn-run-cmd" onclick="runCommand()">Run</button></div>
+      <div id="cmdFeedback"></div>
+      <div id="adminAnswerBox" style="margin-top:6px;">
+        <div class="drop-header" onclick="toggleDropdown(0)"><span>📋 Answers S1</span><span id="dropArrow0">▼</span></div>
+        <div class="drop-content" id="dropContent0"></div>
+        <div class="drop-header" style="margin-top:6px;" onclick="toggleDropdown(1)"><span>📋 Answers S2</span><span id="dropArrow1">▼</span></div>
+        <div class="drop-content" id="dropContent1"></div>
+        <div class="drop-header" style="margin-top:6px;" onclick="toggleDropdown(2)"><span>📋 Answers S3</span><span id="dropArrow2">▼</span></div>
+        <div class="drop-content" id="dropContent2"></div>
+        <div class="drop-header" style="margin-top:6px;" onclick="toggleDropdown(3)"><span>📋 Answers S4</span><span id="dropArrow3">▼</span></div>
+        <div class="drop-content" id="dropContent3"></div>
+      </div>
+    </div>
+    <button class="btn-about" id="profingBtn" style="margin-top:4px;" onclick="handleProfingClick()">🔎 Profing</button>
+  </div>
+  <div class="menu-footer"><a href="https://t.me/English_Wikipedia" target="_blank" class="tg-link"><i class="fab fa-telegram-plane"></i> Telegram Channel</a></div>
+</div>
+
+<div id="toast"></div>
+<div class="proof-toast" id="proofToast"><div class="proof-toast-box" id="proofToastBox"><span id="proofToastText"></span></div></div>
+<div id="highlightMenu" style="display:none;position:fixed;background:#fff;padding:8px;border-radius:20px;box-shadow:0 0 15px rgba(0,0,0,.2);z-index:99999;gap:8px;align-items:center;">
+  <div class="hlColor" data-color="#ff3131" style="background:#ff3131;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div class="hlColor" data-color="#ff7a00" style="background:#ff7a00;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div class="hlColor" data-color="#39FF14" style="background:#39FF14;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div class="hlColor" data-color="#007bff" style="background:#007bff;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div id="removeColor" style="width:28px;height:28px;border-radius:50%;background:white;border:2px solid #999;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;">&#10005;</div>
+</div>
+
+<script>
+const TEACHER_IDS_LIST=["004567","008245","009213"],ADMIN_ID_VAL="000000";
+
+// IELTS Listening Practice Tests 1 & 2 — official free tests, British Council (takeielts.britishcouncil.org)
+// Audio: direct Kaltura progressive-download links (format/url/protocol/https) so the browser's
+// native <audio> player renders — real scrubber/slider, not the clunky iframe embed.
+// Transcript: British Council does not publish an official transcript for these tests
+// (to protect test security) — the app's built-in fallback message explains this.
+// IELTS-style Listening Test — real VOA Special English audio+transcripts (public domain, US govt work)
+// Question TYPES per part mimic real IELTS structure:
+// Part 1 — note/form completion only (easy, gap-fill)
+// Part 2 — mix: gap-fill + multiple choice + one double-answer (choose TWO) question
+// Part 3 — mostly multiple choice (discussion-style), incl. one double-answer question
+// Part 4 — note/summary completion only (gap-fill), academic lecture style
+// IELTS-style Listening Test 5 — real VOA Special English audio+transcripts (public domain, US govt work)
+const passages = [
+{
+  title:"Part 1 — Studying in the USA: Public or Private? (note completion)", totalQ:10,
+  text:`<h1>IELTS-style Listening — Part 1</h1><p style="font-style:italic;color:#888;font-size:.85rem;margin-bottom:16px;">VOA Special English · "Education Report" (Foreign Student Series) · public domain (U.S. government work) · Questions 1–10 · Complete the notes. Write NO MORE THAN TWO WORDS for each answer.</p>
+<p>The state with the most residents, almost forty million, is 1. <input type="text" id="in1" class="input-summary" style="width:160px;" oninput="mark(1)" placeholder="TEXT">.</p>
+<p>Today's example is a smaller West Coast state: 2. <input type="text" id="in2" class="input-summary" style="width:160px;" oninput="mark(2)" placeholder="TEXT">.</p>
+<p>The University of Oregon is located in 3. <input type="text" id="in3" class="input-summary" style="width:140px;" oninput="mark(3)" placeholder="TEXT">.</p>
+<p>Undergraduate tuition for state residents this year is 4. <input type="text" id="in4" class="input-summary" style="width:160px;" oninput="mark(4)" placeholder="TEXT"> dollars.</p>
+<p>Housing costs an additional 5. <input type="text" id="in5" class="input-summary" style="width:160px;" oninput="mark(5)" placeholder="TEXT"> dollars.</p>
+<p>Nonresidents pay almost 6. <input type="text" id="in6" class="input-summary" style="width:160px;" oninput="mark(6)" placeholder="TEXT"> dollars for tuition and fees.</p>
+<p>Lewis and Clark College is located in 7. <input type="text" id="in7" class="input-summary" style="width:140px;" oninput="mark(7)" placeholder="TEXT">.</p>
+<p>Lewis and Clark has 8. <input type="text" id="in8" class="input-summary" style="width:160px;" oninput="mark(8)" placeholder="TEXT"> students, compared to twenty thousand at the University of Oregon.</p>
+<p>The published tuition price at Lewis and Clark is almost 9. <input type="text" id="in9" class="input-summary" style="width:160px;" oninput="mark(9)" placeholder="TEXT"> dollars.</p>
+<p>Each year, Lewis and Clark awards financial aid to 10. <input type="text" id="in10" class="input-summary" style="width:120px;" oninput="mark(10)" placeholder="TEXT"> international students.</p>`,
+  audio:"http://www.voanews.com/MediaAssets2/learningenglish/2008_10/audio/mp3/se_ed_2oct08.mp3",
+  transcript:`<p>This is the VOA Special English Education Report.</p>
+<p>Today, in week four of our Foreign Student Series, we discuss differences between public and private in American higher education.</p>
+<p>A big difference involves money. Public colleges and universities charge for an education just like private schools. But state schools cost less because they get money from the states that started them to educate local citizens. As a result, out-of-state and international students usually pay more than state residents, at least the first year.</p>
+<p><span class="hl">The state with the most residents, almost forty million, is California<span class="badge">1</span></span>. Its systems of two-year and four-year colleges and universities are among the largest in the world.</p>
+<p>But the example we are going to focus on today is to the north of California, in a much smaller state on the West Coast: <span class="hl">Oregon<span class="badge">2</span></span>.</p>
+<p>The University of Oregon, <span class="hl">located in Eugene<span class="badge">3</span></span>, is one of the campuses in the Oregon University System. <span class="hl">The cost for undergraduates this year is six thousand dollars for state residents<span class="badge">4</span></span>. <span class="hl">Housing is an additional eight thousand<span class="badge">5</span></span>. <span class="hl">Nonresidents pay the same for housing -- but almost twenty thousand dollars for tuition and fees<span class="badge">6</span></span>.</p>
+<p>Let's see how these numbers compare to a private college in Oregon.</p>
+<p><span class="hl">Lewis and Clark College in Portland<span class="badge">7</span></span> has <span class="hl">four thousand students<span class="badge">8</span></span>, compared to twenty thousand at the University of Oregon. Housing costs eight hundred dollars more than at the state school. But the big difference is tuition. <span class="hl">The published price at Lewis and Clark is almost thirty-four thousand dollars<span class="badge">9</span></span>.</p>
+<p>Yet Lewis and Clark is one of the few American colleges to offer financial aid for international students. <span class="hl">Each year it awards financial aid to twenty students from other countries<span class="badge">10</span></span>. And it says the average award last year was nineteen thousand dollars. That would make Lewis and Clark cheaper for international students than the University of Oregon.</p>
+<p>But, of course, prices alone do not say anything about the quality of a school or the value of an education.</p>
+<p>And that's the VOA Special English Education Report, written by Nancy Steinbach. Our Foreign Student Series is online at voaspecialenglish.com. I'm Steve Ember.</p>`,
+  correctKeys:{1:"CALIFORNIA",2:"OREGON",3:"EUGENE",4:"SIX THOUSAND",5:"EIGHT THOUSAND",6:"TWENTY THOUSAND",7:"PORTLAND",8:"FOUR THOUSAND",9:"THIRTY-FOUR THOUSAND",10:"TWENTY"},
+  teacherAnswers:["1—CALIFORNIA","2—OREGON","3—EUGENE","4—SIX THOUSAND ($6,000)","5—EIGHT THOUSAND ($8,000)","6—TWENTY THOUSAND (~$20,000)","7—PORTLAND","8—FOUR THOUSAND (4,000)","9—THIRTY-FOUR THOUSAND (~$34,000)","10—TWENTY (20)"]
+},
+{
+  title:"Part 2 — Studying in the USA: Diploma Mills (notes + multiple choice)", totalQ:10,
+  text:`<h1>IELTS-style Listening — Part 2</h1><p style="font-style:italic;color:#888;font-size:.85rem;margin-bottom:16px;">VOA Special English · "Education Report" (Foreign Student Series) · public domain (U.S. government work) · Questions 11–20</p>
+<p><strong>Questions 11–15.</strong> Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.</p>
+<p>Schools must be reaccredited every 11. <input type="text" id="in11" class="input-summary" style="width:120px;" oninput="mark(11)" placeholder="TEXT"> years, or sooner.</p>
+<p>In August, a husband and wife were sentenced to 12. <input type="text" id="in12" class="input-summary" style="width:120px;" oninput="mark(12)" placeholder="TEXT"> years in federal prison.</p>
+<p>They operated Saint Regis University and more than 13. <input type="text" id="in13" class="input-summary" style="width:140px;" oninput="mark(13)" placeholder="TEXT"> other diploma mills.</p>
+<p>These businesses supplied worthless degrees to more than 14. <input type="text" id="in14" class="input-summary" style="width:140px;" oninput="mark(14)" placeholder="TEXT"> people.</p>
+<p>The couple made 15. <input type="text" id="in15" class="input-summary" style="width:140px;" oninput="mark(15)" placeholder="TEXT"> dollars from the scheme.</p>
+<p><strong>Questions 16–18.</strong> Choose the correct letter, A, B or C.</p>
+<p>16. George Gollin, who helped investigate the case, is a professor of</p>
+<div class="q-wrap" data-q="16"><span class="btn-opt" onclick="pick(16,'A',this)">A. law</span><span class="btn-opt" onclick="pick(16,'B',this)">B. physics</span><span class="btn-opt" onclick="pick(16,'C',this)">C. education</span></div>
+<p>17. CHEA stands for the Council for</p>
+<div class="q-wrap" data-q="17"><span class="btn-opt" onclick="pick(17,'A',this)">A. Higher Education Accreditation</span><span class="btn-opt" onclick="pick(17,'B',this)">B. Honest Education in America</span><span class="btn-opt" onclick="pick(17,'C',this)">C. Higher Examination and Assessment</span></div>
+<p>18. The diploma mill operation was based in the state of</p>
+<div class="q-wrap" data-q="18"><span class="btn-opt" onclick="pick(18,'A',this)">A. Oregon</span><span class="btn-opt" onclick="pick(18,'B',this)">B. Washington</span><span class="btn-opt" onclick="pick(18,'C',this)">C. California</span></div>
+<p><strong>Questions 19–20.</strong> Choose TWO letters, A–E. Which TWO of the following are true, according to the report?</p>
+<p>A. Students should check a school's accreditation before paying any money &nbsp; B. Life-experience credit offers are a warning sign of diploma mills &nbsp; C. Accredited schools require no interaction with teachers &nbsp; D. The George Washington University Medical School lost its accreditation permanently &nbsp; E. CHEA charges students a fee to check accreditation</p>
+<div class="q-wrap" data-q="19"><span class="btn-opt" onclick="pick(19,'A',this)">A</span><span class="btn-opt" onclick="pick(19,'B',this)">B</span><span class="btn-opt" onclick="pick(19,'C',this)">C</span><span class="btn-opt" onclick="pick(19,'D',this)">D</span><span class="btn-opt" onclick="pick(19,'E',this)">E</span></div>
+<div class="q-wrap" data-q="20"><span class="btn-opt" onclick="pick(20,'A',this)">A</span><span class="btn-opt" onclick="pick(20,'B',this)">B</span><span class="btn-opt" onclick="pick(20,'C',this)">C</span><span class="btn-opt" onclick="pick(20,'D',this)">D</span><span class="btn-opt" onclick="pick(20,'E',this)">E</span></div>`,
+  audio:"http://www.voanews.com/MediaAssets2/learningenglish/2008_10/audio/mp3/se_ed_oct23.mp3",
+  transcript:`<p>This is the VOA Special English Education Report.</p>
+<p>This week, in part seven of our Foreign Student Series, we talk more about accreditation of American colleges and universities.</p>
+<p>To become accredited, programs have to meet quality standards that are set by an accrediting agency. In the United States, private organizations around the country handle this process.</p>
+<p><span class="hl">Schools must be reaccredited every ten years, or sooner<span class="badge">11</span></span>. They can lose their accreditation if they have problems that are not corrected within a given period of time.</p>
+<p>For example, the George Washington University Medical School announced last week that it was correcting problems found by its accrediting agency. The medical school in Washington, D.C., has been given two years to meet the standards. School officials said the changes include writing more detailed course objectives and providing more study areas for students.</p>
+<p>The process of accreditation is designed in part to protect against "diploma mills." These operations call themselves colleges or universities but provide no real education.</p>
+<p><span class="hl">In August, a husband and wife were sentenced to three years in federal prison<span class="badge">12</span></span> in a case in the northwestern state of Washington. <span class="hl">They operated Saint Regis University and more than one hundred other diploma mills<span class="badge">13</span></span>. <span class="hl">These businesses supplied worthless degrees to more than nine thousand people<span class="badge">14</span></span> in the United States and around the world. <span class="hl">The couple got seven million dollars<span class="badge">15</span></span>.</p>
+<p><span class="hl">George Gollin, a physics professor at the University of Illinois<span class="badge">16</span></span>, is an expert on accreditation who helped investigate the case. <span class="hl">He advises students to get the exact name of a school they are interested in, then look for it on the Web site of a group known as CHEA<span class="badge">19</span></span>. <span class="hl">CHEA is the Council for Higher Education Accreditation<span class="badge">17</span></span>. The address is chea.org.</p>
+<p><span class="hl">Make sure a school or program is accredited by a legally recognized accrediting agency before paying any money<span class="badge">20</span></span>. Only legitimate schools and programs are listed on the site. It also lists the only legally recognized agencies.</p>
+<p>Experts advise students to be suspicious of offers from schools that do not require much work or interaction with teachers. <span class="hl">One warning sign is any offer of college credit for "life experience."<span class="badge">18</span></span></p>
+<p>And that's the VOA Special English Education Report, written by Nancy Steinbach. A link to the CHEA Web site can be found, along with our continuing Foreign Student Series, at voaspecialenglish.com. I'm Steve Ember.</p>`,
+  correctKeys:{11:"TEN",12:"THREE",13:"ONE HUNDRED",14:"NINE THOUSAND",15:"SEVEN MILLION",16:"B",17:"A",18:"B",19:"A",20:"B"},
+  teacherAnswers:["11—TEN (10)","12—THREE (3)","13—ONE HUNDRED (100+)","14—NINE THOUSAND (9,000+)","15—SEVEN MILLION ($7 MILLION)","16—B","17—A","18—B","19&20—A, B (in either order)"]
+},
+{
+  title:"Part 3 — Studying in the USA: TOEFL or IELTS? (mostly multiple choice)", totalQ:10,
+  text:`<h1>IELTS-style Listening — Part 3</h1><p style="font-style:italic;color:#888;font-size:.85rem;margin-bottom:16px;">VOA Special English · "Education Report" (Foreign Student Series) · public domain (U.S. government work) · Questions 21–30</p>
+<p><strong>Questions 21–28.</strong> Choose the correct letter, A, B or C.</p>
+<p>21. The TOEFL is given in how many countries?</p>
+<div class="q-wrap" data-q="21"><span class="btn-opt" onclick="pick(21,'A',this)">A. 120</span><span class="btn-opt" onclick="pick(21,'B',this)">B. 150</span><span class="btn-opt" onclick="pick(21,'C',this)">C. 180</span></div>
+<p>22. The IELTS is given in how many countries?</p>
+<div class="q-wrap" data-q="22"><span class="btn-opt" onclick="pick(22,'A',this)">A. 121</span><span class="btn-opt" onclick="pick(22,'B',this)">B. 150</span><span class="btn-opt" onclick="pick(22,'C',this)">C. 180</span></div>
+<p>23. The TOEFL paper test costs</p>
+<div class="q-wrap" data-q="23"><span class="btn-opt" onclick="pick(23,'A',this)">A. $100</span><span class="btn-opt" onclick="pick(23,'B',this)">B. $150</span><span class="btn-opt" onclick="pick(23,'C',this)">C. $200</span></div>
+<p>24. Which organization administers the TOEFL?</p>
+<div class="q-wrap" data-q="24"><span class="btn-opt" onclick="pick(24,'A',this)">A. IELTS International</span><span class="btn-opt" onclick="pick(24,'B',this)">B. Educational Testing Service</span><span class="btn-opt" onclick="pick(24,'C',this)">C. British Council</span></div>
+<p>25. With the IELTS, the speaking test is done</p>
+<div class="q-wrap" data-q="25"><span class="btn-opt" onclick="pick(25,'A',this)">A. by computer</span><span class="btn-opt" onclick="pick(25,'B',this)">B. as a live interview</span><span class="btn-opt" onclick="pick(25,'C',this)">C. in a group</span></div>
+<p>26. The IELTS was jointly developed by institutions in</p>
+<div class="q-wrap" data-q="26"><span class="btn-opt" onclick="pick(26,'A',this)">A. the US and Canada</span><span class="btn-opt" onclick="pick(26,'B',this)">B. Britain and Australia</span><span class="btn-opt" onclick="pick(26,'C',this)">C. the US and Britain</span></div>
+<p>27. The computer version of the TOEFL is called</p>
+<div class="q-wrap" data-q="27"><span class="btn-opt" onclick="pick(27,'A',this)">A. TOEFL iBT</span><span class="btn-opt" onclick="pick(27,'B',this)">B. TOEFL CBT</span><span class="btn-opt" onclick="pick(27,'C',this)">C. TOEFL Online</span></div>
+<p>28. The IELTS cost is generally comparable to about</p>
+<div class="q-wrap" data-q="28"><span class="btn-opt" onclick="pick(28,'A',this)">A. $100</span><span class="btn-opt" onclick="pick(28,'B',this)">B. $160</span><span class="btn-opt" onclick="pick(28,'C',this)">C. $250</span></div>
+<p><strong>Questions 29–30.</strong> Choose TWO letters, A–E. Which TWO of the following are true, according to the report?</p>
+<p>A. Both tests measure listening, reading, writing and speaking &nbsp; B. The TOEFL is never given on paper &nbsp; C. Only graduate students may take the IELTS &nbsp; D. About one million people a year take the TOEFL &nbsp; E. The IELTS speaking test is done in a large group</p>
+<div class="q-wrap" data-q="29"><span class="btn-opt" onclick="pick(29,'A',this)">A</span><span class="btn-opt" onclick="pick(29,'B',this)">B</span><span class="btn-opt" onclick="pick(29,'C',this)">C</span><span class="btn-opt" onclick="pick(29,'D',this)">D</span><span class="btn-opt" onclick="pick(29,'E',this)">E</span></div>
+<div class="q-wrap" data-q="30"><span class="btn-opt" onclick="pick(30,'A',this)">A</span><span class="btn-opt" onclick="pick(30,'B',this)">B</span><span class="btn-opt" onclick="pick(30,'C',this)">C</span><span class="btn-opt" onclick="pick(30,'D',this)">D</span><span class="btn-opt" onclick="pick(30,'E',this)">E</span></div>`,
+  audio:"http://www.voanews.com/MediaAssets2/learningenglish/2008_12/audio/mp3/se-ed-%20foreign%20student%20series-toefl-ielts-18dec08_0.mp3",
+  transcript:`<p>This is the VOA Special English Education Report.</p>
+<p>For the past two weeks, we have talked about the SAT and ACT college admissions tests and the GRE for graduate school. This week in our Foreign Students Series, we move on to English language tests.</p>
+<p>Most American colleges and universities accept one or both of the two major tests. One is the Test of English as a Foreign Language, known as the TOEFL. The other is the International English Language Testing System, or IELTS.</p>
+<p><span class="hl">The TOEFL is given in one hundred eighty countries<span class="badge">21</span></span>. <span class="hl">The competing IELTS is given in one hundred twenty-one countries<span class="badge">22</span></span>.</p>
+<p><span class="hl">One million people each year take the TOEFL<span class="badge">29</span></span>, says Tom Ewing, a spokesman for the <span class="hl">Educational Testing Service<span class="badge">24</span></span>. Same with the IELTS, says Beryl Meiron, the executive director of IELTS International.</p>
+<p>She says two thousand colleges and universities in the United States now recognize the IELTS. Schools might accept it only for undergraduate or graduate admission or both.</p>
+<p>The IELTS is a paper test, while the TOEFL is given on paper only in places where a computer test is unavailable.</p>
+<p><span class="hl">The TOEFL paper test costs one hundred fifty dollars<span class="badge">23</span></span>. It tests reading, listening and writing. A separate Test of Spoken English costs one hundred twenty-five dollars.</p>
+<p>The computer version is called the <span class="hl">TOEFL iBT, or Internet-based test<span class="badge">27</span></span>. The price is different in each country, but generally falls between one hundred fifty and two hundred dollars.</p>
+<p><span class="hl">The TOEFL iBT and the IELTS both measure all four language skills -- listening, reading, writing and speaking<span class="badge">30</span></span>. But <span class="hl">with the IELTS, the speaking test is done separately as a live interview<span class="badge">25</span></span>. You speak with an examiner who is certified in ESOL -- English for speakers of other languages.</p>
+<p>Everyone takes the same speaking and listening tests. But there is a choice of two kinds of reading and writing tests -- either academic or general training.</p>
+<p>IELTS International says the test measures true-to-life ability to communicate in English for education, immigration and employment. <span class="hl">Institutions in Britain and Australia jointly developed it<span class="badge">26</span></span>.</p>
+<p>The cost is different in each country. But <span class="hl">Beryl Meiron says the price in local currency is generally comparable to about one hundred sixty dollars<span class="badge">28</span></span>. The IELTS Web site is ielts.org. The TOEFL Web site is toefl.org.</p>
+<p>And that's the VOA Special English Education Report, written by Nancy Steinbach. Our Foreign Student Series is online at voaspecialenglish.com. I'm Steve Ember.</p>`,
+  correctKeys:{21:"C",22:"A",23:"B",24:"B",25:"B",26:"B",27:"A",28:"B",29:"D",30:"A"},
+  teacherAnswers:["21—C","22—A","23—B","24—B","25—B","26—B","27—A","28—B","29&30—D, A (in either order)"]
+},
+{
+  title:"Part 4 — Seven Man-Made Wonders in the US (note completion only)", totalQ:10,
+  text:`<h1>IELTS-style Listening — Part 4</h1><p style="font-style:italic;color:#888;font-size:.85rem;margin-bottom:16px;">VOA Special English · "Explorations" · public domain (U.S. government work) · Questions 31–40 · Complete the notes below. Write NO MORE THAN THREE WORDS for each answer.</p>
+<p>The Brooklyn Bridge extends more than 480 meters over the 31. <input type="text" id="in31" class="input-summary" style="width:140px;" oninput="mark(31)" placeholder="TEXT"> River.</p>
+<p>Construction of the Brooklyn Bridge began in 32. <input type="text" id="in32" class="input-summary" style="width:120px;" oninput="mark(32)" placeholder="TEXT">.</p>
+<p>The Golden Gate Bridge links San Francisco with 33. <input type="text" id="in33" class="input-summary" style="width:160px;" oninput="mark(33)" placeholder="TEXT"> County.</p>
+<p>The bridge's color, chosen partly to be visible through fog, is called 34. <input type="text" id="in34" class="input-summary" style="width:180px;" oninput="mark(34)" placeholder="TEXT">.</p>
+<p>The Gateway Arch is located in 35. <input type="text" id="in35" class="input-summary" style="width:160px;" oninput="mark(35)" placeholder="TEXT">, Missouri.</p>
+<p>Mount Rushmore is located in the Black Hills of 36. <input type="text" id="in36" class="input-summary" style="width:160px;" oninput="mark(36)" placeholder="TEXT">.</p>
+<p>The Mount Rushmore memorial took 37. <input type="text" id="in37" class="input-summary" style="width:120px;" oninput="mark(37)" placeholder="TEXT"> years to complete.</p>
+<p>Hoover Dam controls the water of the 38. <input type="text" id="in38" class="input-summary" style="width:160px;" oninput="mark(38)" placeholder="TEXT"> River.</p>
+<p>The Ancestral Puebloan cliff dwellings are part of 39. <input type="text" id="in39" class="input-summary" style="width:180px;" oninput="mark(39)" placeholder="TEXT"> National Park.</p>
+<p>The Space Needle was built as the central structure for the 1962 40. <input type="text" id="in40" class="input-summary" style="width:180px;" oninput="mark(40)" placeholder="TEXT">.</p>`,
+  audio:"http://www.voanews.com/MediaAssets2/learningenglish/2009_03/audio/mp3/se-exp-seven-manmade-wonders-4-mar-09_0.mp3",
+  transcript:`<p>I'm Faith Lapidus. And I'm Steve Ember with EXPLORATIONS in VOA Special English.</p>
+<p>There are many natural wonders in the United States. Today, we take you to seven man-made wonders in America.</p>
+<p>That poem is about our first man-made wonder -- the Brooklyn Bridge in New York City. <span class="hl">It extends more than 480 meters over the East River<span class="badge">31</span></span> to connect the areas of Brooklyn and Manhattan.</p>
+<p>It was the dream of John A. Roebling. He was a member of the design team and became chief engineer of the building project in 1867. Sadly, he became sick and died before work even started.</p>
+<p><span class="hl">Building began in 1870<span class="badge">32</span></span>. It was very dangerous. Historians say between 20 and 30 men died as a result of the building project.</p>
+<p>John Roebling's son, Washington, was severely disabled by the bends. The Brooklyn Bridge opened on May 24, 1883. At the time, it was the longest suspension bridge in the world.</p>
+<p>Another bridge makes our list of the seven man-made wonders. This one is in northern California. The Golden Gate Bridge is named after the waterway it crosses. <span class="hl">The bridge over it links the city of San Francisco with Marin County<span class="badge">33</span></span>.</p>
+<p>Joseph Strauss was the chief engineer of the Golden Gate Bridge. Building began in 1933. The bridge opened in 1937. It was the longest suspension bridge in the world for almost 30 years.</p>
+<p><span class="hl">The color of the bridge, International Orange, is very important<span class="badge">34</span></span>. It was chosen partly because it is easier to see through the heavy fog that often covers San Francisco.</p>
+<p>Our next man-made wonder is as famous a landmark in the Midwest United States as the first two are on the East and West Coasts. <span class="hl">The Gateway Arch in Saint Louis, Missouri<span class="badge">35</span></span> is the tallest freestanding monument in the nation.</p>
+<p>The famous Finnish American building designer, Eero Saarinen, designed the Gateway Arch during a national competition in the late 1940s. Building did not begin until February, 1963. It was completed in October, 1965.</p>
+<p>There is one place in America that almost everyone agrees is a man-made wonder: <span class="hl">South Dakota's Mount Rushmore<span class="badge">36</span></span>. Giant faces of four great American presidents are cut into the rock near the top of Mount Rushmore in the Black Hills.</p>
+<p>Sculptor Gutzon Borglum was chosen to create the Mount Rushmore memorial. <span class="hl">It was completed in 1941, after 14 years<span class="badge">37</span></span>.</p>
+<p>We go next to one of the largest and most difficult structures ever built in the United States: Hoover Dam. The dam is in the Black Canyon, near Las Vegas, Nevada. <span class="hl">It controls the water of the Colorado River<span class="badge">38</span></span> and produces electric power.</p>
+<p>Workers began to build Hoover Dam in 1931. They finished in just five years. More than 20,000 men worked on the project. Ninety-six workers were killed.</p>
+<p>Another man-made wonder of the United States was built long before the nation was established. About 900 years ago, the Ancestral Puebloan people built villages high in the walls of canyons in Mesa Verde, Colorado. <span class="hl">Six hundred cliff dwellings are now part of the Mesa Verde National Park<span class="badge">39</span></span>.</p>
+<p>Our final man-made wonder is in the northwestern city of Seattle, Washington. <span class="hl">The Space Needle was built as the central structure for the 1962 World's Fair<span class="badge">40</span></span>.</p>
+<p>Edward Carlson designed the 184 meter tall structure. The structure was meant to look like a "flying saucer." The restaurant slowly turns to provide visitors with a 360 degree view of Seattle.</p>
+<p>Today, the Space Needle is the most popular place for visitors to Seattle. And it remains the internationally known symbol of the city.</p>
+<p>This program was written and produced by Caty Weaver. I'm Faith Lapidus. And I'm Steve Ember. Join us again next week for EXPLORATIONS in VOA Special English.</p>`,
+  correctKeys:{31:"EAST",32:"1870",33:"MARIN",34:"INTERNATIONAL ORANGE",35:"SAINT LOUIS",36:"SOUTH DAKOTA",37:"FOURTEEN",38:"COLORADO",39:"MESA VERDE",40:"WORLD'S FAIR"},
+  teacherAnswers:["31—EAST (RIVER)","32—1870","33—MARIN","34—INTERNATIONAL ORANGE","35—SAINT LOUIS (ST LOUIS)","36—SOUTH DAKOTA","37—FOURTEEN (14)","38—COLORADO","39—MESA VERDE","40—WORLD'S FAIR"]
+}
+];
+
+let currentPassage=0;
+let state=passages.map(()=>({studentAns:{},solvedCorrect:{},submitted:false}));
+let totalSeconds=0,attemptCount=0,activeUserId=null,proofingMode=false;
+document.getElementById('modalCols').innerHTML = passages.map((p,i)=>
+  `<div class="modal-col"><div class="modal-col-title">🎧 ${p.title}<br><span id="p${i+1}score" style="color:#007bff;">0/${p.totalQ}</span></div><div class="res-list" id="resList${i+1}"></div></div>`
+).join('');
+let dropdownOpen=[false,false,false,false];
+
+setInterval(()=>{totalSeconds++;if(proofingMode)return;let m=Math.floor(totalSeconds/60),s=totalSeconds%60;document.getElementById('timer').innerText=`${m<10?'0'+m:m}:${s<10?'0'+s:s}`;},1000);
+
+function loadPassage(idx){
+  currentPassage=idx;
+  const p=passages[idx],s=state[idx];
+  let playerHtml;
+  if(p.audio){
+    playerHtml = `<div class="audio-player"><audio controls preload="metadata" style="width:100%;"><source src="${p.audio}" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio></div>`;
+  } else if(p.audioEmbed){
+    playerHtml = `<div class="audio-player" style="padding:8px;overflow:hidden;"><iframe src="${p.audioEmbed}" style="width:100%;height:110px;border:0;border-radius:8px;display:block;" allow="autoplay"></iframe></div>`;
+  } else if(p.audioLink){
+    playerHtml = `<div class="audio-player" style="display:flex;align-items:center;gap:12px;padding:14px 20px;"><i class="fas fa-headphones-alt" style="font-size:1.1rem;color:var(--primary);"></i><a href="${p.audioLink}" target="_blank" rel="noopener" style="flex:1;text-decoration:none;color:var(--primary);font-weight:700;font-size:.92rem;">▶ Play audio for this section</a></div>`;
+  } else {
+    playerHtml = '';
+  }
+  let textHtml = playerHtml + p.text;
+  document.getElementById('textArea').innerHTML = textHtml;
+  document.getElementById('questionsArea').innerHTML = p.questionsHTML || '';
+  document.getElementById('questionsArea').scrollTop=0;
+  // Just force a layout pass so the freshly-injected <audio> is measured/painted
+  // immediately. NOTE: we deliberately do NOT call audioEl.load() here — calling
+  // .load() right as the element is inserted resets it and was the actual cause
+  // of the player being invisible on first entry to Part 1 (it only "fixed itself"
+  // once you left and came back because that second loadPassage() call reset an
+  // already-initialized element, which behaves fine). The browser loads the
+  // <source> automatically once the element is in the DOM with preload!=="none".
+  const audioEl = document.querySelector('#textArea audio');
+  if(audioEl){ void audioEl.offsetHeight; }
+  const grid=document.getElementById('bubbleGrid');grid.innerHTML='';
+  Object.keys(p.correctKeys).map(Number).forEach(i=>{
+    let b=document.createElement('div');b.className='bubble';b.id='b'+i;b.innerText=i;
+    if(s.solvedCorrect[i])b.classList.add('solved');else if(s.studentAns[i])b.classList.add('active');
+    grid.appendChild(b);
+  });
+  restoreAndLockAnswers(idx);
+  if(proofingMode){
+    applyProofingStyles(idx);
+  }
+  document.getElementById('transcriptInner').innerHTML=p.transcript||'<p style="color:#888;font-style:italic;">У этой части нет официального транскрипта — British Council не публикует текст записи (защита теста от накрутки). Profing для этой части показывает только это пояснение, подсветки ответов и перемотки по клику здесь не будет.</p>';
+  wrapSentences();
+  document.getElementById('passageLabel').innerText=`Section ${idx+1} / ${passages.length}`;
+  document.getElementById('navLeft').className='nav-btn'+(idx===0?' disabled':' active-arrow');
+  document.getElementById('navRight').className='nav-btn'+(idx===passages.length-1?' disabled':' active-arrow');
+}
+
+// Always applied (proofing or not): restores the student's own answers on
+// re-render and permanently locks+greens any question already answered correctly.
+function restoreAndLockAnswers(idx){
+  const p=passages[idx], s=state[idx];
+  Object.keys(p.correctKeys).map(Number).forEach(i=>{
+    const el=document.getElementById('in'+i);
+    const wrap=document.querySelector('[data-q="'+i+'"]');
+    const userAns = s.studentAns[i] || '';
+    const correct = p.correctKeys[i];
+    if(el&&el.type!=='hidden'){
+      if(userAns) el.value = userAns;
+      el.classList.remove('correct-neon','wrong-neon');
+      const oldHint = el.parentNode.querySelector('.correct-answer-hint');
+      if(oldHint) oldHint.remove();
+      el.readOnly = false;
+      if(s.solvedCorrect[i]){
+        el.classList.add('correct-neon');
+        el.readOnly = true;
+      }
+    }
+    if(wrap){
+      Array.from(wrap.children).forEach(btn=>{
+        btn.classList.remove('selected','correct-neon','wrong-neon');
+        const btnText = btn.innerText.trim().charAt(0);
+        if(userAns && btnText === userAns) btn.classList.add('selected');
+        if(s.solvedCorrect[i] && btnText === correct) btn.classList.add('correct-neon');
+      });
+      const existingHint = wrap.parentNode.querySelector('.choice-hint');
+      if(existingHint) existingHint.remove();
+    }
+  });
+}
+
+// Proofing-only overlay: adds red neon + the correct-answer hint to whatever
+// is still wrong, once this passage has actually been submitted at least once.
+function applyProofingStyles(idx){
+  const p=passages[idx], s=state[idx];
+  if(!s.submitted) return;
+
+  Object.keys(p.correctKeys).map(Number).forEach(i=>{
+    if(s.solvedCorrect[i]) return; // already green+locked by restoreAndLockAnswers
+    const el=document.getElementById('in'+i);
+    const wrap=document.querySelector('[data-q="'+i+'"]');
+    const userAns = s.studentAns[i] || '';
+    const correct = p.correctKeys[i];
+    if(el&&el.type!=='hidden'){
+      el.classList.add('wrong-neon');
+      const oldHint = el.parentNode.querySelector('.correct-answer-hint');
+      if(oldHint) oldHint.remove();
+      const hint = document.createElement('span');
+      hint.className = 'correct-answer-hint';
+      hint.innerText = ' (✔ ' + correct + ')';
+      el.parentNode.insertBefore(hint, el.nextSibling);
+    }
+    if(wrap){
+      Array.from(wrap.children).forEach(btn=>{
+        const btnText = btn.innerText.trim().charAt(0);
+        if(userAns && btnText === userAns) btn.classList.add('wrong-neon');
+        if(btnText === correct) btn.classList.add('correct-neon');
+      });
+    }
+  });
+}
+
+function goPassage(dir){const n=currentPassage+dir;if(n<0||n>=passages.length)return;loadPassage(n);}
+
+function pick(q,v,el){
+  if(state[currentPassage].solvedCorrect[q])return;
+  state[currentPassage].studentAns[q]=v;
+  Array.from(el.parentNode.children).forEach(b=>b.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('b'+q).classList.add('active');
+}
+function mark(q){
+  if(state[currentPassage].solvedCorrect[q])return;
+  const el=document.getElementById('in'+q);
+  const val=el?el.value:'';
+  state[currentPassage].studentAns[q]=val.toUpperCase().trim()||undefined;
+  document.getElementById('b'+q).classList.toggle('active',val.trim()!=='');
+}
+
+function submitTest(){
+  attemptCount++;const ts=document.getElementById('timer').innerText;let totalScore=0,totalQ=0;
+  passages.forEach((p,pi)=>{
+    const s=state[pi];let score=0,resHtml='';const isCurr=(pi===currentPassage);s.submitted=true;
+    Object.keys(p.correctKeys).map(Number).forEach(i=>{
+      let ans;
+      if(isCurr){
+        const el=document.getElementById('in'+i);
+        const wrap=document.querySelector('[data-q="'+i+'"]');
+        if(wrap){
+          const sel=wrap.querySelector('.selected');
+          ans=sel?sel.innerText.trim().charAt(0):'';
+        } else {
+          ans=(s.studentAns[i]||(el?el.value:'')||'').toUpperCase().trim();
+        }
+      } else {
+        ans=(s.studentAns[i]||'').toUpperCase().trim();
+      }
+      const ok=(ans===p.correctKeys[i]);
+      if(ok){score++;s.solvedCorrect[i]=true;}
+      resHtml+=`<div class="res-card ${ok?'correct-row':'wrong-row'}"><span>Q${i}</span><span>${ok?'✔':'✘'}</span></div>`;
+    });
+    totalScore+=score;totalQ+=p.totalQ;
+    document.getElementById('resList'+(pi+1)).innerHTML=resHtml;
+    document.getElementById('p'+(pi+1)+'score').innerText=`${score}/${p.totalQ}`;
+  });
+  document.getElementById('mScore').innerText=`${totalScore} / ${totalQ}`;
+  document.getElementById('attemptsRow').innerHTML+=`<div class="attempt-tag">#${attemptCount}: ${totalScore}/${totalQ} (${ts})</div>`;
+  document.getElementById('modal').style.display='flex';
+  document.getElementById('attemptsRow').scrollLeft=99999;
+}
+function closeModal(){
+  document.getElementById('modal').style.display='none';
+  loadPassage(currentPassage);
+}
+
+function handleProfingClick(){
+  const s=state[currentPassage];
+  if(proofingMode && s.submitted){
+    document.getElementById('transcriptCol').classList.toggle('open');
+    closeMenu();
+    return;
+  }
+  closeMenu();
+  showProofToastBig("Please turn on Proofing mode, then submit your answers. After that you can view the transcript.");
+}
+
+let selectedText=null;
+document.addEventListener('mouseup',e=>{
+  if(e.target.closest('#highlightMenu'))return;
+  const sel=window.getSelection();
+  if(sel.toString().trim().length>0){
+    selectedText=sel.getRangeAt(0);
+    const m=document.getElementById('highlightMenu');
+    m.style.display='flex';
+    m.style.left=e.pageX+'px';
+    m.style.top=(e.pageY+15)+'px';
+  } else {
+    document.getElementById('highlightMenu').style.display='none';
+  }
+});
+document.querySelectorAll('.hlColor').forEach(btn=>btn.addEventListener('click',function(){
+  if(!selectedText)return;
+  const span=document.createElement('span');
+  span.style.backgroundColor=this.dataset.color;
+  try{selectedText.surroundContents(span);}catch(e){}
+  document.getElementById('highlightMenu').style.display='none';
+  window.getSelection().removeAllRanges();
+}));
+document.getElementById('removeColor').addEventListener('click',()=>{
+  if(!selectedText)return;
+  let node=selectedText.startContainer;
+  while(node&&node.nodeType!==1)node=node.parentNode;
+  if(node&&node.tagName==='SPAN')node.outerHTML=node.innerHTML;
+  document.getElementById('highlightMenu').style.display='none';
+  window.getSelection().removeAllRanges();
+});
+
+function wrapSentences(){
+  const container=document.getElementById('transcriptInner');
+  container.querySelectorAll('p').forEach(p=>{
+    // Group the paragraph's direct child nodes into sentences. We only look
+    // for sentence-ending punctuation (. ! ?) inside plain text nodes — an
+    // existing <span class="hl"> answer phrase is kept intact as a unit of
+    // whichever sentence it starts in, rather than re-parsed internally.
+    const nodes=Array.from(p.childNodes);
+    const groups=[[]];
+    let pendingNewGroup=false;
+    nodes.forEach(node=>{
+      if(pendingNewGroup && groups[groups.length-1].length){ groups.push([]); pendingNewGroup=false; }
+      if(node.nodeType===3){ // text node
+        const text=node.textContent;
+        const re=/[^.!?]*[.!?]+(\s+|$)/g;
+        let last=0, m;
+        while((m=re.exec(text))){
+          if(pendingNewGroup && groups[groups.length-1].length){ groups.push([]); }
+          pendingNewGroup=false;
+          groups[groups.length-1].push(document.createTextNode(text.slice(last,m.index+m[0].length)));
+          last=m.index+m[0].length;
+          pendingNewGroup=true;
+        }
+        if(last<text.length){
+          if(pendingNewGroup && groups[groups.length-1].length){ groups.push([]); }
+          pendingNewGroup=false;
+          groups[groups.length-1].push(document.createTextNode(text.slice(last)));
+        }
+      } else {
+        groups[groups.length-1].push(node.cloneNode(true));
+      }
+    });
+    const frag=document.createDocumentFragment();
+    groups.filter(g=>g.length && g.some(n=>n.textContent.trim().length)).forEach(g=>{
+      const span=document.createElement('span');
+      span.className='sent';
+      g.forEach(n=>span.appendChild(n));
+      frag.appendChild(span);
+    });
+    p.innerHTML='';
+    p.appendChild(frag);
+  });
+}
+
+document.getElementById('transcriptInner').addEventListener('click',e=>{
+  const sent=e.target.closest('.sent');
+  if(!sent)return;
+  const all=Array.from(document.querySelectorAll('#transcriptInner .sent'));
+  const idx=all.indexOf(sent);
+  // Weight by character count, not sentence count — sentences vary a lot in
+  // length, so counting "sentence 4 of 20" as literally 20% through the
+  // audio was the source of drift. This mirrors the old paragraph logic,
+  // just at sentence granularity for a more precise jump.
+  let charsBefore=0, totalChars=0;
+  all.forEach((el,i)=>{
+    const len=el.textContent.length;
+    totalChars+=len;
+    if(i<idx) charsBefore+=len;
+  });
+  const audio=document.querySelector('#textArea audio');
+  if(audio && audio.duration && totalChars>0){
+    audio.currentTime=(charsBefore/totalChars)*audio.duration;
+    audio.play();
+  }
+});
+
+// Big "Thanos snap" hint: letters AND the box's own background/border dissolve,
+// plus a scatter of small sand-grain particles blown away like wind — not just
+// text characters fading.
+function showProofToastBig(msg){
+  const wrap=document.getElementById('proofToast');
+  const box=document.getElementById('proofToastBox');
+  const textEl=document.getElementById('proofToastText');
+  box.querySelectorAll('.sand-grain').forEach(g=>g.remove());
+  textEl.innerHTML='';
+  Array.from(msg).forEach(ch=>{
+    const span=document.createElement('span');
+    span.className='snap-char';
+    span.textContent=ch===' '?'\u00A0':ch;
+    textEl.appendChild(span);
+  });
+  const rect=box.getBoundingClientRect();
+  for(let i=0;i<70;i++){
+    const g=document.createElement('div');
+    g.className='sand-grain';
+    const size=(Math.random()*3+1.5);
+    g.style.width=size+'px';g.style.height=size+'px';
+    g.style.left=(Math.random()*rect.width)+'px';
+    g.style.top=(Math.random()*rect.height)+'px';
+    box.appendChild(g);
+  }
+  wrap.classList.add('show');
+  setTimeout(()=>{
+    Array.from(textEl.querySelectorAll('.snap-char')).forEach(c=>{
+      const dx=(Math.random()*220-60).toFixed(0)+'px';
+      const dy=(-(Math.random()*140+40)).toFixed(0)+'px';
+      const rot=(Math.random()*200-100).toFixed(0)+'deg';
+      c.style.transitionDelay=(Math.random()*300)+'ms';
+      c.style.transform=`translate(${dx},${dy}) rotate(${rot}) scale(.15)`;
+      c.style.opacity='0';
+      c.style.filter='blur(4px)';
+    });
+    Array.from(box.querySelectorAll('.sand-grain')).forEach(g=>{
+      const dx=(Math.random()*260+40).toFixed(0)+'px'; // wind blows right
+      const dy=(-(Math.random()*100+10)).toFixed(0)+'px';
+      g.style.transitionDelay=(Math.random()*300)+'ms';
+      g.style.transform=`translate(${dx},${dy})`;
+      g.style.opacity='0';
+    });
+    box.style.background='rgba(45,52,54,0)';
+    box.style.boxShadow='none';
+    setTimeout(()=>{wrap.classList.remove('show');box.style.background='';box.style.boxShadow='';},1000);
+  },3000);
+}
+
+document.getElementById('menuBtn').onclick=()=>{document.getElementById('sideMenu').classList.add('open');document.getElementById('overlay').classList.add('show');};
+document.getElementById('closeMenuBtn').onclick=closeMenu;
+document.getElementById('overlay').onclick=closeMenu;
+function closeMenu(){document.getElementById('sideMenu').classList.remove('open');document.getElementById('overlay').classList.remove('show');}
+function changeFontSize(v){document.documentElement.style.setProperty('--font-size',v+'px');document.getElementById('fontSizeLabel').innerText=v+'px';}
+function setTheme(t){document.body.classList.remove('theme-dark','theme-sepia');if(t==='dark')document.body.classList.add('theme-dark');if(t==='sepia')document.body.classList.add('theme-sepia');['themeLight','themeDark','themeSepia'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById({light:'themeLight',dark:'themeDark',sepia:'themeSepia'}[t]).classList.add('active');}
+function openAbout(){document.getElementById('aboutModal').classList.add('show');}
+function closeAbout(){document.getElementById('aboutModal').classList.remove('show');}
+
+function handleIdInput(){
+  const val=document.getElementById('idInput').value.trim();
+  const statusEl=document.getElementById('idStatus');
+  document.getElementById('teacherAnswerBox').style.display='none';
+  document.getElementById('adminRow').style.display='none';
+  statusEl.className='id-status';statusEl.innerText='';activeUserId=null;
+  dropdownOpen=[false,false,false,false];
+  ['dropContent0'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('open');});
+  ['dropArrow0'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerText='▼';});
+  if(val.length<6)return;
+  if(TEACHER_IDS_LIST.includes(val)){activeUserId='teacher';statusEl.className='id-status show ok';statusEl.innerText='✔ Access granted — Teacher';document.getElementById('teacherAnswerBox').style.display='block';fillTeacherAnswers();document.getElementById('idInput').style.display='none';document.querySelector('.menu-star').style.display='none';}
+  else if(val===ADMIN_ID_VAL){activeUserId='admin';statusEl.className='id-status show ok';statusEl.innerText='✔ Developer access';document.getElementById('adminRow').style.display='block';fillTeacherAnswers();}
+  else{statusEl.className='id-status show err';statusEl.innerText='✘ Invalid ID';}
+}
+function fillTeacherAnswers(){passages.forEach((p,i)=>{const el=document.getElementById('dropContent'+i);if(el)el.innerHTML=p.teacherAnswers.map(v=>`<div class="ans-item">${v}</div>`).join('');});}
+function toggleDropdown(idx){dropdownOpen[idx]=!dropdownOpen[idx];const c=document.getElementById('dropContent'+idx),a=document.getElementById('dropArrow'+idx);if(c)c.classList.toggle('open',dropdownOpen[idx]);if(a)a.innerText=dropdownOpen[idx]?'▲':'▼';}
+
+function runCommand(){
+  if(activeUserId!=='admin')return;
+  const cmd=document.getElementById('cmdInput').value.trim().toLowerCase();
+  const fb=document.getElementById('cmdFeedback');
+  if(cmd==='autofill'){
+    passages.forEach((pp,pi)=>{
+      const ss=state[pi];const isCurr=(pi===currentPassage);
+      Object.keys(pp.correctKeys).map(Number).forEach(i=>{
+        if(ss.solvedCorrect[i])return;const key=pp.correctKeys[i];ss.studentAns[i]=key;
+        if(isCurr){
+          const el=document.getElementById('in'+i);
+          if(el&&el.type!=='hidden'){el.value=key;}
+          else{const wrap=document.querySelector('[data-q="'+i+'"]');if(wrap)Array.from(wrap.children).forEach(btn=>{btn.classList.remove('selected');if(btn.innerText.trim().startsWith(key))btn.classList.add('selected');});}
+          const b=document.getElementById('b'+i);if(b)b.classList.add('active');
+        }
+      });
+    });
+    fb.className='show ok';fb.style.display='block';fb.innerText='✔ All sections autofilled';showToast('✏️ All sections autofilled');
+    loadPassage(currentPassage);
+  } else if(cmd==='answers'){
+    passages.forEach((pp,pi)=>{
+      const ss=state[pi];const isCurr=(pi===currentPassage);
+      Object.keys(pp.correctKeys).map(Number).forEach(i=>{
+        if(ss.solvedCorrect[i])return;const key=pp.correctKeys[i];ss.studentAns[i]=key;
+        if(isCurr){const el=document.getElementById('in'+i);if(el&&el.type!=='hidden'){el.value=key;el.style.color='#007bff';}else{const wrap=document.querySelector('[data-q="'+i+'"]');if(wrap)Array.from(wrap.children).forEach(btn=>{if(btn.innerText.trim().startsWith(key)){btn.style.background='#eef2ff';btn.style.borderColor='#007bff';btn.style.color='#007bff';}});}}
+      });
+    });
+    fb.className='show ok';fb.style.display='block';fb.innerText='✔ All answers revealed';showToast('📋 All answers shown');
+    loadPassage(currentPassage);
+  } else if(cmd==='more time'){
+    if(totalSeconds<=9*60){totalSeconds=0;document.getElementById('timer').innerText='00:00';fb.innerText='✔ Reset to 0:00';showToast('⏱️ Timer reset');}
+    else{totalSeconds=Math.max(0,totalSeconds-600);let m=Math.floor(totalSeconds/60),sv=totalSeconds%60;document.getElementById('timer').innerText=`${m<10?'0'+m:m}:${sv<10?'0'+sv:sv}`;fb.innerText='✔ −10 min';showToast('⏱️ −10 minutes');}
+    fb.className='show ok';fb.style.display='block';
+  } else{fb.className='show err';fb.style.display='block';fb.innerText='✘ Unknown command';showToast('❌ Unknown: '+cmd);}
+  document.getElementById('cmdInput').value='';
+}
+document.getElementById('cmdInput').addEventListener('keydown',e=>{if(e.key==='Enter')runCommand();});
+
+function toggleProofing(){
+  if(proofingMode) return;
+  proofingMode = true;
+  document.getElementById('proofingBtn').classList.add('active');
+  document.getElementById('proofingBtn').disabled = true;
+  document.getElementById('timer').innerText = '∞';
+  showToast('🔍 Режим Proofing активирован. Выход только через перезагрузку страницы.');
+  loadPassage(currentPassage);
+}
+
+function showToast(msg){const t=document.getElementById('toast');t.innerText=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
+function firstLoad(){requestAnimationFrame(()=>requestAnimationFrame(()=>loadPassage(0)));}
+if(document.readyState==='complete'){firstLoad();}else{window.addEventListener('load',firstLoad);}
+</script>
+</body>

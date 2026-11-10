@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IELTS Writing Task 1 & 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root{
+    --accent:#1447a3;
+    --accent-light:#e4ecf9;
+    --border:#191919;
+    --bg:#f2f3f5;
+    --card:#ffffff;
+    --text:#15171b;
+    --ielts-red:#a53a2e;
+    --advice-green:#2f6b3a;
+    --essay-font-size:15px;
+    --font-display:Georgia,'Times New Roman',serif;
+    --font-body:'Segoe UI',Arial,sans-serif;
+    --font-mono:ui-monospace,'Cascadia Code','Consolas','SF Mono',Menlo,monospace;
+  }
+  body.theme-dark{
+    --accent:#6ea8fe;
+    --accent-light:#1f2b4d;
+    --border:#2d3561;
+    --bg:#1a1a2e;
+    --card:#16213e;
+    --text:#c9d1d9;
+  }
+  body.theme-sepia{
+    --accent:#7b5e2a;
+    --accent-light:#f0e3c0;
+    --border:#c9a96e;
+    --bg:#f5e6c0;
+    --card:#fffbef;
+    --text:#4a3a18;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    background:var(--bg);
+    color:var(--text);
+  }
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--card);
+    border-bottom:2px solid var(--border);
+    padding:20px 24px;
+    min-height:100px;
+    position:sticky;
+    top:0;
+    z-index:10;
+    position:relative;
+  }
+  .logo-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    position:absolute;
+    left:24px;
+    top:50%;
+    transform:translateY(-50%);
+  }
+  .logo-placeholder{
+    width:64px;
+    height:64px;
+    border:1px solid var(--border);
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background:#fafbfc;
+    transition:transform 0.15s, box-shadow 0.15s;
+    flex-shrink:0;
+  }
+  .logo-placeholder:hover{
+    transform:scale(1.05);
+    box-shadow:0 2px 8px rgba(20,71,163,0.3);
+  }
+  .logo-placeholder img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+  }
+  .tg-header-link{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    border:1px solid var(--border);
+    background:var(--accent-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+  .title-wrap{
+    text-align:center;
+    line-height:1;
+  }
+  .title{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-style:normal;
+    font-size:32px;
+    color:var(--text);
+    letter-spacing:0.5px;
+    line-height:1;
+  }
+  .subtitle{
+    font-size:11px;
+    font-weight:700;
+    color:var(--accent);
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-top:5px;
+    text-align:center;
+  }
+  .header-right{
+    position:absolute;
+    right:24px;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .timer-box{
+    font-family:var(--font-mono);
+    font-size:22px;
+    font-weight:700;
+    background:var(--accent-light);
+    color:var(--accent);
+    padding:8px 18px;
+    border-radius:30px;
+    min-width:110px;
+    text-align:center;
+    border:1px solid var(--border);
+  }
+  .timer-label{
+    font-size:11px;
+    font-weight:600;
+    color:var(--accent);
+    display:block;
+    margin-bottom:2px;
+  }
+  main{
+    max-width:1300px;
+    margin:24px auto;
+    padding:0 16px 90px;
+  }
+  .panel{
+    background:var(--card);
+    border:3px solid var(--border);
+    border-radius:12px;
+    padding:22px 24px;
+    margin-bottom:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,.09);
+  }
+  .panel h3{
+    margin:0 0 10px;
+    font-size:15px;
+    color:var(--accent);
+    font-weight:700;
+  }
+  .task-select{
+    display:flex;
+    gap:14px;
+    margin-bottom:4px;
+  }
+  .task-select label{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:var(--accent-light);
+    border:1px solid var(--border);
+    padding:8px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:700;
+    color:var(--accent);
+  }
+  .task-select input{
+    accent-color:var(--accent);
+  }
+  .learn-divider{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:16px;
+  }
+  .learn-brick{
+    flex:1;
+    height:8px;
+    background-image:repeating-linear-gradient(90deg, var(--border) 0 18px, transparent 18px 20px);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .learn-btn{
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    padding:8px 20px;
+    border-radius:20px;
+    font-weight:700;
+    font-size:13px;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .learn-btn:hover{
+    filter:brightness(1.1);
+  }
+  textarea, #questionBox, #answerBox{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:12px;
+    font-size:var(--essay-font-size);
+    font-family:inherit;
+    resize:vertical;
+    line-height:1.5;
+    color:var(--text);
+    background:var(--card);
+  }
+  #questionBox{
+    min-height:90px;
+  }
+  textarea:disabled, textarea[readonly], [contenteditable="false"]{
+    background:var(--accent-light);
+    color:var(--text);
+    cursor:default;
+    opacity:1;
+    -webkit-text-fill-color:var(--text);
+  }
+  input:disabled{
+    opacity:1 !important;
+    -webkit-text-fill-color:var(--accent) !important;
+    color:var(--accent) !important;
+    background:var(--accent-light) !important;
+  }
+
+  #answerBox, #answerBox2{
+    min-height:330px;
+    border:2px solid var(--border);
+    border-radius:8px;
+    padding:14px 16px;
+    border-radius:8px;
+    outline:none;
+    overflow-y:auto;
+  }
+
+  #imagePanel{
+    display:none;
+  }
+  .image-drop{
+    border:2px dashed var(--border);
+    border-radius:8px;
+    padding:24px;
+    text-align:center;
+    color:#5b6b7c;
+    background:#fafbfc;
+    cursor:pointer;
+    transition:0.15s;
+  }
+  .image-drop:hover{
+    border-color:var(--accent);
+    background:var(--accent-light);
+  }
+  #previewWrap{
+    margin-top:14px;
+    text-align:center;
+    display:none;
+  }
+  #previewWrap .image-stage{
+    width:100%;
+    height:280px;
+    background:#1b2733;
+    border-radius:10px;
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    padding:10px;
+  }
+  #previewWrap img{
+    max-width:100%;
+    max-height:100%;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    border-radius:4px;
+  }
+  .image-actions{
+    margin-top:10px;
+    display:flex;
+    gap:10px;
+    justify-content:center;
+  }
+  .btn-small{
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    padding:7px 16px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .btn-small.secondary{
+    background:var(--card);
+    color:var(--accent);
+    border:1px solid var(--accent);
+  }
+
+  .bottom-bar{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background:var(--card);
+    border-top:2px solid var(--border);
+    padding:12px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    z-index:10;
+  }
+  .word-count{
+    font-family:var(--font-mono);
+    font-size:14px;
+    font-weight:700;
+    color:var(--accent);
+    background:var(--accent-light);
+    padding:8px 16px;
+    border-radius:20px;
+    border:1px solid var(--border);
+  }
+  .submit-btn{
+    background:var(--ielts-red);
+    color:#fff;
+    border:none;
+    padding:12px 28px;
+    border-radius:8px;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .submit-btn:hover{
+    background:#a30d24;
+  }
+  .submit-btn:disabled{
+    background:#9aa8b6;
+    cursor:not-allowed;
+  }
+  .locked-banner{
+    display:none;
+    background:#fff4e5;
+    border:1px solid #f0c896;
+    color:#8a5a00;
+    padding:10px 16px;
+    border-radius:8px;
+    margin-bottom:18px;
+    font-weight:700;
+    text-align:center;
+  }
+  input[type=file]{
+    display:none;
+  }
+
+  /* Cropper modal */
+  .modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(13,36,58,0.75);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:100;
+    padding:20px;
+  }
+  .modal-overlay.active{
+    display:flex;
+  }
+  .crop-box{
+    background:var(--card);
+    border-radius:10px;
+    padding:18px;
+    max-width:95vw;
+    max-height:92vh;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .crop-box h3{
+    margin:0;
+    color:var(--accent);
+  }
+  #cropCanvasWrap{
+    position:relative;
+    overflow:auto;
+    max-width:92vw;
+    max-height:82vh;
+    border:1px solid var(--border);
+    background:#222;
+  }
+  #cropCanvas{
+    display:block;
+    cursor:crosshair;
+  }
+  .crop-controls{
+    display:flex;
+    gap:10px;
+    justify-content:flex-end;
+  }
+  .crop-hint{
+    font-size:13px;
+    color:#5b6b7c;
+  }
+  .aspect-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:10px 0;
+    flex-wrap:wrap;
+  }
+  .aspect-label{
+    font-size:12px;
+    font-weight:700;
+    color:var(--accent);
+  }
+  .aspect-btn{
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+    padding:6px 12px;
+    border-radius:16px;
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .aspect-btn.active{
+    background:var(--accent);
+    color:#fff;
+    border-color:var(--accent);
+  }
+
+  /* Review modal */
+  #reviewOverlay{
+    position:fixed;
+    inset:0;
+    background:rgba(13,36,58,0.8);
+    display:none;
+    align-items:flex-start;
+    justify-content:center;
+    z-index:200;
+    overflow-y:auto;
+    padding:30px 16px;
+  }
+  #reviewOverlay.active{
+    display:flex;
+  }
+  .review-card{
+    background:var(--card);
+    border-radius:12px;
+    max-width:1200px;
+    width:100%;
+    padding:30px 34px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.25);
+    position:relative;
+  }
+  #aiLoadingOverlay{
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,0.55);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    z-index:300;
+    border-radius:12px;
+  }
+  #aiLoadingOverlay.show{ display:flex; }
+  .ai-spinner{
+    width:56px;
+    height:56px;
+    border:5px solid var(--accent-light);
+    border-top-color:var(--accent);
+    border-radius:50%;
+    animation:ai-spin 0.9s linear infinite;
+  }
+  @keyframes ai-spin{ to{ transform:rotate(360deg); } }
+  .ai-loading-text{
+    font-weight:800;
+    color:var(--accent);
+    font-size:15px;
+    text-align:center;
+    max-width:280px;
+  }
+  @media print{
+    body > *:not(#reviewOverlay){ display:none !important; }
+    #reviewOverlay{ position:static !important; background:none !important; padding:0 !important; display:block !important; }
+    .review-card{ box-shadow:none !important; max-width:100% !important; }
+    .no-print, #aiLoadingOverlay{ display:none !important; }
+  }
+  .review-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid var(--border);
+    padding-bottom:14px;
+    margin-bottom:18px;
+  }
+  .review-header .title{
+    font-size:24px;
+  }
+  .review-close{
+    border:none;
+    background:#eee;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    font-size:16px;
+    cursor:pointer;
+    color:var(--accent);
+  }
+  .review-topic{
+    font-weight:800;
+    font-size:17px;
+    color:var(--accent);
+    background:var(--accent-light);
+    border-left:4px solid var(--accent);
+    padding:12px 16px;
+    border-radius:6px;
+    margin-bottom:18px;
+    line-height:1.5;
+  }
+  #reviewImageWrap{
+    text-align:center;
+    margin-bottom:18px;
+    display:none;
+  }
+  #reviewImageWrap .image-stage{
+    width:100%;
+    height:280px;
+    background:#1b2733;
+    border-radius:10px;
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    padding:10px;
+  }
+  #reviewImageWrap img{
+    max-width:100%;
+    max-height:100%;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    border-radius:4px;
+  }
+  .review-answer{
+    font-size:var(--essay-font-size);
+    line-height:1.7;
+    color:var(--text);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:18px;
+    background:var(--card);
+    margin-bottom:14px;
+  }
+  .review-wordcount{
+    text-align:right;
+    font-weight:700;
+    color:var(--accent);
+    margin-bottom:26px;
+    font-size:14px;
+  }
+  .band-section{
+    border-top:2px dashed var(--border);
+    padding-top:20px;
+  }
+  .band-section h3{
+    color:var(--accent);
+    margin:0 0 14px;
+    text-align:center;
+  }
+  .band-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:14px;
+    margin-bottom:18px;
+  }
+  .band-cell{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+  }
+  .band-cell label{
+    font-size:15px;
+    font-weight:800;
+    color:var(--accent);
+    text-align:center;
+  }
+  .band-cell input{
+    width:100%;
+    height:60px;
+    text-align:center;
+    font-family:var(--font-mono);
+    font-size:26px;
+    font-weight:800;
+    color:var(--accent);
+    background:var(--card);
+    border:2px solid var(--border);
+    border-radius:8px;
+  }
+  .band-cell input:focus{
+    outline:none;
+    border-color:var(--accent);
+  }
+  .band-result{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    background:var(--accent-light);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:24px 16px;
+  }
+  .band-gauge{
+    width:126px;
+    height:126px;
+    border-radius:50%;
+    background:conic-gradient(var(--accent) calc(var(--pct,0)*1%), var(--border) 0);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    transition:background 0.5s ease;
+  }
+  .band-gauge-inner{
+    position:absolute;
+    inset:9px;
+    border-radius:50%;
+    background:var(--card);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+  }
+  .band-gauge-val{
+    font-family:var(--font-mono);
+    font-size:34px;
+    font-weight:800;
+    color:var(--accent);
+    line-height:1;
+  }
+  .band-gauge-max{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--text);
+    opacity:0.55;
+    margin-top:2px;
+  }
+  .band-result-label{
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+
+  /* Student name field */
+  .name-field{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+    background:var(--accent-light);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:10px 14px;
+  }
+  .name-field label{
+    font-weight:700;
+    color:var(--accent);
+    font-size:14px;
+    white-space:nowrap;
+  }
+  .name-field input{
+    flex:1;
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:8px 10px;
+    font-size:15px;
+    color:var(--text);
+  }
+
+  /* Correction mode */
+  .correction-toolbar{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-bottom:6px;
+  }
+  .correction-toggle{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:700;
+    color:var(--accent);
+    font-size:14px;
+    cursor:pointer;
+  }
+  .correction-toggle input{
+    width:17px;
+    height:17px;
+    accent-color:var(--ielts-red);
+  }
+  .correction-hint{
+    font-size:13px;
+    color:#5b6b7c;
+    background:#fff8e8;
+    border:1px solid #f0d896;
+    border-radius:8px;
+    padding:10px 14px;
+    margin-bottom:14px;
+  }
+  .review-answer[contenteditable="true"]{
+    outline:2px dashed var(--ielts-red);
+    background:#fffaf8;
+  }
+  .save-section{
+    text-align:center;
+    margin-top:24px;
+  }
+
+  /* ---- Side menu (reading-style) ---- */
+  .menu-btn{
+    width:38px;height:38px;border-radius:50%;
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--accent);
+    font-size:20px;
+    font-weight:900;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .menu-btn:hover{background:var(--accent-light);}
+  #menuOverlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:none;z-index:1500;}
+  #menuOverlay.show{display:block;}
+  #sideMenu{position:fixed;top:0;right:-40%;width:33%;min-width:280px;max-width:85vw;height:100%;background:var(--card);z-index:1600;transition:right .3s cubic-bezier(.4,0,.2,1);box-shadow:-5px 0 30px rgba(0,0,0,.2);display:flex;flex-direction:column;overflow:hidden;}
+  #sideMenu.open{right:0;}
+  .menu-header{background:var(--accent);color:#fff;padding:20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+  .menu-header h2{margin:0;font-size:1.15rem;font-weight:800;}
+  #closeMenuBtn{background:none;border:none;color:#fff;font-size:1.3rem;cursor:pointer;padding:0;}
+  .menu-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px;}
+  .settings-panel{background:var(--accent-light);border:1px solid var(--border);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:14px;}
+  .settings-label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--accent);margin-bottom:4px;}
+  .font-slider-row{display:flex;align-items:center;gap:10px;}
+  .font-slider-row span{font-size:.8rem;color:var(--accent);min-width:18px;text-align:center;}
+  input[type=range]{flex:1;-webkit-appearance:none;height:4px;border-radius:4px;background:var(--border);outline:none;cursor:pointer;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--accent);cursor:pointer;}
+  .theme-row{display:flex;gap:8px;}
+  .theme-btn{flex:1;padding:9px 6px;border-radius:10px;border:2px solid var(--border);cursor:pointer;font-size:.78rem;font-weight:700;background:var(--card);color:var(--text);text-align:center;}
+  .theme-btn.active{border-color:var(--accent);background:var(--accent-light);color:var(--accent);}
+  .theme-btn .tb-icon{font-size:1.1rem;display:block;margin-bottom:3px;}
+  .btn-about{width:100%;padding:11px;border-radius:10px;border:2px solid var(--border);background:var(--card);cursor:pointer;font-weight:700;font-size:.85rem;color:var(--text);}
+  .btn-about:hover{border-color:var(--accent);color:var(--accent);}
+  .menu-footer{padding:15px 20px;border-top:1px solid var(--border);text-align:center;flex-shrink:0;}
+  .tg-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-weight:700;font-size:.9rem;text-decoration:none;padding:10px 18px;border-radius:10px;background:var(--accent-light);}
+  #aboutModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:2000;justify-content:center;align-items:center;}
+  #aboutModal.show{display:flex;}
+  .about-card{background:var(--card);border-radius:20px;width:320px;max-width:90%;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.35);text-align:center;}
+  .about-top{background:var(--accent);padding:26px 20px;color:#fff;}
+  .about-body{padding:20px;}
+  .about-body p{color:var(--text);font-size:.88rem;line-height:1.6;margin:0 0 14px;}
+  .btn-close-about{width:100%;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;font-size:.9rem;}
+
+  /* ---- Custom confirm modal (replaces native confirm/alert for webview reliability) ---- */
+  #customConfirmOverlay{position:fixed;inset:0;background:rgba(13,36,58,0.75);display:none;align-items:center;justify-content:center;z-index:3000;padding:20px;}
+  #customConfirmOverlay.active{display:flex;}
+  .cc-box{background:var(--card);border-radius:12px;padding:26px 28px;max-width:380px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,0.3);}
+  .cc-box p{color:var(--text);font-size:15px;line-height:1.5;margin:0 0 20px;}
+  .cc-actions{display:flex;gap:12px;justify-content:center;}
+  .cc-actions button{padding:10px 22px;border-radius:8px;font-weight:700;font-size:14px;border:none;cursor:pointer;}
+  #ccYesBtn{background:var(--ielts-red);color:#fff;}
+  #ccNoBtn{background:var(--accent-light);color:var(--accent);}
+
+  /* ---- Start screen (bird flock main menu) ---- */
+  body:not(.app-active) header,
+  body:not(.app-active) main,
+  body:not(.app-active) .bottom-bar{
+    display:none;
+  }
+  #startScreen{
+    position:fixed;
+    inset:0;
+    z-index:5000;
+    background:#07192f;
+    overflow:hidden;
+  }
+  #startScreen.hidden{
+    display:none;
+  }
+  #vantaBg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+  }
+  #backToMenuBtn{
+    font-size:24px;
+    font-weight:900;
+    line-height:1;
+  }
+  .ss-buttons{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+    z-index:20;
+  }
+  .ss-row{
+    display:flex;
+    gap:22px;
+  }
+  .ss-btn{
+    background:#07192f;
+    border:2px solid #ffffff;
+    border-radius:10px;
+    color:#ffffff;
+    font-weight:700;
+    font-size:16px;
+    letter-spacing:0.5px;
+    padding:12px 30px;
+    cursor:pointer;
+    font-family:var(--font-body);
+  }
+  .ss-btn:hover{
+    background:#12294a;
+  }
+
+  /* Image layout styles */
+  /* image layout via select - styles applied by JS */
+
+  /* ---- Fixed image toolbar below header ---- */
+  #imgToolbar{
+    display:none;
+    position:sticky;
+    top:0;
+    z-index:200;
+    background:var(--card);
+    border-bottom:2px solid var(--border);
+    padding:8px 18px;
+    gap:10px;
+    align-items:center;
+    flex-wrap:wrap;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+  }
+  #imgToolbar.visible{display:flex;}
+  #imgToolbar .btn-small{font-size:13px;padding:6px 14px;}
+
+  /* ---- Split layout (left/right) ---- */
+  /* twoColWrap: 2-column layout for left/right image styles */
+  #twoColWrap{
+    align-items:stretch;
+    min-height:60vh;
+    margin-bottom:20px;
+  }
+  #colImg{
+    flex-shrink:0;
+    width:42%;
+    min-width:180px;
+    max-width:72%;
+  }
+  #colResizer{
+    width:6px;
+    cursor:col-resize;
+    flex-shrink:0;
+    position:relative;
+    transition:background .15s;
+    background:var(--border);
+  }
+  #colResizer:hover{ background:var(--accent); }
+
+  #imgFloatWin{
+    position:fixed;
+    bottom:72px;left:14px;
+    width:200px;height:200px;
+    border-radius:10px;
+    border:2px solid var(--border);
+    background:#1b2733;
+    overflow:hidden;
+    display:none;
+    z-index:900;
+    cursor:zoom-in;
+    transition:box-shadow .2s;
+    box-shadow:0 4px 18px rgba(0,0,0,.4);
+  }
+  #imgFloatWin.visible{display:block;}
+  #imgFloatWin img{width:100%;height:100%;object-fit:contain;}
+  /* Lightbox overlay for float window */
+  #imgLightbox{
+    position:fixed;inset:0;
+    background:rgba(0,0,0,.82);
+    z-index:2000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    cursor:zoom-out;
+  }
+  #imgLightbox.open{display:flex;}
+  #imgLightboxInner{
+    position:relative;
+    max-width:90vw;max-height:90vh;
+    cursor:default;
+    user-select:none;
+  }
+  #imgLightboxImg{
+    max-width:90vw;max-height:90vh;
+    object-fit:contain;
+    border-radius:8px;
+    transform-origin:center center;
+    transition:transform .15s;
+    display:block;
+  }
+
+/* === universal theme & readability fixes (auto-appended) === */
+#sideMenu{ will-change: right; }
+#overlay, #highlightMenu, .modal { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+
+body.theme-dark { background: var(--bg) !important; }
+body.theme-dark .content-area, body.theme-dark .content-row,
+body.theme-dark .wrapper, body.theme-dark .main,
+body.theme-dark .left-side, body.theme-dark .right-side,
+body.theme-dark .transcript-col, body.theme-dark .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-dark header, body.theme-dark .action-bar, body.theme-dark .passage-nav {
+  background: #0f3460 !important; border-color:#2d3561 !important;
+}
+body.theme-dark .bubbles-area, body.theme-dark .q-card, body.theme-dark .modal-content,
+body.theme-dark .modal-body, body.theme-dark .about-card, body.theme-dark .about-body,
+body.theme-dark #sideMenu, body.theme-dark .menu-body, body.theme-dark .modal-footer,
+body.theme-dark .drop-content, body.theme-dark #teacherAnswerBox, body.theme-dark #adminAnswerBox,
+body.theme-dark #highlightMenu, body.theme-dark #removeColor, body.theme-dark #toast,
+body.theme-dark .menu-footer, body.theme-dark .modal-col, body.theme-dark .proof-toast-box,
+body.theme-dark .audio-player, body.theme-dark .settings-panel {
+  background: var(--card) !important;
+}
+body.theme-dark, body.theme-dark .text-area, body.theme-dark .questions-area,
+body.theme-dark .q-card, body.theme-dark .q-card p, body.theme-dark .q-card li,
+body.theme-dark .description, body.theme-dark .passage-label, body.theme-dark .nav-btn,
+body.theme-dark label, body.theme-dark .ans-item, body.theme-dark .attempt-tag,
+body.theme-dark .settings-label, body.theme-dark .about-body p, body.theme-dark .btn-opt,
+body.theme-dark .modal-header h2, body.theme-dark .modal-total, body.theme-dark .proof-note,
+body.theme-dark .modal-col-title, body.theme-dark .drop-header, body.theme-dark .menu-header h2,
+body.theme-dark .transcript-inner, body.theme-dark .transcript-inner p, body.theme-dark .badge,
+body.theme-dark .id-status, body.theme-dark #cmdFeedback, body.theme-dark .about-top h3,
+body.theme-dark .res-card {
+  color: #ffffff !important;
+}
+body.theme-dark .input-summary, body.theme-dark .input-match, body.theme-dark input[type=text] {
+  color: #ffffff !important; background: transparent !important;
+}
+body.theme-dark .btn-opt.selected, body.theme-dark .nav-btn.active-arrow { color: #60a5fa !important; }
+body.theme-sepia .btn-opt.selected, body.theme-sepia .nav-btn.active-arrow { color: #a13a1c !important; background: #f9e6c8 !important; border-color: #a13a1c !important; font-weight: 700 !important; }
+body.theme-dark .correct-neon { color:#0b3d19 !important; }
+body.theme-dark .wrong-row, body.theme-dark .correct-row { color: inherit !important; }
+
+body.theme-sepia .content-area, body.theme-sepia .content-row,
+body.theme-sepia .wrapper, body.theme-sepia .main,
+body.theme-sepia .left-side, body.theme-sepia .right-side,
+body.theme-sepia .transcript-col, body.theme-sepia .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-sepia header, body.theme-sepia .action-bar, body.theme-sepia .passage-nav {
+  background:#ede0c8 !important; border-color:#d4b896 !important;
+}
+body.theme-sepia .bubbles-area, body.theme-sepia .q-card, body.theme-sepia .modal-content,
+body.theme-sepia .modal-body, body.theme-sepia .about-card, body.theme-sepia .about-body,
+body.theme-sepia #sideMenu, body.theme-sepia .menu-body, body.theme-sepia .modal-footer,
+body.theme-sepia .drop-content, body.theme-sepia #teacherAnswerBox, body.theme-sepia #adminAnswerBox,
+body.theme-sepia #highlightMenu, body.theme-sepia #removeColor, body.theme-sepia #toast,
+body.theme-sepia .menu-footer, body.theme-sepia .modal-col, body.theme-sepia .proof-toast-box,
+body.theme-sepia .audio-player, body.theme-sepia .settings-panel {
+  background: var(--card) !important;
+}
+</style>
+</head>
+<body>
+
+<div id="startScreen">
+  <div id="vantaBg"></div>
+  <div class="ss-buttons" id="ssButtons">
+    <div class="ss-row">
+      <button type="button" class="ss-btn" id="btnTask1">Task 1</button>
+      <button type="button" class="ss-btn" id="btnTask2">Task 2</button>
+    </div>
+    <button type="button" class="ss-btn ss-learn" id="btnLearn">Learn</button>
+  </div>
+</div>
+
+<header>
+  <div class="logo-box">
+    <a href="https://t.me/English_Wikipedia" target="_blank" rel="noopener" class="logo-placeholder" id="logoPlaceholder" title="Visit our Telegram channel">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfoAAAH6CAYAAADvFY5JAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAACAASURBVHic7d3pcmLJEQbQZF+1Tfv9X3Cmu9USiB38YyLvXDFaACHULp8T0TH2WA0IyXxVWVlVjYjYBQBQpOZXvwAA4PMIegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJegAomKAHgIIJ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" alt="My logo">
+    </a>
+    <a href="https://t.me/English_Wikipedia" target="_blank" rel="noopener" class="tg-header-link" title="Telegram">📣</a>
+    <input type="file" id="logoInput" accept="image/*" style="display:none;">
+    <div class="title-wrap">
+      <div class="title">W WRITING</div>
+      <div class="subtitle">IELTS Writing Tablet</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <button type="button" class="menu-btn" id="backToMenuBtn" title="Back to main menu">‹</button>
+    <div class="timer-box">
+      <span class="timer-label">Time Elapsed</span>
+      <span id="timerDisplay">00:00</span>
+    </div>
+    <button type="button" class="menu-btn" id="menuBtn" title="Menu">⋮</button>
+  </div>
+</header>
+
+<!-- Fixed image toolbar pinned below header -->
+<div id="imgToolbar">
+  <button type="button" class="btn-small" id="tbCropBtn">✂ Crop Again</button>
+  <button type="button" class="btn-small secondary" id="tbReplaceBtn">Replace Image</button>
+  <select id="imgStyleSelect" style="background:var(--card);color:var(--text);border:2px solid var(--border);padding:6px 12px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;">
+    <option value="1">Style 1 — Top</option>
+    <option value="2">Style 2 — Left</option>
+    <option value="3">Style 3 — Right</option>
+    <option value="4">Style 4 — Bottom</option>
+    <option value="5">Style 5 — Mini float</option>
+  </select>
+</div>
+
+<main>
+
+  <div class="locked-banner" id="lockedBanner">✅ Submitted — your answer is now locked and read-only.</div>
+
+  <div style="display:none;">
+    <input type="radio" name="task" value="1" id="task1Radio">
+    <input type="radio" name="task" value="2" id="task2Radio">
+    <button type="button" id="learnBtn"></button>
+  </div>
+
+  <div class="panel" id="imagePanel">
+    <h3>Task 1 Visual (Graph / Chart / Table / Diagram)</h3>
+    <div class="image-drop" id="imageDrop" onclick="document.getElementById('imageInput').click()">
+      Click here to upload the graph / chart / table image
+    </div>
+    <input type="file" id="imageInput" accept="image/*">
+    <div id="previewWrap" style="display:none;">
+      <div class="image-stage" id="imageStage">
+        <img id="previewImg" alt="Task 1 visual">
+      </div>
+      <div class="image-actions" style="display:none;">
+        <button type="button" class="btn-small" id="cropBtn">✂ Crop Again</button>
+        <button type="button" class="btn-small secondary" id="replaceImgBtn">Replace Image</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Float mini window -->
+  <div id="imgFloatWin" title="Click to expand">
+    <img id="imgFloatImg" alt="Task image">
+  </div>
+
+  <!-- Lightbox -->
+  <div id="imgLightbox">
+    <div id="imgLightboxInner">
+      <img id="imgLightboxImg" alt="Task image">
+    </div>
+  </div>
+
+
+  <!-- 2-column wrapper for left/right styles -->
+  <div id="twoColWrap" style="display:none;gap:0;align-items:stretch;">
+    <div id="colImg" style="flex-shrink:0;width:42%;min-width:180px;display:flex;align-items:flex-start;justify-content:center;padding:12px;">
+      <img id="splitImg" alt="Task image" style="max-width:100%;max-height:75vh;object-fit:contain;border-radius:8px;border:2px solid var(--border);">
+    </div>
+    <div id="colResizer" style="width:6px;background:var(--border);cursor:col-resize;flex-shrink:0;position:relative;">
+      <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--accent);font-size:12px;pointer-events:none;">⋮</span>
+    </div>
+    <div id="colText" style="flex:1;min-width:180px;display:flex;flex-direction:column;padding:12px;gap:16px;overflow:auto;">
+      <div class="panel" style="margin:0;">
+        <h3>Paste the Question Here</h3>
+        <textarea id="questionBox" placeholder="Paste the IELTS question here. The timer will start automatically once you paste it." style="width:100%;min-height:100px;"></textarea>
+      </div>
+      <div class="panel" style="margin:0;flex:1;">
+        <h3>Write Your Answer</h3>
+        <div id="answerBox" contenteditable="true" placeholder="Start writing your answer here..." style="min-height:253px;border:2px solid var(--border);border-radius:8px;padding:14px 16px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Normal single-column panels -->
+  <div id="normalPanels">
+    <div class="panel" id="questionPanel">
+      <h3>Paste the Question Here</h3>
+      <textarea id="questionBox2" placeholder="Paste the IELTS question here. The timer will start automatically once you paste it."></textarea>
+    </div>
+    <div class="panel">
+      <h3>Write Your Answer</h3>
+      <div id="answerBox2" contenteditable="true" placeholder="Start writing your answer here..."></div>
+    </div>
+  </div>
+
+</main>
+
+<div class="bottom-bar">
+  <div class="word-count">Words: <span id="wordCount">0</span></div>
+  <button class="submit-btn" id="submitBtn">Submit</button>
+</div>
+
+<!-- Cropper Modal -->
+<div class="modal-overlay" id="cropOverlay">
+  <div class="crop-box">
+    <h3>Crop / Adjust Your Image</h3>
+    <div class="crop-hint">Drag on the image to select the area you want to keep, then click "Apply Crop". You can also just click "Use Full Image" to skip cropping.</div>
+    <div id="cropCanvasWrap">
+      <canvas id="cropCanvas"></canvas>
+    </div>
+    <div class="aspect-row">
+      <span class="aspect-label">Format:</span>
+      <button type="button" class="aspect-btn" data-ratio="free">Free</button>
+      <button type="button" class="aspect-btn" data-ratio="1:1">1:1</button>
+      <button type="button" class="aspect-btn" data-ratio="4:3">4:3</button>
+      <button type="button" class="aspect-btn" data-ratio="16:9">16:9</button>
+      <button type="button" class="aspect-btn" data-ratio="9:16">9:16</button>
+    </div>
+    <div class="crop-controls">
+      <button type="button" class="btn-small secondary" id="resetCropBtn">Reset Selection</button>
+      <button type="button" class="btn-small secondary" id="useFullBtn">Use Full Image</button>
+      <button type="button" class="btn-small" id="applyCropBtn">Apply Crop</button>
+      <button type="button" class="btn-small secondary" id="cancelCropBtn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Choice Modal: Teacher Check -->
+<div class="modal-overlay" id="choiceOverlay" style="z-index:250;">
+  <div class="crop-box" style="max-width:440px;text-align:center;">
+    <h3>Save your work for your teacher</h3>
+    <div class="name-field" style="margin-top:4px;">
+      <label for="choiceNameInput">Your name:</label>
+      <input type="text" id="choiceNameInput" placeholder="Enter your name">
+    </div>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:20px;flex-wrap:wrap;">
+      <button type="button" class="btn-small" id="teacherCheckBtn" style="padding:16px 22px;font-size:15px;flex:1;min-width:150px;">👩‍🏫 Teacher Check</button>
+    </div>
+    <div class="crop-hint" style="margin-top:14px;">Saves a file with your work for your teacher to review.</div>
+  </div>
+</div>
+
+<!-- Review / Grading Modal -->
+<div id="reviewOverlay">
+  <div class="review-card">
+    <div class="review-header">
+      <div class="title" style="font-size:24px;">W WRITING Review</div>
+      <button class="review-close" id="closeReviewBtn">✕</button>
+    </div>
+
+    <div class="name-field">
+      <label for="studentNameInput">Student Name:</label>
+      <input type="text" id="studentNameInput" placeholder="Enter student's full name">
+    </div>
+
+    <div class="review-topic" id="reviewTopic"></div>
+    <div id="reviewImageWrap"><div class="image-stage"><img id="reviewImage" alt="Task 1 visual"></div></div>
+
+    <div id="aiLoadingOverlay">
+      <div class="ai-spinner"></div>
+      <div class="ai-loading-text" id="aiLoadingText">AI is analysing your work...</div>
+    </div>
+
+    <div id="aiFeedbackBox" style="display:none;background:var(--accent-light);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-bottom:14px;white-space:pre-wrap;line-height:1.6;color:var(--text);"></div>
+
+    <div class="review-answer" id="reviewAnswer"></div>
+    <div class="review-wordcount">Time spent: <span id="reviewTimeSpent">00:00</span> &nbsp;|&nbsp; Total words: <span id="reviewWordCount">0</span></div>
+
+    <div class="band-section">
+      <h3>Band Score Calculator (adjust manually)</h3>
+      <div class="band-grid">
+        <div class="band-cell">
+          <label>TA / TR<br>(Task Achievement /<br>Response)</label>
+          <input type="number" min="1" max="9" step="0.5" id="bandTA">
+        </div>
+        <div class="band-cell">
+          <label>CC<br>(Coherence &amp;<br>Cohesion)</label>
+          <input type="number" min="1" max="9" step="0.5" id="bandCC">
+        </div>
+        <div class="band-cell">
+          <label>LR<br>(Lexical<br>Resource)</label>
+          <input type="number" min="1" max="9" step="0.5" id="bandLR">
+        </div>
+        <div class="band-cell">
+          <label>GRA<br>(Grammatical Range<br>&amp; Accuracy)</label>
+          <input type="number" min="1" max="9" step="0.5" id="bandGRA">
+        </div>
+      </div>
+      <div class="band-result">
+        <div class="band-gauge" id="bandGauge" style="--pct:0;">
+          <div class="band-gauge-inner">
+            <span class="band-gauge-val" id="bandAverage">—</span>
+            <span class="band-gauge-max">out of 9</span>
+          </div>
+        </div>
+        <div class="band-result-label">Overall Band Score</div>
+      </div>
+    </div>
+
+    <div class="save-section">
+      <button type="button" class="submit-btn" id="saveDownloadBtn">💾 Save as PDF</button>
+      <button type="button" class="submit-btn" id="exportFeedbackBtn" style="background:var(--accent);margin-top:10px;">📄 Export Feedback Report (HTML)</button>
+    </div>
+  </div>
+</div>
+
+<!-- Side menu (font size + theme, no ID during writing) -->
+<div id="menuOverlay"></div>
+<div id="sideMenu">
+  <div class="menu-header"><h2>Menu</h2><button id="closeMenuBtn">✕</button></div>
+  <div class="menu-body">
+    <div class="settings-panel">
+      <div>
+        <div class="settings-label">Font Size</div>
+        <div class="font-slider-row">
+          <span style="font-size:.75rem;">A</span>
+          <input type="range" id="fontSlider" min="12" max="22" value="15" step="1">
+          <span style="font-size:1.1rem;">A</span>
+        </div>
+        <div style="text-align:center;font-size:.78rem;color:var(--accent);margin-top:2px;" id="fontSizeLabel">15px</div>
+      </div>
+      <div>
+        <div class="settings-label">Theme</div>
+        <div class="theme-row">
+          <button class="theme-btn active" id="themeLight" data-theme="light"><span class="tb-icon">☀️</span>Light</button>
+          <button class="theme-btn" id="themeDark" data-theme="dark"><span class="tb-icon">🌙</span>Dark</button>
+          <button class="theme-btn" id="themeSepia" data-theme="sepia"><span class="tb-icon">📖</span>Sepia</button>
+        </div>
+      </div>
+      <button type="button" class="btn-about" id="aboutBtn">ℹ️ About</button>
+    </div>
+  </div>
+  <div class="menu-footer"><a href="https://t.me/English_Wikipedia" target="_blank" rel="noopener" class="tg-link">📣 Telegram Channel</a></div>
+</div>
+
+<div id="aboutModal">
+  <div class="about-card">
+    <div class="about-top"><h3 style="margin:0 0 4px;font-size:1.3rem;">IELTS Writing</h3><p style="margin:0;opacity:.85;font-size:.85rem;">Practice tool</p></div>
+    <div class="about-body">
+      <p>Practice platform for IELTS Writing Task 1 &amp; 2 with AI or teacher review.</p>
+      <p style="font-weight:800;color:var(--accent);">Made by: rasVet</p>
+      <button type="button" class="btn-close-about" id="closeAboutBtn">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Custom confirm modal (used instead of native confirm/alert) -->
+<div id="customConfirmOverlay">
+  <div class="cc-box">
+    <p id="ccMessage"></p>
+    <div class="cc-actions">
+      <button type="button" id="ccYesBtn">Yes</button>
+      <button type="button" id="ccNoBtn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ---------- Custom confirm modal (replaces native confirm() for webview reliability) ----------
+  function customConfirm(message){
+    return new Promise(function(resolve){
+      document.getElementById('ccMessage').textContent = message;
+      const overlay = document.getElementById('customConfirmOverlay');
+      overlay.classList.add('active');
+      const yesBtn = document.getElementById('ccYesBtn');
+      const noBtn = document.getElementById('ccNoBtn');
+      function cleanup(result){
+        overlay.classList.remove('active');
+        yesBtn.removeEventListener('click', onYes);
+        noBtn.removeEventListener('click', onNo);
+        resolve(result);
+      }
+      function onYes(){ cleanup(true); }
+      function onNo(){ cleanup(false); }
+      yesBtn.addEventListener('click', onYes);
+      noBtn.addEventListener('click', onNo);
+    });
+  }
+
+  // ---------- Simple toast (replaces native alert() for webview reliability) ----------
+  function showToast(message, isError){
+    let toast = document.getElementById('appToast');
+    if(!toast){
+      toast = document.createElement('div');
+      toast.id = 'appToast';
+      toast.style.cssText = 'position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--accent);color:#fff;padding:12px 22px;border-radius:30px;font-weight:700;font-size:.9rem;z-index:9999;transition:all .3s;opacity:0;max-width:90vw;text-align:center;box-shadow:0 5px 20px rgba(0,0,0,.3);pointer-events:none;';
+      document.body.appendChild(toast);
+    }
+    toast.style.background = isError ? 'var(--ielts-red)' : 'var(--accent)';
+    toast.textContent = message;
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateX(-50%) translateY(0)';
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(function(){
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateX(-50%) translateY(20px)';
+    }, 3200);
+  }
+
+  // ---------- Side menu (font size + theme) ----------
+  const menuOverlay = document.getElementById('menuOverlay');
+  const sideMenu = document.getElementById('sideMenu');
+  document.getElementById('menuBtn').addEventListener('click', function(){
+    sideMenu.classList.add('open');
+    menuOverlay.classList.add('show');
+  });
+  function closeSideMenu(){
+    sideMenu.classList.remove('open');
+    menuOverlay.classList.remove('show');
+  }
+  document.getElementById('closeMenuBtn').addEventListener('click', closeSideMenu);
+  menuOverlay.addEventListener('click', closeSideMenu);
+
+  document.getElementById('learnBtn').addEventListener('click', function(){
+    showToast('Coming soon');
+  });
+
+  document.getElementById('fontSlider').addEventListener('input', function(){
+    document.documentElement.style.setProperty('--essay-font-size', this.value + 'px');
+    document.getElementById('fontSizeLabel').textContent = this.value + 'px';
+  });
+
+  document.querySelectorAll('.theme-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const t = this.dataset.theme;
+      document.body.classList.remove('theme-dark', 'theme-sepia');
+      if(t === 'dark') document.body.classList.add('theme-dark');
+      if(t === 'sepia') document.body.classList.add('theme-sepia');
+      document.querySelectorAll('.theme-btn').forEach(function(b){ b.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+
+  document.getElementById('aboutBtn').addEventListener('click', function(){
+    document.getElementById('aboutModal').classList.add('show');
+  });
+  document.getElementById('closeAboutBtn').addEventListener('click', function(){
+    document.getElementById('aboutModal').classList.remove('show');
+  });
+
+  // ---------- Task selection ----------
+  const imagePanel = document.getElementById('imagePanel');
+  function updateTaskView(){
+    imagePanel.style.display = document.getElementById('task1Radio').checked ? 'block' : 'none';
+  }
+  document.getElementById('task1Radio').addEventListener('change', updateTaskView);
+  document.getElementById('task2Radio').addEventListener('change', updateTaskView);
+
+  // ---------- Image upload + crop ----------
+  let originalImageDataUrl = null; // last uploaded (uncropped) image
+  let finalImageDataUrl = null;    // image actually used (after crop or full)
+
+  const imageInput = document.getElementById('imageInput');
+  const previewWrap = document.getElementById('previewWrap');
+  const previewImg = document.getElementById('previewImg');
+
+  imageInput.addEventListener('change', function(e){
+    const file = e.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = function(ev){
+      originalImageDataUrl = ev.target.result;
+      openCropper(originalImageDataUrl);
+    };
+    reader.readAsDataURL(file);
+  });
+
+  document.getElementById('replaceImgBtn').addEventListener('click', function(){
+    imageInput.click();
+  });
+
+  document.getElementById('cropBtn').addEventListener('click', function(){
+    openCropper(originalImageDataUrl || finalImageDataUrl);
+  });
+
+  // ---- Cropper logic ----
+  const cropOverlay = document.getElementById('cropOverlay');
+  const cropCanvas = document.getElementById('cropCanvas');
+  const ctx = cropCanvas.getContext('2d');
+  let cropImg = new Image();
+  let selRect = null; // {x,y,w,h} in canvas pixel coords
+  let dragging = false;
+  let dragStart = null;
+  let currentAspect = null; // null = free, otherwise a width/height ratio number
+
+  function openCropper(srcDataUrl){
+    if(!srcDataUrl) return;
+    cropImg = new Image();
+    cropImg.onload = function(){
+      const maxW = Math.min(1400, window.innerWidth * 0.9);
+      const maxH = Math.min(950, window.innerHeight * 0.8);
+      let scale = Math.min(maxW / cropImg.width, maxH / cropImg.height, 1);
+      cropCanvas.width = cropImg.width * scale;
+      cropCanvas.height = cropImg.height * scale;
+      cropCanvas._scale = scale;
+      selRect = null;
+      currentAspect = null;
+      document.querySelectorAll('.aspect-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.ratio === 'free'); });
+      drawCropCanvas();
+      cropOverlay.classList.add('active');
+    };
+    cropImg.src = srcDataUrl;
+  }
+
+  function drawCropCanvas(){
+    ctx.clearRect(0,0,cropCanvas.width, cropCanvas.height);
+    ctx.drawImage(cropImg, 0, 0, cropCanvas.width, cropCanvas.height);
+    if(selRect){
+      ctx.fillStyle = 'rgba(0,0,0,0.45)';
+      ctx.fillRect(0,0,cropCanvas.width, cropCanvas.height);
+      ctx.clearRect(selRect.x, selRect.y, selRect.w, selRect.h);
+      ctx.drawImage(cropImg,
+        selRect.x / cropCanvas._scale, selRect.y / cropCanvas._scale,
+        selRect.w / cropCanvas._scale, selRect.h / cropCanvas._scale,
+        selRect.x, selRect.y, selRect.w, selRect.h);
+      ctx.strokeStyle = '#c8102e';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(selRect.x, selRect.y, selRect.w, selRect.h);
+    }
+  }
+
+  function getCanvasPos(e){
+    const rect = cropCanvas.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    return { x: clientX - rect.left, y: clientY - rect.top };
+  }
+
+  cropCanvas.addEventListener('mousedown', function(e){
+    dragging = true;
+    dragStart = getCanvasPos(e);
+    selRect = { x:dragStart.x, y:dragStart.y, w:0, h:0 };
+  });
+  cropCanvas.addEventListener('mousemove', function(e){
+    if(!dragging) return;
+    const pos = getCanvasPos(e);
+    let w = pos.x - dragStart.x;
+    let h = pos.y - dragStart.y;
+    if(currentAspect){
+      h = (Math.abs(w) / currentAspect) * (h < 0 ? -1 : 1);
+    }
+    selRect.x = Math.min(dragStart.x, dragStart.x + w);
+    selRect.y = Math.min(dragStart.y, dragStart.y + h);
+    selRect.w = Math.abs(w);
+    selRect.h = Math.abs(h);
+    drawCropCanvas();
+  });
+  window.addEventListener('mouseup', function(){ dragging = false; });
+
+  document.querySelectorAll('.aspect-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const ratioStr = this.dataset.ratio;
+      document.querySelectorAll('.aspect-btn').forEach(function(b){ b.classList.remove('active'); });
+      this.classList.add('active');
+      if(ratioStr === 'free'){
+        currentAspect = null;
+        return;
+      }
+      const parts = ratioStr.split(':').map(Number);
+      currentAspect = parts[0] / parts[1];
+      const cw = cropCanvas.width, ch = cropCanvas.height;
+      let w = cw, h = w / currentAspect;
+      if(h > ch){ h = ch; w = h * currentAspect; }
+      selRect = { x: (cw - w) / 2, y: (ch - h) / 2, w: w, h: h };
+      drawCropCanvas();
+    });
+  });
+
+  document.getElementById('resetCropBtn').addEventListener('click', function(){
+    selRect = null;
+    currentAspect = null;
+    document.querySelectorAll('.aspect-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.ratio === 'free'); });
+    drawCropCanvas();
+  });
+
+  document.getElementById('useFullBtn').addEventListener('click', function(){
+    finalImageDataUrl = cropImg.src;
+    finishCrop();
+  });
+
+  document.getElementById('applyCropBtn').addEventListener('click', function(){
+    if(!selRect || selRect.w < 5 || selRect.h < 5){
+      showToast('Please select a region first, or click "Use Full Image".', true);
+      return;
+    }
+    const scale = cropCanvas._scale;
+    const sx = selRect.x / scale;
+    const sy = selRect.y / scale;
+    const sw = selRect.w / scale;
+    const sh = selRect.h / scale;
+
+    const outCanvas = document.createElement('canvas');
+    outCanvas.width = sw;
+    outCanvas.height = sh;
+    const outCtx = outCanvas.getContext('2d');
+    outCtx.drawImage(cropImg, sx, sy, sw, sh, 0, 0, sw, sh);
+    finalImageDataUrl = outCanvas.toDataURL('image/png');
+    finishCrop();
+  });
+
+  document.getElementById('cancelCropBtn').addEventListener('click', function(){
+    cropOverlay.classList.remove('active');
+  });
+
+  function finishCrop(){
+    var previewImg = document.getElementById('previewImg');
+    var previewWrap = document.getElementById('previewWrap');
+    var imageDrop = document.getElementById('imageDrop');
+    previewImg.src = finalImageDataUrl;
+    currentImgSrc = finalImageDataUrl;
+    previewWrap.style.display = 'block';
+    imageDrop.style.display = 'none';
+    document.getElementById('imgFloatImg').src = finalImageDataUrl;
+    document.getElementById('imgToolbar').classList.add('visible');
+    cropOverlay.classList.remove('active');
+    var sel = document.getElementById('imgStyleSelect');
+    applyImageLayout(sel ? parseInt(sel.value) : 1);
+  }
+
+  // ---------- Timer ----------
+  let timerInterval = null;
+  let secondsElapsed = 0;
+  let timerStarted = false;
+
+  function startTimer(){
+    if(timerStarted) return;
+    timerStarted = true;
+    timerInterval = setInterval(function(){
+      secondsElapsed++;
+      const m = Math.floor(secondsElapsed/60).toString().padStart(2,'0');
+      const s = (secondsElapsed%60).toString().padStart(2,'0');
+      document.getElementById('timerDisplay').textContent = m+':'+s;
+    }, 1000);
+  }
+
+  // ---------- Writing area ----------
+  const answerBox = document.getElementById('answerBox');
+  const questionBox = document.getElementById('questionBox');
+  const answerBox2 = document.getElementById('answerBox2');
+  const questionBox2 = document.getElementById('questionBox2');
+
+  function getActiveAnswerText(){
+    // whichever box is visible gets polled
+    var tw = document.getElementById('twoColWrap');
+    if(tw && tw.style.display !== 'none') return answerBox.innerText.trim();
+    return answerBox2 ? answerBox2.innerText.trim() : '';
+  }
+
+  // Timer starts only when the student begins writing the actual answer
+  function onAnswerInput(){
+    if(getActiveAnswerText().length > 0) startTimer();
+    updateWordCount();
+  }
+  [answerBox, answerBox2].forEach(function(el){ if(el){ el.addEventListener('input', onAnswerInput); el.addEventListener('keyup', onAnswerInput); } });
+
+  function refreshPlaceholder(){
+    [answerBox, answerBox2].forEach(function(el){
+      if(!el) return;
+      if(el.textContent.trim().length === 0) el.classList.add('empty');
+      else el.classList.remove('empty');
+    });
+  }
+  const styleTag = document.createElement('style');
+  styleTag.innerHTML = '#answerBox.empty:before,#answerBox2.empty:before{content:attr(placeholder); color:#9aa8b6;}';
+  document.head.appendChild(styleTag);
+  refreshPlaceholder();
+
+  // ---------- Word count ----------
+  const wordCountEl = document.getElementById('wordCount');
+  function updateWordCount(){
+    const text = getActiveAnswerText();
+    const words = text.length === 0 ? 0 : text.split(/\s+/).filter(Boolean).length;
+    wordCountEl.textContent = words;
+    refreshPlaceholder();
+    return words;
+  }
+
+  // ---------- Submit ----------
+  let submissionData = null;
+
+  document.getElementById('submitBtn').addEventListener('click', async function(){
+    const ok = await customConfirm('Are you sure you want to submit? You will not be able to edit your answer after this.');
+    if(!ok) return;
+
+    if(timerInterval) clearInterval(timerInterval);
+
+    answerBox.setAttribute('contenteditable', 'false');
+    if(answerBox2) answerBox2.setAttribute('contenteditable', 'false');
+    questionBox.setAttribute('readonly', true);
+    if(questionBox2) questionBox2.setAttribute('readonly', true);
+    document.getElementById('task1Radio').disabled = true;
+    document.getElementById('task2Radio').disabled = true;
+    imageInput.disabled = true;
+    document.getElementById('imageDrop').style.pointerEvents = 'none';
+    document.getElementById('imageDrop').style.opacity = '0.7';
+    document.getElementById('cropBtn').style.display = 'none';
+    document.getElementById('replaceImgBtn').style.display = 'none';
+
+    this.disabled = true;
+    this.textContent = 'Submitted';
+
+    document.getElementById('lockedBanner').style.display = 'block';
+
+    const isTask1 = document.getElementById('task1Radio').checked;
+    submissionData = {
+      topic: (questionBox.value || (questionBox2 ? questionBox2.value : '')).trim() || '(No question text was pasted)',
+      answerHTML: (document.getElementById('twoColWrap').style.display !== 'none' ? answerBox.innerHTML : (answerBox2 ? answerBox2.innerHTML : answerBox.innerHTML)),
+      wordCount: updateWordCount(),
+      timeSpent: document.getElementById('timerDisplay').textContent,
+      isTask1: isTask1,
+      imageDataUrl: (isTask1 && finalImageDataUrl) ? finalImageDataUrl : null
+    };
+
+    document.getElementById('choiceOverlay').classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // ---------- Teacher Check choice ----------
+  document.getElementById('teacherCheckBtn').addEventListener('click', function(){
+    if(!submissionData) return;
+    const studentName = document.getElementById('choiceNameInput').value.trim() || 'Student';
+    downloadTeacherFile(submissionData, studentName);
+    document.getElementById('choiceOverlay').classList.remove('active');
+    showToast('Teacher file saved. Send it to your teacher — they can review the work after entering their code.');
+  });
+
+  document.getElementById('closeReviewBtn').addEventListener('click', function(){
+    document.getElementById('reviewOverlay').classList.remove('active');
+  });
+
+  // ---------- Image layout styles ----------
+  var currentImgSrc = '';
+
+  var twoColWrap = document.getElementById('twoColWrap');
+  var normalPanels = document.getElementById('normalPanels');
+  var colImg = document.getElementById('colImg');
+  var colResizer = document.getElementById('colResizer');
+  var splitImg = document.getElementById('splitImg');
+  var floatWin = document.getElementById('imgFloatWin');
+  var floatImg = document.getElementById('imgFloatImg');
+
+  // The real questionBox/answerBox live inside twoColWrap.
+  // questionBox2/answerBox2 live in normalPanels. Sync them.
+  var qBox = document.getElementById('questionBox');    // in twoColWrap
+  var aBox = document.getElementById('answerBox');      // in twoColWrap
+  var qBox2 = document.getElementById('questionBox2'); // in normalPanels
+  var aBox2 = document.getElementById('answerBox2');   // in normalPanels
+
+  // Sync both directions
+  function syncToNormal(){ if(qBox2) qBox2.value = qBox ? qBox.value : ''; if(aBox2) aBox2.innerHTML = aBox ? aBox.innerHTML : ''; }
+  function syncToCol(){ if(qBox) qBox.value = qBox2 ? qBox2.value : ''; if(aBox) aBox.innerHTML = aBox2 ? aBox2.innerHTML : ''; }
+  if(qBox) qBox.addEventListener('input', syncToNormal);
+  if(aBox) aBox.addEventListener('input', syncToNormal);
+  if(qBox2) qBox2.addEventListener('input', syncToCol);
+  if(aBox2) aBox2.addEventListener('input', syncToCol);
+
+  function applyImageLayout(style){
+    if(!currentImgSrc) return;
+    // Reset
+    twoColWrap.style.display = 'none';
+    normalPanels.style.display = '';
+    document.getElementById('imagePanel').style.display = 'none';
+    floatWin.style.display = 'none';
+    floatWin.classList.remove('visible');
+    twoColWrap.style.flexDirection = 'row';
+
+    if(style === 1){
+      // Top: imagePanel above normalPanels
+      document.getElementById('imagePanel').style.display = 'block';
+      var main = document.querySelector('main');
+      main.insertBefore(document.getElementById('imagePanel'), normalPanels);
+    } else if(style === 2 || style === 3){
+      // Left or Right 2-column
+      syncToCol();
+      splitImg.src = currentImgSrc;
+      twoColWrap.style.display = 'flex';
+      normalPanels.style.display = 'none';
+      if(style === 3){
+        colImg.style.order = '2';
+        colResizer.style.order = '1';
+        document.getElementById('colText').style.order = '0';
+      } else {
+        colImg.style.order = '0';
+        colResizer.style.order = '1';
+        document.getElementById('colText').style.order = '2';
+      }
+    } else if(style === 4){
+      // Bottom: normalPanels then imagePanel below
+      normalPanels.style.display = '';
+      document.getElementById('imagePanel').style.display = 'block';
+      var main = document.querySelector('main');
+      main.appendChild(document.getElementById('imagePanel'));
+    } else if(style === 5){
+      // Mini float
+      floatImg.src = currentImgSrc;
+      floatWin.style.display = 'block';
+      floatWin.classList.add('visible');
+    }
+  }
+
+  document.getElementById('imgStyleSelect').addEventListener('change', function(){
+    applyImageLayout(parseInt(this.value));
+  });
+
+  // Toolbar → existing crop/replace buttons
+  document.getElementById('tbCropBtn').addEventListener('click', function(){
+    document.getElementById('cropBtn').click();
+  });
+  document.getElementById('tbReplaceBtn').addEventListener('click', function(){
+    document.getElementById('replaceImgBtn').click();
+  });
+
+  // Lightbox
+  var lbImg = document.getElementById('imgLightboxImg');
+  var lbScale = 1;
+  floatWin.addEventListener('click', function(){
+    if(!currentImgSrc) return;
+    lbImg.src = currentImgSrc;
+    lbScale = 1; lbImg.style.transform = 'scale(1)';
+    document.getElementById('imgLightbox').classList.add('open');
+  });
+  document.getElementById('imgLightbox').addEventListener('click', function(e){
+    if(e.target === this) this.classList.remove('open');
+  });
+  document.getElementById('imgLightbox').addEventListener('wheel', function(e){
+    if(!e.ctrlKey) return;
+    e.preventDefault();
+    lbScale = Math.min(5, Math.max(0.3, lbScale - e.deltaY * 0.002));
+    lbImg.style.transform = 'scale(' + lbScale + ')';
+  }, {passive:false});
+
+  // Resizer drag
+  var isDragging = false, dragStartX = 0, dragStartW = 0;
+  colResizer.addEventListener('mousedown', function(e){
+    isDragging = true; dragStartX = e.clientX; dragStartW = colImg.offsetWidth;
+    document.body.style.cursor = 'col-resize'; document.body.style.userSelect = 'none';
+  });
+  document.addEventListener('mousemove', function(e){
+    if(!isDragging) return;
+    var sel = document.getElementById('imgStyleSelect');
+    var isRight = sel && sel.value === '3';
+    var delta = isRight ? (dragStartX - e.clientX) : (e.clientX - dragStartX);
+    colImg.style.width = Math.min(Math.max(dragStartW + delta, 160), window.innerWidth * 0.72) + 'px';
+  });
+  document.addEventListener('mouseup', function(){
+    if(isDragging){ isDragging = false; document.body.style.cursor = ''; document.body.style.userSelect = ''; }
+  });
+
+
+  // ---------- Band score calculator ----------
+  const bandIds = ['bandTA','bandCC','bandLR','bandGRA'];
+  function recalcBand(){
+    let total = 0, count = 0;
+    bandIds.forEach(function(id){
+      const val = parseFloat(document.getElementById(id).value);
+      if(!isNaN(val)){
+        total += val;
+        count++;
+      }
+    });
+    const resultEl = document.getElementById('bandAverage');
+    const gaugeEl = document.getElementById('bandGauge');
+    if(count === 4){
+      const avgRaw = total / 4;
+      const rounded = Math.floor(avgRaw * 2) / 2;
+      resultEl.textContent = rounded.toFixed(1);
+      if(gaugeEl) gaugeEl.style.setProperty('--pct', (rounded / 9 * 100).toFixed(1));
+    } else {
+      resultEl.textContent = '—';
+      if(gaugeEl) gaugeEl.style.setProperty('--pct', 0);
+    }
+  }
+  bandIds.forEach(function(id){
+    document.getElementById(id).addEventListener('input', recalcBand);
+  });
+
+  // ---------- Save as PDF ----------
+  document.getElementById('saveDownloadBtn').addEventListener('click', function(){
+    window.print();
+  });
+
+  // ---------- Export student feedback HTML (read-only, can't be edited) ----------
+  document.getElementById('exportFeedbackBtn').addEventListener('click', function(){
+    var sName = (document.getElementById('studentNameInput').value || 'Student').trim();
+    var topic = document.getElementById('reviewTopic').textContent || '';
+    var answerHTML = document.getElementById('reviewAnswer').innerHTML || '';
+    var wc = document.getElementById('reviewWordCount').textContent || '0';
+    var time = document.getElementById('reviewTimeSpent').textContent || '—';
+    var aiFeedback = document.getElementById('aiFeedbackBox').textContent || '';
+    var imgSrc = '';
+    var ri = document.getElementById('reviewImage');
+    if(ri && ri.src && ri.src.startsWith('data:')) imgSrc = ri.src;
+    var bands = ['bandTA','bandCC','bandLR','bandGRA'].map(function(id){
+      return document.getElementById(id) ? document.getElementById(id).value : '—';
+    });
+    var bandAvg = document.getElementById('bandAverage').textContent || '—';
+
+    var imgBlock = imgSrc ? '<div style="text-align:center;margin-bottom:20px;"><img src="' + imgSrc + '" style="max-width:100%;max-height:320px;object-fit:contain;border-radius:8px;border:1px solid #ccc;"></div>' : '';
+
+    var feedbackBlock = aiFeedback ? '<div style="background:#e4ecf9;border-left:4px solid #1447a3;border-radius:8px;padding:16px;margin-bottom:20px;white-space:pre-wrap;line-height:1.7;font-size:15px;">' + aiFeedback.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</div>' : '';
+
+    var doc = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Feedback — ' + sName + '</title>'
+      + '<style>*{box-sizing:border-box;}body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:#f2f3f5;color:#15171b;}'
+      + '.card{max-width:900px;margin:28px auto;background:#fff;border-radius:14px;padding:32px 38px 48px;box-shadow:0 4px 18px rgba(0,0,0,.1);}'
+      + 'h1{margin:0 0 4px;font-size:24px;color:#1447a3;}h2{font-size:15px;font-weight:700;color:#1447a3;margin:0 0 16px;letter-spacing:1px;text-transform:uppercase;}'
+      + '.meta{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;color:#555;margin-bottom:20px;border-bottom:1px solid #ddd;padding-bottom:14px;}'
+      + '.topic{background:#e4ecf9;border-left:4px solid #1447a3;border-radius:6px;padding:12px 16px;margin-bottom:18px;font-weight:700;line-height:1.5;}'
+      + '.essay{font-size:15.5px;line-height:2;border:1px solid #ccc;border-radius:8px;padding:20px;background:#fafbfc;margin-bottom:14px;}'
+      + '.bands{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px;}'
+      + '.band-box{background:#e4ecf9;border-radius:10px;padding:14px;text-align:center;}'
+      + '.band-box .label{font-size:12px;font-weight:800;color:#1447a3;margin-bottom:6px;}'
+      + '.band-box .val{font-size:28px;font-weight:900;color:#1447a3;}'
+      + '.total{text-align:center;background:#1447a3;color:#fff;border-radius:12px;padding:18px;margin-bottom:24px;}'
+      + '.total .t{font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}'
+      + '.total .v{font-size:42px;font-weight:900;}'
+      + '.no-edit{background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:10px 14px;font-size:12px;color:#856404;text-align:center;margin-bottom:18px;}'
+      + '</style></head><body><div class="card">'
+      + '<h1>📝 IELTS Writing Feedback</h1><h2>' + sName + '</h2>'
+      + '<div class="no-edit">⚠️ This is a read-only feedback report. It cannot be edited.</div>'
+      + '<div class="meta"><span>📅 ' + new Date().toLocaleDateString() + '</span><span>⏱ Time: ' + time + '</span><span>📝 Words: ' + wc + '</span></div>'
+      + '<div class="topic">' + topic.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</div>'
+      + imgBlock
+      + '<div class="essay">' + answerHTML + '</div>'
+      + '<div class="bands"><div class="band-box"><div class="label">Task Achievement</div><div class="val">' + (bands[0]||'—') + '</div></div>'
+      + '<div class="band-box"><div class="label">Coherence & Cohesion</div><div class="val">' + (bands[1]||'—') + '</div></div>'
+      + '<div class="band-box"><div class="label">Lexical Resource</div><div class="val">' + (bands[2]||'—') + '</div></div>'
+      + '<div class="band-box"><div class="label">Grammatical Range</div><div class="val">' + (bands[3]||'—') + '</div></div></div>'
+      + '<div class="total"><div class="t">Overall Band Score</div><div class="v">' + bandAvg + '</div></div>'
+      + (feedbackBlock ? '<h2>AI / Teacher Feedback</h2>' + feedbackBlock : '')
+      + '</div></body></html>';
+
+    var blob = new Blob([doc], {type:'text/html'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = sName.replace(/[^a-z0-9]/gi,'_') + '_Feedback.html';
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToast('Feedback report saved!');
+  });
+
+  // ---------- Teacher Check: build & download the teacher package file ----------
+  function jsonEsc(str){
+    return JSON.stringify(str == null ? '' : str).replace(/</g, '\\u003C');
+  }
+
+  function downloadTeacherFile(data, studentName){
+    const today = new Date();
+    const dateStr = today.toLocaleDateString();
+    const isTask1 = !!data.isTask1;
+    const doc = buildTeacherHtml({
+      studentName: studentName,
+      dateStr: dateStr,
+      isTask1: isTask1,
+      topic: data.topic,
+      answerHTML: data.answerHTML,
+      wordCount: data.wordCount,
+      timeSpent: data.timeSpent,
+      imageDataUrl: data.imageDataUrl
+    });
+    const blob = new Blob([doc], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    const safeName = studentName.replace(/[^a-z0-9]/gi, '_');
+    a.href = url;
+    a.download = safeName + '_IELTS_For_Teacher.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function buildTeacherHtml(d){
+    const imageBlock = (d.isTask1 && d.imageDataUrl)
+      ? '<div class="img-wrap"><div class="img-stage"><img src="' + d.imageDataUrl + '" alt="Task 1 visual"></div></div>'
+      : '';
+
+    return '<!DOCTYPE html>'
+    + '<html lang="en"><head><meta charset="UTF-8">'
+    + '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+    + '<title>IELTS Writing for Teacher - ' + d.studentName + '</title>'
+    + '<style>'
+    + ':root{--accent:#1447a3;--accent-light:#e4ecf9;--border:#191919;--bg:#f2f3f5;--card:#ffffff;--text:#15171b;--ielts-red:#a53a2e;--advice-green:#2f6b3a;--essay-font-size:15.5px;--font-display:Georgia,\'Times New Roman\',serif;--font-body:"Segoe UI",Arial,sans-serif;--font-mono:ui-monospace,"Cascadia Code","Consolas","SF Mono",Menlo,monospace;}'
+    + 'body.theme-dark{--accent:#6ea8fe;--accent-light:#1f2b4d;--border:#2d3561;--bg:#1a1a2e;--card:#16213e;--text:#c9d1d9;}'
+    + 'body.theme-sepia{--accent:#7b5e2a;--accent-light:#ede0c8;--border:#d4b896;--bg:#f4ecd8;--card:#fdf6e3;--text:#5c4a1e;}'
+    + '*{box-sizing:border-box;}'
+    + 'body{margin:0;font-family:var(--font-body);background:var(--bg);color:var(--text);}'
+    + '.card{max-width:1100px;margin:24px auto;background:var(--card);border-radius:12px;padding:30px 36px 60px;box-shadow:0 4px 18px rgba(0,0,0,0.12);position:relative;}'
+    + '.hdr{display:flex;justify-content:center;align-items:center;border-bottom:2px solid var(--border);padding-bottom:14px;margin-bottom:20px;position:relative;}'
+    + '.hdr .ttl{font-family:var(--font-display);font-weight:700;font-size:26px;color:var(--text);letter-spacing:0.5px;}'
+    + '.hdr .ttl small{display:block;font-family:var(--font-body);font-size:11px;font-weight:700;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-top:4px;}'
+    + '.menu-btn{position:absolute;right:0;top:0;width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--accent);font-size:19px;font-weight:900;cursor:pointer;}'
+    + '.meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:18px;font-size:14px;color:var(--accent);font-weight:700;}'
+    + '.topic{font-weight:800;font-size:16px;color:var(--accent);background:var(--accent-light);border-left:4px solid var(--accent);padding:12px 16px;border-radius:6px;margin-bottom:18px;line-height:1.5;}'
+    + '.img-wrap{text-align:center;margin-bottom:20px;}'
+    + '.img-stage{width:100%;height:280px;background:#1b2733;border-radius:10px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:8px;}'
+    + '.img-stage img{width:100%;height:100%;object-fit:contain;border-radius:4px;}'
+    + '#essayArea{font-size:var(--essay-font-size);line-height:2;border:1px solid var(--border);border-radius:8px;padding:20px;background:var(--card);margin-bottom:10px;outline:none;color:var(--text);}'
+    + '#essayArea[contenteditable="true"]{outline:2px dashed var(--ielts-red);}'
+    + '.wc{text-align:right;font-weight:700;color:var(--accent);margin-bottom:26px;font-size:14px;}'
+    + '.tch-change-wrap{position:relative;display:inline-block;padding-top:1.3em;}'
+    + '.tch-change-note{position:absolute;top:0;left:0;font-size:0.72em;font-weight:800;color:var(--ielts-red);white-space:nowrap;line-height:1;}'
+    + '.tch-change-orig{text-decoration:line-through;text-decoration-color:var(--ielts-red);text-decoration-thickness:2px;color:#888;}'
+    + '.tch-advice{color:var(--advice-green);font-weight:700;font-size:0.92em;}'
+    + '.band-section{border-top:2px dashed var(--border);padding-top:20px;}'
+    + '.band-section h3{color:var(--accent);margin:0 0 14px;text-align:center;font-family:var(--font-display);font-weight:700;}'
+    + '.band-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px;}'
+    + '.band-cell{display:flex;flex-direction:column;align-items:center;gap:8px;}'
+    + '.band-cell label{font-size:14px;font-weight:800;color:var(--accent);text-align:center;}'
+    + '.band-cell input{width:100%;height:52px;text-align:center;font-family:var(--font-mono);font-size:22px;font-weight:800;color:var(--accent);border:2px solid var(--border);border-radius:8px;background:var(--card);}'
+    + 'input:disabled{opacity:1 !important;-webkit-text-fill-color:var(--accent) !important;color:var(--accent) !important;background:var(--accent-light) !important;}'
+    + '.band-result{display:flex;flex-direction:column;align-items:center;gap:12px;background:var(--accent-light);border:1px solid var(--border);border-radius:16px;padding:22px 16px;}'
+    + '.band-gauge{width:116px;height:116px;border-radius:50%;background:conic-gradient(var(--accent) calc(var(--pct,0)*1%), var(--border) 0);display:flex;align-items:center;justify-content:center;position:relative;transition:background 0.5s ease;}'
+    + '.band-gauge-inner{position:absolute;inset:9px;border-radius:50%;background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;}'
+    + '.band-gauge-val{font-family:var(--font-mono);font-size:30px;font-weight:800;color:var(--accent);line-height:1;}'
+    + '.band-gauge-max{font-family:var(--font-mono);font-size:11px;color:var(--text);opacity:0.55;margin-top:2px;}'
+    + '.band-result-label{font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);}'
+    + '.save-section{text-align:center;margin-top:24px;}'
+    + '.btn{background:var(--ielts-red);color:#fff;border:none;padding:12px 26px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;}'
+    + '.btn.secondary{background:var(--card);color:var(--accent);border:1px solid var(--accent);}'
+    + '.locked-note{background:var(--accent-light);border:1px solid var(--border);color:var(--accent);padding:10px 14px;border-radius:8px;margin-bottom:16px;font-weight:700;text-align:center;font-size:13px;}'
+    + '.locked-note.unlocked{background:#eafaf1;border-color:#9fe3bd;color:#1a6b3a;}'
+    /* side menu (reading-style) */
+    + '#menuOverlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:none;z-index:1500;}'
+    + '#menuOverlay.show{display:block;}'
+    + '#sideMenu{position:fixed;top:0;right:-40%;width:33%;min-width:280px;max-width:85vw;height:100%;background:var(--card);z-index:1600;transition:right .3s cubic-bezier(.4,0,.2,1);box-shadow:-5px 0 30px rgba(0,0,0,.2);display:flex;flex-direction:column;overflow:hidden;}'
+    + '#sideMenu.open{right:0;}'
+    + '.menu-header{background:var(--accent);color:#fff;padding:20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}'
+    + '.menu-header h2{margin:0;font-size:1.15rem;font-weight:800;}'
+    + '#closeMenuBtn{background:none;border:none;color:#fff;font-size:1.3rem;cursor:pointer;padding:0;}'
+    + '.menu-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px;}'
+    + '.settings-panel{background:var(--accent-light);border:1px solid var(--border);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:14px;}'
+    + '.settings-label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--accent);margin-bottom:4px;}'
+    + '.font-slider-row{display:flex;align-items:center;gap:10px;}'
+    + '.font-slider-row span{font-size:.8rem;color:var(--accent);min-width:18px;text-align:center;}'
+    + 'input[type=range]{flex:1;-webkit-appearance:none;height:4px;border-radius:4px;background:var(--border);outline:none;cursor:pointer;}'
+    + 'input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--accent);cursor:pointer;}'
+    + '.theme-row{display:flex;gap:8px;}'
+    + '.theme-btn{flex:1;padding:9px 6px;border-radius:10px;border:2px solid var(--border);cursor:pointer;font-size:.78rem;font-weight:700;background:var(--card);color:var(--text);text-align:center;}'
+    + '.theme-btn.active{border-color:var(--accent);background:var(--accent-light);color:var(--accent);}'
+    + '.theme-btn .tb-icon{font-size:1.1rem;display:block;margin-bottom:3px;}'
+    + '.menu-mid-row{display:flex;align-items:center;gap:10px;}'
+    + '.menu-star{width:44px;height:44px;border-radius:50%;border:2px solid var(--border);background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--accent);font-weight:bold;flex-shrink:0;}'
+    + '.menu-id-box{flex:1;border:2px solid var(--border);border-radius:12px;padding:10px 14px;font-size:1rem;font-weight:600;outline:none;letter-spacing:2px;background:var(--card);color:var(--text);}'
+    + '.menu-id-box:focus{border-color:var(--accent);}'
+    + '.id-status{font-size:.82rem;color:#adb5bd;padding-left:4px;display:none;}'
+    + '.id-status.show{display:block;}'
+    + '.id-status.ok{color:#2d6a4f;}'
+    + '.id-status.err{color:#a4161a;}'
+    + '.menu-footer{padding:15px 20px;border-top:1px solid var(--border);text-align:center;flex-shrink:0;font-size:.78rem;color:var(--accent);}'
+    + '.btn-about{width:100%;padding:11px;border-radius:10px;border:2px solid var(--border);background:var(--card);cursor:pointer;font-weight:700;font-size:.85rem;color:var(--text);}'
+    + '.btn-about:hover{border-color:var(--accent);color:var(--accent);}'
+    + '.tg-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-weight:700;font-size:.9rem;text-decoration:none;padding:10px 18px;border-radius:10px;background:var(--accent-light);}'
+    + '#aboutModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:2000;justify-content:center;align-items:center;}'
+    + '#aboutModal.show{display:flex;}'
+    + '.about-card{background:var(--card);border-radius:20px;width:320px;max-width:90%;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.35);text-align:center;}'
+    + '.about-top{background:var(--accent);padding:26px 20px;color:#fff;}'
+    + '.about-body{padding:20px;}'
+    + '.about-body p{color:var(--text);font-size:.88rem;line-height:1.6;margin:0 0 14px;}'
+    + '.btn-close-about{width:100%;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;font-size:.9rem;}'
+    /* selection menu */
+    + '.sel-menu{display:none;position:absolute;background:var(--card);padding:6px;border-radius:14px;box-shadow:0 4px 18px rgba(0,0,0,0.25);z-index:900;gap:6px;align-items:center;}'
+    + '.sel-menu button{border:none;background:var(--accent-light);color:var(--accent);border-radius:8px;padding:8px 12px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;}'
+    + '.sel-menu button:hover{background:var(--accent);color:#fff;}'
+    + '.hl-menu{display:none;position:absolute;background:var(--card);padding:8px;border-radius:20px;box-shadow:0 4px 18px rgba(0,0,0,0.25);z-index:900;gap:8px;align-items:center;}'
+    + '.hl-color{width:26px;height:26px;border-radius:50%;cursor:pointer;border:2px solid var(--card);box-shadow:0 0 0 2px var(--text);}'
+    + '.hl-remove{width:24px;height:24px;border-radius:50%;cursor:pointer;border:2px solid var(--border);background:var(--card);color:var(--text);font-size:13px;line-height:20px;text-align:center;}'
+    /* edit bar - styled like a find/search bar */
+    + '.edit-bar{display:none;position:absolute;background:var(--card);border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,0.25);z-index:900;align-items:center;gap:6px;padding:6px 6px 6px 12px;border:1px solid var(--border);}'
+    + '.edit-bar input{border:none;outline:none;font-size:14px;width:220px;padding:6px 0;background:var(--card);color:var(--text);}'
+    + '.edit-bar button{border:none;border-radius:6px;padding:7px 12px;font-size:13px;font-weight:700;cursor:pointer;}'
+    + '.edit-bar .ok-btn{background:var(--accent);color:#fff;}'
+    + '.edit-bar .x-btn{background:#eee;color:#666;}'
+    + '@media print{'
+    + '  #menuOverlay,#sideMenu,.menu-btn,.sel-menu,.hl-menu,.edit-bar,.no-print{display:none !important;}'
+    + '  body{background:#fff;}'
+    + '  .card{box-shadow:none;margin:0;padding:0 10px;}'
+    + '}'
+    + '</style></head><body>'
+
+    + '<div id="menuOverlay"></div>'
+    + '<div id="sideMenu">'
+    + '  <div class="menu-header"><h2>Menu</h2><button id="closeMenuBtn">✕</button></div>'
+    + '  <div class="menu-body">'
+    + '    <div class="settings-panel">'
+    + '      <div><div class="settings-label">Font Size</div><div class="font-slider-row"><span style="font-size:.75rem;">A</span><input type="range" id="fontSlider" min="12" max="22" value="15" step="1"><span style="font-size:1.1rem;">A</span></div><div style="text-align:center;font-size:.78rem;color:var(--accent);margin-top:2px;" id="fontSizeLabel">15px</div></div>'
+    + '      <div><div class="settings-label">Theme</div><div class="theme-row"><button class="theme-btn active" id="themeLight" data-theme="light"><span class="tb-icon">☀️</span>Light</button><button class="theme-btn" id="themeDark" data-theme="dark"><span class="tb-icon">🌙</span>Dark</button><button class="theme-btn" id="themeSepia" data-theme="sepia"><span class="tb-icon">📖</span>Sepia</button></div></div>'
+    + '    </div>'
+    + '    <div class="menu-mid-row"><div class="menu-star">✱</div><input type="text" class="menu-id-box" id="teacherCode" placeholder="Enter teacher ID" maxlength="6"></div>'
+    + '    <div class="id-status" id="codeStatus"></div>'
+    + '    <button type="button" class="btn-about" id="aboutBtn">ℹ️ About</button>'
+    + '  </div>'
+    + '  <div class="menu-footer">Enter the teacher code to access grading and comments.<br><br><a href="https://t.me/English_Wikipedia" target="_blank" rel="noopener" class="tg-link">📣 Telegram Channel</a></div>'
+    + '</div>'
+
+    + '<div id="aboutModal">'
+    + '  <div class="about-card">'
+    + '    <div class="about-top"><h3 style="margin:0 0 4px;font-size:1.3rem;">W WRITING</h3><p style="margin:0;opacity:.85;font-size:.85rem;">Teacher review</p></div>'
+    + '    <div class="about-body">'
+    + '      <p>Grading and commenting on IELTS Writing essays.</p>'
+    + '      <p style="font-weight:800;color:var(--accent);">Made by: rasVet</p>'
+    + '      <button type="button" class="btn-close-about" id="closeAboutBtn">Close</button>'
+    + '    </div>'
+    + '  </div>'
+    + '</div>'
+
+    + '<div class="card">'
+    + '  <div class="hdr"><div class="ttl">W WRITING<small>Teacher Review</small></div><button type="button" class="menu-btn" id="menuBtn">⋮</button></div>'
+    + '  <div class="locked-note" id="lockedNote">🔒 Grading locked — open the menu (⋮) and enter the teacher code.</div>'
+    + '  <div class="meta"><div>Student: ' + d.studentName + '</div><div>Date: ' + d.dateStr + '</div><div>Task ' + (d.isTask1 ? '1' : '2') + '</div></div>'
+    + '  <div class="topic">' + '<span id="topicSpan"></span></div>'
+    + imageBlock
+    + '  <div id="essayArea"></div>'
+    + '  <div class="wc">Time spent: ' + d.timeSpent + ' &nbsp;|&nbsp; Total words: ' + d.wordCount + '</div>'
+
+    + '  <div class="band-section">'
+    + '    <h3>Teacher Band Score Calculator</h3>'
+    + '    <div class="band-grid">'
+    + '      <div class="band-cell"><label>TA / TR</label><input type="number" min="1" max="9" step="0.5" id="bandTA" disabled></div>'
+    + '      <div class="band-cell"><label>CC</label><input type="number" min="1" max="9" step="0.5" id="bandCC" disabled></div>'
+    + '      <div class="band-cell"><label>LR</label><input type="number" min="1" max="9" step="0.5" id="bandLR" disabled></div>'
+    + '      <div class="band-cell"><label>GRA</label><input type="number" min="1" max="9" step="0.5" id="bandGRA" disabled></div>'
+    + '    </div>'
+    + '    <div class="band-result">'
+    + '      <div class="band-gauge" id="bandGauge" style="--pct:0;"><div class="band-gauge-inner"><span class="band-gauge-val" id="bandAverage">—</span><span class="band-gauge-max">out of 9</span></div></div>'
+    + '      <div class="band-result-label">Overall Band Score</div>'
+    + '    </div>'
+    + '  </div>'
+
+    + '  <div class="save-section no-print">'
+    + '    <button type="button" class="btn" id="savePdfBtn">💾 Save as PDF</button>'
+    + '  </div>'
+    + '</div>'
+
+    + '<div class="sel-menu" id="selMenu">'
+    + '  <button type="button" id="btnChange">✏️ Change</button>'
+    + '  <button type="button" id="btnAdvice">💬 Advice</button>'
+    + '  <button type="button" id="btnHighlight">🖍️ Highlight</button>'
+    + '</div>'
+    + '<div class="hl-menu" id="hlMenu">'
+    + '  <div class="hl-color" data-color="#f7b8b0" style="background:#f7b8b0;"></div>'
+    + '  <div class="hl-color" data-color="#f9dba0" style="background:#f9dba0;"></div>'
+    + '  <div class="hl-color" data-color="#b9dcaa" style="background:#b9dcaa;"></div>'
+    + '  <div class="hl-color" data-color="#a9cdec" style="background:#a9cdec;"></div>'
+    + '  <div class="hl-remove" id="hlRemove" title="Убрать выделение">✕</div>'
+    + '</div>'
+    + '<div class="edit-bar" id="editBar">'
+    + '  <input type="text" id="editBarInput" placeholder="">'
+    + '  <button type="button" class="ok-btn" id="editBarConfirm">OK</button>'
+    + '  <button type="button" class="x-btn" id="editBarCancel">✕</button>'
+    + '</div>'
+
+    + '<script>'
+    + 'document.getElementById("topicSpan").textContent = ' + jsonEsc(d.topic) + ';\n'
+    + 'document.getElementById("essayArea").innerHTML = ' + jsonEsc(d.answerHTML) + ';\n'
+    + 'const TEACHER_IDS = ["004567","008245","009213","000000"];\n'
+    + 'let unlocked = false;\n'
+    + 'let selectedRange = null;\n'
+    + 'const essayArea = document.getElementById("essayArea");\n'
+    + 'const selMenu = document.getElementById("selMenu");\n'
+    + 'const hlMenu = document.getElementById("hlMenu");\n'
+    + 'const editBar = document.getElementById("editBar");\n'
+
+    + 'const menuOverlay = document.getElementById("menuOverlay");\n'
+    + 'const sideMenu = document.getElementById("sideMenu");\n'
+    + 'document.getElementById("menuBtn").addEventListener("click", function(){ sideMenu.classList.add("open"); menuOverlay.classList.add("show"); });\n'
+    + 'function closeSideMenu(){ sideMenu.classList.remove("open"); menuOverlay.classList.remove("show"); }\n'
+    + 'document.getElementById("closeMenuBtn").addEventListener("click", closeSideMenu);\n'
+    + 'menuOverlay.addEventListener("click", closeSideMenu);\n'
+
+    + 'document.getElementById("fontSlider").addEventListener("input", function(){\n'
+    + '  document.documentElement.style.setProperty("--essay-font-size", this.value + "px");\n'
+    + '  document.getElementById("fontSizeLabel").textContent = this.value + "px";\n'
+    + '});\n'
+
+    + 'document.querySelectorAll(".theme-btn").forEach(function(btn){\n'
+    + '  btn.addEventListener("click", function(){\n'
+    + '    const t = this.dataset.theme;\n'
+    + '    document.body.classList.remove("theme-dark", "theme-sepia");\n'
+    + '    if(t === "dark") document.body.classList.add("theme-dark");\n'
+    + '    if(t === "sepia") document.body.classList.add("theme-sepia");\n'
+    + '    document.querySelectorAll(".theme-btn").forEach(function(b){ b.classList.remove("active"); });\n'
+    + '    this.classList.add("active");\n'
+    + '  });\n'
+    + '});\n'
+
+    + 'document.getElementById("aboutBtn").addEventListener("click", function(){ document.getElementById("aboutModal").classList.add("show"); });\n'
+    + 'document.getElementById("closeAboutBtn").addEventListener("click", function(){ document.getElementById("aboutModal").classList.remove("show"); });\n'
+
+    + 'function checkTeacherCode(){\n'
+    + '  const val = document.getElementById("teacherCode").value.trim();\n'
+    + '  const statusEl = document.getElementById("codeStatus");\n'
+    + '  if(val.length < 6) return;\n'
+    + '  if(TEACHER_IDS.includes(val)){\n'
+    + '    unlocked = true;\n'
+    + '    statusEl.className = "id-status show ok";\n'
+    + '    statusEl.textContent = "✔ Доступ разрешён — теперь можно комментировать работу";\n'
+    + '    document.querySelectorAll(".band-section input").forEach(function(inp){ inp.disabled = false; });\n'
+    + '    const note = document.getElementById("lockedNote");\n'
+    + '    note.textContent = "✔ Режим учителя включён — выделяйте текст или кликайте, чтобы редактировать.";\n'
+    + '    note.classList.add("unlocked");\n'
+    + '    setTimeout(closeSideMenu, 600);\n'
+    + '  } else {\n'
+    + '    statusEl.className = "id-status show err";\n'
+    + '    statusEl.textContent = "✘ Wrong code";\n'
+    + '  }\n'
+    + '}\n'
+    + 'document.getElementById("teacherCode").addEventListener("input", checkTeacherCode);\n'
+
+    + 'function hideMenus(){ selMenu.style.display = "none"; hlMenu.style.display = "none"; }\n'
+
+    + 'essayArea.addEventListener("mouseup", function(e){\n'
+    + '  if(!unlocked) return;\n'
+    + '  const sel = window.getSelection();\n'
+    + '  if(sel && sel.toString().trim().length > 0 && essayArea.contains(sel.anchorNode)){\n'
+    + '    selectedRange = sel.getRangeAt(0).cloneRange();\n'
+    + '    selMenu.style.display = "flex";\n'
+    + '    selMenu.style.left = (e.pageX) + "px";\n'
+    + '    selMenu.style.top = (e.pageY + 12) + "px";\n'
+    + '  } else if(!editBar.contains(e.target) && !hlMenu.contains(e.target) && !selMenu.contains(e.target)){\n'
+    + '    hideMenus();\n'
+    + '  }\n'
+    + '});\n'
+
+    + 'document.getElementById("btnHighlight").addEventListener("click", function(){\n'
+    + '  const r = selectedRange.getBoundingClientRect();\n'
+    + '  hlMenu.style.display = "flex";\n'
+    + '  hlMenu.style.left = (r.left + window.scrollX) + "px";\n'
+    + '  hlMenu.style.top = (r.top + window.scrollY - 44) + "px";\n'
+    + '  selMenu.style.display = "none";\n'
+    + '});\n'
+    + 'document.querySelectorAll(".hl-color").forEach(function(btn){\n'
+    + '  btn.addEventListener("click", function(){\n'
+    + '    if(!selectedRange) return;\n'
+    + '    const span = document.createElement("span");\n'
+    + '    span.style.backgroundColor = this.dataset.color;\n'
+    + '    span.style.color = "#1a1a1a";\n'
+    + '    try{ selectedRange.surroundContents(span); }catch(e){}\n'
+    + '    hideMenus();\n'
+    + '    window.getSelection().removeAllRanges();\n'
+    + '  });\n'
+    + '});\n'
+    + 'document.getElementById("hlRemove").addEventListener("click", function(){\n'
+    + '  if(!selectedRange) return;\n'
+    + '  let node = selectedRange.startContainer;\n'
+    + '  while(node && node.nodeType !== 1) node = node.parentNode;\n'
+    + '  if(node && node.tagName === "SPAN") node.outerHTML = node.innerHTML;\n'
+    + '  hideMenus();\n'
+    + '  window.getSelection().removeAllRanges();\n'
+    + '});\n'
+
+    + 'function openEditBar(mode){\n'
+    + '  const r = selectedRange.getBoundingClientRect();\n'
+    + '  const input = document.getElementById("editBarInput");\n'
+    + '  input.value = "";\n'
+    + '  input.placeholder = mode === "change" ? "Correct version..." : "Advice / comment...";\n'
+    + '  editBar.dataset.mode = mode;\n'
+    + '  editBar.style.display = "flex";\n'
+    + '  editBar.style.left = (r.left + window.scrollX) + "px";\n'
+    + '  editBar.style.top = (r.top + window.scrollY - 46) + "px";\n'
+    + '  selMenu.style.display = "none";\n'
+    + '  input.focus();\n'
+    + '}\n'
+    + 'document.getElementById("btnChange").addEventListener("click", function(){ openEditBar("change"); });\n'
+    + 'document.getElementById("btnAdvice").addEventListener("click", function(){ openEditBar("advice"); });\n'
+
+    + 'function closeEditBar(){ editBar.style.display = "none"; window.getSelection().removeAllRanges(); }\n'
+    + 'function confirmEdit(){\n'
+    + '  const mode = editBar.dataset.mode;\n'
+    + '  const text = document.getElementById("editBarInput").value.trim();\n'
+    + '  if(!text || !selectedRange){ closeEditBar(); return; }\n'
+    + '  const range = selectedRange;\n'
+    + '  if(mode === "change"){\n'
+    + '    const wrap = document.createElement("span");\n'
+    + '    wrap.className = "tch-change-wrap";\n'
+    + '    const note = document.createElement("span");\n'
+    + '    note.className = "tch-change-note";\n'
+    + '    note.textContent = text;\n'
+    + '    const orig = document.createElement("span");\n'
+    + '    orig.className = "tch-change-orig";\n'
+    + '    orig.textContent = range.toString();\n'
+    + '    wrap.appendChild(note);\n'
+    + '    wrap.appendChild(orig);\n'
+    + '    range.deleteContents();\n'
+    + '    range.insertNode(wrap);\n'
+    + '  } else {\n'
+    + '    const adviceSpan = document.createElement("span");\n'
+    + '    adviceSpan.className = "tch-advice";\n'
+    + '    adviceSpan.textContent = " (" + text + ")";\n'
+    + '    range.collapse(false);\n'
+    + '    range.insertNode(adviceSpan);\n'
+    + '  }\n'
+    + '  closeEditBar();\n'
+    + '}\n'
+    + 'document.getElementById("editBarConfirm").addEventListener("click", confirmEdit);\n'
+    + 'document.getElementById("editBarCancel").addEventListener("click", closeEditBar);\n'
+    + 'document.getElementById("editBarInput").addEventListener("keydown", function(e){\n'
+    + '  if(e.key === "Enter"){ e.preventDefault(); confirmEdit(); }\n'
+    + '  else if(e.key === "Escape"){ closeEditBar(); }\n'
+    + '});\n'
+
+    + 'essayArea.addEventListener("click", function(e){\n'
+    + '  if(!unlocked) return;\n'
+    + '  const sel = window.getSelection();\n'
+    + '  if(sel && sel.toString().trim().length > 0) return;\n'
+    + '  let range = null;\n'
+    + '  if(document.caretRangeFromPoint){ range = document.caretRangeFromPoint(e.clientX, e.clientY); }\n'
+    + '  else if(document.caretPositionFromPoint){ const pos = document.caretPositionFromPoint(e.clientX, e.clientY); range = document.createRange(); range.setStart(pos.offsetNode, pos.offset); }\n'
+    + '  if(!range) return;\n'
+    + '  essayArea.setAttribute("contenteditable", "true");\n'
+    + '  const s = window.getSelection();\n'
+    + '  s.removeAllRanges();\n'
+    + '  s.addRange(range);\n'
+    + '  essayArea.focus();\n'
+    + '  function exitTyping(){ essayArea.removeAttribute("contenteditable"); document.removeEventListener("mousemove", exitTyping); }\n'
+    + '  document.addEventListener("mousemove", exitTyping, { once: true });\n'
+    + '});\n'
+
+    + 'const bandIds = ["bandTA","bandCC","bandLR","bandGRA"];\n'
+    + 'function recalcBand(){\n'
+    + '  let total = 0, count = 0;\n'
+    + '  bandIds.forEach(function(id){ const v = parseFloat(document.getElementById(id).value); if(!isNaN(v)){ total += v; count++; } });\n'
+    + '  const el = document.getElementById("bandAverage");\n'
+    + '  const gaugeEl = document.getElementById("bandGauge");\n'
+    + '  if(count === 4){ const r = Math.floor((total/4)*2)/2; el.textContent = r.toFixed(1); if(gaugeEl) gaugeEl.style.setProperty("--pct", (r/9*100).toFixed(1)); } else { el.textContent = "—"; if(gaugeEl) gaugeEl.style.setProperty("--pct", 0); }\n'
+    + '}\n'
+    + 'bandIds.forEach(function(id){ document.getElementById(id).addEventListener("input", recalcBand); });\n'
+
+    + 'document.getElementById("savePdfBtn").addEventListener("click", function(){ window.print(); });\n'
+    + '<\/script>'
+    + '</body></html>';
+  }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.birds.min.js"></script>
+<script>
+(function(){
+  var vantaEffect = null;
+
+  function initVanta(){
+    if(window.VANTA && window.VANTA.BIRDS && !vantaEffect){
+      vantaEffect = window.VANTA.BIRDS({
+        el: '#vantaBg',
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200,
+        minWidth: 200,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        alignment: 20,
+        backgroundAlpha: 1,
+        backgroundColor: 0x07192f,
+        color1: 0xff0000,
+        color2: 0x00d1ff,
+        colorMode: 'varianceGradient',
+        birdSize: 1,
+        wingSpan: 30,
+        speedLimit: 5,
+        separation: 20,
+        cohesion: 20,
+        quantity: 5
+      });
+    }
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initVanta);
+  } else {
+    initVanta();
+  }
+
+  function goToTask(n){
+    document.getElementById('startScreen').classList.add('hidden');
+    document.body.classList.add('app-active');
+    if(vantaEffect){ vantaEffect.destroy(); vantaEffect = null; }
+    var radio = document.getElementById(n === 1 ? 'task1Radio' : 'task2Radio');
+    radio.checked = true;
+    radio.dispatchEvent(new Event('change'));
+  }
+
+  document.getElementById('btnTask1').addEventListener('click', function(){ goToTask(1); });
+  document.getElementById('btnTask2').addEventListener('click', function(){ goToTask(2); });
+  document.getElementById('btnLearn').addEventListener('click', function(){
+    document.getElementById('learnBtn').click();
+  });
+
+  document.getElementById('backToMenuBtn').addEventListener('click', function(){
+    document.body.classList.remove('app-active');
+    document.getElementById('startScreen').classList.remove('hidden');
+    var t1 = document.getElementById('task1Radio'), t2 = document.getElementById('task2Radio');
+    t1.checked = false; t2.checked = false;
+    t1.dispatchEvent(new Event('change'));
+    setTimeout(initVanta, 50);
+  });
+})();
+</script>
+</body>
+</html>

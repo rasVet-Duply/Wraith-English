@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Reading: The History of the Magnetic Compass</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root{--primary:#007bff;--bg:#ffffff;--card:#ffffff;--border:#e0e0e0;--neon-green:#39FF14;--neon-red:#ff3131;--dark:#2d3436;--bar:#2d3436;--text:#444;--font-size:1.05rem;}
+body.theme-dark{--bg:#1a1a2e;--card:#16213e;--border:#2d3561;--text:#ffffff;--dark:#ffffff;--bar:#0f3460;}
+body.theme-dark header,body.theme-dark .action-bar{background:#0f3460;}
+body.theme-dark .left-side,body.theme-dark .right-side{background:var(--bg);}
+body.theme-dark .q-card{background:var(--card);border-color:var(--border);}
+body.theme-dark .btn-opt{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-dark .timer{background:#0f3460;border-color:#2d3561;color:#ffffff;}
+body.theme-dark .text-area{color:var(--text);background:var(--bg);}
+body.theme-dark .text-area h1{color:var(--text);}
+body.theme-dark .text-area p{color:var(--text);}
+body.theme-dark th{background:#0f3460;color:#ffffff;}
+body.theme-dark td{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-dark .settings-panel{background:#0f3460;border-color:#2d3561;}
+body.theme-dark #sideMenu{background:#16213e;}
+body.theme-dark .menu-header{background:var(--bar);}
+body.theme-dark .menu-body{background:#16213e;}
+body.theme-dark .bubbles-area{background:var(--card);border-color:var(--border);}
+body.theme-dark .bubbles-area div{color:#ffffff;}
+body.theme-dark .bubble{border-color:#2d3561;color:#ffffff;background:transparent;}
+body.theme-dark .divider{background:#0f3460;border-color:var(--border);}
+body.theme-dark .divider::after{color:#ffffff;}
+body.theme-dark .input-summary{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-dark .correct-hint{color:var(--neon-green);}
+body.theme-dark select.input-summary{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-dark .menu-id-box,body.theme-dark .admin-cmd-box{background:#0f3460;color:#ffffff;border-color:#2d3561;}
+body.theme-dark .menu-id-box::placeholder,body.theme-dark .admin-cmd-box::placeholder{color:#8aa0c8;}
+body.theme-dark .menu-star,body.theme-dark .menu-top-icon,body.theme-dark .admin-slash-icon{background:#0f3460;border-color:#2d3561;color:#ffffff;}
+body.theme-dark #teacherAnswerBox{background:#0f3460;border-color:#2d3561;}
+body.theme-dark #teacherAnswerBox .drop-header{color:#ffffff;}
+body.theme-dark #adminAnswerBox .drop-header{color:#ffffff;}
+body.theme-dark .ans-item{color:#ffffff;border-color:#2d3561;}
+body.theme-dark .description{color:#ffffff;}
+body.theme-dark .attempt-tag{background:#0f3460;color:#ffffff;border-color:#2d3561;}
+body.theme-dark .settings-label{color:#ffffff;}
+body.theme-dark #menuBtn{background:#0f3460;border-color:#2d3561;color:#ffffff;}
+body.theme-dark .theme-btn{background:#16213e;border-color:#2d3561;color:#ffffff;}
+body.theme-dark .theme-btn.active{background:#0f3460;border-color:var(--primary);color:#ffffff;}
+body.theme-dark .btn-about{background:#16213e;border-color:#2d3561;color:#ffffff;}
+body.theme-dark .passage-label{color:#ffffff;}
+body.theme-dark .modal-content{background:var(--card);}
+body.theme-dark .modal-header{background:var(--bar);}
+body.theme-dark .modal-body{background:var(--card);}
+body.theme-dark .modal-total,body.theme-dark .proof-note{color:#ffffff;}
+body.theme-dark .modal-footer{background:#0f3460;}
+body.theme-dark .modal-col-title{background:#0f3460;color:#ffffff;}
+body.theme-dark .about-card{background:var(--card);}
+body.theme-dark .about-body{background:var(--card);}
+body.theme-dark .about-body p{color:#ffffff;}
+body.theme-dark .about-tag{background:#0f3460;color:#ffffff;}
+body.theme-dark .menu-footer{background:#16213e;border-color:#2d3561;}
+body.theme-dark .tg-link{background:#0f3460;color:#ffffff;}
+body.theme-dark #highlightMenu{background:#16213e;box-shadow:0 0 15px rgba(0,0,0,.6);}
+body.theme-dark #removeColor{background:#0f3460;border-color:#2d3561;color:#ffffff;}
+body.theme-dark #toast{background:var(--bar);color:#ffffff;}
+body.theme-dark .id-status,body.theme-dark #cmdFeedback{color:#ffffff;}
+body.theme-sepia{--bg:#f2e0bc;--card:#ecd6a8;--border:#d9bd85;--text:#4a3320;--dark:#4a3320;--bar:#c9975e;}
+body.theme-sepia header,body.theme-sepia .action-bar{background:#c9975e;}
+body.theme-sepia .left-side,body.theme-sepia .right-side{background:var(--bg);}
+body.theme-sepia .q-card{background:var(--card);border-color:var(--border);}
+body.theme-sepia .btn-opt{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-sepia .timer{background:#e8cf9c;border-color:var(--border);color:#4a3320;}
+body.theme-sepia .text-area{color:var(--text);background:var(--bg);}
+body.theme-sepia .text-area h1{color:var(--text);}
+body.theme-sepia .text-area p{color:var(--text);}
+body.theme-sepia th{background:#c9975e;color:#4a3320;}
+body.theme-sepia td{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-sepia .settings-panel{background:#e8cf9c;border-color:var(--border);}
+body.theme-sepia #sideMenu{background:var(--card);}
+body.theme-sepia .menu-header{background:var(--bar);}
+body.theme-sepia .menu-body{background:var(--card);}
+body.theme-sepia .bubbles-area{background:var(--card);border-color:var(--border);}
+body.theme-sepia .bubbles-area div{color:#4a3320;}
+body.theme-sepia .bubble{border-color:var(--border);color:#8a6a3f;background:transparent;}
+body.theme-sepia .bubble.active{border-color:#a9713a;color:#a9713a;background:#e8cf9c;}
+body.theme-sepia .divider{background:#e8cf9c;border-color:var(--border);}
+body.theme-sepia .divider::after{color:#8a6a3f;}
+body.theme-sepia .input-summary{background:transparent;color:var(--text);border-color:var(--border);}
+body.theme-sepia .correct-hint{color:#2d6a4f;}
+body.theme-sepia select.input-summary{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-sepia .menu-id-box,body.theme-sepia .admin-cmd-box{background:#e8cf9c;color:#4a3320;border-color:var(--border);}
+body.theme-sepia .menu-id-box::placeholder,body.theme-sepia .admin-cmd-box::placeholder{color:#8a6a3f;}
+body.theme-sepia .menu-star,body.theme-sepia .menu-top-icon,body.theme-sepia .admin-slash-icon{background:#e8cf9c;border-color:var(--border);color:#4a3320;}
+body.theme-sepia #teacherAnswerBox{background:#e8cf9c;border-color:var(--border);}
+body.theme-sepia #teacherAnswerBox .drop-header{color:#4a3320;}
+body.theme-sepia #adminAnswerBox .drop-header{color:#4a3320;}
+body.theme-sepia .ans-item{color:#4a3320;border-color:var(--border);}
+body.theme-sepia .description{color:#4a3320;}
+body.theme-sepia .attempt-tag{background:#e8cf9c;color:#4a3320;border-color:var(--border);}
+body.theme-sepia .settings-label{color:#4a3320;}
+body.theme-sepia #menuBtn{background:#e8cf9c;border-color:var(--border);color:#4a3320;}
+body.theme-sepia .theme-btn{background:var(--card);border-color:var(--border);color:#4a3320;}
+body.theme-sepia .theme-btn.active{background:#e8cf9c;border-color:#a9713a;color:#4a3320;}
+body.theme-sepia .btn-about{background:var(--card);border-color:var(--border);color:#4a3320;}
+body.theme-sepia .passage-label{color:#4a3320;}
+body.theme-sepia .modal-content{background:var(--card);}
+body.theme-sepia .modal-header{background:var(--bar);}
+body.theme-sepia .modal-body{background:var(--card);}
+body.theme-sepia .modal-total,body.theme-sepia .proof-note{color:#4a3320;}
+body.theme-sepia .modal-footer{background:#e8cf9c;}
+body.theme-sepia .modal-col-title{background:#e8cf9c;color:#4a3320;}
+body.theme-sepia .about-card{background:var(--card);}
+body.theme-sepia .about-body{background:var(--card);}
+body.theme-sepia .about-body p{color:#4a3320;}
+body.theme-sepia .about-tag{background:#e8cf9c;color:#4a3320;}
+body.theme-sepia .menu-footer{background:var(--card);border-color:var(--border);}
+body.theme-sepia .tg-link{background:#e8cf9c;color:#4a3320;}
+body.theme-sepia #highlightMenu{background:var(--card);box-shadow:0 0 15px rgba(0,0,0,.3);}
+body.theme-sepia #removeColor{background:#e8cf9c;border-color:var(--border);color:#4a3320;}
+body.theme-sepia #toast{background:var(--bar);color:#4a3320;}
+body.theme-sepia .id-status,body.theme-sepia #cmdFeedback{color:#4a3320;}
+body.theme-sepia .id-status.ok{color:#2d6a4f;}
+body.theme-sepia .id-status.err{color:#a4161a;}
+body.theme-sepia #proofingBtn.active{background:var(--card);color:#4a3320;border-color:#4a3320;}
+*{box-sizing:border-box;}
+body,html{margin:0;padding:0;height:100%;font-family:'Inter','Segoe UI',sans-serif;overflow:hidden;background:var(--bg);transition:background .3s,color .3s;}
+.wrapper{display:flex;flex-direction:column;height:100vh;}
+header{height:65px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 25px;flex-shrink:0;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:background .3s;}
+.logo{font-weight:800;font-size:1.2rem;color:var(--dark);display:flex;align-items:center;gap:10px;}
+.logo i{color:var(--primary);}
+.timer{font-weight:bold;background:#eef2ff;padding:8px 25px;border-radius:30px;border:1px solid #d1d9ff;color:var(--primary);font-size:1.2rem;min-width:110px;text-align:center;transition:.3s;}
+#menuBtn{width:38px;height:38px;border-radius:50%;border:2px solid #dee2e6;background:#fff;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#495057;transition:.2s;}
+#menuBtn:hover{background:#f0f7ff;border-color:var(--primary);color:var(--primary);}
+#proofingBtn{padding:8px 18px;border-radius:30px;border:2px solid #007bff;background:#007bff;color:#fff;font-weight:700;font-size:.85rem;cursor:pointer;transition:.2s;}
+#proofingBtn.active{background:#fff;color:#007bff;border-color:#007bff;}
+body.theme-dark #proofingBtn.active{background:#16213e;color:#ffffff;}
+.main{display:flex;flex:1;overflow:hidden;}
+.left-side{width:50%;display:flex;flex-direction:column;background:#fff;border-right:1px solid var(--border);}
+.text-area{flex:1;overflow-y:auto;padding:40px;line-height:1.8;color:var(--text);font-size:var(--font-size);transition:font-size .2s,color .3s;}
+.text-area h1{color:var(--dark);font-size:1.8rem;margin-bottom:8px;}
+.bubbles-area{height:100px;border-top:1px solid var(--border);background:#fff;padding:15px 25px;overflow-y:auto;flex-shrink:0;transition:background .3s;}
+.bubbles-grid{display:flex;flex-wrap:wrap;gap:10px;}
+.bubble{width:36px;height:36px;border-radius:50%;border:2px solid #dee2e6;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#adb5bd;font-size:.9rem;transition:.3s;}
+.bubble.active{border-color:var(--primary);color:var(--primary);background:#eef2ff;}
+.bubble.solved{background:var(--primary);color:#fff;border-color:var(--primary);}
+.divider{width:12px;background:#f1f3f5;cursor:col-resize;flex-shrink:0;position:relative;border-left:1px solid #e9ecef;border-right:1px solid #e9ecef;}
+.divider::after{content:'||';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#adb5bd;font-size:.8rem;letter-spacing:1px;}
+.right-side{flex:1;display:flex;flex-direction:column;background:var(--bg);min-width:300px;}
+.action-bar{background:#fff;border-bottom:1px solid var(--border);padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:15px;height:65px;flex-shrink:0;transition:background .3s;}
+.attempts-row{display:flex;gap:10px;overflow-x:auto;flex:1;min-width:0;align-items:center;height:100%;}
+.attempt-tag{background:#f8f9fa;border:1px solid #e9ecef;padding:8px 15px;border-radius:8px;font-size:.85rem;white-space:nowrap;color:#495057;font-weight:600;}
+.btn-submit{background:var(--primary);color:#fff;border:none;padding:12px 30px;border-radius:8px;font-weight:700;cursor:pointer;transition:.2s;box-shadow:0 4px 15px rgba(0,123,255,.3);}
+.btn-submit:hover{background:#0069d9;transform:translateY(-1px);}
+.questions-area{flex:1;overflow-y:auto;padding:30px;font-size:var(--font-size);transition:font-size .2s;}
+.q-card{background:#fff;padding:25px 30px;border-radius:12px;border:1px solid #e9ecef;margin-bottom:25px;box-shadow:0 4px 6px rgba(0,0,0,.02);transition:background .3s;}
+.description{font-weight:800;color:#2d3436;margin-bottom:16px;display:block;font-size:.88rem;text-transform:uppercase;letter-spacing:.5px;border-left:5px solid var(--primary);padding-left:15px;}
+.btn-opt{padding:10px 18px;border:1.5px solid #dee2e6;border-radius:8px;cursor:pointer;margin:5px 8px 5px 0;display:inline-block;background:#fff;font-weight:500;transition:.2s;}
+.btn-opt.selected{border-color:var(--primary);color:var(--primary);background:#f0f7ff;}
+body.theme-dark .btn-opt.selected{background:#0f3460;color:#ffffff;}
+.correct-neon{border:2px solid var(--neon-green)!important;box-shadow:0 0 15px var(--neon-green)!important;background-color:#fafff5!important;pointer-events:none;}
+body.theme-dark .correct-neon{background-color:#0f3460!important;color:#ffffff!important;}
+.wrong-neon{border:2px solid var(--neon-red)!important;box-shadow:0 0 15px var(--neon-red)!important;}
+body.theme-dark .wrong-neon{color:#ffffff!important;}
+.correct-hint{display:inline-block;margin-left:10px;font-weight:800;font-size:.85rem;color:#2d6a4f;}
+table{width:100%;border-collapse:collapse;margin-top:10px;}
+th,td{border:1px solid #eee;padding:10px 14px;text-align:left;}
+th{background:#f8f9fa;color:#6c757d;font-size:.8rem;text-transform:uppercase;font-weight:700;}
+.input-summary{border:none;border-bottom:2px solid #dee2e6;width:150px;text-align:center;outline:none;font-weight:700;padding:5px;transition:.3s;background:transparent;}
+.passage-nav{display:flex;align-items:center;justify-content:center;gap:16px;padding:14px 20px;border-top:1px solid #e9ecef;background:#fff;flex-shrink:0;transition:background .3s;}
+body.theme-dark .passage-nav{background:#0f3460;border-color:#2d3561;}
+.passage-label{font-weight:700;font-size:.9rem;color:#495057;min-width:100px;text-align:center;}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:1000;justify-content:center;align-items:center;backdrop-filter:blur(5px);}
+.modal-content{background:#fff;border-radius:20px;width:95vw;max-width:600px;text-align:center;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,.4);animation:modalIn .3s cubic-bezier(.34,1.56,.64,1);max-height:90vh;display:flex;flex-direction:column;}
+@keyframes modalIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-header{background:var(--bar);color:#fff;padding:20px 30px;flex-shrink:0;}
+.modal-header h2{margin:0;font-size:2rem;font-weight:900;}
+.modal-total{font-size:1rem;opacity:.9;margin-top:4px;color:#fff;}
+.modal-body{padding:20px;background:#fff;flex:1;overflow:auto;}
+.modal-col-title{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:#6c757d;margin-bottom:8px;text-align:center;padding:6px;background:#f8f9fa;border-radius:8px;}
+.res-list{text-align:left;overflow-y:auto;}
+.res-card{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;margin-bottom:6px;border-radius:8px;font-weight:700;font-size:.82rem;border:2px solid transparent;transition:.3s;}
+.res-card.correct-row{border-color:var(--neon-green);box-shadow:0 0 8px var(--neon-green);background:#fafff5;color:#2d6a4f;}
+.res-card.wrong-row{border-color:var(--neon-red);box-shadow:0 0 8px var(--neon-red);background:#fff5f5;color:#a4161a;}
+.proof-note{padding:30px 10px;font-weight:700;color:#495057;font-size:1.05rem;line-height:1.6;}
+.modal-footer{padding:16px 25px;background:#f8f9fa;flex-shrink:0;}
+#overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:none;z-index:1500;backdrop-filter:blur(2px);}
+#overlay.show{display:block;}
+#sideMenu{position:fixed;top:0;right:-35%;width:33%;min-width:320px;height:100%;background:#fff;z-index:1600;transition:right .3s cubic-bezier(.4,0,.2,1);padding:0;box-shadow:-5px 0 30px rgba(0,0,0,.2);display:flex;flex-direction:column;overflow:hidden;}
+#sideMenu.open{right:0;}
+.menu-header{background:var(--bar);color:#fff;padding:25px 20px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.menu-header h2{margin:0;font-size:1.3rem;font-weight:800;}
+#closeMenuBtn{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:0;}
+.menu-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px;}
+.settings-panel{background:#f8f9fa;border:1px solid #e9ecef;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:14px;transition:background .3s;}
+.settings-label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#6c757d;margin-bottom:4px;}
+.font-slider-row{display:flex;align-items:center;gap:10px;}
+.font-slider-row span{font-size:.8rem;color:#adb5bd;min-width:18px;text-align:center;}
+input[type=range]{flex:1;-webkit-appearance:none;height:4px;border-radius:4px;background:#dee2e6;outline:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--primary);cursor:pointer;box-shadow:0 2px 6px rgba(0,123,255,.4);}
+.theme-row{display:flex;gap:8px;}
+.theme-btn{flex:1;padding:9px 6px;border-radius:10px;border:2px solid #dee2e6;cursor:pointer;font-size:.78rem;font-weight:700;transition:.2s;background:#fff;color:#495057;text-align:center;}
+.theme-btn:hover{border-color:var(--primary);color:var(--primary);}
+.theme-btn.active{border-color:var(--primary);background:#eef2ff;color:var(--primary);}
+body.theme-dark .theme-btn.active{background:#0f3460;}
+.theme-btn .tb-icon{font-size:1.1rem;display:block;margin-bottom:3px;}
+.btn-about{width:100%;padding:11px;border-radius:10px;border:2px solid #dee2e6;background:#fff;cursor:pointer;font-weight:700;font-size:.85rem;color:#495057;display:flex;align-items:center;justify-content:center;gap:8px;transition:.2s;}
+.btn-about:hover{border-color:var(--primary);color:var(--primary);background:#eef2ff;}
+#aboutModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:2000;justify-content:center;align-items:center;backdrop-filter:blur(4px);}
+#aboutModal.show{display:flex;}
+.about-card{background:#fff;border-radius:20px;width:340px;max-width:90%;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.35);animation:modalIn .3s cubic-bezier(.34,1.56,.64,1);text-align:center;}
+.about-top{background:linear-gradient(135deg,#007bff,#0056cc);padding:30px 20px 25px;color:#fff;}
+.about-avatar{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.25);border:3px solid rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 12px;}
+.about-top h3{margin:0 0 4px;font-size:1.4rem;font-weight:900;}
+.about-top p{margin:0;opacity:.8;font-size:.85rem;}
+.about-body{padding:20px;}
+.about-body p{color:#6c757d;font-size:.88rem;line-height:1.6;margin:0 0 14px;}
+.about-tag{display:inline-block;background:#eef2ff;color:var(--primary);border-radius:20px;padding:6px 16px;font-weight:700;font-size:.85rem;margin-bottom:16px;}
+.btn-close-about{width:100%;padding:12px;background:var(--primary);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;font-size:.9rem;}
+.menu-top-icon{width:44px;height:44px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#495057;cursor:pointer;transition:.2s;align-self:flex-start;}
+.menu-top-icon:hover{background:#eef2ff;border-color:var(--primary);color:var(--primary);}
+.menu-mid-row{display:flex;align-items:center;gap:10px;}
+.menu-star{width:44px;height:44px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#495057;font-weight:bold;flex-shrink:0;}
+.menu-id-box{flex:1;border:2px solid #dee2e6;border-radius:12px;padding:10px 14px;font-size:1rem;font-weight:600;outline:none;transition:border-color .2s;letter-spacing:2px;}
+.menu-id-box:focus{border-color:var(--primary);}
+.menu-id-box::placeholder{letter-spacing:0;font-weight:400;color:#adb5bd;}
+.id-status{font-size:.82rem;color:#adb5bd;padding-left:4px;display:none;}
+.id-status.show{display:block;}
+.id-status.ok{color:#2d6a4f;}
+.id-status.err{color:#a4161a;}
+body.theme-dark .id-status.ok{color:#39FF14;}
+body.theme-dark .id-status.err{color:#ff3131;}
+#teacherAnswerBox{background:#f8f9fa;border:1px solid #dee2e6;border-radius:12px;padding:12px;display:none;}
+#teacherAnswerBox .drop-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:.9rem;color:var(--dark);}
+#teacherAnswerBox .drop-content{max-height:180px;overflow-y:auto;margin-top:10px;display:none;}
+#teacherAnswerBox .drop-content.open{display:block;}
+.ans-item{padding:8px 10px;border-radius:8px;font-size:.85rem;font-weight:600;color:#495057;border-bottom:1px solid #e9ecef;}
+.ans-item:last-child{border-bottom:none;}
+#adminRow{display:none;margin-top:4px;}
+.admin-mid-row{display:flex;align-items:center;gap:10px;}
+.admin-slash-icon{width:44px;height:44px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#495057;font-weight:bold;flex-shrink:0;}
+.admin-cmd-box{flex:1;border:2px solid #dee2e6;border-radius:12px;padding:10px 14px;font-size:.95rem;font-weight:600;outline:none;transition:border-color .2s;}
+.admin-cmd-box:focus{border-color:#ff3131;}
+.admin-cmd-box::placeholder{font-weight:400;color:#adb5bd;}
+.btn-run-cmd{padding:10px 16px;background:var(--bar);color:#fff;border:none;border-radius:10px;cursor:pointer;font-weight:700;font-size:.85rem;transition:.2s;}
+.btn-run-cmd:hover{background:#ff3131;}
+#cmdFeedback{font-size:.82rem;padding-left:4px;color:#adb5bd;display:none;}
+#cmdFeedback.show{display:block;}
+#cmdFeedback.ok{color:#2d6a4f;}
+#cmdFeedback.err{color:#a4161a;}
+#adminAnswerBox .drop-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:.9rem;color:var(--dark);padding:6px 0;}
+#adminAnswerBox .drop-content{max-height:160px;overflow-y:auto;margin-top:6px;display:none;}
+#adminAnswerBox .drop-content.open{display:block;}
+.menu-footer{padding:15px 20px;border-top:1px solid #e9ecef;text-align:center;flex-shrink:0;}
+.tg-link{display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-weight:700;font-size:.9rem;text-decoration:none;padding:10px 18px;border-radius:10px;background:#eef2ff;transition:.2s;}
+.tg-link:hover{background:#d1d9ff;}
+#highlightMenu{display:none;position:fixed;background:#fff;padding:8px;border-radius:20px;box-shadow:0 0 15px rgba(0,0,0,.2);z-index:99999;gap:8px;align-items:center;}
+.hlColor{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;}
+#removeColor{width:28px;height:28px;border-radius:50%;background:white;border:2px solid #999;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;}
+#toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--bar);color:#fff;padding:12px 24px;border-radius:30px;font-weight:700;font-size:.9rem;z-index:9999;transition:transform .3s;box-shadow:0 5px 20px rgba(0,0,0,.3);}
+#toast.show{transform:translateX(-50%) translateY(0);}
+
+/* === universal theme & readability fixes (auto-appended) === */
+#sideMenu{ will-change: right; }
+#overlay, #highlightMenu, .modal { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+
+body.theme-dark { background: var(--bg) !important; }
+body.theme-dark .content-area, body.theme-dark .content-row,
+body.theme-dark .wrapper, body.theme-dark .main,
+body.theme-dark .left-side, body.theme-dark .right-side,
+body.theme-dark .transcript-col, body.theme-dark .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-dark header, body.theme-dark .action-bar, body.theme-dark .passage-nav {
+  background: #0f3460 !important; border-color:#2d3561 !important;
+}
+body.theme-dark .bubbles-area, body.theme-dark .q-card, body.theme-dark .modal-content,
+body.theme-dark .modal-body, body.theme-dark .about-card, body.theme-dark .about-body,
+body.theme-dark #sideMenu, body.theme-dark .menu-body, body.theme-dark .modal-footer,
+body.theme-dark .drop-content, body.theme-dark #teacherAnswerBox, body.theme-dark #adminAnswerBox,
+body.theme-dark #highlightMenu, body.theme-dark #removeColor, body.theme-dark #toast,
+body.theme-dark .menu-footer, body.theme-dark .modal-col, body.theme-dark .proof-toast-box,
+body.theme-dark .audio-player, body.theme-dark .settings-panel {
+  background: var(--card) !important;
+}
+body.theme-dark, body.theme-dark .text-area, body.theme-dark .questions-area,
+body.theme-dark .q-card, body.theme-dark .q-card p, body.theme-dark .q-card li,
+body.theme-dark .description, body.theme-dark .passage-label, body.theme-dark .nav-btn,
+body.theme-dark label, body.theme-dark .ans-item, body.theme-dark .attempt-tag,
+body.theme-dark .settings-label, body.theme-dark .about-body p, body.theme-dark .btn-opt,
+body.theme-dark .modal-header h2, body.theme-dark .modal-total, body.theme-dark .proof-note,
+body.theme-dark .modal-col-title, body.theme-dark .drop-header, body.theme-dark .menu-header h2,
+body.theme-dark .transcript-inner, body.theme-dark .transcript-inner p, body.theme-dark .badge,
+body.theme-dark .id-status, body.theme-dark #cmdFeedback, body.theme-dark .about-top h3,
+body.theme-dark .res-card {
+  color: #ffffff !important;
+}
+body.theme-dark .input-summary, body.theme-dark .input-match, body.theme-dark input[type=text] {
+  color: #ffffff !important; background: transparent !important;
+}
+body.theme-dark .btn-opt.selected, body.theme-dark .nav-btn.active-arrow { color: #60a5fa !important; }
+body.theme-sepia .btn-opt.selected, body.theme-sepia .nav-btn.active-arrow { color: #a13a1c !important; background: #f9e6c8 !important; border-color: #a13a1c !important; font-weight: 700 !important; }
+body.theme-dark .correct-neon { color:#0b3d19 !important; }
+body.theme-dark .wrong-row, body.theme-dark .correct-row { color: inherit !important; }
+
+body.theme-sepia .content-area, body.theme-sepia .content-row,
+body.theme-sepia .wrapper, body.theme-sepia .main,
+body.theme-sepia .left-side, body.theme-sepia .right-side,
+body.theme-sepia .transcript-col, body.theme-sepia .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-sepia header, body.theme-sepia .action-bar, body.theme-sepia .passage-nav {
+  background:#ede0c8 !important; border-color:#d4b896 !important;
+}
+body.theme-sepia .bubbles-area, body.theme-sepia .q-card, body.theme-sepia .modal-content,
+body.theme-sepia .modal-body, body.theme-sepia .about-card, body.theme-sepia .about-body,
+body.theme-sepia #sideMenu, body.theme-sepia .menu-body, body.theme-sepia .modal-footer,
+body.theme-sepia .drop-content, body.theme-sepia #teacherAnswerBox, body.theme-sepia #adminAnswerBox,
+body.theme-sepia #highlightMenu, body.theme-sepia #removeColor, body.theme-sepia #toast,
+body.theme-sepia .menu-footer, body.theme-sepia .modal-col, body.theme-sepia .proof-toast-box,
+body.theme-sepia .audio-player, body.theme-sepia .settings-panel {
+  background: var(--card) !important;
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <div class="logo"><i class="fas fa-feather-alt"></i> IELTS READING</div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="timer" id="timer">00:00</div>
+      <button id="proofingBtn" onclick="toggleProofing()">Proofing</button>
+      <button id="menuBtn">&#8942;</button>
+    </div>
+  </header>
+  <div class="main">
+    <div class="left-side" id="leftSide">
+      <div class="text-area" id="textArea"></div>
+      <div class="bubbles-area">
+        <div style="font-weight:800;color:#adb5bd;font-size:.7rem;text-transform:uppercase;margin-bottom:8px;">Questions Navigation</div>
+        <div class="bubbles-grid" id="bubbleGrid"></div>
+      </div>
+    </div>
+    <div class="divider" id="divider"></div>
+    <div class="right-side">
+      <div class="action-bar">
+        <div class="attempts-row" id="attemptsRow"></div>
+        <button class="btn-submit" onclick="submitTest()">SUBMIT ANSWERS</button>
+      </div>
+      <div class="questions-area" id="questionsArea"></div>
+      <div class="passage-nav"><span class="passage-label">Reading Passage 1</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <div class="modal-header"><h2 id="mScore">0 / 13</h2><div class="modal-total" id="modalTotal">Your score</div></div>
+    <div class="modal-body" id="modalBody">
+      <div class="res-list" id="resList1"></div>
+    </div>
+    <div class="modal-footer"><button class="btn-submit" style="width:100%;" onclick="closeModal()">CLOSE RESULTS</button></div>
+  </div>
+</div>
+
+<div id="aboutModal">
+  <div class="about-card">
+    <div class="about-top"><div class="about-avatar">&#127749;</div><h3>rasVet</h3><p>Creator &amp; Developer</p></div>
+    <div class="about-body"><p>IELTS Reading practice platform built by <strong>rasVet</strong>.</p><div class="about-tag">by: rasVet</div><button class="btn-close-about" onclick="closeAbout()">Close</button></div>
+  </div>
+</div>
+
+<div id="overlay"></div>
+<div id="sideMenu">
+  <div class="menu-header"><h2>Menu</h2><button id="closeMenuBtn">&#10005;</button></div>
+  <div class="menu-body">
+    <div class="settings-panel">
+      <div><div class="settings-label">Font Size</div><div class="font-slider-row"><span style="font-size:.75rem;">A</span><input type="range" id="fontSlider" min="12" max="22" value="16" step="1" oninput="changeFontSize(this.value)"><span style="font-size:1.1rem;">A</span></div><div style="text-align:center;font-size:.78rem;color:#adb5bd;margin-top:2px;" id="fontSizeLabel">16px</div></div>
+      <div><div class="settings-label">Theme</div><div class="theme-row"><button class="theme-btn active" id="themeLight" onclick="setTheme('light')"><span class="tb-icon">&#9728;&#65039;</span>Light</button><button class="theme-btn" id="themeDark" onclick="setTheme('dark')"><span class="tb-icon">&#127769;</span>Dark</button><button class="theme-btn" id="themeSepia" onclick="setTheme('sepia')"><span class="tb-icon">&#128214;</span>Sepia</button></div></div>
+      <button class="btn-about" onclick="openAbout()"><i class="fas fa-info-circle"></i> About</button>
+    </div>
+    <div class="menu-top-icon"><i class="fas fa-cog"></i></div>
+    <div class="menu-mid-row"><div class="menu-star">&#10047;</div><input type="text" class="menu-id-box" id="idInput" placeholder="Enter ID" maxlength="6" oninput="handleIdInput()"></div>
+    <div class="id-status" id="idStatus"></div>
+    <div id="teacherAnswerBox">
+      <div class="drop-header" onclick="toggleDropdown()"><span>&#128203; Answers P1</span><span id="dropArrow0">&#9660;</span></div>
+      <div class="drop-content" id="dropContent0"></div>
+    </div>
+    <div id="adminRow">
+      <div class="admin-mid-row"><div class="admin-slash-icon">/</div><input type="text" class="admin-cmd-box" id="cmdInput" placeholder="answers / autofill / more time"><button class="btn-run-cmd" onclick="runCommand()">Run</button></div>
+      <div id="cmdFeedback"></div>
+      <div id="adminAnswerBox" style="margin-top:10px;">
+        <div class="drop-header" onclick="toggleDropdown()"><span>&#128203; Answers P1</span><span id="dropArrow0b">&#9660;</span></div>
+        <div class="drop-content" id="dropContent0b"></div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-footer"><a href="https://t.me/English_Wikipedia" target="_blank" class="tg-link"><i class="fab fa-telegram-plane"></i> Telegram Channel</a></div>
+</div>
+
+<div id="highlightMenu" style="display:none;position:fixed;background:#fff;padding:8px;border-radius:20px;box-shadow:0 0 15px rgba(0,0,0,.2);z-index:99999;gap:8px;align-items:center;">
+  <div class="hlColor" data-color="#ff3131" style="background:#ff3131;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div class="hlColor" data-color="#ff7a00" style="background:#ff7a00;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div class="hlColor" data-color="#39FF14" style="background:#39FF14;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div class="hlColor" data-color="#007bff" style="background:#007bff;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div id="removeColor" style="width:28px;height:28px;border-radius:50%;background:white;border:2px solid #999;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;">&#10005;</div>
+</div>
+<div id="toast"></div>
+
+<script>
+const TEACHER_IDS_LIST=["004567","008245","009213"],ADMIN_ID_VAL="000000";
+
+const passage={
+  title:"The History of the Magnetic Compass",totalQ:13,
+  text:`<h1>The History of the Magnetic Compass</h1><p style="font-style:italic;color:#888;font-size:.88rem;margin-bottom:16px;">Reading Passage 2 &middot; Questions 1&ndash;13</p><p>The magnetic compass, one of the most important navigational instruments ever developed, is believed to have originated in China more than two thousand years ago, initially not as a tool for navigation but for geomancy, a practice concerned with harmonising structures and objects with their surrounding environment. Early Chinese diviners discovered that a naturally magnetised mineral known as lodestone, when suspended freely, would consistently align itself along a north-south axis.</p><p>It was not until several centuries later, during the Song Dynasty, that Chinese sailors began adapting this discovery for maritime navigation, using magnetised needles floating in bowls of water to determine direction when out of sight of land. This innovation proved especially valuable during long sea voyages, when overcast skies or nighttime travel made it impossible to navigate using the sun or stars alone.</p><p>Knowledge of the magnetic compass gradually spread westward, reaching the Islamic world and subsequently Europe by the twelfth century, where it was rapidly adopted by sailors navigating the Mediterranean. European navigators made several refinements to the design, including mounting the needle on a pivot rather than floating it in water, and later enclosing the needle within a protective case marked with a compass rose showing the cardinal directions.</p><p>The compass played a transformative role in the Age of Exploration, enabling European sailors to undertake long ocean voyages far from familiar coastlines with considerably greater confidence than had previously been possible. Alongside advances in shipbuilding and cartography, the compass was instrumental in making possible the transatlantic voyages of explorers such as Christopher Columbus, and later, extensive European trade and exploration across the globe.</p><p>Although modern sailors and pilots now rely primarily on satellite-based navigation systems for precise positioning, the magnetic compass has never been entirely abandoned. It remains a standard piece of equipment on ships and aircraft, valued precisely because it requires no electrical power or satellite signal to function, making it an essential backup in the event that electronic navigation systems fail.</p>`,
+  questionsHTML:`<div class="q-card"><span class="description">Questions 1&ndash;6 &middot; TRUE / FALSE / NOT GIVEN</span>
+<p>1. The magnetic compass was originally developed in China for navigation.</p>
+<div class="q-wrap" data-q="1"><span class="btn-opt" onclick="pick(1,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(1,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(1,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>2. Lodestone naturally aligns along a north-south axis when suspended freely.</p>
+<div class="q-wrap" data-q="2"><span class="btn-opt" onclick="pick(2,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(2,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(2,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>3. Chinese sailors began using compasses for navigation during the Song Dynasty.</p>
+<div class="q-wrap" data-q="3"><span class="btn-opt" onclick="pick(3,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(3,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(3,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>4. The compass reached Europe before it reached the Islamic world.</p>
+<div class="q-wrap" data-q="4"><span class="btn-opt" onclick="pick(4,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(4,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(4,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>5. European navigators mounted the compass needle on a pivot.</p>
+<div class="q-wrap" data-q="5"><span class="btn-opt" onclick="pick(5,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(5,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(5,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>6. Modern ships and aircraft no longer carry magnetic compasses at all.</p>
+<div class="q-wrap" data-q="6"><span class="btn-opt" onclick="pick(6,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(6,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(6,'NOT GIVEN',this)">NOT GIVEN</span></div>
+</div>
+<div class="q-card"><span class="description">Questions 7&ndash;9 &middot; Choose the correct letter A, B, C or D</span>
+<p>7. What was the compass originally used for in ancient China?</p>
+<div class="q-wrap" data-q="7"><span class="btn-opt" onclick="pick(7,'A',this)">A. maritime navigation</span><span class="btn-opt" onclick="pick(7,'B',this)">B. geomancy</span><span class="btn-opt" onclick="pick(7,'C',this)">C. satellite positioning</span><span class="btn-opt" onclick="pick(7,'D',this)">D. cartography</span></div>
+<p>8. Why was the compass particularly valuable during long sea voyages?</p>
+<div class="q-wrap" data-q="8"><span class="btn-opt" onclick="pick(8,'A',this)">A. it worked even when the sun or stars were not visible</span><span class="btn-opt" onclick="pick(8,'B',this)">B. it eliminated the need for shipbuilding</span><span class="btn-opt" onclick="pick(8,'C',this)">C. it required satellite signals</span><span class="btn-opt" onclick="pick(8,'D',this)">D. it replaced the need for sailors</span></div>
+<p>9. Why is the magnetic compass still used today, according to the passage?</p>
+<div class="q-wrap" data-q="9"><span class="btn-opt" onclick="pick(9,'A',this)">A. it is more accurate than satellite navigation</span><span class="btn-opt" onclick="pick(9,'B',this)">B. it requires no electrical power or satellite signal</span><span class="btn-opt" onclick="pick(9,'C',this)">C. it is cheaper than GPS devices</span><span class="btn-opt" onclick="pick(9,'D',this)">D. it is required by international law</span></div>
+</div>
+<div class="q-card"><span class="description">Questions 10&ndash;13 &middot; Complete the notes (NO MORE THAN TWO WORDS)</span>
+<p>Early Chinese diviners used a magnetised mineral called <input type="text" id="in10" class="input-summary" style="width:200px;" oninput="mark(10)"> .</p>
+<p>European sailors enclosed the compass needle within a protective case marked with a compass <input type="text" id="in11" class="input-summary" style="width:220px;" oninput="mark(11)"> .</p>
+<p>The compass helped make possible the transatlantic voyages of <input type="text" id="in12" class="input-summary" style="width:220px;" oninput="mark(12)"> .</p>
+<p>The compass acts as an essential backup if electronic navigation systems <input type="text" id="in13" class="input-summary" style="width:220px;" oninput="mark(13)"> .</p>
+</div>`,
+  correctKeys:{"1": "FALSE", "2": "TRUE", "3": "TRUE", "4": "FALSE", "5": "TRUE", "6": "FALSE", "7": "B", "8": "A", "9": "B", "10": "LODESTONE", "11": "ROSE", "12": "CHRISTOPHER COLUMBUS", "13": "FAIL"},
+  teacherAnswers:["1—FALSE", "2—TRUE", "3—TRUE", "4—FALSE", "5—TRUE", "6—FALSE", "7—B", "8—A", "9—B", "10—LODESTONE", "11—ROSE", "12—CHRISTOPHER COLUMBUS", "13—FAIL"]
+};
+
+let state={studentAns:{},solvedCorrect:{}};
+let totalSeconds=0,attemptCount=0,activeUserId=null,proofingMode=false,dropdownOpen=false;
+let pendingReveal=false;
+
+setInterval(()=>{totalSeconds++;if(proofingMode)return;let m=Math.floor(totalSeconds/60),s=totalSeconds%60;document.getElementById('timer').innerText=`${m<10?'0'+m:m}:${s<10?'0'+s:s}`;},1000);
+
+const divider=document.getElementById('divider'),leftSide=document.getElementById('leftSide');
+divider.onmousedown=()=>{document.onmousemove=e=>{let p=(e.clientX/window.innerWidth)*100;if(p>15&&p<85)leftSide.style.width=p+'%';};document.onmouseup=()=>document.onmousemove=null;};
+
+function loadPassage(){
+  document.getElementById('textArea').innerHTML=passage.text;
+  document.getElementById('questionsArea').innerHTML=passage.questionsHTML;
+  const grid=document.getElementById('bubbleGrid');grid.innerHTML='';
+  Object.keys(passage.correctKeys).map(Number).forEach(i=>{
+    let b=document.createElement('div');b.className='bubble';b.id='b'+i;b.innerText=i;
+    if(state.solvedCorrect[i])b.classList.add('solved');else if(state.studentAns[i])b.classList.add('active');
+    grid.appendChild(b);
+  });
+}
+
+function pick(q,v,el){
+  if(state.solvedCorrect[q])return;
+  state.studentAns[q]=v;
+  Array.from(el.parentNode.children).forEach(b=>b.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('b'+q).classList.add('active');
+}
+function mark(q){
+  if(state.solvedCorrect[q])return;
+  const el=document.getElementById('in'+q);
+  const val=el?el.value:'';
+  state.studentAns[q]=val.toUpperCase().trim()||undefined;
+  document.getElementById('b'+q).classList.toggle('active',val.trim()!=='');
+}
+
+function applyNeon(q,ok,reveal){
+  const key=passage.correctKeys[q];
+  const el=document.getElementById('in'+q);
+  if(el&&el.type!=='hidden'){
+    if(ok){el.classList.add('correct-neon');el.readOnly=true;}
+    else{
+      el.classList.add('wrong-neon');
+      if(reveal){
+        el.readOnly=true;
+        let hint=document.getElementById('hint'+q);
+        if(!hint){hint=document.createElement('span');hint.id='hint'+q;hint.className='correct-hint';el.insertAdjacentElement('afterend',hint);}
+        hint.innerText='Correct: '+key;
+      }
+    }
+  }else{
+    const wrap=document.querySelector('[data-q="'+q+'"]');
+    if(wrap)Array.from(wrap.children).forEach(btn=>{
+      const isSelected=btn.classList.contains('selected');
+      const isCorrectBtn=btn.innerText.trim().startsWith(key);
+      if(ok&&isSelected)btn.classList.add('correct-neon');
+      if(!ok&&isSelected)btn.classList.add('wrong-neon');
+      if(!ok&&reveal&&isCorrectBtn)btn.classList.add('correct-neon');
+    });
+  }
+  const b=document.getElementById('b'+q);if(b&&ok)b.classList.add('solved');
+}
+
+function submitTest(){
+  attemptCount++;const ts=document.getElementById('timer').innerText;
+  let score=0,resHtml='';const results=[];
+  Object.keys(passage.correctKeys).map(Number).forEach(i=>{
+    const el=document.getElementById('in'+i);
+    let ans=(state.studentAns[i]||(el&&el.type!=='hidden'?el.value:'')||'').toUpperCase().trim();
+    const ok=(ans===passage.correctKeys[i]);
+    if(ok){score++;state.solvedCorrect[i]=true;}
+    results.push({q:i,ok});
+    resHtml+=`<div class="res-card ${ok?'correct-row':'wrong-row'}"><span>Q${i}</span><span>${ok?'&#10003;':'&#10007;'}</span></div>`;
+  });
+  document.getElementById('attemptsRow').innerHTML+=`<div class="attempt-tag">#${attemptCount}: ${score}/${passage.totalQ} (${ts})</div>`;
+  document.getElementById('attemptsRow').scrollLeft=99999;
+
+  document.getElementById('mScore').innerText=`${score} / ${passage.totalQ}`;
+  document.getElementById('modalTotal').innerText='Your score';
+  document.getElementById('modalBody').innerHTML=`<div class="res-list" id="resList1">${resHtml}</div>`;
+
+  if(proofingMode){
+    pendingReveal=results;
+  }else{
+    results.forEach(r=>applyNeon(r.q,r.ok,false));
+    pendingReveal=null;
+  }
+  document.getElementById('modal').style.display='flex';
+}
+
+function closeModal(){
+  document.getElementById('modal').style.display='none';
+  if(proofingMode&&pendingReveal){
+    pendingReveal.forEach(r=>applyNeon(r.q,r.ok,true));
+    pendingReveal=null;
+    return;
+  }
+  document.querySelectorAll('.wrong-neon').forEach(el=>el.classList.remove('wrong-neon'));
+}
+
+document.getElementById('menuBtn').onclick=()=>{document.getElementById('sideMenu').classList.add('open');document.getElementById('overlay').classList.add('show');};
+document.getElementById('closeMenuBtn').onclick=closeMenu;
+document.getElementById('overlay').onclick=closeMenu;
+function closeMenu(){document.getElementById('sideMenu').classList.remove('open');document.getElementById('overlay').classList.remove('show');}
+function changeFontSize(v){document.documentElement.style.setProperty('--font-size',v+'px');document.getElementById('fontSizeLabel').innerText=v+'px';}
+function setTheme(t){
+  document.body.classList.remove('theme-dark','theme-sepia');
+  if(t==='dark')document.body.classList.add('theme-dark');
+  if(t==='sepia')document.body.classList.add('theme-sepia');
+  ['themeLight','themeDark','themeSepia'].forEach(id=>document.getElementById(id).classList.remove('active'));
+  document.getElementById({light:'themeLight',dark:'themeDark',sepia:'themeSepia'}[t]).classList.add('active');
+}
+function openAbout(){document.getElementById('aboutModal').classList.add('show');}
+function closeAbout(){document.getElementById('aboutModal').classList.remove('show');}
+
+function handleIdInput(){
+  const val=document.getElementById('idInput').value.trim();
+  const statusEl=document.getElementById('idStatus');
+  document.getElementById('teacherAnswerBox').style.display='none';
+  document.getElementById('adminRow').style.display='none';
+  statusEl.className='id-status';statusEl.innerText='';activeUserId=null;
+  dropdownOpen=false;
+  const c=document.getElementById('dropContent0');if(c)c.classList.remove('open');
+  const a=document.getElementById('dropArrow0');if(a)a.innerText='\u25bc';
+  if(val.length<6)return;
+  if(TEACHER_IDS_LIST.includes(val)){activeUserId='teacher';statusEl.className='id-status show ok';statusEl.innerText='Access granted \u2014 Teacher';document.getElementById('teacherAnswerBox').style.display='block';fillTeacherAnswers();document.getElementById('idInput').style.display='none';document.querySelector('.menu-star').style.display='none';}
+  else if(val===ADMIN_ID_VAL){activeUserId='admin';statusEl.className='id-status show ok';statusEl.innerText='Developer access';document.getElementById('adminRow').style.display='block';fillTeacherAnswers();}
+  else{statusEl.className='id-status show err';statusEl.innerText='Invalid ID';}
+}
+function fillTeacherAnswers(){
+  const html=passage.teacherAnswers.map(v=>`<div class="ans-item">${v}</div>`).join('');
+  const el0=document.getElementById('dropContent0');if(el0)el0.innerHTML=html;
+  const el0b=document.getElementById('dropContent0b');if(el0b)el0b.innerHTML=html;
+}
+function toggleDropdown(){
+  dropdownOpen=!dropdownOpen;
+  ['dropContent0','dropContent0b'].forEach(id=>{const c=document.getElementById(id);if(c)c.classList.toggle('open',dropdownOpen);});
+  ['dropArrow0','dropArrow0b'].forEach(id=>{const a=document.getElementById(id);if(a)a.innerText=dropdownOpen?'\u25b2':'\u25bc';});
+}
+
+function runCommand(){
+  if(activeUserId!=='admin')return;
+  const cmd=document.getElementById('cmdInput').value.trim().toLowerCase();
+  const fb=document.getElementById('cmdFeedback');
+  if(cmd==='autofill'){
+    Object.keys(passage.correctKeys).map(Number).forEach(i=>{
+      if(state.solvedCorrect[i])return;const key=passage.correctKeys[i];state.studentAns[i]=key;
+      const el=document.getElementById('in'+i);
+      if(el&&el.type!=='hidden'){el.value=key;}
+      else{const wrap=document.querySelector('[data-q="'+i+'"]');if(wrap)Array.from(wrap.children).forEach(btn=>{btn.classList.remove('selected');if(btn.innerText.trim().startsWith(key))btn.classList.add('selected');});}
+      const b=document.getElementById('b'+i);if(b)b.classList.add('active');
+    });
+    fb.className='show ok';fb.style.display='block';fb.innerText='Autofilled';showToast('Autofilled');
+  } else if(cmd==='answers'){
+    Object.keys(passage.correctKeys).map(Number).forEach(i=>{
+      if(state.solvedCorrect[i])return;const key=passage.correctKeys[i];state.studentAns[i]=key;
+      const el=document.getElementById('in'+i);
+      if(el&&el.type!=='hidden'){el.value=key;el.style.color='#007bff';}
+      else{const wrap=document.querySelector('[data-q="'+i+'"]');if(wrap)Array.from(wrap.children).forEach(btn=>{if(btn.innerText.trim().startsWith(key)){btn.style.background='#eef2ff';btn.style.borderColor='#007bff';btn.style.color='#007bff';}});}
+    });
+    fb.className='show ok';fb.style.display='block';fb.innerText='Answers revealed';showToast('Answers shown');
+  } else if(cmd==='more time'){
+    if(totalSeconds<=9*60){totalSeconds=0;document.getElementById('timer').innerText='00:00';fb.innerText='Reset to 0:00';showToast('Timer reset');}
+    else{totalSeconds=Math.max(0,totalSeconds-600);let m=Math.floor(totalSeconds/60),sv=totalSeconds%60;document.getElementById('timer').innerText=`${m<10?'0'+m:m}:${sv<10?'0'+sv:sv}`;fb.innerText='\u221210 min';showToast('\u221210 minutes');}
+    fb.className='show ok';fb.style.display='block';
+  } else{fb.className='show err';fb.style.display='block';fb.innerText='Unknown command';showToast('Unknown: '+cmd);}
+  document.getElementById('cmdInput').value='';
+}
+document.getElementById('cmdInput').addEventListener('keydown',e=>{if(e.key==='Enter')runCommand();});
+
+function toggleProofing(){if(proofingMode)return;proofingMode=true;document.getElementById('proofingBtn').classList.add('active');document.getElementById('timer').innerText='\u221e';}
+
+let selectedText=null;
+document.addEventListener('mouseup',e=>{const sel=window.getSelection();if(sel.toString().trim().length>0){selectedText=sel.getRangeAt(0);const m=document.getElementById('highlightMenu');m.style.display='flex';m.style.left=e.pageX+'px';m.style.top=(e.pageY+15)+'px';}else document.getElementById('highlightMenu').style.display='none';});
+document.querySelectorAll('.hlColor').forEach(btn=>btn.addEventListener('click',function(){if(!selectedText)return;const span=document.createElement('span');span.style.backgroundColor=this.dataset.color;try{selectedText.surroundContents(span);}catch(e){}document.getElementById('highlightMenu').style.display='none';window.getSelection().removeAllRanges();}));
+document.getElementById('removeColor').addEventListener('click',()=>{if(!selectedText)return;let node=selectedText.startContainer;while(node&&node.nodeType!==1)node=node.parentNode;if(node&&node.tagName==='SPAN')node.outerHTML=node.innerHTML;document.getElementById('highlightMenu').style.display='none';window.getSelection().removeAllRanges();});
+
+function showToast(msg){const t=document.getElementById('toast');t.innerText=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
+loadPassage();
+</script>
+</body>
+</html>

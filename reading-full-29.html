@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Reading: Mock Test 29</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root{--primary:#007bff;--bg:#f8f9fa;--card:#fff;--border:#e0e0e0;--neon-green:#39FF14;--neon-red:#ff3131;--dark:#2d3436;--text:#444;--font-size:1.05rem;}
+body.theme-dark{--bg:#1a1a2e;--card:#16213e;--border:#2d3561;--text:#c9d1d9;--dark:#e2e8f0;}
+body.theme-dark header,body.theme-dark .action-bar{background:#0f3460;}
+body.theme-dark .left-side,body.theme-dark .right-side{background:var(--bg);}
+body.theme-dark .q-card{background:var(--card);border-color:var(--border);}
+body.theme-dark .btn-opt{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-dark .timer{background:#0f3460;border-color:#2d3561;color:#60a5fa;}
+body.theme-dark .text-area{color:var(--text);background:var(--bg);}
+body.theme-dark .text-area h1{color:#e2e8f0;}
+body.theme-dark th{background:#0f3460;color:#94a3b8;}
+body.theme-dark td{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-dark .settings-panel{background:#0f3460;border-color:#2d3561;}
+body.theme-dark #sideMenu{background:#16213e;}
+body.theme-dark .menu-body{background:#16213e;}
+body.theme-dark .bubbles-area{background:var(--card);border-color:var(--border);}
+body.theme-dark .divider{background:#0f3460;border-color:var(--border);}
+body.theme-dark .input-summary{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-dark select.input-summary{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-dark .menu-id-box,body.theme-dark .admin-cmd-box{background:#0f3460;color:#e2e8f0;border-color:#2d3561;}
+body.theme-dark .menu-star,body.theme-dark .menu-top-icon,body.theme-dark .admin-slash-icon{background:#0f3460;border-color:#2d3561;color:#94a3b8;}
+body.theme-dark #teacherAnswerBox{background:#0f3460;border-color:#2d3561;}
+body.theme-dark #teacherAnswerBox .drop-header{color:#e2e8f0;}
+body.theme-dark #adminAnswerBox .drop-header{color:#e2e8f0;}
+body.theme-dark .ans-item{color:#94a3b8;border-color:#2d3561;}
+body.theme-dark .description{color:#e2e8f0;}
+body.theme-dark .attempt-tag{background:#0f3460;color:#94a3b8;border-color:#2d3561;}
+body.theme-dark .settings-label{color:#94a3b8;}
+body.theme-dark #menuBtn{background:#0f3460;border-color:#2d3561;color:#94a3b8;}
+body.theme-dark .theme-btn{background:#16213e;border-color:#2d3561;color:#94a3b8;}
+body.theme-dark .theme-btn.active{background:#0f3460;border-color:var(--primary);color:var(--primary);}
+body.theme-dark .btn-about{background:#16213e;border-color:#2d3561;color:#94a3b8;}
+body.theme-dark .passage-nav{background:#0f3460;border-color:#2d3561;}
+body.theme-dark .nav-btn{background:#16213e;border-color:#2d3561;color:#94a3b8;}
+body.theme-dark .nav-btn.active-arrow{color:#e2e8f0;border-color:#e2e8f0;}
+body.theme-dark .passage-label{color:#94a3b8;}
+body.theme-dark .modal-content{background:var(--card);}
+body.theme-dark .modal-body{background:var(--card);}
+body.theme-dark .modal-footer{background:#0f3460;}
+body.theme-dark .modal-col-title{background:#0f3460;color:#94a3b8;}
+body.theme-dark .about-card{background:var(--card);}
+body.theme-dark .about-body{background:var(--card);}
+body.theme-dark .about-body p{color:#94a3b8;}
+body.theme-dark .about-tag{background:#0f3460;color:#60a5fa;}
+body.theme-dark .heading-drop{border-color:#2d3561;background:#0f3460;}
+body.theme-dark .drop-placeholder{color:#4a5568;}
+body.theme-dark .menu-footer{background:#16213e;border-color:#2d3561;}
+body.theme-dark .tg-link{background:#0f3460;color:#60a5fa;}
+body.theme-sepia{--bg:#f4ecd8;--card:#fdf6e3;--border:#d4b896;--text:#5c4a1e;--dark:#3e2e10;}
+body.theme-sepia header,body.theme-sepia .action-bar{background:#ede0c8;}
+body.theme-sepia .left-side,body.theme-sepia .right-side{background:var(--bg);}
+body.theme-sepia .q-card{background:var(--card);border-color:var(--border);}
+body.theme-sepia .timer{background:#ede0c8;border-color:#d4b896;color:#7b5e2a;}
+body.theme-sepia .text-area{color:var(--text);background:var(--bg);}
+body.theme-sepia .settings-panel{background:#ede0c8;border-color:#d4b896;}
+body.theme-sepia .bubbles-area{background:var(--card);border-color:var(--border);}
+body.theme-sepia .btn-opt{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-sepia select.input-summary{background:var(--card);color:var(--text);}
+body.theme-sepia .passage-nav{background:#ede0c8;border-color:var(--border);}
+body.theme-sepia .nav-btn{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia .nav-btn.active-arrow{color:var(--dark);border-color:var(--dark);}
+body.theme-sepia .passage-label{color:var(--text);}
+body.theme-sepia .modal-content{background:var(--card);}
+body.theme-sepia .modal-body{background:var(--card);}
+body.theme-sepia .modal-footer{background:#ede0c8;}
+body.theme-sepia .modal-col-title{background:#ede0c8;color:#7b5e2a;}
+body.theme-sepia .about-card{background:var(--card);}
+body.theme-sepia .about-body{background:var(--card);}
+body.theme-sepia .about-body p{color:#7b5e2a;}
+body.theme-sepia #menuBtn{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia .theme-btn{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia .theme-btn.active{background:#ede0c8;border-color:#7b5e2a;color:#7b5e2a;}
+body.theme-sepia .btn-about{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia #sideMenu{background:var(--card);}
+body.theme-sepia .menu-body{background:var(--card);}
+body.theme-sepia .menu-footer{background:#ede0c8;border-color:var(--border);}
+body.theme-sepia .tg-link{background:#e8d5b5;color:#7b5e2a;}
+body.theme-sepia .menu-top-icon{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia .menu-star{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia .menu-id-box{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-sepia td{background:var(--card);color:var(--text);}
+body.theme-sepia th{background:#ede0c8;color:#7b5e2a;}
+body.theme-sepia .heading-drop{border-color:var(--border);background:var(--card);}
+body.theme-sepia #teacherAnswerBox{background:#ede0c8;border-color:var(--border);}
+body.theme-sepia .ans-item{color:var(--text);border-color:var(--border);}
+body.theme-sepia .settings-label{color:#7b5e2a;}
+body.theme-sepia .attempt-tag{background:var(--card);border-color:var(--border);color:var(--text);}
+*{box-sizing:border-box;}
+body,html{margin:0;padding:0;height:100%;font-family:'Inter','Segoe UI',sans-serif;overflow:hidden;background:var(--bg);transition:background .3s,color .3s;}
+.wrapper{display:flex;flex-direction:column;height:100vh;}
+header{height:65px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 25px;flex-shrink:0;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:background .3s;}
+.logo{font-weight:800;font-size:1.2rem;color:var(--dark);display:flex;align-items:center;gap:10px;}
+.logo i{color:var(--primary);}
+.timer{font-weight:bold;background:#eef2ff;padding:8px 25px;border-radius:30px;border:1px solid #d1d9ff;color:var(--primary);font-size:1.2rem;min-width:110px;text-align:center;transition:.3s;}
+#menuBtn{width:38px;height:38px;border-radius:50%;border:2px solid #dee2e6;background:#fff;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#495057;transition:.2s;}
+#menuBtn:hover{background:#f0f7ff;border-color:var(--primary);color:var(--primary);}
+#proofingBtn{padding:8px 18px;border-radius:30px;border:2px solid #007bff;background:#007bff;color:#fff;font-weight:700;font-size:.85rem;cursor:pointer;transition:.2s;}
+#proofingBtn.active{background:#fff;color:#007bff;border-color:#007bff;}
+.main{display:flex;flex:1;overflow:hidden;}
+.left-side{width:50%;display:flex;flex-direction:column;background:#fff;border-right:1px solid var(--border);}
+.text-area{flex:1;overflow-y:auto;padding:40px;line-height:1.8;color:var(--text);font-size:var(--font-size);transition:font-size .2s,color .3s;}
+.text-area h1{color:var(--dark);font-size:1.8rem;margin-bottom:8px;}
+.bubbles-area{height:100px;border-top:1px solid var(--border);background:#fff;padding:15px 25px;overflow-y:auto;flex-shrink:0;transition:background .3s;}
+.bubbles-grid{display:flex;flex-wrap:wrap;gap:10px;}
+.bubble{width:36px;height:36px;border-radius:50%;border:2px solid #dee2e6;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#adb5bd;font-size:.9rem;transition:.3s;}
+.bubble.active{border-color:var(--primary);color:var(--primary);background:#eef2ff;}
+.bubble.solved{background:var(--primary);color:#fff;border-color:var(--primary);}
+.divider{width:12px;background:#f1f3f5;cursor:col-resize;flex-shrink:0;position:relative;border-left:1px solid #e9ecef;border-right:1px solid #e9ecef;}
+.divider::after{content:'||';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#adb5bd;font-size:.8rem;letter-spacing:1px;}
+.right-side{flex:1;display:flex;flex-direction:column;background:var(--bg);min-width:300px;}
+.action-bar{background:#fff;border-bottom:1px solid var(--border);padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:15px;height:65px;flex-shrink:0;transition:background .3s;}
+.attempts-row{display:flex;gap:10px;overflow-x:auto;flex:1;min-width:0;align-items:center;height:100%;}
+.attempt-tag{background:#f8f9fa;border:1px solid #e9ecef;padding:8px 15px;border-radius:8px;font-size:.85rem;white-space:nowrap;color:#495057;font-weight:600;}
+.btn-submit{background:var(--primary);color:#fff;border:none;padding:12px 30px;border-radius:8px;font-weight:700;cursor:pointer;transition:.2s;box-shadow:0 4px 15px rgba(0,123,255,.3);}
+.btn-submit:hover{background:#0069d9;transform:translateY(-1px);}
+.questions-area{flex:1;overflow-y:auto;padding:30px;font-size:var(--font-size);transition:font-size .2s;}
+.q-card{background:#fff;padding:25px 30px;border-radius:12px;border:1px solid #e9ecef;margin-bottom:25px;box-shadow:0 4px 6px rgba(0,0,0,.02);transition:background .3s;}
+.description{font-weight:800;color:#2d3436;margin-bottom:16px;display:block;font-size:.88rem;text-transform:uppercase;letter-spacing:.5px;border-left:5px solid var(--primary);padding-left:15px;}
+.btn-opt{padding:10px 18px;border:1.5px solid #dee2e6;border-radius:8px;cursor:pointer;margin:5px 8px 5px 0;display:inline-block;background:#fff;font-weight:500;transition:.2s;}
+.btn-opt.selected{border-color:var(--primary);color:var(--primary);background:#f0f7ff;}
+.correct-neon{border:2px solid var(--neon-green)!important;box-shadow:0 0 15px var(--neon-green)!important;background-color:#fafff5!important;pointer-events:none;}
+.wrong-neon{border:2px solid var(--neon-red)!important;box-shadow:0 0 15px var(--neon-red)!important;}
+table{width:100%;border-collapse:collapse;margin-top:10px;}
+th,td{border:1px solid #eee;padding:10px 14px;text-align:left;}
+th{background:#f8f9fa;color:#6c757d;font-size:.8rem;text-transform:uppercase;font-weight:700;}
+.input-summary{border:none;border-bottom:2px solid #dee2e6;width:150px;text-align:center;outline:none;font-weight:700;padding:5px;transition:.3s;background:transparent;}
+.heading-chip{display:inline-flex;align-items:center;gap:7px;background:#2d3436;color:#fff;padding:7px 12px;border-radius:8px;font-size:.82rem;font-weight:600;cursor:grab;user-select:none;transition:opacity .2s;}
+.heading-chip.used{background:#adb5bd;color:#f8f9fa;cursor:not-allowed;pointer-events:none;opacity:.55;}
+.hnum{background:rgba(255,255,255,.18);border-radius:5px;padding:1px 6px;font-weight:800;font-size:.78rem;}
+.heading-drop{min-height:42px;border:2px dashed #ced4da;border-radius:8px;padding:6px 10px;display:flex;align-items:center;transition:border-color .2s,background .2s;}
+.heading-drop.over{border-color:#007bff;background:#eef2ff;}
+.drop-placeholder{color:#adb5bd;font-size:.82rem;font-style:italic;}
+.drop-filled-chip{display:inline-flex;align-items:center;gap:7px;background:#495057;color:#fff;padding:6px 12px;border-radius:7px;font-size:.82rem;font-weight:600;cursor:grab;user-select:none;}
+.drop-filled-chip:active{cursor:grabbing;}
+.drop-filled-chip .hnum{background:rgba(255,255,255,.2);border-radius:4px;padding:1px 5px;font-weight:800;}
+.passage-nav{display:flex;align-items:center;justify-content:center;gap:16px;padding:14px 20px;border-top:1px solid #e9ecef;background:#fff;flex-shrink:0;transition:background .3s;}
+.nav-btn{width:40px;height:40px;border-radius:50%;border:2px solid #dee2e6;background:#fff;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;font-weight:bold;transition:.2s;}
+.nav-btn:hover:not(.disabled){background:#eef2ff;border-color:var(--primary);color:var(--primary);}
+.nav-btn.disabled{color:#dee2e6;border-color:#f1f3f5;cursor:default;pointer-events:none;}
+.nav-btn.active-arrow{color:#2d3436;border-color:#2d3436;}
+.passage-label{font-weight:700;font-size:.9rem;color:#495057;min-width:100px;text-align:center;}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:1000;justify-content:center;align-items:center;backdrop-filter:blur(5px);}
+.modal-content{background:#fff;border-radius:20px;width:95vw;max-width:1100px;text-align:center;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,.4);animation:modalIn .3s cubic-bezier(.34,1.56,.64,1);max-height:90vh;display:flex;flex-direction:column;}
+@keyframes modalIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-header{background:var(--dark);color:#fff;padding:20px 30px;flex-shrink:0;}
+.modal-header h2{margin:0;font-size:2rem;font-weight:900;}
+.modal-total{font-size:1rem;opacity:.8;margin-top:4px;}
+.modal-body{padding:20px;background:#fff;flex:1;overflow:hidden;}
+.modal-cols{display:flex;gap:12px;height:100%;max-height:55vh;}
+.modal-col{flex:1;display:flex;flex-direction:column;min-width:0;}
+.modal-col-title{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:#6c757d;margin-bottom:8px;text-align:center;padding:6px;background:#f8f9fa;border-radius:8px;}
+.res-list{text-align:left;overflow-y:auto;flex:1;}
+.res-card{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;margin-bottom:6px;border-radius:8px;font-weight:700;font-size:.82rem;border:2px solid transparent;transition:.3s;}
+.res-card.correct-row{border-color:var(--neon-green);box-shadow:0 0 8px var(--neon-green);background:#fafff5;color:#2d6a4f;}
+.res-card.wrong-row{border-color:var(--neon-red);box-shadow:0 0 8px var(--neon-red);background:#fff5f5;color:#a4161a;}
+.modal-footer{padding:16px 25px;background:#f8f9fa;flex-shrink:0;}
+#overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:none;z-index:1500;backdrop-filter:blur(2px);}
+#overlay.show{display:block;}
+#sideMenu{position:fixed;top:0;right:-26%;width:25%;height:100%;background:#fff;z-index:1600;transition:right .3s cubic-bezier(.4,0,.2,1);padding:0;box-shadow:-5px 0 30px rgba(0,0,0,.2);display:flex;flex-direction:column;overflow:hidden;}
+#sideMenu.open{right:0;}
+.menu-header{background:var(--dark);color:#fff;padding:25px 20px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.menu-header h2{margin:0;font-size:1.3rem;font-weight:800;}
+#closeMenuBtn{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:0;}
+.menu-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px;}
+.settings-panel{background:#f8f9fa;border:1px solid #e9ecef;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:14px;transition:background .3s;}
+.settings-label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#6c757d;margin-bottom:4px;}
+.font-slider-row{display:flex;align-items:center;gap:10px;}
+.font-slider-row span{font-size:.8rem;color:#adb5bd;min-width:18px;text-align:center;}
+input[type=range]{flex:1;-webkit-appearance:none;height:4px;border-radius:4px;background:#dee2e6;outline:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--primary);cursor:pointer;box-shadow:0 2px 6px rgba(0,123,255,.4);}
+.theme-row{display:flex;gap:8px;}
+.theme-btn{flex:1;padding:9px 6px;border-radius:10px;border:2px solid #dee2e6;cursor:pointer;font-size:.78rem;font-weight:700;transition:.2s;background:#fff;color:#495057;text-align:center;}
+.theme-btn:hover{border-color:var(--primary);color:var(--primary);}
+.theme-btn.active{border-color:var(--primary);background:#eef2ff;color:var(--primary);}
+.theme-btn .tb-icon{font-size:1.1rem;display:block;margin-bottom:3px;}
+.btn-about{width:100%;padding:11px;border-radius:10px;border:2px solid #dee2e6;background:#fff;cursor:pointer;font-weight:700;font-size:.85rem;color:#495057;display:flex;align-items:center;justify-content:center;gap:8px;transition:.2s;}
+.btn-about:hover{border-color:var(--primary);color:var(--primary);background:#eef2ff;}
+#aboutModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:2000;justify-content:center;align-items:center;backdrop-filter:blur(4px);}
+#aboutModal.show{display:flex;}
+.about-card{background:#fff;border-radius:20px;width:340px;max-width:90%;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.35);animation:modalIn .3s cubic-bezier(.34,1.56,.64,1);text-align:center;}
+.about-top{background:linear-gradient(135deg,#007bff,#0056cc);padding:30px 20px 25px;color:#fff;}
+.about-avatar{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.25);border:3px solid rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 12px;}
+.about-top h3{margin:0 0 4px;font-size:1.4rem;font-weight:900;}
+.about-top p{margin:0;opacity:.8;font-size:.85rem;}
+.about-body{padding:20px;}
+.about-body p{color:#6c757d;font-size:.88rem;line-height:1.6;margin:0 0 14px;}
+.about-tag{display:inline-block;background:#eef2ff;color:var(--primary);border-radius:20px;padding:6px 16px;font-weight:700;font-size:.85rem;margin-bottom:16px;}
+.btn-close-about{width:100%;padding:12px;background:var(--primary);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;font-size:.9rem;}
+.menu-top-icon{width:44px;height:44px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#495057;cursor:pointer;transition:.2s;align-self:flex-start;}
+.menu-top-icon:hover{background:#eef2ff;border-color:var(--primary);color:var(--primary);}
+.menu-mid-row{display:flex;align-items:center;gap:10px;}
+.menu-star{width:44px;height:44px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#495057;font-weight:bold;flex-shrink:0;}
+.menu-id-box{flex:1;border:2px solid #dee2e6;border-radius:12px;padding:10px 14px;font-size:1rem;font-weight:600;outline:none;transition:border-color .2s;letter-spacing:2px;}
+.menu-id-box:focus{border-color:var(--primary);}
+.menu-id-box::placeholder{letter-spacing:0;font-weight:400;color:#adb5bd;}
+.id-status{font-size:.82rem;color:#adb5bd;padding-left:4px;display:none;}
+.id-status.show{display:block;}
+.id-status.ok{color:#2d6a4f;}
+.id-status.err{color:#a4161a;}
+#teacherAnswerBox{background:#f8f9fa;border:1px solid #dee2e6;border-radius:12px;padding:12px;display:none;}
+#teacherAnswerBox .drop-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:.9rem;color:var(--dark);}
+#teacherAnswerBox .drop-content{max-height:180px;overflow-y:auto;margin-top:10px;display:none;}
+#teacherAnswerBox .drop-content.open{display:block;}
+.ans-item{padding:8px 10px;border-radius:8px;font-size:.85rem;font-weight:600;color:#495057;border-bottom:1px solid #e9ecef;}
+.ans-item:last-child{border-bottom:none;}
+#adminRow{display:none;margin-top:4px;}
+.admin-mid-row{display:flex;align-items:center;gap:10px;}
+.admin-slash-icon{width:44px;height:44px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#495057;font-weight:bold;flex-shrink:0;}
+.admin-cmd-box{flex:1;border:2px solid #dee2e6;border-radius:12px;padding:10px 14px;font-size:.95rem;font-weight:600;outline:none;transition:border-color .2s;}
+.admin-cmd-box:focus{border-color:#ff3131;}
+.admin-cmd-box::placeholder{font-weight:400;color:#adb5bd;}
+.btn-run-cmd{padding:10px 16px;background:var(--dark);color:#fff;border:none;border-radius:10px;cursor:pointer;font-weight:700;font-size:.85rem;transition:.2s;}
+.btn-run-cmd:hover{background:#ff3131;}
+#cmdFeedback{font-size:.82rem;padding-left:4px;color:#adb5bd;display:none;}
+#cmdFeedback.show{display:block;}
+#cmdFeedback.ok{color:#2d6a4f;}
+#cmdFeedback.err{color:#a4161a;}
+#adminAnswerBox .drop-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:.9rem;color:var(--dark);padding:6px 0;}
+#adminAnswerBox .drop-content{max-height:160px;overflow-y:auto;margin-top:6px;display:none;}
+#adminAnswerBox .drop-content.open{display:block;}
+.menu-footer{padding:15px 20px;border-top:1px solid #e9ecef;text-align:center;flex-shrink:0;}
+.tg-link{display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-weight:700;font-size:.9rem;text-decoration:none;padding:10px 18px;border-radius:10px;background:#eef2ff;transition:.2s;}
+.tg-link:hover{background:#d1d9ff;}
+
+@keyframes flashText{0%{color:#fff;text-shadow:-4px -4px 0 #000,4px -4px 0 #000,-4px 4px 0 #000,4px 4px 0 #000,0 0 20px #000}50%{color:#000;text-shadow:-4px -4px 0 #fff,4px -4px 0 #fff,-4px 4px 0 #fff,4px 4px 0 #fff,0 0 20px #fff}}
+#highlightMenu{display:none;position:fixed;background:#fff;padding:8px;border-radius:20px;box-shadow:0 0 15px rgba(0,0,0,.2);z-index:99999;gap:8px;align-items:center;}
+.hlColor{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;}
+#removeColor{width:28px;height:28px;border-radius:50%;background:white;border:2px solid #999;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;}
+#toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--dark);color:#fff;padding:12px 24px;border-radius:30px;font-weight:700;font-size:.9rem;z-index:9999;transition:transform .3s;box-shadow:0 5px 20px rgba(0,0,0,.3);}
+#toast.show{transform:translateX(-50%) translateY(0);}
+
+/* === universal theme & readability fixes (auto-appended) === */
+#sideMenu{ will-change: right; }
+#overlay, #highlightMenu, .modal { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+
+body.theme-dark { background: var(--bg) !important; }
+body.theme-dark .content-area, body.theme-dark .content-row,
+body.theme-dark .wrapper, body.theme-dark .main,
+body.theme-dark .left-side, body.theme-dark .right-side,
+body.theme-dark .transcript-col, body.theme-dark .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-dark header, body.theme-dark .action-bar, body.theme-dark .passage-nav {
+  background: #0f3460 !important; border-color:#2d3561 !important;
+}
+body.theme-dark .bubbles-area, body.theme-dark .q-card, body.theme-dark .modal-content,
+body.theme-dark .modal-body, body.theme-dark .about-card, body.theme-dark .about-body,
+body.theme-dark #sideMenu, body.theme-dark .menu-body, body.theme-dark .modal-footer,
+body.theme-dark .drop-content, body.theme-dark #teacherAnswerBox, body.theme-dark #adminAnswerBox,
+body.theme-dark #highlightMenu, body.theme-dark #removeColor, body.theme-dark #toast,
+body.theme-dark .menu-footer, body.theme-dark .modal-col, body.theme-dark .proof-toast-box,
+body.theme-dark .audio-player, body.theme-dark .settings-panel {
+  background: var(--card) !important;
+}
+body.theme-dark, body.theme-dark .text-area, body.theme-dark .questions-area,
+body.theme-dark .q-card, body.theme-dark .q-card p, body.theme-dark .q-card li,
+body.theme-dark .description, body.theme-dark .passage-label, body.theme-dark .nav-btn,
+body.theme-dark label, body.theme-dark .ans-item, body.theme-dark .attempt-tag,
+body.theme-dark .settings-label, body.theme-dark .about-body p, body.theme-dark .btn-opt,
+body.theme-dark .modal-header h2, body.theme-dark .modal-total, body.theme-dark .proof-note,
+body.theme-dark .modal-col-title, body.theme-dark .drop-header, body.theme-dark .menu-header h2,
+body.theme-dark .transcript-inner, body.theme-dark .transcript-inner p, body.theme-dark .badge,
+body.theme-dark .id-status, body.theme-dark #cmdFeedback, body.theme-dark .about-top h3,
+body.theme-dark .res-card {
+  color: #ffffff !important;
+}
+body.theme-dark .input-summary, body.theme-dark .input-match, body.theme-dark input[type=text] {
+  color: #ffffff !important; background: transparent !important;
+}
+body.theme-dark .btn-opt.selected, body.theme-dark .nav-btn.active-arrow { color: #60a5fa !important; }
+body.theme-sepia .btn-opt.selected, body.theme-sepia .nav-btn.active-arrow { color: #a13a1c !important; background: #f9e6c8 !important; border-color: #a13a1c !important; font-weight: 700 !important; }
+body.theme-dark .correct-neon { color:#0b3d19 !important; }
+body.theme-dark .wrong-row, body.theme-dark .correct-row { color: inherit !important; }
+
+body.theme-sepia .content-area, body.theme-sepia .content-row,
+body.theme-sepia .wrapper, body.theme-sepia .main,
+body.theme-sepia .left-side, body.theme-sepia .right-side,
+body.theme-sepia .transcript-col, body.theme-sepia .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-sepia header, body.theme-sepia .action-bar, body.theme-sepia .passage-nav {
+  background:#ede0c8 !important; border-color:#d4b896 !important;
+}
+body.theme-sepia .bubbles-area, body.theme-sepia .q-card, body.theme-sepia .modal-content,
+body.theme-sepia .modal-body, body.theme-sepia .about-card, body.theme-sepia .about-body,
+body.theme-sepia #sideMenu, body.theme-sepia .menu-body, body.theme-sepia .modal-footer,
+body.theme-sepia .drop-content, body.theme-sepia #teacherAnswerBox, body.theme-sepia #adminAnswerBox,
+body.theme-sepia #highlightMenu, body.theme-sepia #removeColor, body.theme-sepia #toast,
+body.theme-sepia .menu-footer, body.theme-sepia .modal-col, body.theme-sepia .proof-toast-box,
+body.theme-sepia .audio-player, body.theme-sepia .settings-panel {
+  background: var(--card) !important;
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <div class="logo"><i class="fas fa-feather-alt"></i> IELTS READING</div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="timer" id="timer">00:00</div>
+      <button id="proofingBtn" onclick="toggleProofing()">Proofing</button>
+      <button id="menuBtn">⋮</button>
+    </div>
+  </header>
+  <div class="main">
+    <div class="left-side" id="leftSide">
+      <div class="text-area" id="textArea"></div>
+      <div class="bubbles-area">
+        <div style="font-weight:800;color:#adb5bd;font-size:.7rem;text-transform:uppercase;margin-bottom:8px;">Questions Navigation</div>
+        <div class="bubbles-grid" id="bubbleGrid"></div>
+      </div>
+    </div>
+    <div class="divider" id="divider"></div>
+    <div class="right-side">
+      <div class="action-bar">
+        <div class="attempts-row" id="attemptsRow"></div>
+        <button class="btn-submit" onclick="submitTest()">SUBMIT ANSWERS</button>
+      </div>
+      <div class="questions-area" id="questionsArea"></div>
+      <div class="passage-nav">
+        <button class="nav-btn disabled" id="navLeft" onclick="goPassage(-1)">&#8592;</button>
+        <span class="passage-label" id="passageLabel">Passage 1 / 3</span>
+        <button class="nav-btn active-arrow" id="navRight" onclick="goPassage(1)">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <div class="modal-header"><h2 id="mScore">0 / 40</h2><div class="modal-total" id="modalTotal">Total score across all passages</div></div>
+    <div class="modal-body">
+      <div class="modal-cols">
+        <div class="modal-col"><div class="modal-col-title">📖 Passage 1 — Twin Studies<br><span id="p1score" style="color:#007bff;">0/12</span></div><div class="res-list" id="resList1"></div></div>
+        <div class="modal-col"><div class="modal-col-title">📖 Passage 2 — Torch Relay<br><span id="p2score" style="color:#007bff;">0/15</span></div><div class="res-list" id="resList2"></div></div>
+        <div class="modal-col"><div class="modal-col-title">📖 Passage 3 — Hurricane<br><span id="p3score" style="color:#007bff;">0/13</span></div><div class="res-list" id="resList3"></div></div>
+      </div>
+    </div>
+    <div class="modal-footer"><button class="btn-submit" style="width:100%;" onclick="closeModal()">CLOSE RESULTS</button></div>
+  </div>
+</div>
+
+<div id="aboutModal">
+  <div class="about-card">
+    <div class="about-top"><div class="about-avatar">🌅</div><h3>rasVet</h3><p>Creator & Developer</p></div>
+    <div class="about-body"><p>IELTS Reading practice platform built by <strong>rasVet</strong>.</p><div class="about-tag">by: rasVet</div><button class="btn-close-about" onclick="closeAbout()">Close</button></div>
+  </div>
+</div>
+
+<div id="overlay"></div>
+<div id="sideMenu">
+  <div class="menu-header"><h2>Menu</h2><button id="closeMenuBtn">✕</button></div>
+  <div class="menu-body">
+    <div class="settings-panel">
+      <div><div class="settings-label">Font Size</div><div class="font-slider-row"><span style="font-size:.75rem;">A</span><input type="range" id="fontSlider" min="12" max="22" value="16" step="1" oninput="changeFontSize(this.value)"><span style="font-size:1.1rem;">A</span></div><div style="text-align:center;font-size:.78rem;color:#adb5bd;margin-top:2px;" id="fontSizeLabel">16px</div></div>
+      <div><div class="settings-label">Theme</div><div class="theme-row"><button class="theme-btn active" id="themeLight" onclick="setTheme('light')"><span class="tb-icon">☀️</span>Light</button><button class="theme-btn" id="themeDark" onclick="setTheme('dark')"><span class="tb-icon">🌙</span>Dark</button><button class="theme-btn" id="themeSepia" onclick="setTheme('sepia')"><span class="tb-icon">📖</span>Reading</button></div></div>
+      <button class="btn-about" onclick="openAbout()"><i class="fas fa-info-circle"></i> About</button>
+    </div>
+    <div class="menu-top-icon"><i class="fas fa-cog"></i></div>
+    <div class="menu-mid-row"><div class="menu-star">✱</div><input type="text" class="menu-id-box" id="idInput" placeholder="Enter ID" maxlength="6" oninput="handleIdInput()"></div>
+    <div class="id-status" id="idStatus"></div>
+    <div id="teacherAnswerBox">
+      <div class="drop-header" onclick="toggleDropdown(0)"><span>📋 Answers P1</span><span id="dropArrow0">▼</span></div>
+      <div class="drop-content" id="dropContent0"></div>
+      <div class="drop-header" style="margin-top:8px;" onclick="toggleDropdown(1)"><span>📋 Answers P2</span><span id="dropArrow1">▼</span></div>
+      <div class="drop-content" id="dropContent1"></div>
+      <div class="drop-header" style="margin-top:8px;" onclick="toggleDropdown(2)"><span>📋 Answers P3</span><span id="dropArrow2">▼</span></div>
+      <div class="drop-content" id="dropContent2"></div>
+    </div>
+    <div id="adminRow">
+      <div class="admin-mid-row"><div class="admin-slash-icon">/</div><input type="text" class="admin-cmd-box" id="cmdInput" placeholder="answers / autofill / more time"><button class="btn-run-cmd" onclick="runCommand()">Run</button></div>
+      <div id="cmdFeedback"></div>
+      <div id="adminAnswerBox" style="margin-top:10px;">
+        <div class="drop-header" onclick="toggleDropdown(0)"><span>📋 Answers P1</span><span id="dropArrow0">▼</span></div>
+        <div class="drop-content" id="dropContent0"></div>
+        <div class="drop-header" style="margin-top:8px;" onclick="toggleDropdown(1)"><span>📋 Answers P2</span><span id="dropArrow1">▼</span></div>
+        <div class="drop-content" id="dropContent1"></div>
+        <div class="drop-header" style="margin-top:8px;" onclick="toggleDropdown(2)"><span>📋 Answers P3</span><span id="dropArrow2">▼</span></div>
+        <div class="drop-content" id="dropContent2"></div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-footer"><a href="https://t.me/English_Wikipedia" target="_blank" class="tg-link"><i class="fab fa-telegram-plane"></i> Telegram Channel</a></div>
+</div>
+
+
+<div id="highlightMenu" style="display:none;position:fixed;background:#fff;padding:8px;border-radius:20px;box-shadow:0 0 15px rgba(0,0,0,.2);z-index:99999;gap:8px;align-items:center;">
+  <div class="hlColor" data-color="#ff3131" style="background:#ff3131;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div class="hlColor" data-color="#ff7a00" style="background:#ff7a00;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div class="hlColor" data-color="#39FF14" style="background:#39FF14;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div class="hlColor" data-color="#007bff" style="background:#007bff;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div id="removeColor" style="width:28px;height:28px;border-radius:50%;background:white;border:2px solid #999;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;">✕</div>
+</div>
+<div id="toast"></div>
+
+<script>
+const TEACHER_IDS_LIST=["004567","008245","009213"],ADMIN_ID_VAL="000000";
+
+function buildHeadingPool(headings,poolId){
+  let h=`<div id="${poolId}" style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px;padding:14px;background:#f0f7ff;border:1px solid #c8dffe;border-radius:12px;">`;
+  h+=`<div style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:#6c757d;margin-bottom:4px;">List of Headings</div>`;
+  headings.forEach(([key,label])=>{h+=`<div class="heading-chip" draggable="true" data-heading="${key}" ondragstart="dragHeading(event)"><span class="hnum">${key}</span> ${label}</div>`;});
+  return h+'</div>';
+}
+function buildDropZone(q,label){return `<tr><td style="padding:8px 12px;border:1px solid #eee;font-weight:600;font-size:.9rem;">${label}</td><td style="padding:6px;border:1px solid #eee;"><div class="heading-drop" data-q="${q}" ondrop="dropHeading(event,${q})" ondragover="allowDropH(event)" ondragleave="leaveDrop(event)"><input type="hidden" id="in${q}"><div class="drop-placeholder">Drop here</div></div></td></tr>`;}
+
+const passages=[
+{
+  title:"A Second Look at Twin Studies",totalQ:12,
+  text:`<h1>A Second Look at Twin Studies</h1><p style="font-style:italic;color:#888;font-size:.88rem;margin-bottom:16px;">Reading Passage 1 · Questions 1–12</p>
+<p>More than a century after Galton's observation, twin studies remain a favorite tool of behavioral geneticists. Researchers have used twin studies to try to disentangle the environmental and genetic backgrounds of a cornucopia of traits, from aggression to intelligence to schizophrenia to alcohol dependence.</p>
+<p>But despite the popularity of twin studies, some psychologists have long questioned assumptions that underline them, like the supposition that fraternal and identical twins share equal environments or that people choose mates with traits unlike their own. The equal environments assumption, for example, has been debated for at least 40 years. Many researchers have found evidence that the assumption is valid, but others remain skeptical.</p>
+<p>Overall, twin studies assumptions remain controversial, says psychologist James Jaccard, PhD. In response, researchers are working to expand and develop twin study designs and statistical methods. And while the assumptions question remains a stumbling block for some researchers, many agree twin studies will continue to be an important tool, along with emerging genome and molecular research methods, in shedding light on human behavioral genetics.</p>
+<p>The classical twin study design relies on studying twins raised in the same family environments. Monozygotic (identical) twins share all of their genes, while dizygotic (fraternal) twins share only about 50 percent of them. So, if a researcher compares the similarity between sets of identical twins to the similarity between sets of fraternal twins for a particular trait, then any excess likeness between the identical twins should be due to genes rather than environment.</p>
+<p>Researchers use this method to estimate the heritability of traits: the percentage of variance in a population due to genes. Modern twin studies also try to quantify the effect of a person's shared environment (family) and unique environment (the individual events that shape a life) on a trait.</p>
+<p><strong>Random mating.</strong> Twin researchers assume that people are as likely to choose partners who are different from themselves as they are to choose partners who are similar for a particular trait. If people tend to choose mates like themselves, then fraternal twins could share more than 50 percent of their genes.</p>
+<p><strong>Equal environments.</strong> Twin researchers also assume that fraternal and identical twins raised in the same homes experience equally similar environments. But some research suggests that parents, teachers, peers and others may treat identical twins more similarly than fraternal twins.</p>
+<p><strong>Gene-environment interaction.</strong> Some researchers think that interaction between genes and environment, rather than genes and environment separately, may influence many traits. Many twin study designs don't take this type of complication into account.</p>
+<p><strong>Genetic mechanisms.</strong> Traits can be inherited through different genetic mechanisms. For traits governed by dominant genetic mechanisms, a dominant gene inherited from one parent trumps a recessive gene. Additive genetic mechanisms mix together — a plant that receives one red gene and one white gene might turn out pink. Epistatic mechanisms are complex cases where interactions among multiple genes may determine the outcome of one trait. Twin studies, in general, assume that only one type of genetic mechanism — usually additive — is operating for a particular trait.</p>
+<p>Twin researchers acknowledge that these and other limitations exist. But they say the limitations don't negate the usefulness of twin studies. For traits that are substantially influenced by heredity, the approximately two-fold difference in genetic similarity between two types of twins should outweigh any complications.</p>
+<p>Twin study designs and statistical analysis methods are also constantly evolving and improving. The original twin study design has expanded to include studies of twins' extended families, longitudinal studies and other variations. Some of these variations allow researchers to address previous limitations.</p>
+<p>In the age of molecular genetics, meanwhile, the classical twin study design is only one aspect of genetics research. Twin studies estimate the heritability of a trait, but molecular genetics attempts to pinpoint the effects of a particular gene. "When we conduct a study of twins these days, we always get DNA on everyone," Hewitt says. "And we'll use that DNA to try and identify specific individual genes that contribute to the overall pattern of heritability".</p>`,
+  questionsHTML:`<div class="q-card"><span class="description">Questions 1–7 · TRUE / FALSE / NOT GIVEN</span>
+<p>1. The environmental assumptions for twin studies have been challenged for a long time.</p>
+<div class="q-wrap" data-q="1"><span class="btn-opt" onclick="pick(1,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(1,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(1,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>2. Scientists only developed three methods to study human behavioral genetics.</p>
+<div class="q-wrap" data-q="2"><span class="btn-opt" onclick="pick(2,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(2,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(2,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>3. Questioning previous assumptions has made twin studies a useless tool.</p>
+<div class="q-wrap" data-q="3"><span class="btn-opt" onclick="pick(3,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(3,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(3,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>4. Identical twins share more similarities than fraternal twins.</p>
+<div class="q-wrap" data-q="4"><span class="btn-opt" onclick="pick(4,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(4,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(4,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>5. Because of an additive genetic mechanism, people will inherit dominant genes from their parents.</p>
+<div class="q-wrap" data-q="5"><span class="btn-opt" onclick="pick(5,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(5,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(5,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>6. Numerous genetic elements may join together to determine the result of one trait.</p>
+<div class="q-wrap" data-q="6"><span class="btn-opt" onclick="pick(6,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(6,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(6,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>7. Twin studies investigate the effect of a single gene.</p>
+<div class="q-wrap" data-q="7"><span class="btn-opt" onclick="pick(7,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(7,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(7,'NOT GIVEN',this)">NOT GIVEN</span></div>
+</div>
+<div class="q-card"><span class="description">Questions 8–12 · Complete the summary (choose from the word list below)</span>
+<p style="font-size:.83rem;color:#888;margin-bottom:12px;"><em>Word list: same family / unique environment / longitudinal studies / molecular genetics / heritability / behavioral genetics / assumptions / identical</em></p>
+<p>Twin studies are constantly evolving. The classical twin study design is based on studying twins raised in the <input type="text" id="in8" class="input-summary" style="width:150px;" oninput="mark(8)">. Modern twin studies try to quantify the effect of a person's family and <input type="text" id="in9" class="input-summary" style="width:200px;" oninput="mark(9)"> on a trait. Twin researchers acknowledge limitations and expand the original study to include <input type="text" id="in10" class="input-summary" style="width:200px;" oninput="mark(10)"> and other variations. In the time of <input type="text" id="in11" class="input-summary" style="width:200px;" oninput="mark(11)">, the classical twin study has its limitation. It does not pinpoint the implication of a particular gene, although it helps to assess individual's <input type="text" id="in12" class="input-summary" style="width:150px;" oninput="mark(12)">.</p>
+</div>`,
+  correctKeys:{1:"TRUE",2:"NOT GIVEN",3:"FALSE",4:"TRUE",5:"FALSE",6:"TRUE",7:"FALSE",8:"SAME FAMILY",9:"UNIQUE ENVIRONMENT",10:"LONGITUDINAL STUDIES",11:"MOLECULAR GENETICS",12:"HERITABILITY"},
+  teacherAnswers:["1—TRUE","2—NOT GIVEN","3—FALSE","4—TRUE","5—FALSE","6—TRUE","7—FALSE","8—SAME FAMILY","9—UNIQUE ENVIRONMENT","10—LONGITUDINAL STUDIES","11—MOLECULAR GENETICS","12—HERITABILITY"]
+},
+{
+  title:"Torch Relay",totalQ:15,
+  text:`<h1>Torch Relay</h1><p style="font-style:italic;color:#888;font-size:.88rem;margin-bottom:16px;">Reading Passage 2 · Questions 13–27</p>
+<p><strong>A</strong>&nbsp; Fire is a sacred symbol dating back to prehistoric times. In ancient Greece it symbolized the creation of the world, renewal and light. It was also the sacred symbol of Hephaestus, and a gift to the human race from Prometheus, who stole it from Zeus. At the center of every city-state in ancient Greece there was an altar with an ever-burning fire and in every home the sacred Flame burned, dedicated to Hestia, goddess of the family.</p>
+<p><strong>B</strong>&nbsp; Torch Relay races started in ancient Greece as religious rituals held at night. Soon they turned into a team athletic event, initially among adolescents, and further developed to become one of the most popular ancient sports. The enchanting power of fire was a source of inspiration. Sacred flames lit by the rays of the sun always burned in Olympia, in an altar dedicated to Hestia. Fire was ignited with the help of a concave mirror, which has the ability to concentrate the rays of the sun on a single spot. When the head priestess touched that point with the Torch, the Flame was lit.</p>
+<p><strong>C</strong>&nbsp; The Ancient Greeks held a "lampadedromia" (the Greek word for Torch Relay), where athletes competed by passing on the Flame in a relay race to the finish line. In ancient Athens the ritual was performed during the Panathenaia fest, held every four years in honor of the goddess Athena. The strength and purity of the sacred Flame was preserved through its transportation by the quickest means; in this case a relay of Torchbearers. The Torch Relay carried the Flame from the altar of Prometheus to the altar of goddess Athena on the Acropolis. Forty youths from the ten Athenian tribes had to run a distance of 2.5 kilometers in total.</p>
+<p><strong>D</strong>&nbsp; For the modern Olympic Games the sacred Flame is lit in Olympia by the head priestess, in the same way as in antiquity, and the ritual includes the athletes' oath. The Flame is then transmitted to the Torch of the first runner and the journey of the Torch Relay begins. The modern Torch Relay is a non-competitive replication of the ancient Flame relay and a symbolic celebration of the Olympic Games. In a prophetic speech at the end of the Stockholm Games in 1912, Baron Pierre de Coubertin said: "And now great people have received the Torch and have thereby undertaken to preserve and quicken its precious Flame."</p>
+<p><strong>E</strong>&nbsp; The Torch Relay, as the opening of the Olympic celebration, was received in the Berlin Olympiad in 1936 and since then the Torch Relay has preceded every Olympic Summer Games. Starting from Olympia and carried by the first runner, the young athlete Konstantinos Kondylis, the Flame travelled for the first time hand to hand until it reached the Berlin Olympic Stadium. In Olympiads that followed, the Torch Relay continued to play an important role, having been enriched with the characteristics and cultures of the host countries. The choice of the athlete who lights the Flame in the Olympic stadium is always symbolic to the host country.</p>
+<p><strong>F</strong>&nbsp; For the 1960 Olympic Games in Rome, the Flame followed a route in homage to the Greek and Roman civilizations. It was the first time that the event was covered by television. In the Mexico Olympiad in 1968, the Flame followed the route taken by Christopher Columbus, and the athletics champion Enriqueta Basilio was the first woman to light the Flame in the Olympic stadium. For the Montreal Games in 1976, the Flame travelled by satellite from Athens to Ottawa, and in the 1992 Games in Barcelona, a Paralympics archery medalist lit the Flame with a burning arrow. In Sydney 2000, the Flame made its journey underwater in the Great Barrier Reef. And the Beijing 2008 Olympic Torch Relay traversed the longest distance and included the largest number of people.</p>
+<p><strong>G</strong>&nbsp; The design of the Beijing 2008 Olympic Torch takes advantage of Chinese artistic heritage and technological expertise. The design features traditional scrolls and "Lucky Cloud". It stands 72 centimeters high and weighs 985 grams. The Torch incorporates technological innovations to remain lit in winds of up to 65 kilometers-an-hour and in rain of up to 50 millimeters-an-hour. The torch can keep burning for 15 minutes. The materials are recyclable, and the propane fuel meets environmental requirements. "The torch and the Olympic Flame are symbols which embody the Olympic Values of excellence, respect and friendship," added IOC President Jacques Rogge.</p>`,
+  questionsHTML:`<div class="q-card"><span class="description">Questions 13–18 · Match paragraphs A–D, F, G with the correct heading (drag to drop)</span>
+${buildHeadingPool([
+  ["i","Symbolic meanings of fire"],
+  ["ii","How ancient Greeks used fire"],
+  ["iii","The origin of Torch Relay"],
+  ["iv","How to light a torch"],
+  ["v","How ancient Greeks performed Torch Relay"],
+  ["vi","Selecting right athletes for carrying torches"],
+  ["vii","Torch Relay as a mark for modern Olympics"],
+  ["viii","Technologies adapted in Torch Relay"],
+  ["ix","Different Torch Relay practices in modern Olympics"],
+  ["x","Combination of culture and technology"]
+],'headingsPool2')}
+<table><tr><th style="width:42%;">Paragraph</th><th>Heading</th></tr>
+${buildDropZone(13,'13. Paragraph A')}
+${buildDropZone(14,'14. Paragraph B')}
+${buildDropZone(15,'15. Paragraph C')}
+${buildDropZone(16,'16. Paragraph D')}
+${buildDropZone(17,'17. Paragraph F')}
+${buildDropZone(18,'18. Paragraph G')}
+</table></div>
+<div class="q-card"><span class="description">Questions 19–26 · TRUE / FALSE / NOT GIVEN</span>
+<p>19. Altars had been built in every ancient Greek city for the Olympics.</p>
+<div class="q-wrap" data-q="19"><span class="btn-opt" onclick="pick(19,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(19,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(19,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>20. There were only ten tribes living in Ancient Greece.</p>
+<div class="q-wrap" data-q="20"><span class="btn-opt" onclick="pick(20,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(20,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(20,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>21. The ancient and modern Olympic Games obtained the sacred Flame in Olympia in different ways.</p>
+<div class="q-wrap" data-q="21"><span class="btn-opt" onclick="pick(21,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(21,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(21,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>22. The Torch Relay was reintroduced at the Berlin Olympic Games during the opening ceremony.</p>
+<div class="q-wrap" data-q="22"><span class="btn-opt" onclick="pick(22,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(22,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(22,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>23. The opening ceremony had been suspended temporarily before the Berlin Olympiad.</p>
+<div class="q-wrap" data-q="23"><span class="btn-opt" onclick="pick(23,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(23,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(23,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>24. Host countries choose their national symbols to light the Olympic flame.</p>
+<div class="q-wrap" data-q="24"><span class="btn-opt" onclick="pick(24,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(24,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(24,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>25. In the Mexico Olympiad in 1968, the Flame was lit by Christopher Columbus.</p>
+<div class="q-wrap" data-q="25"><span class="btn-opt" onclick="pick(25,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(25,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(25,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>26. The Beijing 2008 Olympic Torch can keep burning in light rain.</p>
+<div class="q-wrap" data-q="26"><span class="btn-opt" onclick="pick(26,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(26,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(26,'NOT GIVEN',this)">NOT GIVEN</span></div>
+</div>
+<div class="q-card"><span class="description">Question 27 · Choose NO MORE THAN THREE WORDS from the passage</span>
+<p>27. Name three basic Olympic Values mentioned in the passage.</p>
+<input type="text" id="in27" class="input-summary" style="width:300px;" oninput="mark(27)" placeholder="e.g. excellence, respect, friendship">
+</div>`,
+  correctKeys:{13:"I",14:"III",15:"V",16:"VII",17:"IX",18:"X",19:"TRUE",20:"NOT GIVEN",21:"FALSE",22:"TRUE",23:"NOT GIVEN",24:"NOT GIVEN",25:"FALSE",26:"TRUE",27:"EXCELLENCE, RESPECT, FRIENDSHIP"},
+  teacherAnswers:["13—i","14—iii","15—v","16—vii","17—ix","18—x","19—TRUE","20—NOT GIVEN","21—FALSE","22—TRUE","23—NOT GIVEN","24—NOT GIVEN","25—FALSE","26—TRUE","27—excellence, respect, friendship"]
+},
+{
+  title:"Hurricane",totalQ:13,
+  text:`<h1>Hurricane</h1><p style="font-style:italic;color:#888;font-size:.88rem;margin-bottom:16px;">Reading Passage 3 · Questions 28–40</p>
+<p>They are essential features of the Earth's atmosphere, as they transfer heat and energy between the equator and the cooler regions towards the poles.</p>
+<p><strong>Section A</strong>&nbsp; A hurricane is a large rotating storm centered around an area of very low pressure with strong winds blowing at an average speed in excess of 74 miles per hour. The whole storm system may be up to 10 miles high and on average 500 miles wide. It moves forward like an immense spinning top, at speeds up to 20 mph.</p>
+<p><strong>Section B</strong>&nbsp; There are various trigger mechanisms required to transform frequent storms into rarer hurricanes. These trigger mechanisms depend on several conditions being 'right' at the same time. One of the most influential factors are sources of very warm, moist air, which derived from tropical oceans with surface temperatures greater than 26°C, and sufficient spin or twist from the rotating earth, which is related to latitude.</p>
+<p>As the warm sea heats the air above it, a current of very warm moist air rises up quickly, creating a center of low pressure at the surface. Trade winds rush in towards this low pressure and the inward spiralling winds whirl upwards releasing heat and moisture before descending.</p>
+<p>The rotation of the Earth causes the rising column to twist, gradually taking on the form of a cylinder whirling around an eye of relatively still air, free from clouds. The rising air cools and produces towering cumulus and cumulonimbus clouds. Further aloft at 6 miles the cloud tops are carried outwards to give thick layer clouds due to the outward spiralling winds leaving the hurricane core.</p>
+<p><strong>Section C</strong>&nbsp; Great amounts of energy are transferred when warm water is evaporated from tropical seas. This energy is stored within the water vapor contained in moist air. As this air ascends, 90% of the stored energy is released by condensation, giving rise to the towering cumulus clouds and rain.</p>
+<p>The release of heat energy warms the air locally causing a further decrease in pressure aloft. Consequently, air rises faster to fill this area of low pressure, and more warm moist air is drawn off the sea feeding further energy to the system. Thus a self-sustaining heat engine is created.</p>
+<p>Only as little as 3% of the heat energy may be converted mechanical energy of the circulating winds. This relatively small amount of mechanical energy equates to a power supply of 360 billion kilowatt hours per day — or 6 months supply of electrical energy for the whole of the USA!</p>
+<p><strong>Section D</strong>&nbsp; Hurricanes form between 5 and 30 latitude and initially move westward (owing to easterly winds) and slightly towards the poles. Many hurricanes eventually drift far enough north or south to move into areas dominated by westerly winds. These winds tend to reverse the direction of the hurricane to an eastward path.</p>
+<p>As the hurricane moves poleward it picks up speed and may reach between 20 and 30 mph. An average hurricane can travel about 300 to 400 miles a day, or about 3000 miles before it dies out. Hurricanes occur between July and October in the Atlantic, eastern Pacific and the western Pacific north of the equator. South of the equator, they occur between November and March.</p>
+<p>The name hurricane should only be used for those tropical storms occurring in the Atlantic. In the Pacific they are known as typhoons, in the Indian Ocean as cyclones. They are given names beginning with "A", "B" etc. in order of occurrence and the names are alternately male and female.</p>
+<p><strong>Section E</strong>&nbsp; These phenomena can cause major destruction, especially when the hurricane's path takes it over land. However a path over land also causes the destruction of the hurricane itself. As it moves over land its energy source is depleted and friction across the land surface distorts the air flow. This leads to the eye filling with cloud and the hurricane dies.</p>
+<p><strong>Section F</strong>&nbsp; Other than basic knowledge of general hurricane occurrence there are no atmospheric conditions that can be measured and combined to predict where a hurricane will develop. Therefore we can only forecast its path once formed. A network of instruments, men and equipment at the National Hurricane Center in Miami, Florida search out potential hurricanes in their early stages and track them through their life cycle until they decay and die.</p>
+<p>Satellites detect hurricanes in their early stages of development and can help to provide early warning of imminent hurricanes. Reinforced aircraft fitted with instruments fly through and over hurricanes, and weather radar can locate storms within 200 miles of the radar station.</p>
+<p>A hurricane warning is issued to coastal areas where winds of 74 mph or greater are definitely expected to occur, or dangerously high water or high waves are predicted. The general public are usually informed via television broadcasts and through a system of flying flags by day and lanterns by night.</p>`,
+  questionsHTML:`<div class="q-card"><span class="description">Questions 28–31 · Complete the notes using NO MORE THAN THREE WORDS from Section B</span>
+<p>28. A current of heated <input type="text" id="in28" class="input-summary" style="width:150px;" oninput="mark(28)"> raised up from the warm ocean.</p>
+<p>29. A center of <input type="text" id="in29" class="input-summary" style="width:150px;" oninput="mark(29)"> created at the surface.</p>
+<p>30. Trade winds rush inwards, discharge <input type="text" id="in30" class="input-summary" style="width:180px;" oninput="mark(30)"> before descending.</p>
+<p>31. The <input type="text" id="in31" class="input-summary" style="width:200px;" oninput="mark(31)"> helps the column to twist, taking on the form of a cylinder spinning around an eye of still air.</p>
+</div>
+<div class="q-card"><span class="description">Questions 32–38 · TRUE / FALSE / NOT GIVEN</span>
+<p>32. Hurricanes often form around the equator.</p>
+<div class="q-wrap" data-q="32"><span class="btn-opt" onclick="pick(32,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(32,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(32,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>33. Hurricanes are normally generated above the sea surface under relatively higher temperatures.</p>
+<div class="q-wrap" data-q="33"><span class="btn-opt" onclick="pick(33,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(33,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(33,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>34. 3% of the mechanical energy generated from hurricanes could power the USA for half a year.</p>
+<div class="q-wrap" data-q="34"><span class="btn-opt" onclick="pick(34,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(34,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(34,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>35. Hurricanes, typhoons and cyclones are all the same type of tropical storms.</p>
+<div class="q-wrap" data-q="35"><span class="btn-opt" onclick="pick(35,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(35,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(35,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>36. Once the eye of the hurricane is filled with cloud, it will die.</p>
+<div class="q-wrap" data-q="36"><span class="btn-opt" onclick="pick(36,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(36,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(36,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>37. We are still not capable of anticipating where a hurricane will develop.</p>
+<div class="q-wrap" data-q="37"><span class="btn-opt" onclick="pick(37,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(37,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(37,'NOT GIVEN',this)">NOT GIVEN</span></div>
+<p>38. A system of flying flags and lanterns is used to warn of hurricanes within 200 miles.</p>
+<div class="q-wrap" data-q="38"><span class="btn-opt" onclick="pick(38,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(38,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(38,'NOT GIVEN',this)">NOT GIVEN</span></div>
+</div>
+<div class="q-card"><span class="description">Questions 39–40 · NO MORE THAN THREE WORDS from the passage</span>
+<p>39. How fast does a hurricane normally travel?<br><input type="text" id="in39" class="input-summary" style="width:180px;" oninput="mark(39)"></p>
+<p>40. How broad is a typical hurricane system?<br><input type="text" id="in40" class="input-summary" style="width:180px;" oninput="mark(40)"></p>
+</div>`,
+  correctKeys:{28:"MOIST AIR",29:"LOW PRESSURE",30:"HEAT AND MOISTURE",31:"ROTATION OF EARTH",32:"TRUE",33:"TRUE",34:"FALSE",35:"TRUE",36:"FALSE",37:"TRUE",38:"NOT GIVEN",39:"20 MPH",40:"500 MILES WIDE"},
+  teacherAnswers:["28—MOIST AIR","29—LOW PRESSURE","30—HEAT AND MOISTURE","31—ROTATION OF EARTH","32—TRUE","33—TRUE","34—FALSE","35—TRUE","36—FALSE","37—TRUE","38—NOT GIVEN","39—20 MPH","40—500 MILES WIDE"]
+}
+];
+
+let currentPassage=0;
+let state=passages.map(()=>({studentAns:{},solvedCorrect:{}}));
+let totalSeconds=0,attemptCount=0,activeUserId=null,proofingMode=false,cheaterTimer=null;
+let dropdownOpen=[false,false,false];
+let draggedHeading=null;
+
+setInterval(()=>{totalSeconds++;if(proofingMode)return;let m=Math.floor(totalSeconds/60),s=totalSeconds%60;document.getElementById('timer').innerText=`${m<10?'0'+m:m}:${s<10?'0'+s:s}`;},1000);
+
+const divider=document.getElementById('divider'),leftSide=document.getElementById('leftSide');
+divider.onmousedown=()=>{document.onmousemove=e=>{let p=(e.clientX/window.innerWidth)*100;if(p>15&&p<85)leftSide.style.width=p+'%';};document.onmouseup=()=>document.onmousemove=null;};
+
+function loadPassage(idx){
+  currentPassage=idx;
+  const p=passages[idx],s=state[idx];
+  document.getElementById('textArea').innerHTML=p.text;
+  document.getElementById('questionsArea').innerHTML=p.questionsHTML;
+  document.getElementById('questionsArea').scrollTop=0;
+  const grid=document.getElementById('bubbleGrid');grid.innerHTML='';
+  Object.keys(p.correctKeys).map(Number).forEach(i=>{
+    let b=document.createElement('div');b.className='bubble';b.id='b'+i;b.innerText=i;
+    if(s.solvedCorrect[i])b.classList.add('solved');else if(s.studentAns[i])b.classList.add('active');
+    grid.appendChild(b);
+  });
+  Object.keys(p.correctKeys).map(Number).forEach(i=>{
+    const zone=document.querySelector('.heading-drop[data-q="'+i+'"]');
+    if(zone&&s.studentAns[i]){
+      const hk=s.studentAns[i].toLowerCase();
+      const hLabels=getHLabels(idx);
+      zone.innerHTML='<input type="hidden" id="in'+i+'" value="'+s.studentAns[i]+'">'+buildFilledChip(hk,i,hLabels);
+      if(s.solvedCorrect[i])applyNeonZone(zone,'correct');
+      const poolId=idx===1?'headingsPool2':'headingsPool3';
+      const chip=document.querySelector('#'+poolId+' .heading-chip[data-heading="'+hk+'"]');
+      if(chip)chip.classList.add('used');
+    }
+    const el=document.getElementById('in'+i);
+    if(el&&el.type!=='hidden'){
+      if(s.studentAns[i])el.value=s.studentAns[i];
+      if(s.solvedCorrect[i])el.classList.add('correct-neon');
+    }
+    const wrap=document.querySelector('[data-q="'+i+'"]');
+    if(wrap&&s.studentAns[i]){
+      Array.from(wrap.children).forEach(btn=>{
+        btn.classList.remove('selected','correct-neon','wrong-neon');
+        if(btn.innerText.trim().startsWith(s.studentAns[i]))btn.classList.add('selected');
+        if(s.solvedCorrect[i]&&btn.innerText.trim().startsWith(s.studentAns[i]))btn.classList.add('correct-neon');
+      });
+    }
+  });
+  document.getElementById('passageLabel').innerText=`Passage ${idx+1} / 3`;
+  document.getElementById('navLeft').className='nav-btn'+(idx===0?' disabled':' active-arrow');
+  document.getElementById('navRight').className='nav-btn'+(idx===2?' disabled':' active-arrow');
+}
+function goPassage(dir){const n=currentPassage+dir;if(n<0||n>2)return;loadPassage(n);}
+
+function getHLabels(pi){
+  if(pi===1)return {i:"Symbolic meanings of fire",ii:"How ancient Greeks used fire",iii:"The origin of Torch Relay",iv:"How to light a torch",v:"How ancient Greeks performed Torch Relay",vi:"Selecting right athletes for carrying torches",vii:"Torch Relay as a mark for modern Olympics",viii:"Technologies adapted in Torch Relay",ix:"Different Torch Relay practices in modern Olympics",x:"Combination of culture and technology"};
+  return {};
+}
+function buildFilledChip(hk,q,hLabels){return `<div class="drop-filled-chip" draggable="true" data-heading="${hk}" data-from-zone="${q}" ondragstart="dragHeading(event)"><span class="hnum">${hk}</span> ${hLabels[hk]||''}</div>`;}
+function dragHeading(ev){const chip=ev.currentTarget;draggedHeading={el:chip,heading:chip.dataset.heading,fromZone:chip.dataset.fromZone?parseInt(chip.dataset.fromZone):null};ev.dataTransfer.setData('heading',chip.dataset.heading);}
+document.addEventListener('dragover',e=>{const qa=document.getElementById('questionsArea');if(!qa)return;const rect=qa.getBoundingClientRect(),scrollTrigger=100;if(e.clientY>rect.bottom-scrollTrigger&&e.clientY<rect.bottom){qa.scrollTop+=10;}else if(e.clientY<rect.top+scrollTrigger&&e.clientY>rect.top){qa.scrollTop-=10;}});
+function allowDropH(ev){ev.preventDefault();ev.currentTarget.classList.add('over');}
+function leaveDrop(ev){ev.currentTarget.classList.remove('over');}
+function applyNeonZone(zone,status){
+  if(status==='correct'){zone.style.border='2px solid var(--neon-green)';zone.style.boxShadow='0 0 15px var(--neon-green)';zone.style.background='#fafff5';zone.style.pointerEvents='none';}
+  else{zone.style.border='2px solid var(--neon-red)';zone.style.boxShadow='0 0 15px var(--neon-red)';}
+}
+function dropHeading(ev,q){
+  ev.preventDefault();if(state[currentPassage].solvedCorrect[q])return;
+  const zone=ev.currentTarget;zone.classList.remove('over');if(!draggedHeading)return;
+  const newH=draggedHeading.heading,fromZone=draggedHeading.fromZone;
+  const hiddenIn=document.getElementById('in'+q),oldH=hiddenIn?hiddenIn.value.toLowerCase():'';
+  const hLabels=getHLabels(currentPassage);
+  const poolId=currentPassage===1?'headingsPool2':'headingsPool3';
+  if(oldH&&!fromZone){const old=document.querySelector('#'+poolId+' .heading-chip[data-heading="'+oldH+'"]');if(old)old.classList.remove('used');}
+  if(fromZone&&fromZone!==q){
+    const srcZone=document.querySelector('.heading-drop[data-q="'+fromZone+'"]');
+    if(oldH){srcZone.innerHTML='<input type="hidden" id="in'+fromZone+'" value="'+oldH.toUpperCase()+'">'+buildFilledChip(oldH,fromZone,hLabels);state[currentPassage].studentAns[fromZone]=oldH.toUpperCase();document.getElementById('b'+fromZone).classList.add('active');}
+    else{srcZone.innerHTML='<input type="hidden" id="in'+fromZone+'"><div class="drop-placeholder">Drop here</div>';delete state[currentPassage].studentAns[fromZone];document.getElementById('b'+fromZone).classList.remove('active');}
+  }
+  if(fromZone===q){draggedHeading=null;return;}
+  zone.innerHTML='<input type="hidden" id="in'+q+'" value="'+newH.toUpperCase()+'">'+buildFilledChip(newH,q,hLabels);
+  state[currentPassage].studentAns[q]=newH.toUpperCase();document.getElementById('b'+q).classList.add('active');
+  if(!fromZone){const poolChip=document.querySelector('#'+poolId+' .heading-chip[data-heading="'+newH+'"]');if(poolChip)poolChip.classList.add('used');}
+  draggedHeading=null;
+}
+
+function pick(q,v,el){if(state[currentPassage].solvedCorrect[q])return;state[currentPassage].studentAns[q]=v;Array.from(el.parentNode.children).forEach(b=>b.classList.remove('selected'));el.classList.add('selected');document.getElementById('b'+q).classList.add('active');}
+function mark(q){if(state[currentPassage].solvedCorrect[q])return;const el=document.getElementById('in'+q);const val=el?el.value:'';state[currentPassage].studentAns[q]=val.toUpperCase().trim()||undefined;document.getElementById('b'+q).classList.toggle('active',val.trim()!=='');}
+
+function submitTest(){
+  attemptCount++;const ts=document.getElementById('timer').innerText;let totalScore=0,totalQ=0;
+  passages.forEach((p,pi)=>{
+    const s=state[pi];let score=0,resHtml='';const isCurr=(pi===currentPassage);
+    Object.keys(p.correctKeys).map(Number).forEach(i=>{
+      let ans;
+      if(isCurr){const el=document.getElementById('in'+i);ans=(s.studentAns[i]||(el&&el.type!=='hidden'?el.value:'')||'').toUpperCase().trim();}
+      else ans=(s.studentAns[i]||'').toUpperCase().trim();
+      const ok=(ans===p.correctKeys[i]);
+      if(ok){score++;s.solvedCorrect[i]=true;if(isCurr)applyNeon(i,'correct');}
+      else if(!s.solvedCorrect[i]&&isCurr)applyNeon(i,'wrong');
+      resHtml+=`<div class="res-card ${ok?'correct-row':'wrong-row'}"><span>Q${i}</span><span>${ok?'✔':'✘'}</span></div>`;
+    });
+    totalScore+=score;totalQ+=p.totalQ;
+    document.getElementById('resList'+(pi+1)).innerHTML=resHtml;
+    document.getElementById('p'+(pi+1)+'score').innerText=`${score}/${p.totalQ}`;
+  });
+  document.getElementById('mScore').innerText=`${totalScore} / ${totalQ}`;
+  document.getElementById('attemptsRow').innerHTML+=`<div class="attempt-tag">#${attemptCount}: ${totalScore}/40 (${ts})</div>`;
+  document.getElementById('modal').style.display='flex';
+  document.getElementById('attemptsRow').scrollLeft=99999;
+}
+function applyNeon(q,status){
+  const zone=document.querySelector('.heading-drop[data-q="'+q+'"]');
+  if(zone){applyNeonZone(zone,status);if(status==='correct'){zone.removeAttribute('ondrop');zone.removeAttribute('ondragover');zone.removeAttribute('ondragleave');const chip=zone.querySelector('.drop-filled-chip');if(chip){chip.draggable=false;chip.style.cursor='default';}}return;}
+  const el=document.getElementById('in'+q);
+  if(el&&el.type!=='hidden'){el.classList.add(status+'-neon');if(status==='correct')el.readOnly=true;}
+  else{const wrap=document.querySelector('[data-q="'+q+'"]');if(wrap)Array.from(wrap.children).forEach(btn=>{if(btn.classList.contains('selected'))btn.classList.add(status+'-neon');if(status==='correct'&&btn.innerText.trim().startsWith(passages[currentPassage].correctKeys[q])){btn.classList.add('correct-neon','selected');}});}
+}
+function closeModal(){
+  document.getElementById('modal').style.display='none';
+  document.querySelectorAll('.wrong-neon').forEach(el=>el.classList.remove('wrong-neon'));
+  document.querySelectorAll('.heading-drop').forEach(zone=>{const q=parseInt(zone.dataset.q);if(zone.dataset.q&&!state[currentPassage].solvedCorrect[q]){zone.style.border='';zone.style.boxShadow='';zone.style.background='';}});
+  Object.keys(passages[currentPassage].correctKeys).map(Number).forEach(i=>{if(!state[currentPassage].solvedCorrect[i]){const b=document.getElementById('b'+i);if(b)b.classList.remove('active');}});
+}
+
+document.getElementById('menuBtn').onclick=()=>{document.getElementById('sideMenu').classList.add('open');document.getElementById('overlay').classList.add('show');};
+document.getElementById('closeMenuBtn').onclick=closeMenu;
+document.getElementById('overlay').onclick=closeMenu;
+function closeMenu(){document.getElementById('sideMenu').classList.remove('open');document.getElementById('overlay').classList.remove('show');}
+function changeFontSize(v){document.documentElement.style.setProperty('--font-size',v+'px');document.getElementById('fontSizeLabel').innerText=v+'px';}
+function setTheme(t){document.body.classList.remove('theme-dark','theme-sepia');if(t==='dark')document.body.classList.add('theme-dark');if(t==='sepia')document.body.classList.add('theme-sepia');['themeLight','themeDark','themeSepia'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById({light:'themeLight',dark:'themeDark',sepia:'themeSepia'}[t]).classList.add('active');}
+function openAbout(){document.getElementById('aboutModal').classList.add('show');}
+function closeAbout(){document.getElementById('aboutModal').classList.remove('show');}
+
+function handleIdInput(){
+  const val=document.getElementById('idInput').value.trim();
+  const statusEl=document.getElementById('idStatus');
+  document.getElementById('teacherAnswerBox').style.display='none';
+  document.getElementById('adminRow').style.display='none';
+  statusEl.className='id-status';statusEl.innerText='';activeUserId=null;
+  dropdownOpen=[false,false,false];
+  ['dropContent0','dropContent1','dropContent2'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('open');});
+  ['dropArrow0','dropArrow1','dropArrow2'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerText='▼';});
+  if(val.length<6)return;
+  if(TEACHER_IDS_LIST.includes(val)){activeUserId='teacher';statusEl.className='id-status show ok';statusEl.innerText='✔ Access granted — Teacher';document.getElementById('teacherAnswerBox').style.display='block';fillTeacherAnswers();document.getElementById('idInput').style.display='none';document.querySelector('.menu-star').style.display='none';deactivateCheater();}
+  else if(val===ADMIN_ID_VAL){activeUserId='admin';statusEl.className='id-status show ok';statusEl.innerText='✔ Developer access';document.getElementById('adminRow').style.display='block';fillTeacherAnswers();deactivateCheater();}
+  else{statusEl.className='id-status show err';statusEl.innerText='✘ Invalid ID';}
+}
+function fillTeacherAnswers(){passages.forEach((p,i)=>{const el=document.getElementById('dropContent'+i);if(el)el.innerHTML=p.teacherAnswers.map(v=>`<div class="ans-item">${v}</div>`).join('');});}
+function toggleDropdown(idx){dropdownOpen[idx]=!dropdownOpen[idx];const c=document.getElementById('dropContent'+idx),a=document.getElementById('dropArrow'+idx);if(c)c.classList.toggle('open',dropdownOpen[idx]);if(a)a.innerText=dropdownOpen[idx]?'▲':'▼';}
+
+function runCommand(){
+  if(activeUserId!=='admin')return;
+  const cmd=document.getElementById('cmdInput').value.trim().toLowerCase();
+  const fb=document.getElementById('cmdFeedback');
+  if(cmd==='autofill'){
+    passages.forEach((pp,pi)=>{
+      const ss=state[pi];const isCurr=(pi===currentPassage);
+      const hLabels=getHLabels(pi);
+      const poolId=pi===1?'headingsPool2':'headingsPool3';
+      Object.keys(pp.correctKeys).map(Number).forEach(i=>{
+        if(ss.solvedCorrect[i])return;const key=pp.correctKeys[i];ss.studentAns[i]=key;
+        if(isCurr){
+          const zone=document.querySelector('.heading-drop[data-q="'+i+'"]');
+          if(zone){const hk=key.toLowerCase();zone.innerHTML='<input type="hidden" id="in'+i+'" value="'+key+'">'+buildFilledChip(hk,i,hLabels);const chip=document.querySelector('#'+poolId+' .heading-chip[data-heading="'+hk+'"]');if(chip)chip.classList.add('used');}
+          else{const el=document.getElementById('in'+i);if(el&&el.type!=='hidden'){el.value=key;}else{const wrap=document.querySelector('[data-q="'+i+'"]');if(wrap)Array.from(wrap.children).forEach(btn=>{btn.classList.remove('selected');if(btn.innerText.trim().startsWith(key))btn.classList.add('selected');});}}
+          const b=document.getElementById('b'+i);if(b)b.classList.add('active');
+        }
+      });
+    });
+    fb.className='show ok';fb.style.display='block';fb.innerText='✔ All passages autofilled';showToast('✏️ All passages autofilled');
+  } else if(cmd==='answers'){
+    passages.forEach((pp,pi)=>{
+      const ss=state[pi];const isCurr=(pi===currentPassage);
+      Object.keys(pp.correctKeys).map(Number).forEach(i=>{
+        if(ss.solvedCorrect[i])return;const key=pp.correctKeys[i];ss.studentAns[i]=key;
+        if(isCurr){const el=document.getElementById('in'+i);if(el&&el.type!=='hidden'){el.value=key;el.style.color='#007bff';}else{const wrap=document.querySelector('[data-q="'+i+'"]');if(wrap)Array.from(wrap.children).forEach(btn=>{if(btn.innerText.trim().startsWith(key)){btn.style.background='#eef2ff';btn.style.borderColor='#007bff';btn.style.color='#007bff';}});}}
+      });
+    });
+    fb.className='show ok';fb.style.display='block';fb.innerText='✔ All answers revealed';showToast('📋 All answers shown');
+  } else if(cmd==='more time'){
+    if(totalSeconds<=9*60){totalSeconds=0;document.getElementById('timer').innerText='00:00';fb.innerText='✔ Reset to 0:00';showToast('⏱️ Timer reset');}
+    else{totalSeconds=Math.max(0,totalSeconds-600);let m=Math.floor(totalSeconds/60),sv=totalSeconds%60;document.getElementById('timer').innerText=`${m<10?'0'+m:m}:${sv<10?'0'+sv:sv}`;fb.innerText='✔ −10 min';showToast('⏱️ −10 minutes');}
+    fb.className='show ok';fb.style.display='block';
+  } else{fb.className='show err';fb.style.display='block';fb.innerText='✘ Unknown command';showToast('❌ Unknown: '+cmd);}
+  document.getElementById('cmdInput').value='';
+}
+document.getElementById('cmdInput').addEventListener('keydown',e=>{if(e.key==='Enter')runCommand();});
+
+function toggleProofing(){if(proofingMode)return;proofingMode=true;document.getElementById('proofingBtn').classList.add('active');document.getElementById('timer').innerText='∞';deactivateCheater();}
+function isTrusted(){return proofingMode||activeUserId==='teacher'||activeUserId==='admin';}
+function activateCheater(){ /* anti-cheat removed */ }
+function deactivateCheater(){ /* anti-cheat removed */ }
+
+let selectedText=null;
+document.addEventListener('mouseup',e=>{const sel=window.getSelection();if(sel.toString().trim().length>0){selectedText=sel.getRangeAt(0);const m=document.getElementById('highlightMenu');m.style.display='flex';m.style.left=e.pageX+'px';m.style.top=(e.pageY+15)+'px';}else document.getElementById('highlightMenu').style.display='none';});
+document.querySelectorAll('.hlColor').forEach(btn=>btn.addEventListener('click',function(){if(!selectedText)return;const span=document.createElement('span');span.style.backgroundColor=this.dataset.color;try{selectedText.surroundContents(span);}catch(e){}document.getElementById('highlightMenu').style.display='none';window.getSelection().removeAllRanges();}));
+document.getElementById('removeColor').addEventListener('click',()=>{if(!selectedText)return;let node=selectedText.startContainer;while(node&&node.nodeType!==1)node=node.parentNode;if(node&&node.tagName==='SPAN')node.outerHTML=node.innerHTML;document.getElementById('highlightMenu').style.display='none';window.getSelection().removeAllRanges();});
+
+function showToast(msg){const t=document.getElementById('toast');t.innerText=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
+loadPassage(0);
+</script>
+</body>
+</html>

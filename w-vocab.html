@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>W Vocab — Vocabulary Trainer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #FAF0D7;
+    --paper-deep: #F2E3B8;
+    --ink: #211C16;
+    --ink-soft: #6B5F4C;
+    --ink-faint: #8C7F68;
+    --rule-thin: #D8C89B;
+    --rule-thick: #9C8347;
+    --gold: #BD8A2A;
+    --gold-deep: #8F6A1F;
+    --gold-bright: #E0A83C;
+    --teal: #2F6459;
+    --teal-deep: #234B43;
+    --plum: #7A3B4E;
+    --green: #3C7A4E;
+    --green-bg: #E3F0E3;
+    --red: #B3402F;
+    --red-bg: #F7E3DD;
+    --cream: #FCF8EC;
+    --bg-deep: #F1E9D2;
+    --shadow-sm: 0 2px 8px rgba(33,28,22,0.08);
+    --shadow: 0 14px 34px rgba(33,28,22,0.14), 0 2px 8px rgba(33,28,22,0.08);
+    --shadow-lg: 0 26px 60px rgba(33,28,22,0.22), 0 6px 18px rgba(33,28,22,0.10);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:
+      radial-gradient(ellipse 900px 500px at 8% -5%, rgba(224,168,60,0.16), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 0%, rgba(47,100,89,0.10), transparent 55%),
+      linear-gradient(180deg, var(--cream) 0%, var(--bg-deep) 100%);
+    background-attachment:fixed;
+    color:var(--ink);
+    min-height:100vh;
+    position:relative;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  .hidden{display:none !important;}
+  h1,h2,h3{font-family:'Fraunces',serif; font-weight:600; margin:0;}
+  button{font-family:'Inter',sans-serif; cursor:pointer; -webkit-tap-highlight-color:transparent;}
+  button:focus-visible, textarea:focus-visible, input:focus-visible{ outline:2.5px solid var(--gold-bright); outline-offset:2px; }
+  #mainView, #exerciseMenu, #exerciseArea{ animation:viewIn .38s cubic-bezier(.2,.8,.2,1); }
+  @keyframes viewIn{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:translateY(0); } }
+  @media (prefers-reduced-motion: reduce){ *{ animation-duration:.001s !important; transition-duration:.001s !important; } }
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:26px 36px 10px 36px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:12px;
+  }
+  .brand .monogram{
+    width:40px; height:40px; border-radius:11px;
+    background:linear-gradient(155deg, var(--gold-bright), var(--gold-deep));
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces',serif; font-weight:600; font-size:20px; color:#fff;
+    box-shadow:0 6px 14px rgba(143,106,31,0.4), inset 0 1px 0 rgba(255,255,255,0.35);
+    cursor:pointer;
+    transition:all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform-origin:center;
+  }
+  .brand .monogram:hover{
+    transform:scale(1.15);
+    box-shadow:0 10px 24px rgba(143,106,31,0.5);
+  }
+  .brand .monogram:active{
+    transform:scale(1.1);
+  }
+  .brand .word-mark{ display:flex; flex-direction:column; line-height:1; }
+  .brand h1{font-size:24px; letter-spacing:.005em; color:var(--ink);}
+  .brand h1 .accent{ color:var(--gold-deep); }
+  .brand .tagline{ font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint); margin-top:3px; }
+
+  .home-btn{
+    background:var(--ink); color:var(--cream); border:none; border-radius:10px;
+    padding:11px 18px; font-size:13.5px; font-weight:600; display:flex; align-items:center; gap:7px;
+    box-shadow:var(--shadow-sm); letter-spacing:.01em; transition:all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor:pointer;
+  }
+  .home-btn:hover{
+    background:#3a3226; 
+    transform:translateY(-1px) scale(1.06); 
+    box-shadow:var(--shadow);
+  }
+  .home-btn:active{ 
+    transform:translateY(0) scale(1.02); 
+  }
+  .action-btn{
+    background:linear-gradient(155deg, var(--gold-bright), var(--gold));
+    color:#fff; border:none; border-radius:10px;
+    padding:12px 22px; font-size:13.5px; font-weight:700; letter-spacing:.02em;
+    box-shadow:0 8px 18px rgba(143,106,31,0.3), inset 0 1px 0 rgba(255,255,255,0.25);
+    transition:all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor:pointer;
+  }
+  .action-btn:hover{ 
+    filter:brightness(1.06); 
+    transform:translateY(-1px) scale(1.08); 
+    box-shadow:0 12px 24px rgba(143,106,31,0.38); 
+  }
+  .action-btn:active{ 
+    transform:translateY(0) scale(1.04); 
+  }
+  .action-btn.save-mode{background:linear-gradient(155deg, #4C9463, var(--green)); box-shadow:0 8px 18px rgba(60,122,78,0.32), inset 0 1px 0 rgba(255,255,255,0.25);}
+  .action-btn.save-mode:hover{ box-shadow:0 12px 24px rgba(60,122,78,0.4); }
+
+  /* ---------- Main view / ledger table ---------- */
+  #mainView{ padding:14px 36px 130px 36px; }
+  .ledger-wrap{
+    max-width:1100px; margin:22px auto 0 auto;
+    background:var(--paper);
+    border:1px solid var(--rule-thick);
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .ledger-caption{
+    padding:22px 28px 16px 28px; display:flex; align-items:baseline; justify-content:space-between;
+    border-bottom:2px solid var(--rule-thick);
+    background:linear-gradient(180deg, var(--paper-deep), var(--paper));
+  }
+  .ledger-caption h2{ font-size:22px; }
+  .ledger-caption .sub{font-size:12.5px; color:var(--ink-soft); font-family:'Space Mono',monospace; letter-spacing:.02em;}
+  table.ledger{ width:100%; border-collapse:collapse; }
+  table.ledger thead th{
+    font-family:'Fraunces',serif; font-weight:600; font-size:16.5px; text-align:left;
+    padding:14px 20px; background:var(--paper-deep);
+    border-bottom:2px solid var(--rule-thick);
+    color:var(--ink);
+  }
+  table.ledger thead th:not(:last-child){ border-right:3px solid var(--rule-thick); }
+  table.ledger tbody td{
+    padding:0; border-bottom:1px solid var(--rule-thin); vertical-align:top;
+    transition:background .15s;
+  }
+  table.ledger tbody tr:hover td{ background:rgba(224,168,60,0.07); }
+  table.ledger tbody td:not(.td-actions){ border-right:3px solid var(--rule-thick); }
+  table.ledger tbody tr:last-child td{ border-bottom:none; }
+  table.ledger tbody td textarea{
+    width:100%; border:none; background:transparent; resize:none; overflow:hidden;
+    font-family:'Inter',sans-serif; font-size:14.5px; color:var(--ink); padding:14px 18px;
+    line-height:1.45; min-height:48px;
+  }
+  table.ledger tbody td textarea::placeholder{ color:var(--ink-faint); }
+  table.ledger tbody td textarea:disabled{ color:var(--ink); opacity:1; cursor:default; }
+  table.ledger tbody td textarea:focus{ outline:none; background:#fffdf4; box-shadow:inset 0 0 0 2px var(--gold-bright); }
+  td.td-word textarea{ font-weight:700; font-family:'Fraunces',serif; font-size:16px; }
+  td.td-actions{ width:46px; text-align:center; }
+  .row-del{
+    background:none; border:none; color:var(--ink-faint); font-size:16px; padding:8px;
+    border-radius:8px; transition:all .15s;
+  }
+  .row-del:hover{ background:var(--red-bg); color:var(--red); transform:scale(1.08); }
+  .ledger-footer{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:16px 28px; background:linear-gradient(180deg, var(--paper), var(--paper-deep)); border-top:2px solid var(--rule-thick);
+  }
+  .add-row-btn{
+    background:transparent; border:1.5px dashed var(--rule-thick); color:var(--gold-deep);
+    border-radius:10px; padding:10px 20px; font-weight:700; font-size:13.5px;
+    transition:all .15s;
+  }
+  .add-row-btn:hover{ background:rgba(189,138,42,0.12); border-color:var(--gold); transform:translateY(-1px); }
+  .empty-note{ padding:40px 24px; text-align:center; color:var(--ink-soft); font-style:italic; font-family:'Fraunces',serif; font-size:16px; }
+  .locked-note{ font-size:12.5px; color:var(--ink-soft); font-family:'Space Mono',monospace; }
+
+  /* ---------- Start button ---------- */
+  .start-btn{
+    position:fixed; left:32px; bottom:32px;
+    background:linear-gradient(155deg, #4C9463, var(--green));
+    color:#fff; border:none; border-radius:50px;
+    padding:17px 32px; font-size:16px; font-weight:700; letter-spacing:.02em;
+    box-shadow:0 14px 30px rgba(60,122,78,0.4), inset 0 1px 0 rgba(255,255,255,0.25);
+    display:flex; align-items:center; gap:10px;
+    transition:all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor:pointer;
+  }
+  .start-btn:hover{ 
+    transform:translateY(-2px) scale(1.08); 
+    box-shadow:0 18px 36px rgba(60,122,78,0.48); 
+  }
+  .start-btn:active{ 
+    transform:translateY(0) scale(1.04); 
+  }
+
+  /* ---------- Exercise menu ---------- */
+  #exerciseMenu{ padding:64px 32px; max-width:960px; margin:0 auto; text-align:center; }
+  #exerciseMenu h2{ font-size:34px; margin-bottom:10px; }
+  #exerciseMenu p.hint{ color:var(--ink-soft); margin-bottom:40px; font-size:15px; }
+  .exercise-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:22px;
+  }
+  .ex-card{
+    background:var(--paper); border:1px solid var(--rule-thick); border-radius:18px;
+    padding:32px 26px; box-shadow:var(--shadow-sm); text-align:left; position:relative; overflow:hidden;
+    transition:transform .2s cubic-bezier(.2,.8,.2,1), box-shadow .2s;
+  }
+  .ex-card::before{
+    content:''; position:absolute; inset:0; opacity:0; transition:opacity .2s;
+    background:linear-gradient(155deg, rgba(255,255,255,0.5), transparent 55%);
+  }
+  .ex-card .num{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:34px; height:34px; border-radius:50%;
+    font-family:'Space Mono',monospace; color:#fff; font-size:13px; letter-spacing:.02em; font-weight:700;
+    background:var(--card-accent, var(--gold));
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  }
+  .ex-card:nth-child(1){ --card-accent: var(--gold); }
+  .ex-card:nth-child(2){ --card-accent: var(--teal); }
+  .ex-card:nth-child(3){ --card-accent: var(--plum); }
+  .ex-card:nth-child(4){ --card-accent: var(--green); }
+  .ex-card h3{ font-size:20px; margin:14px 0 6px 0; }
+  .ex-card p{ color:var(--ink-soft); font-size:13.5px; margin:0; line-height:1.5; }
+  .ex-card:hover{ 
+    border-color:var(--card-accent, var(--gold)); 
+    transform:translateY(-4px) scale(1.05); 
+    box-shadow:var(--shadow); 
+  }
+  .ex-card:active{
+    transform:translateY(-2px) scale(1.02);
+  }
+  .ex-card:hover::before{ opacity:1; }
+
+  /* ---------- Exercise area shared ---------- */
+  #exerciseArea{ padding:22px 32px 140px 32px; }
+  .ex-topbar{ display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto 22px auto; }
+  .ex-progress{ font-family:'Space Mono',monospace; font-size:12.5px; color:var(--ink-soft); background:var(--paper); border:1px solid var(--rule-thick); padding:7px 14px; border-radius:20px; }
+  .submit-btn{
+    position:fixed; right:32px; bottom:32px;
+    background:linear-gradient(155deg, #3a3226, var(--ink)); color:var(--cream); border:none; border-radius:50px;
+    padding:16px 30px; font-size:14.5px; font-weight:700; box-shadow:var(--shadow); letter-spacing:.01em;
+    transition:all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor:pointer;
+  }
+  .submit-btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 18px 36px rgba(0,0,0,0.2);
+  }
+  .submit-btn:active{
+    transform:scale(1.04);
+  }
+  .submit-btn:hover{ transform:translateY(-2px); box-shadow:var(--shadow-lg); }
+
+  /* ---- Drag and drop ---- */
+  .dnd-layout{ display:flex; gap:26px; max-width:1300px; margin:0 auto; align-items:stretch; height:calc(100vh - 250px); min-height:380px; }
+  .dnd-defs{
+    flex:0 0 78%; display:flex; flex-wrap:wrap; align-content:flex-start; gap:16px;
+    overflow-y:auto; overflow-x:hidden; height:100%; padding:2px 10px 20px 2px;
+    -webkit-overflow-scrolling:touch; scrollbar-gutter:stable; contain:content;
+  }
+  .dnd-def-box{
+    flex:1 1 260px; min-width:240px; background:var(--paper); border:2px solid var(--rule-thick);
+    border-radius:14px; padding:16px 18px; min-height:100px;
+    box-shadow:var(--shadow-sm);
+  }
+  .dnd-def-box.correct, .dnd-def-box.incorrect{ transition:border-color .15s, background .15s; }
+  .dnd-def-box .def-text{ font-size:14px; color:var(--ink); margin-bottom:12px; line-height:1.45; }
+  .dnd-def-box .drop-slot{
+    min-height:38px; border:1.5px dashed var(--rule-thin); border-radius:8px;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14.5px;
+    background:rgba(255,255,255,0.55); font-family:'Fraunces',serif; color:var(--ink-faint);
+  }
+  .dnd-def-box.correct{ border-color:var(--green); background:var(--green-bg); }
+  .dnd-def-box.correct .drop-slot{ border-style:solid; border-color:var(--green); color:var(--green); background:#fff; }
+  .dnd-def-box.incorrect{ border-color:var(--red); background:var(--red-bg); }
+  .dnd-def-box.incorrect .drop-slot{ border-style:solid; border-color:var(--red); color:var(--red); background:#fff; }
+  .dnd-def-box.dragover{ border-color:var(--gold-bright); background:#fffaf0; }
+  .dnd-def-box .drop-slot.filled{ border-style:solid; border-color:var(--gold); background:#fff; }
+  .dnd-def-box .drop-slot .placed-word{ color:var(--ink); font-weight:800; }
+  .dnd-words{
+    flex:0 0 20%; display:flex; flex-direction:column; gap:11px;
+    overflow-y:auto; overflow-x:hidden; height:100%; padding:2px 8px 20px 2px;
+    -webkit-overflow-scrolling:touch; scrollbar-gutter:stable; contain:content;
+  }
+  .dnd-defs::-webkit-scrollbar, .dnd-words::-webkit-scrollbar{ width:8px; }
+  .dnd-defs::-webkit-scrollbar-thumb, .dnd-words::-webkit-scrollbar-thumb{ background:var(--rule-thick); border-radius:8px; }
+  .dnd-defs::-webkit-scrollbar-track, .dnd-words::-webkit-scrollbar-track{ background:transparent; }
+  .dnd-word-chip{
+    background:var(--cream); border:1.5px solid var(--rule-thick); border-radius:10px;
+    padding:12px 14px; font-weight:700; font-family:'Fraunces',serif; text-align:center; cursor:grab;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08); flex-shrink:0;
+  }
+  .dnd-word-chip:hover{ border-color:var(--gold); }
+  .dnd-word-chip.placed{ opacity:0.3; cursor:default; box-shadow:none; }
+  .dnd-word-chip:active{ cursor:grabbing; }
+
+  /* ---- Multiple choice ---- */
+  .mc-wrap{ max-width:740px; margin:36px auto 0 auto; text-align:center; }
+  .mc-prompt-box{
+    background:var(--paper); border:2px solid var(--rule-thick); border-radius:18px;
+    padding:44px 34px; margin-bottom:30px; box-shadow:var(--shadow);
+    position:relative; overflow:hidden;
+  }
+  .mc-prompt-box::before{ content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg, var(--gold-bright), var(--teal)); }
+  .mc-prompt-label{ font-family:'Space Mono',monospace; font-size:11.5px; color:var(--gold-deep); letter-spacing:.14em; margin-bottom:12px; text-transform:uppercase;}
+  .mc-prompt-text{ font-family:'Fraunces',serif; font-size:25px; line-height:1.4; }
+  .mc-options{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .mc-option{
+    background:var(--cream); border:2px solid var(--rule-thick); border-radius:12px;
+    padding:18px; font-size:15.5px; font-weight:700; transition:all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1); box-shadow:var(--shadow-sm);
+    cursor:pointer;
+  }
+  .mc-option:hover:not(:disabled){ 
+    border-color:var(--gold-bright); 
+    background:#fffaf0; 
+    transform:translateY(-2px) scale(1.06); 
+    box-shadow:var(--shadow); 
+  }
+  .mc-option:active:not(:disabled){
+    transform:translateY(-1px) scale(1.03);
+  }
+  .mc-option.correct{ border-color:var(--green); background:var(--green-bg); color:var(--green); }
+  .mc-option.incorrect{ border-color:var(--red); background:var(--red-bg); color:var(--red); }
+  .mc-option:disabled{ cursor:default; }
+  .mc-option:disabled:hover{ transform:none; }
+
+  /* ---- Connect ---- */
+  .connect-wrap{ max-width:900px; margin:34px auto 0 auto; position:relative; }
+  .connect-cols{ display:flex; justify-content:space-between; gap:80px; position:relative; }
+  .connect-col{ flex:1; display:flex; flex-direction:column; gap:16px; }
+  .connect-item{
+    background:var(--paper); border:2px solid var(--rule-thick); border-radius:12px;
+    padding:15px 18px; font-weight:700; font-family:'Fraunces',serif; font-size:15.5px; text-align:center; transition:all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow:var(--shadow-sm);
+    cursor:pointer;
+  }
+  .connect-item:not(.matched):hover{ 
+    border-color:var(--gold-bright); 
+    transform:translateY(-1px) scale(1.08); 
+    box-shadow:var(--shadow); 
+  }
+  .connect-item:not(.matched):active{
+    transform:translateY(0) scale(1.04);
+  }
+  .connect-item.selected{ border-color:var(--gold-bright); background:#fffaf0; box-shadow:0 0 0 3px rgba(224,168,60,0.25); }
+  .connect-item.matched{ border-color:var(--green); background:var(--green-bg); cursor:default; box-shadow:none; }
+  .connect-item.wrong{ border-color:var(--red); background:var(--red-bg); animation:shake .3s; }
+  @keyframes shake{ 0%,100%{transform:translateX(0);} 25%{transform:translateX(-4px);} 75%{transform:translateX(4px);} }
+  #connectSvg{ position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; }
+
+  /* ---------- Modals ---------- */
+  .modal{
+    position:fixed; inset:0; background:rgba(24,20,15,0.6); display:flex;
+    align-items:center; justify-content:center; z-index:100; backdrop-filter:blur(4px);
+    animation:fadeIn .2s ease;
+  }
+  @keyframes fadeIn{ from{ opacity:0; } to{ opacity:1; } }
+  .modal-content{
+    background:var(--cream); border:1px solid var(--rule-thick); border-radius:20px; padding:38px 42px; width:380px;
+    text-align:center; box-shadow:var(--shadow-lg);
+    animation:modalPop .25s cubic-bezier(.2,.9,.3,1.2);
+  }
+  @keyframes modalPop{ from{ opacity:0; transform:scale(.94) translateY(8px); } to{ opacity:1; transform:scale(1) translateY(0); } }
+  .modal-content h3{ font-size:21px; margin-bottom:24px; }
+  .pin-boxes{ display:flex; gap:11px; justify-content:center; margin-bottom:26px; }
+  .pin-box{
+    width:48px; height:58px; text-align:center; font-size:23px; font-weight:700;
+    border:2px solid var(--rule-thick); border-radius:12px; background:var(--paper);
+    color:var(--ink); font-family:'Space Mono',monospace; transition:all .15s;
+  }
+  .pin-box:focus{ outline:none; border-color:var(--gold-bright); background:#fffaf0; box-shadow:0 0 0 4px rgba(224,168,60,0.2); }
+  .modal-error{ color:var(--red); font-size:13px; margin:-14px 0 16px 0; min-height:16px; font-weight:600; }
+  .modal-primary-btn{
+    width:100%; background:linear-gradient(155deg, var(--gold-bright), var(--gold)); color:#fff; border:none; border-radius:10px;
+    padding:14px; font-size:15px; font-weight:700; box-shadow:0 8px 18px rgba(143,106,31,0.3);
+    transition:transform .15s, box-shadow .15s;
+  }
+  .modal-primary-btn:hover{ transform:translateY(-1px); box-shadow:0 12px 24px rgba(143,106,31,0.38); }
+  .modal-cancel{ margin-top:16px; background:none; border:none; color:var(--ink-soft); font-size:13px; text-decoration:underline; }
+
+  #resultsModal .modal-content{ width:440px; }
+  .results-score{ font-family:'Fraunces',serif; font-size:44px; margin-bottom:8px; background:linear-gradient(155deg, var(--gold-deep), var(--teal-deep)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .results-detail{ color:var(--ink-soft); font-size:14px; margin-bottom:26px; }
+  .close-results-btn{
+    width:100%; background:linear-gradient(155deg, #3a3226, var(--ink)); color:var(--cream); border:none; border-radius:10px;
+    padding:14px; font-size:15px; font-weight:700; transition:transform .15s;
+  }
+  .close-results-btn:hover{ transform:translateY(-1px); }
+
+  /* ---- Intro gate modal ---- */
+  #introModal .modal-content{ width:400px; }
+  #introModal h3{ font-size:19px; line-height:1.4; margin-bottom:26px; }
+  .intro-btn{
+    width:100%; border:none; border-radius:10px; padding:14px; font-size:15.5px; font-weight:700;
+    color:#fff; letter-spacing:.02em; transition:background .2s, transform .15s, box-shadow .2s;
+  }
+  .intro-btn#introOkBtn span{ font-family:'Space Mono',monospace; opacity:.85; }
+  .intro-btn.counting{ background:#9C9488; cursor:not-allowed; box-shadow:none; }
+  .intro-btn.ready{ background:linear-gradient(155deg, #9B3A34, #7A2C27); cursor:pointer; box-shadow:0 10px 22px rgba(122,44,39,0.35); }
+  .intro-btn.ready:hover{ transform:translateY(-1px); box-shadow:0 14px 28px rgba(122,44,39,0.42); }
+
+  @media (max-width:720px){
+    .exercise-grid{ grid-template-columns:1fr; }
+    .dnd-layout{ flex-direction:column; height:auto; max-height:none; }
+    .dnd-defs{ height:52vh; }
+    .dnd-words{ flex:0 0 auto; flex-direction:row; flex-wrap:wrap; height:auto; max-height:22vh; }
+    .mc-options{ grid-template-columns:1fr; }
+    .connect-cols{ gap:24px; }
+    table.ledger thead th{ font-size:14px; padding:8px 10px; }
+    td.td-word textarea, table.ledger tbody td textarea{ font-size:13px; padding:8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="monogram">W</div>
+    <div class="word-mark">
+      <h1>W <span class="accent">Vocab</span></h1>
+      <span class="tagline">Vocabulary Trainer</span>
+    </div>
+  </div>
+  <div style="display:flex; gap:10px; align-items:center;">
+    <button id="homeBtn" class="home-btn hidden">⌂ Home</button>
+    <button id="actionBtn" class="action-btn">Download</button>
+  </div>
+</div>
+
+<!-- MAIN VIEW: the ledger table -->
+<div id="mainView">
+  <div class="ledger-wrap">
+    <div class="ledger-caption">
+      <h2>Vocabulary Ledger</h2>
+      <span class="sub" id="lockedNote"></span>
+    </div>
+    <table class="ledger">
+      <thead>
+        <tr><th style="width:26%">Word</th><th style="width:37%">Definition</th><th style="width:37%">Translation</th><th style="width:44px"></th></tr>
+      </thead>
+      <tbody id="ledgerBody"></tbody>
+    </table>
+    <div id="emptyNote" class="empty-note hidden">No words yet — add your first entry below.</div>
+    <div class="ledger-footer">
+      <button id="addRowBtn" class="add-row-btn">+ Add word</button>
+      <span class="sub" id="countNote"></span>
+    </div>
+  </div>
+</div>
+
+<button id="startBtn" class="start-btn">▶ Start</button>
+
+<!-- EXERCISE MENU -->
+<div id="exerciseMenu" class="hidden">
+  <h2>Choose an exercise</h2>
+  <p class="hint">Pick a way to practice today's words.</p>
+  <div class="exercise-grid">
+    <button class="ex-card" data-ex="drag"><span class="num">01</span><h3>Drag and drop</h3><p>Drag each word onto its matching definition.</p></button>
+    <button class="ex-card" data-ex="mcDef"><span class="num">02</span><h3>Multiple choice — definition</h3><p>Pick the word that matches the definition shown.</p></button>
+    <button class="ex-card" data-ex="mcTrans"><span class="num">03</span><h3>Multiple choice — translation</h3><p>Pick the word that matches the translation shown.</p></button>
+    <button class="ex-card" data-ex="connect"><span class="num">04</span><h3>Connect to each other</h3><p>Match words to their translations, five at a time.</p></button>
+  </div>
+</div>
+
+<!-- EXERCISE AREA -->
+<div id="exerciseArea" class="hidden"></div>
+
+<!-- PASSWORD MODAL -->
+<div id="passwordModal" class="modal hidden">
+  <div class="modal-content">
+    <h3 id="passwordTitle">Create a password</h3>
+    <div class="pin-boxes" id="pinBoxes">
+      <input class="pin-box" type="text" inputmode="numeric" maxlength="1" pattern="[0-9]*">
+      <input class="pin-box" type="text" inputmode="numeric" maxlength="1" pattern="[0-9]*">
+      <input class="pin-box" type="text" inputmode="numeric" maxlength="1" pattern="[0-9]*">
+      <input class="pin-box" type="text" inputmode="numeric" maxlength="1" pattern="[0-9]*">
+      <input class="pin-box" type="text" inputmode="numeric" maxlength="1" pattern="[0-9]*">
+    </div>
+    <div class="modal-error" id="pinError"></div>
+    <button class="modal-primary-btn" id="pinConfirmBtn">Download</button>
+    <button class="modal-cancel" id="pinCancelBtn">Cancel</button>
+  </div>
+</div>
+
+<!-- RESULTS MODAL -->
+<div id="resultsModal" class="modal hidden">
+  <div class="modal-content">
+    <div class="results-score" id="resultsScore">0 / 0</div>
+    <div class="results-detail" id="resultsDetail">Correct answers</div>
+    <button class="close-results-btn" id="closeResultsBtn">Close results</button>
+  </div>
+</div>
+
+<!-- INTRO / GATE MODAL — shown every time the app is opened -->
+<div id="introModal" class="modal">
+  <div class="modal-content">
+    <h3>To exit, press the W on the corner of display</h3>
+    <button id="introOkBtn" class="intro-btn counting" disabled>OK <span id="introTimer">(3)</span></button>
+  </div>
+</div>
+
+<script id="vocabDataScript">
+window.__VOCAB_DATA__ = { fileId: null, locked: false, passwordHash: null, words: [] };
+</script>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============ Utilities ============ */
+  function uid(){ return 'w' + Date.now().toString(36) + Math.random().toString(36).slice(2,8); }
+  function fileId(){ return 'f' + Date.now().toString(36) + Math.random().toString(36).slice(2,8); }
+  function simpleHash(str){
+    var h = 5381;
+    for(var i=0;i<str.length;i++){ h = ((h << 5) + h) + str.charCodeAt(i); h = h & 0xffffffff; }
+    return (h >>> 0).toString(36);
+  }
+  function shuffle(arr){
+    var a = arr.slice();
+    for(var i=a.length-1;i>0;i--){ var j = Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; }
+    return a;
+  }
+  function escapeHtml(s){
+    return (s||'').replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  /* ============ State ============ */
+  var embedded = window.__VOCAB_DATA__ || { fileId:null, locked:false, passwordHash:null, words:[] };
+  var storageKey = embedded.fileId ? ('vocabTrainer_' + embedded.fileId) : null;
+
+  var state = {
+    fileId: embedded.fileId,
+    locked: !!embedded.locked,
+    passwordHash: embedded.passwordHash || null,
+    words: embedded.words || []
+  };
+
+  // If this is a locked/downloaded copy, prefer any locally saved edits over the embedded snapshot.
+  if(storageKey){
+    try{
+      var saved = localStorage.getItem(storageKey);
+      if(saved){
+        var parsed = JSON.parse(saved);
+        state.locked = true;
+        state.passwordHash = parsed.passwordHash || state.passwordHash;
+        state.words = parsed.words || state.words;
+      }
+    }catch(e){ /* ignore corrupt storage */ }
+  }
+
+  function persist(){
+    if(!storageKey) return;
+    try{
+      localStorage.setItem(storageKey, JSON.stringify({ passwordHash: state.passwordHash, words: state.words }));
+    }catch(e){ /* storage unavailable, ignore */ }
+  }
+
+  /* ============ DOM refs ============ */
+  var $ = function(id){ return document.getElementById(id); };
+  var mainView = $('mainView'), exerciseMenu = $('exerciseMenu'), exerciseArea = $('exerciseArea');
+  var homeBtn = $('homeBtn'), actionBtn = $('actionBtn'), startBtn = $('startBtn');
+  var ledgerBody = $('ledgerBody'), addRowBtn = $('addRowBtn'), emptyNote = $('emptyNote'), countNote = $('countNote'), lockedNote = $('lockedNote');
+  var passwordModal = $('passwordModal'), pinBoxes = $('pinBoxes'), pinError = $('pinError'), pinTitle = $('passwordTitle'), pinConfirmBtn = $('pinConfirmBtn'), pinCancelBtn = $('pinCancelBtn');
+  var resultsModal = $('resultsModal'), resultsScore = $('resultsScore'), resultsDetail = $('resultsDetail'), closeResultsBtn = $('closeResultsBtn');
+  var introModal = $('introModal'), introOkBtn = $('introOkBtn'), introTimer = $('introTimer');
+
+  /* ============ View switching ============ */
+  function showMainView(){
+    mainView.classList.remove('hidden');
+    startBtn.classList.remove('hidden');
+    exerciseMenu.classList.add('hidden');
+    exerciseArea.classList.add('hidden');
+    homeBtn.classList.add('hidden');
+    actionBtn.classList.remove('hidden');
+    renderTable();
+  }
+  function showExerciseMenu(){
+    mainView.classList.add('hidden');
+    startBtn.classList.add('hidden');
+    exerciseArea.classList.add('hidden');
+    exerciseMenu.classList.remove('hidden');
+    homeBtn.classList.remove('hidden');
+    actionBtn.classList.add('hidden');
+  }
+  function showExerciseArea(){
+    mainView.classList.add('hidden');
+    startBtn.classList.add('hidden');
+    exerciseMenu.classList.add('hidden');
+    exerciseArea.classList.remove('hidden');
+    homeBtn.classList.remove('hidden');
+    actionBtn.classList.add('hidden');
+  }
+  homeBtn.addEventListener('click', showMainView);
+  startBtn.addEventListener('click', function(){
+    if(nonEmptyWords().length < 1){ alert('Add at least one word to the ledger before starting.'); return; }
+    showExerciseMenu();
+  });
+
+  /* ============ Ledger table (main view) ============ */
+  function updateActionButtonLabel(){
+    if(!state.locked){
+      actionBtn.textContent = 'Download';
+      actionBtn.classList.remove('save-mode');
+      lockedNote.textContent = '';
+    } else if(state.locked && !editingUnlocked){
+      actionBtn.textContent = 'Edit';
+      actionBtn.classList.remove('save-mode');
+      lockedNote.textContent = '🔒 locked — press Edit to make changes';
+    } else {
+      actionBtn.textContent = 'Save';
+      actionBtn.classList.add('save-mode');
+      lockedNote.textContent = '✎ editing — press Save when done';
+    }
+  }
+
+  var editingUnlocked = false; // true only while a locked file has been unlocked via password for editing
+
+  function isEditable(){
+    return !state.locked || editingUnlocked;
+  }
+
+  function renderTable(){
+    ledgerBody.innerHTML = '';
+    emptyNote.classList.toggle('hidden', state.words.length > 0);
+    countNote.textContent = state.words.length + (state.words.length === 1 ? ' word' : ' words');
+    var editable = isEditable();
+    state.words.forEach(function(w){
+      var tr = document.createElement('tr');
+      tr.dataset.id = w.id;
+
+      tr.appendChild(makeCell(w, 'word', editable, true));
+      tr.appendChild(makeCell(w, 'definition', editable, false));
+      tr.appendChild(makeCell(w, 'translation', editable, false));
+
+      var tdAct = document.createElement('td');
+      tdAct.className = 'td-actions';
+      if(editable){
+        var del = document.createElement('button');
+        del.className = 'row-del'; del.innerHTML = '✕'; del.title = 'Delete row';
+        del.addEventListener('click', function(){
+          state.words = state.words.filter(function(x){ return x.id !== w.id; });
+          renderTable();
+        });
+        tdAct.appendChild(del);
+      }
+      tr.appendChild(tdAct);
+      ledgerBody.appendChild(tr);
+    });
+    updateActionButtonLabel();
+  }
+
+  function makeCell(w, field, editable, isWord){
+    var td = document.createElement('td');
+    td.className = isWord ? 'td-word' : '';
+    var ta = document.createElement('textarea');
+    ta.rows = 1;
+    ta.value = w[field] || '';
+    ta.disabled = !editable;
+    ta.addEventListener('input', function(){
+      // Fallback for mobile keyboards / paste flows where a newline lands
+      // in the value without a preventable keydown. Pasted text can arrive
+      // in several chunks on some mobile browsers, so wait a beat for it to
+      // fully settle before splitting — otherwise a partial chunk gets
+      // processed more than once and a word ends up duplicated.
+      if(ta.value.indexOf('\n') !== -1){
+        if(ta._splitPending) return;
+        ta._splitPending = true;
+        setTimeout(function(){
+          ta._splitPending = false;
+          var parts = ta.value.split(/\r\n|\r|\n/);
+          var idx0 = state.words.findIndex(function(x){ return x.id === w.id; });
+          if(idx0 === -1) return;
+          w[field] = parts[0];
+          var curIdx0 = idx0;
+          for(var pi = 1; pi < parts.length; pi++){
+            if(!parts[pi]) continue; // skip blank lines
+            curIdx0++;
+            var row0 = ensureRowAt(curIdx0);
+            row0[field] = parts[pi] + (row0[field] ? ' ' + row0[field] : '');
+          }
+          focusCell(curIdx0, field);
+        }, 60);
+        return;
+      }
+      w[field] = ta.value;
+      autoGrow(ta);
+    });
+    if(editable){
+      ta.addEventListener('keydown', function(e){
+        if(e.key !== 'Enter' || e.shiftKey || e.ctrlKey || e.altKey || e.metaKey) return;
+        e.preventDefault();
+        var idx = state.words.findIndex(function(x){ return x.id === w.id; });
+        if(idx === -1) return;
+        var pos = ta.selectionStart, endPos = ta.selectionEnd;
+        var before = ta.value.slice(0, pos);
+        var after = ta.value.slice(endPos);
+        w[field] = before;
+        var nextIdx = idx + 1;
+        var nextRow = ensureRowAt(nextIdx);
+        if(after){
+          nextRow[field] = after + (nextRow[field] ? ' ' + nextRow[field] : '');
+        }
+        focusCell(nextIdx, field);
+      });
+      ta.addEventListener('paste', function(e){
+        var cd = e.clipboardData || window.clipboardData;
+        if(!cd) return;
+        var text = cd.getData('text');
+        var lines = text.split(/\r\n|\r|\n/).filter(function(t){ return t.length > 0; });
+        if(lines.length <= 1) return; // single line: let the browser paste normally
+        e.preventDefault();
+        var idx = state.words.findIndex(function(x){ return x.id === w.id; });
+        if(idx === -1) return;
+        var pos = ta.selectionStart, endPos = ta.selectionEnd;
+        var before = ta.value.slice(0, pos);
+        var after = ta.value.slice(endPos);
+        w[field] = before + lines[0];
+        var curIdx = idx;
+        for(var i = 1; i < lines.length; i++){
+          curIdx++;
+          var row = ensureRowAt(curIdx);
+          row[field] = lines[i];
+        }
+        if(after){
+          curIdx++;
+          var lastRow = ensureRowAt(curIdx);
+          lastRow[field] = after + (lastRow[field] ? ' ' + lastRow[field] : '');
+        }
+        focusCell(curIdx, field);
+      });
+    }
+    td.appendChild(ta);
+    setTimeout(function(){ autoGrow(ta); }, 0);
+    return td;
+  }
+  function ensureRowAt(index){
+    while(state.words.length <= index){
+      state.words.push({ id: uid(), word:'', definition:'', translation:'' });
+    }
+    return state.words[index];
+  }
+  function focusCell(rowIndex, field){
+    renderTable();
+    var rows = ledgerBody.querySelectorAll('tr');
+    var row = rows[rowIndex];
+    if(!row) return;
+    var colIndex = field === 'word' ? 0 : (field === 'definition' ? 1 : 2);
+    var td = row.children[colIndex];
+    var ta = td && td.querySelector('textarea');
+    if(ta){
+      ta.focus();
+      var v = ta.value;
+      ta.setSelectionRange(v.length, v.length);
+    }
+  }
+  function autoGrow(ta){ ta.style.height = 'auto'; ta.style.height = (ta.scrollHeight) + 'px'; }
+
+  addRowBtn.addEventListener('click', function(){
+    if(!isEditable()) return;
+    state.words.push({ id: uid(), word:'', definition:'', translation:'' });
+    renderTable();
+    var rows = ledgerBody.querySelectorAll('tr');
+    var last = rows[rows.length-1];
+    if(last){ var t = last.querySelector('textarea'); if(t) t.focus(); }
+  });
+
+  /* ============ Action button: Download / Edit / Save ============ */
+  actionBtn.addEventListener('click', function(){
+    if(!state.locked){
+      openPasswordModal('create');
+    } else if(!editingUnlocked){
+      openPasswordModal('verify');
+    } else {
+      // Save
+      editingUnlocked = false;
+      persist();
+      renderTable();
+    }
+  });
+
+  /* ============ Password modal (create / verify) ============ */
+  var pinInputs = Array.prototype.slice.call(pinBoxes.querySelectorAll('.pin-box'));
+  var pinMode = 'create';
+
+  function openPasswordModal(mode){
+    pinMode = mode;
+    pinError.textContent = '';
+    pinInputs.forEach(function(inp){ inp.value = ''; });
+    pinTitle.textContent = (mode === 'create') ? 'Create a password' : 'Enter password';
+    pinConfirmBtn.textContent = (mode === 'create') ? 'Download' : 'Unlock';
+    passwordModal.classList.remove('hidden');
+    setTimeout(function(){ pinInputs[0].focus(); }, 30);
+  }
+  function closePasswordModal(){ passwordModal.classList.add('hidden'); }
+  pinCancelBtn.addEventListener('click', closePasswordModal);
+
+  pinInputs.forEach(function(inp, idx){
+    inp.addEventListener('input', function(){
+      inp.value = inp.value.replace(/[^0-9]/g,'').slice(0,1);
+      if(inp.value && idx < pinInputs.length - 1){ pinInputs[idx+1].focus(); }
+    });
+    inp.addEventListener('keydown', function(e){
+      if(e.key === 'Backspace' && !inp.value && idx > 0){ pinInputs[idx-1].focus(); }
+      if(e.key === 'Enter'){ pinConfirmBtn.click(); }
+    });
+  });
+
+  pinConfirmBtn.addEventListener('click', function(){
+    var pin = pinInputs.map(function(i){ return i.value; }).join('');
+    if(pin.length !== 5){
+      pinError.textContent = 'Enter all 5 digits.';
+      return;
+    }
+    if(pinMode === 'create'){
+      closePasswordModal();
+      generateDownload(pin);
+    } else {
+      var hash = simpleHash(pin);
+      if(hash === state.passwordHash){
+        editingUnlocked = true;
+        closePasswordModal();
+        renderTable();
+      } else {
+        pinError.textContent = 'Incorrect password.';
+        pinInputs.forEach(function(i){ i.value=''; });
+        pinInputs[0].focus();
+      }
+    }
+  });
+
+  /* ============ Generate downloadable locked copy ============ */
+  function generateDownload(pin){
+    // Make sure we're on the main view with no modals open before snapshotting.
+    passwordModal.classList.add('hidden');
+    resultsModal.classList.add('hidden');
+    showMainView();
+
+    var clone = document.documentElement.cloneNode(true);
+    var dataScript = clone.querySelector('#vocabDataScript');
+    var newData = {
+      fileId: fileId(),
+      locked: true,
+      passwordHash: simpleHash(pin),
+      words: state.words
+    };
+    dataScript.textContent = 'window.__VOCAB_DATA__ = ' + JSON.stringify(newData) + ';';
+
+    var htmlStr = '<!DOCTYPE html>\n' + clone.outerHTML;
+    var blob = new Blob([htmlStr], { type: 'text/html' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'vocabulary-trainer.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 2000);
+  }
+
+  /* ============ Exercise menu wiring ============ */
+  Array.prototype.slice.call(document.querySelectorAll('.ex-card')).forEach(function(card){
+    card.addEventListener('click', function(){
+      startExercise(card.dataset.ex);
+    });
+  });
+
+  function startExercise(type){
+    showExerciseArea();
+    if(type === 'drag') renderDragDrop();
+    else if(type === 'mcDef') renderMultipleChoice('definition');
+    else if(type === 'mcTrans') renderMultipleChoice('translation');
+    else if(type === 'connect') renderConnect();
+  }
+
+  function showResults(correctCount, total, label){
+    resultsScore.textContent = correctCount + ' / ' + total;
+    resultsDetail.textContent = label || 'Correct answers';
+    resultsModal.classList.remove('hidden');
+  }
+  closeResultsBtn.addEventListener('click', function(){ resultsModal.classList.add('hidden'); });
+
+  /* Only words with real content should ever show up in an exercise.
+     requireFields: list of extra fields (besides "word") that must be non-empty. */
+  function usableWords(requireFields){
+    requireFields = requireFields || [];
+    return state.words.filter(function(w){
+      if(!w.word || !w.word.trim()) return false;
+      for(var i=0;i<requireFields.length;i++){
+        var f = requireFields[i];
+        if(!w[f] || !w[f].trim()) return false;
+      }
+      return true;
+    });
+  }
+  function nonEmptyWords(){
+    return state.words.filter(function(w){ return w.word && w.word.trim(); });
+  }
+  function showExerciseEmptyMessage(text){
+    exerciseArea.innerHTML = '<div class="empty-note" style="max-width:600px;margin:60px auto;">' + escapeHtml(text) + '</div>';
+  }
+
+  /* ============ Exercise 1: Drag & Drop ============ */
+  function renderDragDrop(){
+    var words = shuffle(usableWords(['definition']));
+    if(words.length < 1){ showExerciseEmptyMessage('No words with a definition yet — add definitions in the ledger first.'); return; }
+    exerciseArea.innerHTML =
+      '<div class="ex-topbar"><span class="ex-progress">Drag and drop — match each word to its definition</span></div>' +
+      '<div class="dnd-layout">' +
+        '<div class="dnd-defs" id="dndDefs"></div>' +
+        '<div class="dnd-words" id="dndWords"></div>' +
+      '</div>' +
+      '<button class="submit-btn" id="dndSubmit">Submit</button>';
+
+    var defsWrap = $('dndDefs'), wordsWrap = $('dndWords');
+    var defOrder = shuffle(words);
+
+    defOrder.forEach(function(w){
+      var box = document.createElement('div');
+      box.className = 'dnd-def-box';
+      box.dataset.wordId = w.id;
+      box.innerHTML = '<div class="def-text">' + escapeHtml(w.definition) + '</div>' +
+                       '<div class="drop-slot" data-slot="1">drop word here</div>';
+      var slot = box.querySelector('.drop-slot');
+      box.addEventListener('dragover', function(e){ e.preventDefault(); box.classList.add('dragover'); });
+      box.addEventListener('dragleave', function(){ box.classList.remove('dragover'); });
+      box.addEventListener('drop', function(e){
+        e.preventDefault();
+        box.classList.remove('dragover');
+        var chipId = e.dataTransfer.getData('text/plain');
+        placeChip(chipId, box, slot);
+      });
+      defsWrap.appendChild(box);
+    });
+
+    words.forEach(function(w){
+      var chip = document.createElement('div');
+      chip.className = 'dnd-word-chip';
+      chip.textContent = w.word;
+      chip.draggable = true;
+      chip.dataset.wordId = w.id;
+      chip.addEventListener('dragstart', function(e){
+        e.dataTransfer.setData('text/plain', w.id);
+      });
+      wordsWrap.appendChild(chip);
+    });
+
+    function placeChip(chipId, box, slot){
+      var chip = wordsWrap.querySelector('[data-word-id="' + chipId + '"]');
+      if(!chip) return;
+      // if slot already has a placed word, return it to the pool
+      var existing = slot.querySelector('.placed-word');
+      if(existing){
+        var oldChip = wordsWrap.querySelector('[data-word-id="' + existing.dataset.wordId + '"]');
+        if(oldChip) oldChip.classList.remove('placed');
+      }
+      slot.innerHTML = '';
+      var tag = document.createElement('div');
+      tag.className = 'placed-word';
+      tag.dataset.wordId = chipId;
+      tag.textContent = chip.textContent;
+      slot.appendChild(tag);
+      slot.classList.add('filled');
+      chip.classList.add('placed');
+    }
+
+    $('dndSubmit').addEventListener('click', function(){
+      var boxes = defsWrap.querySelectorAll('.dnd-def-box');
+      var correct = 0, total = boxes.length;
+      boxes.forEach(function(box){
+        var slot = box.querySelector('.drop-slot');
+        var placed = slot.querySelector('.placed-word');
+        box.classList.remove('correct','incorrect');
+        if(placed && placed.dataset.wordId === box.dataset.wordId){
+          box.classList.add('correct'); correct++;
+        } else {
+          box.classList.add('incorrect');
+        }
+      });
+      showResults(correct, total, 'Definitions matched correctly');
+    });
+  }
+
+  /* ============ Exercise 2 & 3: Multiple choice ============ */
+  function renderMultipleChoice(field){
+    var questions = shuffle(usableWords([field]));
+    var wordPool = nonEmptyWords();
+    if(questions.length < 1){
+      showExerciseEmptyMessage('No words with a ' + field + ' yet — fill that column in the ledger first.');
+      return;
+    }
+    var idx = 0, correctCount = 0, answeredCurrent = false;
+    var label = field === 'definition' ? 'Definition' : 'Translation';
+
+    exerciseArea.innerHTML =
+      '<div class="ex-topbar"><span class="ex-progress" id="mcProgress"></span></div>' +
+      '<div class="mc-wrap">' +
+        '<div class="mc-prompt-box"><div class="mc-prompt-label">' + label + '</div><div class="mc-prompt-text" id="mcPrompt"></div></div>' +
+        '<div class="mc-options" id="mcOptions"></div>' +
+      '</div>' +
+      '<button class="submit-btn" id="mcSubmit">Submit</button>';
+
+    function buildOptions(correctWord){
+      var others = wordPool.filter(function(w){ return w.id !== correctWord.id; });
+      var distractors = shuffle(others).slice(0, 3);
+      return shuffle([correctWord].concat(distractors));
+    }
+
+    function renderQuestion(){
+      if(idx >= questions.length){
+        showResults(correctCount, questions.length, 'Correct answers');
+        return;
+      }
+      answeredCurrent = false;
+      var q = questions[idx];
+      $('mcProgress').textContent = 'Question ' + (idx+1) + ' / ' + questions.length;
+      $('mcPrompt').textContent = q[field];
+      var optsWrap = $('mcOptions');
+      optsWrap.innerHTML = '';
+      var options = buildOptions(q);
+      options.forEach(function(opt){
+        var btn = document.createElement('button');
+        btn.className = 'mc-option';
+        btn.textContent = opt.word;
+        btn.addEventListener('click', function(){
+          if(answeredCurrent) return;
+          answeredCurrent = true;
+          var isCorrect = opt.id === q.id;
+          btn.classList.add(isCorrect ? 'correct' : 'incorrect');
+          if(isCorrect) correctCount++;
+          else {
+            var correctBtn = Array.prototype.find.call(optsWrap.children, function(b){ return b.textContent === q.word; });
+            if(correctBtn) correctBtn.classList.add('correct');
+          }
+          Array.prototype.forEach.call(optsWrap.children, function(b){ b.disabled = true; });
+          setTimeout(function(){ idx++; renderQuestion(); }, 900);
+        });
+        optsWrap.appendChild(btn);
+      });
+    }
+    renderQuestion();
+
+    $('mcSubmit').addEventListener('click', function(){
+      showResults(correctCount, idx, 'Correct answers so far');
+    });
+  }
+
+  /* ============ Exercise 4: Connect to each other ============ */
+  function renderConnect(){
+    var remaining = shuffle(usableWords(['translation']));
+    if(remaining.length < 1){ showExerciseEmptyMessage('No words with a translation yet — fill that column in the ledger first.'); return; }
+    var totalCorrectPairs = 0, totalPairs = remaining.length;
+
+    exerciseArea.innerHTML =
+      '<div class="ex-topbar"><span class="ex-progress" id="connProgress"></span></div>' +
+      '<div class="connect-wrap">' +
+        '<svg id="connectSvg"></svg>' +
+        '<div class="connect-cols"><div class="connect-col" id="connLeft"></div><div class="connect-col" id="connRight"></div></div>' +
+      '</div>' +
+      '<button class="submit-btn" id="connSubmit">Submit</button>';
+
+    $('connSubmit').addEventListener('click', function(){
+      showResults(totalCorrectPairs, totalPairs, 'Pairs matched so far');
+    });
+
+    function nextBatch(){
+      if(remaining.length === 0){
+        showResults(totalCorrectPairs, totalPairs, 'Pairs matched correctly');
+        return;
+      }
+      var batchSize = Math.min(5, remaining.length);
+      var batch = remaining.splice(0, batchSize);
+      renderBatch(batch);
+    }
+
+    function renderBatch(batch){
+      $('connProgress').textContent = (totalPairs - remaining.length - batch.length + batch.length) + ' of ' + totalPairs + ' words in this round · ' + remaining.length + ' remaining after';
+      var left = $('connLeft'), right = $('connRight');
+      left.innerHTML = ''; right.innerHTML = '';
+      var svg = $('connectSvg');
+      svg.innerHTML = '';
+
+      var leftOrder = shuffle(batch);
+      var rightOrder = shuffle(batch);
+      var matchedIds = {};
+      var selectedWord = null, selectedTrans = null;
+      var batchRemaining = batch.length;
+
+      leftOrder.forEach(function(w){
+        var el = document.createElement('div');
+        el.className = 'connect-item'; el.textContent = w.word; el.dataset.id = w.id; el.dataset.side='word';
+        el.addEventListener('click', function(){
+          if(el.classList.contains('matched')) return;
+          Array.prototype.forEach.call(left.children, function(c){ c.classList.remove('selected'); });
+          el.classList.add('selected');
+          selectedWord = w;
+          tryMatch();
+        });
+        left.appendChild(el);
+      });
+      rightOrder.forEach(function(w){
+        var el = document.createElement('div');
+        el.className = 'connect-item'; el.textContent = w.translation; el.dataset.id = w.id; el.dataset.side='trans';
+        el.addEventListener('click', function(){
+          if(el.classList.contains('matched')) return;
+          Array.prototype.forEach.call(right.children, function(c){ c.classList.remove('selected'); });
+          el.classList.add('selected');
+          selectedTrans = w;
+          tryMatch();
+        });
+        right.appendChild(el);
+      });
+
+      function tryMatch(){
+        if(!selectedWord || !selectedTrans) return;
+        var wordEl = left.querySelector('[data-id="'+selectedWord.id+'"]');
+        var transEl = right.querySelector('[data-id="'+selectedTrans.id+'"]');
+        if(selectedWord.id === selectedTrans.id){
+          wordEl.classList.remove('selected'); transEl.classList.remove('selected');
+          wordEl.classList.add('matched'); transEl.classList.add('matched');
+          drawLine(wordEl, transEl);
+          matchedIds[selectedWord.id] = true;
+          totalCorrectPairs++;
+          batchRemaining--;
+          selectedWord = null; selectedTrans = null;
+          if(batchRemaining === 0){
+            setTimeout(nextBatch, 500);
+          }
+        } else {
+          wordEl.classList.add('wrong'); transEl.classList.add('wrong');
+          setTimeout(function(){
+            wordEl.classList.remove('wrong','selected');
+            transEl.classList.remove('wrong','selected');
+          }, 3000);
+          selectedWord = null; selectedTrans = null;
+        }
+      }
+
+      function drawLine(elA, elB){
+        var wrapRect = document.querySelector('.connect-wrap').getBoundingClientRect();
+        var rA = elA.getBoundingClientRect(), rB = elB.getBoundingClientRect();
+        var x1 = rA.right - wrapRect.left, y1 = rA.top + rA.height/2 - wrapRect.top;
+        var x2 = rB.left - wrapRect.left, y2 = rB.top + rB.height/2 - wrapRect.top;
+        var line = document.createElementNS('http://www.w3.org/2000/svg','line');
+        line.setAttribute('x1', x1); line.setAttribute('y1', y1);
+        line.setAttribute('x2', x2); line.setAttribute('y2', y2);
+        line.setAttribute('stroke', '#3C7A4E'); line.setAttribute('stroke-width', '2.5');
+        line.setAttribute('stroke-linecap', 'round');
+        svg.appendChild(line);
+      }
+    }
+
+    nextBatch();
+  }
+
+  /* ============ Intro gate: shown every time the app is opened ============ */
+  function startIntroGate(){
+    var count = 3;
+    introOkBtn.disabled = true;
+    introOkBtn.classList.add('counting');
+    introOkBtn.classList.remove('ready');
+    introTimer.textContent = '(' + count + ')';
+    var iv = setInterval(function(){
+      count--;
+      if(count > 0){
+        introTimer.textContent = '(' + count + ')';
+      } else {
+        clearInterval(iv);
+        introTimer.textContent = '';
+        introOkBtn.disabled = false;
+        introOkBtn.classList.remove('counting');
+        introOkBtn.classList.add('ready');
+      }
+    }, 1000);
+  }
+  introOkBtn.addEventListener('click', function(){
+    if(introOkBtn.disabled) return;
+    introModal.classList.add('hidden');
+  });
+
+  /* ============ Init ============ */
+  showMainView();
+  startIntroGate();
+
+  /* ============ W button: exit to main app menu ============ */
+  var monogramEl = document.querySelector('.monogram');
+  if(monogramEl){
+    monogramEl.addEventListener('click', function(){
+      if(window.parent && typeof window.parent.exitToAppMenu === 'function'){
+        window.parent.exitToAppMenu();
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>

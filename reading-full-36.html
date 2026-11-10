@@ -1,0 +1,781 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Reading: Mock Test 36</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #007bff; --bg: #f8f9fa; --card: #ffffff;
+            --border: #e0e0e0; --neon-green: #39FF14; --neon-red: #ff3131;
+            --dark: #2d3436; --text: #444; --font-size: 1.05rem;
+        }
+        body.theme-dark { --bg:#1a1a2e;--card:#16213e;--border:#2d3561;--text:#c9d1d9;--dark:#e2e8f0; }
+        body.theme-dark header,body.theme-dark .action-bar { background:#0f3460; }
+        body.theme-dark .left-side,body.theme-dark .right-side { background:var(--bg); }
+        body.theme-dark .q-card,body.theme-dark .bubbles-area { background:var(--card);border-color:var(--border); }
+        body.theme-dark .btn-opt { background:var(--card);color:var(--text);border-color:var(--border); }
+        body.theme-dark .timer { background:#0f3460;border-color:#2d3561;color:#60a5fa; }
+        body.theme-dark .text-area { color:var(--text);background:var(--bg); }
+        body.theme-dark .text-area h1 { color:#e2e8f0; }
+        body.theme-dark th { background:#0f3460;color:#94a3b8; }
+        body.theme-dark td { border-color:var(--border); }
+        body.theme-dark .drag-options { background:#0f3460;border-color:var(--border); }
+        body.theme-dark .input-match,.input-summary { background:var(--card);color:var(--text);border-color:var(--border); }
+        body.theme-dark #sideMenu { background:#16213e; }
+        body.theme-dark .menu-id-box,.admin-cmd-box { background:#0f3460;color:#e2e8f0;border-color:#2d3561; }
+        body.theme-dark .menu-star,.menu-top-icon,.admin-slash-icon { background:#0f3460;border-color:#2d3561;color:#94a3b8; }
+        body.theme-dark .settings-panel { background:#0f3460;border-color:#2d3561; }
+        body.theme-dark .settings-label { color:#94a3b8; }
+        body.theme-sepia { --bg:#f4ecd8;--card:#fdf6e3;--border:#d4b896;--text:#5c4a1e;--dark:#3e2e10; }
+        body.theme-sepia header,body.theme-sepia .action-bar { background:#ede0c8; }
+        body.theme-sepia .left-side,body.theme-sepia .right-side { background:var(--bg); }
+        body.theme-sepia .q-card { background:var(--card);border-color:var(--border); }
+        body.theme-sepia .timer { background:#ede0c8;border-color:#d4b896;color:#7b5e2a; }
+        body.theme-sepia .text-area { color:var(--text);background:var(--bg); }
+        body.theme-sepia .settings-panel { background:#ede0c8;border-color:#d4b896; }
+
+        *{box-sizing:border-box;}
+        body,html{margin:0;padding:0;height:100%;font-family:'Inter','Segoe UI',sans-serif;overflow:hidden;background:var(--bg);transition:background .3s,color .3s;}
+        .wrapper{display:flex;flex-direction:column;height:100vh;}
+
+        header{height:65px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 25px;flex-shrink:0;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:background .3s;}
+        .logo{font-weight:800;font-size:1.2rem;color:var(--dark);display:flex;align-items:center;gap:10px;}
+        .logo i{color:var(--primary);}
+        .timer{font-weight:bold;background:#eef2ff;padding:8px 25px;border-radius:30px;border:1px solid #d1d9ff;color:var(--primary);font-size:1.2rem;min-width:110px;text-align:center;transition:.3s;}
+        #menuBtn{width:38px;height:38px;border-radius:50%;border:2px solid #dee2e6;background:#fff;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#495057;transition:.2s;}
+        #menuBtn:hover{background:#f0f7ff;border-color:var(--primary);color:var(--primary);}
+        #proofingBtn{padding:8px 18px;border-radius:30px;border:2px solid #007bff;background:#007bff;color:#fff;font-weight:700;font-size:.85rem;cursor:pointer;transition:.2s;}
+        #proofingBtn:hover{background:#0056cc;border-color:#0056cc;}
+        #proofingBtn.active{background:#fff;color:#007bff;border-color:#007bff;}
+
+        .main{display:flex;flex:1;overflow:hidden;}
+        .left-side{width:50%;display:flex;flex-direction:column;background:#fff;border-right:1px solid var(--border);}
+        .text-area{flex:1;overflow-y:auto;padding:40px;line-height:1.8;color:var(--text);font-size:var(--font-size);transition:font-size .2s,color .3s;}
+        .text-area h1{color:var(--dark);font-size:1.8rem;margin-bottom:8px;}
+        .text-area h2{color:var(--dark);font-size:1.1rem;margin:20px 0 10px;}
+        .bubbles-area{height:100px;border-top:1px solid var(--border);background:#fff;padding:15px 25px;overflow-y:auto;flex-shrink:0;transition:background .3s;}
+        .bubbles-grid{display:flex;flex-wrap:wrap;gap:10px;}
+        .bubble{width:36px;height:36px;border-radius:50%;border:2px solid #dee2e6;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#adb5bd;font-size:.9rem;transition:.3s;}
+        .bubble.active{border-color:var(--primary);color:var(--primary);background:#eef2ff;}
+        .bubble.solved{background:var(--primary);color:#fff;border-color:var(--primary);}
+        .divider{width:12px;background:#f1f3f5;cursor:col-resize;flex-shrink:0;position:relative;border-left:1px solid #e9ecef;border-right:1px solid #e9ecef;}
+        .divider::after{content:'||';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#adb5bd;font-size:.8rem;letter-spacing:1px;}
+        .right-side{flex:1;display:flex;flex-direction:column;background:var(--bg);min-width:300px;}
+        .action-bar{background:#fff;border-bottom:1px solid var(--border);padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:15px;height:65px;flex-shrink:0;transition:background .3s;}
+        .attempts-row{display:flex;gap:10px;overflow-x:auto;flex:1;min-width:0;align-items:center;height:100%;}
+        .attempt-tag{background:#f8f9fa;border:1px solid #e9ecef;padding:8px 15px;border-radius:8px;font-size:.85rem;white-space:nowrap;color:#495057;font-weight:600;}
+        .btn-submit{background:var(--primary);color:#fff;border:none;padding:12px 30px;border-radius:8px;font-weight:700;cursor:pointer;transition:.2s;box-shadow:0 4px 15px rgba(0,123,255,.3);}
+        .btn-submit:hover{background:#0069d9;transform:translateY(-1px);}
+        .questions-area{flex:1;overflow-y:auto;padding:30px;font-size:var(--font-size);transition:font-size .2s;}
+        .q-card{background:#fff;padding:30px;border-radius:12px;border:1px solid #e9ecef;margin-bottom:25px;box-shadow:0 4px 6px rgba(0,0,0,.02);transition:background .3s;}
+        .description{font-weight:800;color:#2d3436;margin-bottom:20px;display:block;font-size:.9rem;text-transform:uppercase;letter-spacing:.5px;border-left:5px solid var(--primary);padding-left:15px;}
+        .btn-opt{padding:10px 18px;border:1.5px solid #dee2e6;border-radius:8px;cursor:pointer;margin:5px 8px 5px 0;display:inline-block;background:#fff;font-weight:500;transition:.2s;}
+        .btn-opt.selected{border-color:var(--primary);color:var(--primary);background:#f0f7ff;}
+        .correct-neon{border:2px solid var(--neon-green)!important;box-shadow:0 0 15px var(--neon-green)!important;background-color:#fafff5!important;pointer-events:none;}
+        .wrong-neon{border:2px solid var(--neon-red)!important;box-shadow:0 0 15px var(--neon-red)!important;}
+        table{width:100%;border-collapse:collapse;margin-top:15px;}
+        th,td{border:1px solid #eee;padding:12px 15px;text-align:left;}
+        th{background:#f8f9fa;color:#6c757d;font-size:.8rem;text-transform:uppercase;font-weight:700;}
+        .input-match{width:100%;padding:10px;text-align:center;border:2px dashed #ced4da;border-radius:6px;font-weight:700;outline:none;transition:.3s;}
+        .input-summary{border:none;border-bottom:2px solid #dee2e6;width:160px;text-align:center;outline:none;font-weight:700;padding:5px;transition:.3s;background:transparent;}
+        .drag-options{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px;background:#f8f9fa;padding:15px;border-radius:10px;border:1px solid #e9ecef;}
+        .drag-item{background:var(--dark);color:#fff;padding:8px 13px;border-radius:6px;cursor:grab;font-weight:600;font-size:.85rem;}
+
+        /* PASSAGE NAVIGATOR */
+        .passage-nav{display:flex;align-items:center;justify-content:center;gap:16px;padding:14px 20px;border-top:1px solid #e9ecef;background:#fff;flex-shrink:0;}
+        .nav-btn{width:40px;height:40px;border-radius:50%;border:2px solid #dee2e6;background:#fff;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;font-weight:bold;transition:.2s;}
+        .nav-btn:hover:not(.disabled){background:#eef2ff;border-color:var(--primary);color:var(--primary);}
+        .nav-btn.disabled{color:#dee2e6;border-color:#f1f3f5;cursor:default;pointer-events:none;}
+        .nav-btn.active-arrow{color:#2d3436;border-color:#2d3436;}
+        .passage-label{font-weight:700;font-size:.9rem;color:#495057;min-width:100px;text-align:center;}
+
+        /* MODAL */
+        .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:1000;justify-content:center;align-items:center;backdrop-filter:blur(5px);}
+        .modal-content{background:#fff;border-radius:20px;width:500px;max-width:95%;text-align:center;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,.4);animation:modalIn .3s cubic-bezier(.34,1.56,.64,1);}
+        @keyframes modalIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+        .modal-header{background:var(--dark);color:#fff;padding:30px;}
+        .modal-header h2{margin:0;font-size:2.5rem;font-weight:900;}
+        .modal-body{padding:25px;background:#fff;}
+        .res-list{text-align:left;max-height:350px;overflow-y:auto;}
+        .res-card{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;margin-bottom:10px;border-radius:10px;font-weight:700;font-size:.95rem;border:2px solid transparent;transition:.3s;}
+        .res-card.correct-row{border-color:var(--neon-green);box-shadow:0 0 15px var(--neon-green);background:#fafff5;color:#2d6a4f;}
+        .res-card.wrong-row{border-color:var(--neon-red);box-shadow:0 0 15px var(--neon-red);background:#fff5f5;color:#a4161a;}
+        .modal-footer{padding:25px;background:#f8f9fa;}
+
+        /* OVERLAY & SIDE MENU */
+        #overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:none;z-index:1500;backdrop-filter:blur(2px);}
+        #overlay.show{display:block;}
+        #sideMenu{position:fixed;top:0;right:-26%;width:25%;height:100%;background:#fff;z-index:1600;transition:right .3s cubic-bezier(.4,0,.2,1);padding:0;box-shadow:-5px 0 30px rgba(0,0,0,.2);display:flex;flex-direction:column;overflow:hidden;}
+        #sideMenu.open{right:0;}
+        .menu-header{background:var(--dark);color:#fff;padding:25px 20px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+        .menu-header h2{margin:0;font-size:1.3rem;font-weight:800;}
+        #closeMenuBtn{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:0;}
+        .menu-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px;}
+        .settings-panel{background:#f8f9fa;border:1px solid #e9ecef;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:14px;transition:background .3s;}
+        .settings-label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#6c757d;margin-bottom:4px;}
+        .font-slider-row{display:flex;align-items:center;gap:10px;}
+        .font-slider-row span{font-size:.8rem;color:#adb5bd;min-width:18px;text-align:center;}
+        input[type=range]{flex:1;-webkit-appearance:none;height:4px;border-radius:4px;background:#dee2e6;outline:none;cursor:pointer;}
+        input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--primary);cursor:pointer;box-shadow:0 2px 6px rgba(0,123,255,.4);}
+        .theme-row{display:flex;gap:8px;}
+        .theme-btn{flex:1;padding:9px 6px;border-radius:10px;border:2px solid #dee2e6;cursor:pointer;font-size:.78rem;font-weight:700;transition:.2s;background:#fff;color:#495057;text-align:center;}
+        .theme-btn:hover{border-color:var(--primary);color:var(--primary);}
+        .theme-btn.active{border-color:var(--primary);background:#eef2ff;color:var(--primary);}
+        .theme-btn .tb-icon{font-size:1.1rem;display:block;margin-bottom:3px;}
+        .btn-about{width:100%;padding:11px;border-radius:10px;border:2px solid #dee2e6;background:#fff;cursor:pointer;font-weight:700;font-size:.85rem;color:#495057;display:flex;align-items:center;justify-content:center;gap:8px;transition:.2s;}
+        .btn-about:hover{border-color:var(--primary);color:var(--primary);background:#eef2ff;}
+        #aboutModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:2000;justify-content:center;align-items:center;backdrop-filter:blur(4px);}
+        #aboutModal.show{display:flex;}
+        .about-card{background:#fff;border-radius:20px;width:340px;max-width:90%;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.35);animation:modalIn .3s cubic-bezier(.34,1.56,.64,1);text-align:center;}
+        .about-top{background:linear-gradient(135deg,#007bff,#0056cc);padding:30px 20px 25px;color:#fff;}
+        .about-avatar{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.25);border:3px solid rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 12px;}
+        .about-top h3{margin:0 0 4px;font-size:1.4rem;font-weight:900;}
+        .about-top p{margin:0;opacity:.8;font-size:.85rem;}
+        .about-body{padding:20px;}
+        .about-body p{color:#6c757d;font-size:.88rem;line-height:1.6;margin:0 0 14px;}
+        .about-tag{display:inline-block;background:#eef2ff;color:var(--primary);border-radius:20px;padding:6px 16px;font-weight:700;font-size:.85rem;margin-bottom:16px;}
+        .btn-close-about{width:100%;padding:12px;background:var(--primary);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;font-size:.9rem;}
+        .menu-top-icon{width:44px;height:44px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#495057;cursor:pointer;transition:.2s;align-self:flex-start;}
+        .menu-top-icon:hover{background:#eef2ff;border-color:var(--primary);color:var(--primary);}
+        .menu-mid-row{display:flex;align-items:center;gap:10px;}
+        .menu-star{width:44px;height:44px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#495057;font-weight:bold;flex-shrink:0;}
+        .menu-id-box{flex:1;border:2px solid #dee2e6;border-radius:12px;padding:10px 14px;font-size:1rem;font-weight:600;outline:none;transition:border-color .2s;letter-spacing:2px;}
+        .menu-id-box:focus{border-color:var(--primary);}
+        .menu-id-box::placeholder{letter-spacing:0;font-weight:400;color:#adb5bd;}
+        .id-status{font-size:.82rem;color:#adb5bd;padding-left:4px;display:none;}
+        .id-status.show{display:block;}
+        .id-status.ok{color:#2d6a4f;}
+        .id-status.err{color:#a4161a;}
+        #teacherAnswerBox{background:#f8f9fa;border:1px solid #dee2e6;border-radius:12px;padding:12px;display:none;}
+        #teacherAnswerBox .drop-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:.9rem;color:var(--dark);}
+        #teacherAnswerBox .drop-content{max-height:180px;overflow-y:auto;margin-top:10px;display:none;}
+        #teacherAnswerBox .drop-content.open{display:block;}
+        .ans-item{padding:8px 10px;border-radius:8px;font-size:.85rem;font-weight:600;color:#495057;border-bottom:1px solid #e9ecef;}
+        .ans-item:last-child{border-bottom:none;}
+        #adminRow{display:none;margin-top:4px;}
+        .admin-mid-row{display:flex;align-items:center;gap:10px;}
+        .admin-slash-icon{width:44px;height:44px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#495057;font-weight:bold;flex-shrink:0;}
+        .admin-cmd-box{flex:1;border:2px solid #dee2e6;border-radius:12px;padding:10px 14px;font-size:.95rem;font-weight:600;outline:none;transition:border-color .2s;}
+        .admin-cmd-box:focus{border-color:#ff3131;}
+        .admin-cmd-box::placeholder{font-weight:400;color:#adb5bd;}
+        .btn-run-cmd{padding:10px 16px;background:var(--dark);color:#fff;border:none;border-radius:10px;cursor:pointer;font-weight:700;font-size:.85rem;transition:.2s;}
+        .btn-run-cmd:hover{background:#ff3131;}
+        #cmdFeedback{font-size:.82rem;padding-left:4px;color:#adb5bd;display:none;}
+        #cmdFeedback.show{display:block;}
+        #cmdFeedback.ok{color:#2d6a4f;}
+        #cmdFeedback.err{color:#a4161a;}
+        .menu-footer{padding:15px 20px;border-top:1px solid #e9ecef;text-align:center;flex-shrink:0;}
+        .tg-link{display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-weight:700;font-size:.9rem;text-decoration:none;padding:10px 18px;border-radius:10px;background:#eef2ff;transition:.2s;}
+        .tg-link:hover{background:#d1d9ff;}
+
+        
+        @keyframes flashText{0%{color:#fff;text-shadow:-4px -4px 0 #000,4px -4px 0 #000,-4px 4px 0 #000,4px 4px 0 #000,0 0 20px #000}50%{color:#000;text-shadow:-4px -4px 0 #fff,4px -4px 0 #fff,-4px 4px 0 #fff,4px 4px 0 #fff,0 0 20px #fff}}
+
+        /* HIGHLIGHT */
+        #highlightMenu{display:none;position:fixed;background:#fff;padding:8px;border-radius:20px;box-shadow:0 0 15px rgba(0,0,0,.2);z-index:99999;gap:8px;align-items:center;}
+        .hlColor{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;}
+        #removeColor{width:28px;height:28px;border-radius:50%;background:white;border:2px solid #999;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;}
+
+        /* TOAST */
+        #toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--dark);color:#fff;padding:12px 24px;border-radius:30px;font-weight:700;font-size:.9rem;z-index:9999;transition:transform .3s;box-shadow:0 5px 20px rgba(0,0,0,.3);}
+        #toast.show{transform:translateX(-50%) translateY(0);}
+    
+/* === universal theme & readability fixes (auto-appended) === */
+#sideMenu{ will-change: right; }
+#overlay, #highlightMenu, .modal { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+
+body.theme-dark { background: var(--bg) !important; }
+body.theme-dark .content-area, body.theme-dark .content-row,
+body.theme-dark .wrapper, body.theme-dark .main,
+body.theme-dark .left-side, body.theme-dark .right-side,
+body.theme-dark .transcript-col, body.theme-dark .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-dark header, body.theme-dark .action-bar, body.theme-dark .passage-nav {
+  background: #0f3460 !important; border-color:#2d3561 !important;
+}
+body.theme-dark .bubbles-area, body.theme-dark .q-card, body.theme-dark .modal-content,
+body.theme-dark .modal-body, body.theme-dark .about-card, body.theme-dark .about-body,
+body.theme-dark #sideMenu, body.theme-dark .menu-body, body.theme-dark .modal-footer,
+body.theme-dark .drop-content, body.theme-dark #teacherAnswerBox, body.theme-dark #adminAnswerBox,
+body.theme-dark #highlightMenu, body.theme-dark #removeColor, body.theme-dark #toast,
+body.theme-dark .menu-footer, body.theme-dark .modal-col, body.theme-dark .proof-toast-box,
+body.theme-dark .audio-player, body.theme-dark .settings-panel {
+  background: var(--card) !important;
+}
+body.theme-dark, body.theme-dark .text-area, body.theme-dark .questions-area,
+body.theme-dark .q-card, body.theme-dark .q-card p, body.theme-dark .q-card li,
+body.theme-dark .description, body.theme-dark .passage-label, body.theme-dark .nav-btn,
+body.theme-dark label, body.theme-dark .ans-item, body.theme-dark .attempt-tag,
+body.theme-dark .settings-label, body.theme-dark .about-body p, body.theme-dark .btn-opt,
+body.theme-dark .modal-header h2, body.theme-dark .modal-total, body.theme-dark .proof-note,
+body.theme-dark .modal-col-title, body.theme-dark .drop-header, body.theme-dark .menu-header h2,
+body.theme-dark .transcript-inner, body.theme-dark .transcript-inner p, body.theme-dark .badge,
+body.theme-dark .id-status, body.theme-dark #cmdFeedback, body.theme-dark .about-top h3,
+body.theme-dark .res-card {
+  color: #ffffff !important;
+}
+body.theme-dark .input-summary, body.theme-dark .input-match, body.theme-dark input[type=text] {
+  color: #ffffff !important; background: transparent !important;
+}
+body.theme-dark .btn-opt.selected, body.theme-dark .nav-btn.active-arrow { color: #60a5fa !important; }
+body.theme-sepia .btn-opt.selected, body.theme-sepia .nav-btn.active-arrow { color: #a13a1c !important; background: #f9e6c8 !important; border-color: #a13a1c !important; font-weight: 700 !important; }
+body.theme-dark .correct-neon { color:#0b3d19 !important; }
+body.theme-dark .wrong-row, body.theme-dark .correct-row { color: inherit !important; }
+
+body.theme-sepia .content-area, body.theme-sepia .content-row,
+body.theme-sepia .wrapper, body.theme-sepia .main,
+body.theme-sepia .left-side, body.theme-sepia .right-side,
+body.theme-sepia .transcript-col, body.theme-sepia .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-sepia header, body.theme-sepia .action-bar, body.theme-sepia .passage-nav {
+  background:#ede0c8 !important; border-color:#d4b896 !important;
+}
+body.theme-sepia .bubbles-area, body.theme-sepia .q-card, body.theme-sepia .modal-content,
+body.theme-sepia .modal-body, body.theme-sepia .about-card, body.theme-sepia .about-body,
+body.theme-sepia #sideMenu, body.theme-sepia .menu-body, body.theme-sepia .modal-footer,
+body.theme-sepia .drop-content, body.theme-sepia #teacherAnswerBox, body.theme-sepia #adminAnswerBox,
+body.theme-sepia #highlightMenu, body.theme-sepia #removeColor, body.theme-sepia #toast,
+body.theme-sepia .menu-footer, body.theme-sepia .modal-col, body.theme-sepia .proof-toast-box,
+body.theme-sepia .audio-player, body.theme-sepia .settings-panel {
+  background: var(--card) !important;
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <div class="logo"><i class="fas fa-feather-alt"></i> IELTS READING</div>
+        <div style="display:flex;align-items:center;gap:10px;">
+            <div class="timer" id="timer">00:00</div>
+            <button id="proofingBtn" onclick="toggleProofing()">Proofing</button>
+            <button id="menuBtn">⋮</button>
+        </div>
+    </header>
+    <div class="main">
+        <div class="left-side" id="leftSide">
+            <div class="text-area" id="textArea"><!-- filled by JS --></div>
+            <div class="bubbles-area">
+                <div style="font-weight:800;color:#adb5bd;font-size:.7rem;text-transform:uppercase;margin-bottom:8px;">Questions Navigation</div>
+                <div class="bubbles-grid" id="bubbleGrid"></div>
+            </div>
+        </div>
+        <div class="divider" id="divider"></div>
+        <div class="right-side">
+            <div class="action-bar">
+                <div class="attempts-row" id="attemptsRow"></div>
+                <button class="btn-submit" onclick="submitTest()">SUBMIT ANSWERS</button>
+            </div>
+            <div class="questions-area" id="questionsArea"><!-- filled by JS --></div>
+            <!-- PASSAGE NAVIGATOR -->
+            <div class="passage-nav">
+                <button class="nav-btn disabled" id="navLeft" onclick="goPassage(-1)">&#8592;</button>
+                <span class="passage-label" id="passageLabel">Passage 1 / 3</span>
+                <button class="nav-btn active-arrow" id="navRight" onclick="goPassage(1)">&#8594;</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Results Modal -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <div class="modal-header"><h2 id="mScore">0 / 13</h2><div style="font-weight:500;opacity:.7;">PASSAGE SCORE</div></div>
+        <div class="modal-body"><div class="res-list" id="resList"></div></div>
+        <div class="modal-footer"><button class="btn-submit" style="width:100%;" onclick="closeModal()">CLOSE RESULTS</button></div>
+    </div>
+</div>
+
+<!-- About Modal -->
+<div id="aboutModal">
+    <div class="about-card">
+        <div class="about-top"><div class="about-avatar">🌅</div><h3>rasVet</h3><p>Creator & Developer</p></div>
+        <div class="about-body">
+            <p>This IELTS Reading practice platform was designed and built by <strong>rasVet</strong>.</p>
+            <div class="about-tag">by: rasVet</div>
+            <button class="btn-close-about" onclick="closeAbout()">Close</button>
+        </div>
+    </div>
+</div>
+
+<div id="overlay"></div>
+
+<div id="sideMenu">
+    <div class="menu-header"><h2>Menu</h2><button id="closeMenuBtn">✕</button></div>
+    <div class="menu-body">
+        <div class="settings-panel">
+            <div>
+                <div class="settings-label">Font Size</div>
+                <div class="font-slider-row">
+                    <span style="font-size:.75rem;">A</span>
+                    <input type="range" id="fontSlider" min="12" max="22" value="16" step="1" oninput="changeFontSize(this.value)">
+                    <span style="font-size:1.1rem;">A</span>
+                </div>
+                <div style="text-align:center;font-size:.78rem;color:#adb5bd;margin-top:2px;" id="fontSizeLabel">16px</div>
+            </div>
+            <div>
+                <div class="settings-label">Theme</div>
+                <div class="theme-row">
+                    <button class="theme-btn active" id="themeLight" onclick="setTheme('light')"><span class="tb-icon">☀️</span>Light</button>
+                    <button class="theme-btn" id="themeDark" onclick="setTheme('dark')"><span class="tb-icon">🌙</span>Dark</button>
+                    <button class="theme-btn" id="themeSepia" onclick="setTheme('sepia')"><span class="tb-icon">📖</span>Reading</button>
+                </div>
+            </div>
+            <button class="btn-about" onclick="openAbout()"><i class="fas fa-info-circle"></i> About</button>
+        </div>
+        <div class="menu-top-icon"><i class="fas fa-cog"></i></div>
+        <div class="menu-mid-row">
+            <div class="menu-star">✱</div>
+            <input type="text" class="menu-id-box" id="idInput" placeholder="Enter ID" maxlength="6" oninput="handleIdInput()">
+        </div>
+        <div class="id-status" id="idStatus"></div>
+        <div id="teacherAnswerBox">
+            <div class="drop-header" onclick="toggleDropdown()"><span>📋 Correct Answers</span><span id="dropArrow">▼</span></div>
+            <div class="drop-content" id="dropContent"></div>
+        </div>
+        <div id="adminRow">
+            <div class="admin-mid-row">
+                <div class="admin-slash-icon">/</div>
+                <input type="text" class="admin-cmd-box" id="cmdInput" placeholder="answers / autofill / more time">
+                <button class="btn-run-cmd" onclick="runCommand()">Run</button>
+            </div>
+            <div id="cmdFeedback"></div>
+        </div>
+    </div>
+    <div class="menu-footer">
+        <a href="https://t.me/English_Wikipedia" target="_blank" class="tg-link"><i class="fab fa-telegram-plane"></i> Telegram Channel</a>
+    </div>
+</div>
+
+
+
+<div id="highlightMenu" style="display:none;position:fixed;background:#fff;padding:8px;border-radius:20px;box-shadow:0 0 15px rgba(0,0,0,.2);z-index:99999;gap:8px;align-items:center;">
+    <div class="hlColor" data-color="#ff3131" style="background:#ff3131;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+    <div class="hlColor" data-color="#ff7a00" style="background:#ff7a00;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+    <div class="hlColor" data-color="#39FF14" style="background:#39FF14;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+    <div class="hlColor" data-color="#007bff" style="background:#007bff;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+    <div id="removeColor" style="width:28px;height:28px;border-radius:50%;background:white;border:2px solid #999;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;">✕</div>
+</div>
+<div id="toast"></div>
+
+<script>
+// ===== PASSAGES DATA =====
+const passages = [
+  {
+    title: "The Dugong: Sea Cow",
+    totalQ: 13,
+    text: `<h1>The Dugong: Sea Cow</h1>
+<p style="font-style:italic;color:#888;font-size:.88rem;margin-bottom:16px;">Reading Passage 1 · Questions 1–13</p>
+<p>Dugongs are herbivorous mammals that spend their entire lives in the sea. Their close relatives the manatees also venture into or live in freshwater. Together dugongs and manatees make up the order Sirenia or sea cows, so-named because dugongs and manatees are thought to have given rise to the myth of the mermaids or sirens of the sea.</p>
+<p><strong>A</strong>&nbsp; The dugong is a large marine mammal which, together with the manatees, looks rather like a cross between a rotund dolphin and a walrus. Its body, flippers and fluke resemble those of a dolphin but it has no dorsal fin. Its head looks somewhat like that of a walrus without the long tusks.</p>
+<p><strong>B</strong>&nbsp; Dugongs, along with other Sirenians, have a diet that consists mainly of sea-grass; and the distribution of dugongs very closely follows that of these marine flowering plants. As seagrasses grow rooted in the sediment, they are limited by the availability of light. Consequently they are found predominantly in shallow coastal waters, and so too are dugongs. But dugongs do not eat all species of seagrass, preferring seagrass of higher nitrogen and lower fibre content.</p>
+<p><strong>C</strong>&nbsp; Due to their poor eyesight, dugongs often use smell to locate edible plants. They also have a strong tactile sense, and feel their surroundings with their long sensitive bristles. They will dig up an entire plant and then shake it to remove the sand before eating it. They have been known to collect a pile of plants in one area before eating them. The flexible and muscular upper lip is used to dig out the plants. When eating they ingest the whole plant, including the roots, although when this is impossible they will feed on just the leaves. A wide variety of seagrass has been found in dugong stomach contents, and evidence exists they will eat algae when seagrass is scarce. Although almost completely herbivorous, they will occasionally eat invertebrates such as jellyfish, sea squirts, and shellfish.</p>
+<p><strong>D</strong>&nbsp; A heavily grazed seagrass bed looks like a lawn mown by a drunk. Dugongs graze apparently at random within a seagrass bed, their trails meandering in all directions across the bottom. This is rather an inefficient means of removing seagrass that results in numerous small tufts remaining. And this is where the dugongs derive some advantage from their inefficiency. The species that recover most quickly from this disturbance, spreading out vegetatively from the remaining tufts, are those that dugongs like to eat. In addition, the new growth found in these areas tends to be exactly what hungry dugongs like.</p>
+<p><strong>E</strong>&nbsp; Dugongs are semi-nomadic, often travelling long distances in search of food, but staying within a certain range their entire life. Large numbers often move together from one area to another. It is thought that these movements are caused by changes in seagrass availability. Their memory allows them to return to specific points after long travels. Dugong movements mostly occur within a localised area of seagrass beds, and animals in the same region show individualistic patterns of movement.</p>
+<p><strong>F</strong>&nbsp; Recorded numbers of dugongs are generally believed to be lower than actual numbers, due to a lack of accurate surveys. Despite this, the dugong population is thought to be shrinking, with a worldwide decline of 20 per cent in the last 90 years. They have disappeared from the waters of Hong Kong, Mauritius, and Taiwan, as well as parts of Cambodia, Japan, the Philippines and Vietnam. The Persian Gulf has the second-largest dugong population in the world, with the current population believed to be around 7,500. Australia is home to the largest population; the population of Shark Bay is thought to be stable with over 10,000 dugongs.</p>
+<p><strong>G</strong>&nbsp; Experience from various parts of northern Australia suggests that extreme weather such as cyclones and floods can destroy hundreds of square kilometres of seagrass meadows, as well as washing dugongs ashore. About 900 km² of seagrass was lost in Hervey Bay in 1992, probably because of murky water from flooding of local rivers, and run-off turbulence from a cyclone three weeks later. Prior to the 1992 floods, the extensive seagrasses in Hervey Bay supported an estimated 1750 dugongs. Eight months after the floods the affected area was estimated to support only about 70 dugongs.</p>
+<p><strong>H</strong>&nbsp; If dugongs do not get enough to eat they may calve later and produce fewer young. Food shortages can be caused by many factors, such as a loss of habitat, death and decline in quality of seagrass, and a disturbance of feeding caused by human activity. Sewage, detergents, heavy metal, hypersaline water, herbicides, and other waste products all negatively affect seagrass meadows. Human activity such as mining, trawling, dredging, land-reclamation, and boat propeller scarring also cause an increase in sedimentation which smothers seagrass and prevents light from reaching it. One of the dugong's preferred species of seagrass, <em>Halophila ovalis</em>, declines rapidly due to lack of light, dying completely after 30 days.</p>
+<p><strong>I</strong>&nbsp; Despite being legally protected in many countries, the main causes of population decline remain anthropogenic and include hunting, habitat degradation, and fishing-related fatalities. Entanglement in fishing nets has caused many deaths, although there are no precise statistics. Most issues with industrial fishing occur in deeper waters where dugong populations are low, with local fishing being the main risk in shallower waters. As dugongs cannot stay underwater for a very long period, they are highly prone to deaths due to entanglement. Hunting has historically been a problem too, although in most areas they are no longer hunted, with the exception of certain indigenous communities.</p>`,
+    questions: `
+<div class="q-card">
+  <span class="description">Questions 1–4 · Summary — NO MORE THAN TWO WORDS from the passage.</span>
+  <p>Dugongs are picky on their feeding seagrass, and only chose seagrass with higher <strong>1.</strong> <input type="text" id="in1" class="input-summary" oninput="mark(1)"> and lower fibre. To compensate for their poor eyesight, they use their <strong>2.</strong> <input type="text" id="in2" class="input-summary" oninput="mark(2)"> to feel their surroundings.</p>
+  <p>Dugongs often leave <strong>3.</strong> <input type="text" id="in3" class="input-summary" oninput="mark(3)"> randomly in all directions across the sea bed. Dugongs prefer eating the newly grew seagrass recovering from the tiny <strong>4.</strong> <input type="text" id="in4" class="input-summary" oninput="mark(4)"> left behind by the grazing dugongs.</p>
+</div>
+<div class="q-card">
+  <span class="description">Questions 5–9 · TRUE / FALSE / NOT GIVEN</span>
+  <p>5. The dugong will keep eating up the plant completely when they begin to feed.</p>
+  <div class="q-wrap" data-q="5"><span class="btn-opt" onclick="pick(5,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(5,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(5,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>6. It takes more than ten years for the re-growth of seagrass where it has been grazed by Dugongs.</p>
+  <div class="q-wrap" data-q="6"><span class="btn-opt" onclick="pick(6,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(6,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(6,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>7. Even in facing food shortages, the strong individuals will not compete with the weak small ones for food.</p>
+  <div class="q-wrap" data-q="7"><span class="btn-opt" onclick="pick(7,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(7,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(7,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>8. It is thought that the dugong rarely returns to the old habitats when they finished the plant.</p>
+  <div class="q-wrap" data-q="8"><span class="btn-opt" onclick="pick(8,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(8,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(8,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>9. Coastal industrial fishing poses the greatest danger to dugongs which are prone to be killed due to entanglement.</p>
+  <div class="q-wrap" data-q="9"><span class="btn-opt" onclick="pick(9,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(9,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(9,'NOT GIVEN',this)">NOT GIVEN</span></div>
+</div>
+<div class="q-card">
+  <span class="description">Questions 10–13 · NO MORE THAN TWO WORDS AND/OR A NUMBER</span>
+  <p><strong>10.</strong> What is Dugong in resemblance to yet easily told apart by its tail?<br><input type="text" id="in10" class="input-summary" style="width:220px;" oninput="mark(10)"></p>
+  <p><strong>11.</strong> What is the major reason Dugongs travelled long distances in herds?<br><input type="text" id="in11" class="input-summary" style="width:300px;" oninput="mark(11)"></p>
+  <p><strong>12.</strong> How many dugongs were estimated in Hervey Bay before the 1992 floods?<br><input type="text" id="in12" class="input-summary" style="width:180px;" oninput="mark(12)"></p>
+  <p><strong>13.</strong> What is thought to be the lethal danger when dugongs were often trapped in?<br><input type="text" id="in13" class="input-summary" style="width:260px;" oninput="mark(13)"></p>
+</div>`,
+    correctKeys: {1:"NITROGEN",2:"SENSITIVE BRISTLES",3:"TRAILS",4:"TUFTS",5:"TRUE",6:"FALSE",7:"NOT GIVEN",8:"FALSE",9:"NOT GIVEN",10:"DOLPHIN",11:"SEAGRASS AVAILABILITY",12:"1750",13:"FISHING NET"},
+    teacherAnswers: ["1 — NITROGEN","2 — SENSITIVE BRISTLES","3 — TRAILS","4 — TUFTS","5 — TRUE","6 — FALSE","7 — NOT GIVEN","8 — FALSE","9 — NOT GIVEN","10 — DOLPHIN","11 — SEAGRASS AVAILABILITY","12 — 1750","13 — FISHING NET"]
+  },
+  {
+    title: "Thomas Young — The Last True Know-It-All",
+    totalQ: 13,
+    text: `<h1>Thomas Young — The Last True Know-It-All</h1>
+<p style="font-style:italic;color:#888;font-size:.88rem;margin-bottom:16px;">Reading Passage 2 · Questions 14–26</p>
+<p>Thomas Young (1773–1829) contributed 63 articles to the <em>Encyclopedia Britannica</em>, including 46 biographical entries (mostly on scientists and classicists) and substantial essays on "Bridge," "Chromatics," "Egypt," "Languages" and "Tides". Was someone who could write authoritatively about so many subjects a polymath, a genius or a dilettante? In an ambitious new biography, Andrew Robinson argues that Young is a good contender for the epitaph "the last man who knew everything."</p>
+<p>Young, of course, did more than write encyclopedia entries. He presented his first paper to the Royal Society of London at the age of 20 and was elected a Fellow a week after his 21st birthday. In the paper, Young explained the process of accommodation in the human eye — on how the eye focuses properly on objects at varying distances. Young hypothesised that this was achieved by changes in the shape of the lens. Young also theorised that light traveled in waves and believed that, to account for the ability to see in color, there must be three receptors in the eye corresponding to the three "principal colors" to which the retina could respond: red, green, violet. All these hypotheses were subsequently proved to be correct.</p>
+<p>Later in his life, when he was in his forties, Young was instrumental in cracking the code that unlocked the unknown script on the Rosetta Stone, a tablet that was "found" in Egypt by the Napoleonic army in 1799. The stone contains text in three alphabets: Greek, something unrecognisable and Egyptian hieroglyphs. The unrecognisable script is now known as demotic and, as Young deduced, is related directly to hieroglyphic. His initial work on this appeared in his Britannica entry on Egypt. In another entry, he coined the term Indo-European to describe the family of languages spoken throughout most of Europe and northern India. These are the landmark achievements of a man who was a child prodigy.</p>
+<p>Born in 1773 in Somerset in England, Young lived from an early age with his maternal grandfather, eventually leaving to attend boarding school. He had devoured books from the age of two, and through his own initiative he excelled at Latin, Greek, mathematics and natural philosophy. After leaving school, he was greatly encouraged by his mother's uncle, Richard Brocklesby, a physician and Fellow of the Royal Society. Following Brocklesby's lead, Young decided to pursue a career in medicine. He studied in London, Edinburgh, Gottingen and Cambridge. After completing his medical training at the University of Cambridge in 1808, Young set up practice as a physician in London.</p>
+<p>Young's skill as a physician, however, did not equal his skill as a scholar of natural philosophy or linguistics. In 1801, he had been appointed to a professorship of natural philosophy at the Royal Institution, where he delivered as many as 60 lectures in a year. These were published in two volumes in 1807. In 1804 Young had become secretary to the Royal Society, a post he would hold until his death. His opinions were sought on civic and national matters, such as the introduction of gas lighting to London and methods of ship construction. From 1819 he was superintendent of the Nautical Almanac and secretary to the Board of Longitude.</p>
+<p>Young is a perfect subject for a biography — perfect, but daunting. Few men contributed so much to so many technical fields. Robinson's aim is to introduce non-scientists to Young's work and life. He succeeds, providing clear expositions of the technical material (especially that on optics and Egyptian hieroglyphs). Yet despite the rich material presented in this book, readers will not end up knowing Young personally. Young was introduced into elite society, attended the theatre and learned to dance and play the flute. In addition, he was an accomplished horseman.</p>
+<p>Young married Eliza Maxwell in 1804, and according to Robinson, "their marriage was a happy one and she appreciated his work." Almost all we know about her is that she sustained her husband through some rancorous disputes about optics and that she worried about money when his medical career was slow to take off. Despite the lack of details concerning Young's relationships, however, anyone interested in what it means to be a genius should read this book.</p>`,
+    questions: `
+<div class="q-card">
+  <span class="description">Questions 14–20 · TRUE / FALSE / NOT GIVEN</span>
+  <p>14. 'The last man who knew everything' has also been claimed to other people.</p>
+  <div class="q-wrap" data-q="14"><span class="btn-opt" onclick="pick(14,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(14,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(14,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>15. All Young's articles were published in Encyclopedia Britannica.</p>
+  <div class="q-wrap" data-q="15"><span class="btn-opt" onclick="pick(15,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(15,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(15,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>16. Like others, Young wasn't so brilliant when growing up.</p>
+  <div class="q-wrap" data-q="16"><span class="btn-opt" onclick="pick(16,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(16,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(16,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>17. Young's talent as a doctor surpassed his other skills.</p>
+  <div class="q-wrap" data-q="17"><span class="btn-opt" onclick="pick(17,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(17,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(17,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>18. Young's advice was sought by people responsible for local and national issues.</p>
+  <div class="q-wrap" data-q="18"><span class="btn-opt" onclick="pick(18,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(18,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(18,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>19. Young took part in various social pastimes.</p>
+  <div class="q-wrap" data-q="19"><span class="btn-opt" onclick="pick(19,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(19,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(19,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>20. Young suffered from a disease in his later years.</p>
+  <div class="q-wrap" data-q="20"><span class="btn-opt" onclick="pick(20,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(20,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(20,'NOT GIVEN',this)">NOT GIVEN</span></div>
+</div>
+<div class="q-card">
+  <span class="description">Questions 21–26 · NO MORE THAN THREE WORDS AND/OR A NUMBER</span>
+  <p><strong>21.</strong> How many life stories did Young write for the Encyclopedia Britannica?<br><input type="text" id="in21" class="input-summary" style="width:160px;" oninput="mark(21)"></p>
+  <p><strong>22.</strong> What aspect of scientific research did Young focus on in his first academic paper?<br><input type="text" id="in22" class="input-summary" style="width:300px;" oninput="mark(22)"></p>
+  <p><strong>23.</strong> What name did Young introduce to refer to a group of languages?<br><input type="text" id="in23" class="input-summary" style="width:240px;" oninput="mark(23)"></p>
+  <p><strong>24.</strong> Who inspired Young to start his medical studies?<br><input type="text" id="in24" class="input-summary" style="width:260px;" oninput="mark(24)"></p>
+  <p><strong>25.</strong> Where did Young get a teaching position?<br><input type="text" id="in25" class="input-summary" style="width:260px;" oninput="mark(25)"></p>
+  <p><strong>26.</strong> What contribution did Young make to London?<br><input type="text" id="in26" class="input-summary" style="width:260px;" oninput="mark(26)"></p>
+</div>`,
+    correctKeys: {14:"TRUE",15:"FALSE",16:"FALSE",17:"FALSE",18:"TRUE",19:"TRUE",20:"NOT GIVEN",21:"46",22:"HUMAN EYE ACCOMMODATION",23:"INDO-EUROPEAN",24:"RICHARD BROCKLESBY",25:"ROYAL INSTITUTION",26:"GAS LIGHTING"},
+    teacherAnswers: ["14 — TRUE","15 — FALSE","16 — FALSE","17 — FALSE","18 — TRUE","19 — TRUE","20 — NOT GIVEN","21 — 46","22 — HUMAN EYE ACCOMMODATION","23 — INDO-EUROPEAN","24 — RICHARD BROCKLESBY","25 — ROYAL INSTITUTION","26 — GAS LIGHTING"]
+  },
+  {
+    title: "The Pearl",
+    totalQ: 14,
+    text: `<h1>The Pearl</h1>
+<p style="font-style:italic;color:#888;font-size:.88rem;margin-bottom:16px;">Reading Passage 3 · Questions 27–40</p>
+<p><strong>A</strong>&nbsp; Throughout history, pearls have held a unique presence within the wealthy and powerful. For instance, the pearl was the favored gem of the wealthy during the Roman Empire. This gift from the sea had been brought back from the orient by the Roman conquests. Roman women wore pearls to bed so they could be reminded of their wealth immediately upon waking up. Before jewelers learned to cut gems, the pearl was of greater value than the diamond. In the Orient and Persia Empire, pearls were ground into powders to cure anything from heart disease to epilepsy, with possible aphrodisiac uses as well. Pearls were once considered an exclusive privilege for royalty.</p>
+<p><strong>B</strong>&nbsp; There are essentially three types of pearls: natural, cultured and imitation. A natural pearl (often called an Oriental pearl) forms when an irritant, such as a piece of sand, works its way into a particular species of oyster, mussel, or clam. As a defense mechanism, the mollusk secretes a fluid to coat the irritant. The layer upon layer of this coating is deposited on the irritant until a lustrous pearl is formed.</p>
+<p><strong>C</strong>&nbsp; The only difference between natural pearls and cultured pearls is that the irritant is a surgically implanted bead or piece of shell called Mother of Pearl. Often, these shells are ground oyster shells that are worth significant amounts of money in their own right as irritant catalysts for quality pearls. The resulting core is, therefore, much larger than in a natural pearl. Yet, as long as there are enough layers of nacre (the secreted fluid covering the irritant) to result in a beautiful, gem-quality pearl, the size of the nucleus is of no consequence to beauty or durability.</p>
+<p><strong>D</strong>&nbsp; Pearls can come from either salt or freshwater sources. Typically, saltwater pearls tend to be higher quality, although there are several types of freshwater pearls that are considered high in quality as well. Freshwater pearls tend to be very irregular in shape, with a puffed rice appearance the most prevalent. Saltwater pearl oysters are usually cultivated in protected lagoons or volcanic atolls. However, most freshwater cultured pearls sold today come from China. Cultured pearls are the response of the shell to a tissue implant. The majority of saltwater cultured pearls are grown with beads.</p>
+<p><strong>E</strong>&nbsp; Regardless of the method used to acquire a pearl, the process usually takes several years. Mussels must reach a mature age, which can take up to 3 years, and then be implanted or naturally receive an irritant. Once the irritant is in place, it can take up to another 3 years for the pearl to reach its full size. Often, the irritant may be rejected, the pearl will be terrifically misshapen, or the oyster may simply die from disease or countless other complications. By the end of a 5 to 10-year cycle, only 50% of the oysters will have survived. And of the pearls produced, only approximately 5% are of substantial quality for top jewelry makers.</p>
+<p><strong>F</strong>&nbsp; Imitation pearls are a different story altogether. In most cases, a glass bead is dipped into a solution made from fish scales. This coating is thin and may eventually wear off. One can usually tell an imitation by biting on it. Fake pearls glide across your teeth, while the layers of nacre on real pearls feel gritty. The Island of Mallorca (in Spain) is known for its imitation pearl industry. Quality natural pearls are very rare jewels. The valuation factors include size, shape, color, quality of surface, orient, and luster. In general, cultured pearls are less valuable than natural pearls, whereas imitation pearls almost have no value. Among cultured pearls, Akoya pearls from Japan are some of the most lustrous. The South Sea waters of Australia tend to produce the larger pearls; probably because the water along the coastline is supplied with rich nutrients from the ocean floor.</p>
+<p><strong>G</strong>&nbsp; Historically, the world's best pearls came from the Persian Gulf, especially around what is now Bahrain. The pearls of the Persian Gulf were naturally created and collected by breath-hold divers. The secret to the special luster of Gulf pearls probably derived from the unique mixture of sweet and saltwater around the island. Unfortunately, the natural pearl industry of the Persian Gulf ended abruptly in the early 1930s with the discovery of large deposits of oil. Today, pearl diving is practiced only as a hobby. Still, Bahrain remains one of the foremost trading centers for high-quality pearls. Cultured pearls are banned from the Bahrain pearl market. Nowadays, the largest stock of natural pearls probably resides in India.</p>`,
+    questions: `
+<div class="q-card">
+  <span class="description">Questions 27–30 · Which paragraph (A–G) contains the following information?</span>
+  <p><strong>27.</strong> Ancient stories around the pearl and customers &nbsp;<input type="text" id="in27" class="input-summary" style="width:80px;" oninput="mark(27)" placeholder="A-G"></p>
+  <p><strong>28.</strong> Difficulties in the cultivating process &nbsp;<input type="text" id="in28" class="input-summary" style="width:80px;" oninput="mark(28)" placeholder="A-G"></p>
+  <p><strong>29.</strong> Factors that decide the value of natural pearls &nbsp;<input type="text" id="in29" class="input-summary" style="width:80px;" oninput="mark(29)" placeholder="A-G"></p>
+  <p><strong>30.</strong> Different growth mechanisms that distinguish cultured pearls from natural ones &nbsp;<input type="text" id="in30" class="input-summary" style="width:80px;" oninput="mark(30)" placeholder="A-G"></p>
+</div>
+<div class="q-card">
+  <span class="description">Questions 31–36 · Choose a letter A–K</span>
+  <p style="font-size:.85rem;color:#6c757d;margin-bottom:12px;"><strong>A</strong> America &nbsp;<strong>B</strong> Ancient Rome &nbsp;<strong>C</strong> Australia &nbsp;<strong>D</strong> Bahrain &nbsp;<strong>E</strong> China &nbsp;<strong>F</strong> Japan &nbsp;<strong>G</strong> India &nbsp;<strong>H</strong> Korea &nbsp;<strong>I</strong> Mexico &nbsp;<strong>J</strong> Persia &nbsp;<strong>K</strong> Spain</p>
+  <p><strong>31.</strong> Pearls were treated as a gem for women in ____&nbsp;<input type="text" id="in31" class="input-summary" style="width:80px;" oninput="mark(31)" placeholder="A-K"></p>
+  <p><strong>32.</strong> Pearls were used as medicine and sex drug for people in ____&nbsp;<input type="text" id="in32" class="input-summary" style="width:80px;" oninput="mark(32)" placeholder="A-K"></p>
+  <p><strong>33.</strong> ____ is famous for its imitation pearl industry&nbsp;<input type="text" id="in33" class="input-summary" style="width:80px;" oninput="mark(33)" placeholder="A-K"></p>
+  <p><strong>34.</strong> ____ usually manufactures some of the glitteriest cultured ones&nbsp;<input type="text" id="in34" class="input-summary" style="width:80px;" oninput="mark(34)" placeholder="A-K"></p>
+  <p><strong>35.</strong> ____ produces larger sized pearls due to favorable environment&nbsp;<input type="text" id="in35" class="input-summary" style="width:80px;" oninput="mark(35)" placeholder="A-K"></p>
+  <p><strong>36.</strong> ____ in Gulf produced the world's best pearls historically&nbsp;<input type="text" id="in36" class="input-summary" style="width:80px;" oninput="mark(36)" placeholder="A-K"></p>
+</div>
+<div class="q-card">
+  <span class="description">Questions 37–40 · TRUE / FALSE / NOT GIVEN</span>
+  <p>37. Often cultured pearl's center is significantly larger than in a natural pearl.</p>
+  <div class="q-wrap" data-q="37"><span class="btn-opt" onclick="pick(37,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(37,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(37,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>38. Cultivated cultured pearls are generally valued the same as natural ones.</p>
+  <div class="q-wrap" data-q="38"><span class="btn-opt" onclick="pick(38,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(38,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(38,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>39. The size of pearls produced in Japan is usually smaller than those from Australia.</p>
+  <div class="q-wrap" data-q="39"><span class="btn-opt" onclick="pick(39,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(39,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(39,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>40. Akoya pearls from Japan glow more deeply than the South Sea pearls of Australia.</p>
+  <div class="q-wrap" data-q="40"><span class="btn-opt" onclick="pick(40,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(40,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(40,'NOT GIVEN',this)">NOT GIVEN</span></div>
+</div>`,
+    correctKeys: {27:"A",28:"E",29:"F",30:"C",31:"B",32:"J",33:"K",34:"F",35:"C",36:"D",37:"TRUE",38:"FALSE",39:"TRUE",40:"NOT GIVEN"},
+    teacherAnswers: ["27 — A","28 — E","29 — F","30 — C","31 — B","32 — J","33 — K","34 — F","35 — C","36 — D","37 — TRUE","38 — FALSE","39 — TRUE","40 — NOT GIVEN"]
+  }
+];
+
+// ===== STATE =====
+const TEACHER_IDS = ["004567","008245","009213"];
+const ADMIN_ID = "000000";
+let currentPassage = 0;
+// Per-passage state
+let state = passages.map(() => ({ studentAns:{}, solvedCorrect:{} }));
+let totalSeconds = 0, attemptCount = 0;
+let activeUserId = null, dropdownOpen = false;
+let proofingMode = false;
+let cheaterTimer = null;
+
+// ===== TIMER =====
+setInterval(()=>{
+    totalSeconds++;
+    if(proofingMode) return;
+    let m=Math.floor(totalSeconds/60),s=totalSeconds%60;
+    document.getElementById('timer').innerText=`${m<10?'0'+m:m}:${s<10?'0'+s:s}`;
+},1000);
+
+// ===== DIVIDER =====
+const divider=document.getElementById('divider'),leftSide=document.getElementById('leftSide');
+divider.onmousedown=()=>{
+    document.onmousemove=e=>{let p=(e.clientX/window.innerWidth)*100;if(p>15&&p<85)leftSide.style.width=p+'%';};
+    document.onmouseup=()=>document.onmousemove=null;
+};
+
+// ===== LOAD PASSAGE =====
+function loadPassage(idx) {
+    currentPassage = idx;
+    const p = passages[idx];
+    const s = state[idx];
+
+    // Text
+    document.getElementById('textArea').innerHTML = p.text;
+
+    // Questions
+    document.getElementById('questionsArea').innerHTML = p.questions;
+    document.getElementById('questionsArea').scrollTop = 0;
+
+    // Bubbles
+    const grid = document.getElementById('bubbleGrid');
+    grid.innerHTML = '';
+    const keys = Object.keys(p.correctKeys).map(Number);
+    keys.forEach(i=>{
+        let b=document.createElement('div');
+        b.className='bubble'; b.id='b'+i; b.innerText=i;
+        if(s.solvedCorrect[i]) b.classList.add('solved');
+        else if(s.studentAns[i]) b.classList.add('active');
+        grid.appendChild(b);
+    });
+
+    // Restore answers visually
+    keys.forEach(i=>{
+        const el=document.getElementById('in'+i);
+        if(el && el.type!=='hidden'){
+            if(s.studentAns[i]) el.value=s.studentAns[i];
+            if(s.solvedCorrect[i]) el.classList.add('correct-neon');
+        }
+        const wrap=document.querySelector(`[data-q="${i}"]`);
+        if(wrap && s.studentAns[i]){
+            Array.from(wrap.children).forEach(btn=>{
+                btn.classList.remove('selected','correct-neon','wrong-neon');
+                if(btn.innerText.trim().startsWith(s.studentAns[i])) btn.classList.add('selected');
+                if(s.solvedCorrect[i] && btn.innerText.trim().startsWith(s.studentAns[i])) btn.classList.add('correct-neon');
+            });
+        }
+    });
+
+    // Navigator
+    document.getElementById('passageLabel').innerText = `Passage ${idx+1} / 3`;
+    const navL=document.getElementById('navLeft'), navR=document.getElementById('navRight');
+    navL.className='nav-btn'+(idx===0?' disabled':' active-arrow');
+    navR.className='nav-btn'+(idx===2?' disabled':' active-arrow');
+
+    // Score label
+    document.getElementById('mScore').innerText=`0 / ${p.totalQ}`;
+}
+
+function goPassage(dir){
+    const next=currentPassage+dir;
+    if(next<0||next>2) return;
+    loadPassage(next);
+}
+
+// ===== PICK / MARK =====
+function pick(q,v,el){
+    if(state[currentPassage].solvedCorrect[q]) return;
+    state[currentPassage].studentAns[q]=v;
+    Array.from(el.parentNode.children).forEach(b=>b.classList.remove('selected'));
+    el.classList.add('selected');
+    document.getElementById('b'+q).classList.add('active');
+}
+function mark(q){
+    if(state[currentPassage].solvedCorrect[q]) return;
+    const el=document.getElementById('in'+q);
+    const val=el?el.value:'';
+    state[currentPassage].studentAns[q]=val.toUpperCase().trim()||undefined;
+    document.getElementById('b'+q).classList.toggle('active',val.trim()!=='');
+}
+
+// ===== DRAG & DROP (for letter matching) =====
+function allowDrop(ev){ev.preventDefault();}
+function drag(ev){ev.dataTransfer.setData("text",ev.target.innerText[0]);}
+function drop(ev,q){
+    if(state[currentPassage].solvedCorrect[q]) return;
+    ev.preventDefault();
+    ev.target.value=ev.dataTransfer.getData("text");
+    state[currentPassage].studentAns[q]=ev.target.value.toUpperCase();
+    document.getElementById('b'+q).classList.add('active');
+}
+
+// ===== SUBMIT =====
+function submitTest(){
+    attemptCount++;
+    const p=passages[currentPassage];
+    const s=state[currentPassage];
+    let score=0, resHtml='';
+    const ts=document.getElementById('timer').innerText;
+    const keys=Object.keys(p.correctKeys).map(Number);
+    keys.forEach(i=>{
+        const el=document.getElementById('in'+i);
+        let ans=(s.studentAns[i]||(el&&el.type!=='hidden'?el.value:'')||'').toUpperCase().trim();
+        const ok=(ans===p.correctKeys[i]);
+        if(ok){score++;s.solvedCorrect[i]=true;applyNeon(i,'correct');document.getElementById('b'+i).classList.add('solved');}
+        else{if(!s.solvedCorrect[i])applyNeon(i,'wrong');}
+        resHtml+=`<div class="res-card ${ok?'correct-row':'wrong-row'}"><span>Q${i}</span><span>${ok?'✔ CORRECT':'✘ WRONG'}</span></div>`;
+    });
+    document.getElementById('mScore').innerText=`${score} / ${p.totalQ}`;
+    document.getElementById('resList').innerHTML=resHtml;
+    document.getElementById('attemptsRow').innerHTML+=`<div class="attempt-tag">#${attemptCount} P${currentPassage+1}: ${score}/${p.totalQ} (${ts})</div>`;
+    document.getElementById('modal').style.display='flex';
+    document.getElementById('attemptsRow').scrollLeft=99999;
+}
+
+function applyNeon(q,status){
+    const el=document.getElementById('in'+q);
+    if(el&&el.type!=='hidden'){el.classList.add(status+'-neon');if(status==='correct')el.readOnly=true;}
+    else{
+        const wrap=document.querySelector(`[data-q="${q}"]`);
+        if(wrap) Array.from(wrap.children).forEach(btn=>{
+            if(btn.classList.contains('selected')) btn.classList.add(status+'-neon');
+            if(status==='correct'&&btn.innerText.trim().startsWith(passages[currentPassage].correctKeys[q])){btn.classList.add('correct-neon','selected');}
+        });
+    }
+}
+
+function closeModal(){
+    document.getElementById('modal').style.display='none';
+    document.querySelectorAll('.wrong-neon').forEach(el=>el.classList.remove('wrong-neon'));
+    const keys=Object.keys(passages[currentPassage].correctKeys).map(Number);
+    keys.forEach(i=>{if(!state[currentPassage].solvedCorrect[i])document.getElementById('b'+i).classList.remove('active');});
+}
+
+// ===== MENU =====
+document.getElementById('menuBtn').onclick=()=>{document.getElementById('sideMenu').classList.add('open');document.getElementById('overlay').classList.add('show');};
+document.getElementById('closeMenuBtn').onclick=closeMenu;
+document.getElementById('overlay').onclick=closeMenu;
+function closeMenu(){document.getElementById('sideMenu').classList.remove('open');document.getElementById('overlay').classList.remove('show');}
+
+// ===== FONT / THEME / ABOUT =====
+function changeFontSize(v){document.documentElement.style.setProperty('--font-size',v+'px');document.getElementById('fontSizeLabel').innerText=v+'px';}
+function setTheme(t){
+    document.body.classList.remove('theme-dark','theme-sepia');
+    if(t==='dark')document.body.classList.add('theme-dark');
+    if(t==='sepia')document.body.classList.add('theme-sepia');
+    ['themeLight','themeDark','themeSepia'].forEach(id=>document.getElementById(id).classList.remove('active'));
+    document.getElementById({light:'themeLight',dark:'themeDark',sepia:'themeSepia'}[t]).classList.add('active');
+}
+function openAbout(){document.getElementById('aboutModal').classList.add('show');}
+function closeAbout(){document.getElementById('aboutModal').classList.remove('show');}
+
+// ===== ID =====
+function handleIdInput(){
+    const val=document.getElementById('idInput').value.trim();
+    const statusEl=document.getElementById('idStatus');
+    document.getElementById('teacherAnswerBox').style.display='none';
+    document.getElementById('adminRow').style.display='none';
+    statusEl.className='id-status'; statusEl.innerText=''; activeUserId=null;
+    if(val.length<6) return;
+    if(TEACHER_IDS.includes(val)){
+        activeUserId='teacher';
+        statusEl.className='id-status show ok'; statusEl.innerText='✔ Access granted — Teacher';
+        document.getElementById('teacherAnswerBox').style.display='block';
+        fillTeacherAnswers();
+        document.getElementById('idInput').style.display='none';
+        document.querySelector('.menu-star').style.display='none';
+        deactivateCheater();
+    } else if(val===ADMIN_ID){
+        activeUserId='admin';
+        statusEl.className='id-status show ok'; statusEl.innerText='✔ Developer access';
+        document.getElementById('adminRow').style.display='block';
+        deactivateCheater();
+    } else {
+        statusEl.className='id-status show err'; statusEl.innerText='✘ Invalid ID';
+    }
+}
+function fillTeacherAnswers(){
+    const answers=passages[currentPassage].teacherAnswers;
+    document.getElementById('dropContent').innerHTML=answers.map(v=>`<div class="ans-item">${v}</div>`).join('');
+}
+function toggleDropdown(){
+    dropdownOpen=!dropdownOpen;
+    document.getElementById('dropContent').classList.toggle('open',dropdownOpen);
+    document.getElementById('dropArrow').innerText=dropdownOpen?'▲':'▼';
+}
+
+// ===== ADMIN COMMANDS =====
+function runCommand(){
+    if(activeUserId!=='admin') return;
+    const cmd=document.getElementById('cmdInput').value.trim().toLowerCase();
+    const fb=document.getElementById('cmdFeedback');
+    const p=passages[currentPassage], s=state[currentPassage];
+    const keys=Object.keys(p.correctKeys).map(Number);
+    if(cmd==='answers'){
+        keys.forEach(i=>{
+            if(s.solvedCorrect[i]) return;
+            const key=p.correctKeys[i];
+            const el=document.getElementById('in'+i);
+            if(el&&el.type!=='hidden'){el.value=key;el.style.color='#007bff';}
+            else{const wrap=document.querySelector(`[data-q="${i}"]`);if(wrap)Array.from(wrap.children).forEach(btn=>{if(btn.innerText.trim().startsWith(key)){btn.style.background='#eef2ff';btn.style.borderColor='#007bff';btn.style.color='#007bff';}});}
+        });
+        fb.className='show ok';fb.style.display='block';fb.innerText='✔ Answers revealed';showToast('📋 Answers shown');
+    } else if(cmd==='autofill'){
+        keys.forEach(i=>{
+            if(s.solvedCorrect[i]) return;
+            const key=p.correctKeys[i];
+            const el=document.getElementById('in'+i);
+            if(el&&el.type!=='hidden'){el.value=key;s.studentAns[i]=key;document.getElementById('b'+i).classList.add('active');}
+            else{const wrap=document.querySelector(`[data-q="${i}"]`);if(wrap)Array.from(wrap.children).forEach(btn=>{btn.classList.remove('selected');if(btn.innerText.trim().startsWith(key)){btn.classList.add('selected');s.studentAns[i]=key;}});document.getElementById('b'+i).classList.add('active');}
+        });
+        fb.className='show ok';fb.style.display='block';fb.innerText='✔ Autofilled';showToast('✏️ Autofill complete');
+    } else if(cmd==='more time'){
+        if(totalSeconds<=9*60){totalSeconds=0;document.getElementById('timer').innerText='00:00';fb.innerText='✔ Timer reset to 0:00';showToast('⏱️ Timer reset to 0:00');}
+        else{totalSeconds=Math.max(0,totalSeconds-600);let m=Math.floor(totalSeconds/60),sv=totalSeconds%60;document.getElementById('timer').innerText=`${m<10?'0'+m:m}:${sv<10?'0'+sv:sv}`;fb.innerText='✔ −10 min';showToast('⏱️ −10 minutes');}
+        fb.className='show ok';fb.style.display='block';
+    } else {fb.className='show err';fb.style.display='block';fb.innerText='✘ Unknown command';showToast('❌ Unknown: '+cmd);}
+    document.getElementById('cmdInput').value='';
+}
+document.getElementById('cmdInput').addEventListener('keydown',e=>{if(e.key==='Enter')runCommand();});
+
+// ===== PROOFING =====
+function toggleProofing(){
+    proofingMode=!proofingMode;
+    const btn=document.getElementById('proofingBtn');
+    if(proofingMode){btn.classList.add('active');document.getElementById('timer').innerText='∞';deactivateCheater();}
+    else{btn.classList.remove('active');let m=Math.floor(totalSeconds/60),s=totalSeconds%60;document.getElementById('timer').innerText=`${m<10?'0'+m:m}:${s<10?'0'+s:s}`;}
+}
+
+// ===== CHEATER =====
+function isTrusted(){return proofingMode||activeUserId==='teacher'||activeUserId==='admin';}
+function activateCheater(){ /* anti-cheat removed */ }
+function deactivateCheater(){ /* anti-cheat removed */ }
+
+
+let selectedText=null;
+document.addEventListener('mouseup',e=>{
+    const sel=window.getSelection();
+    if(sel.toString().trim().length>0){selectedText=sel.getRangeAt(0);const m=document.getElementById('highlightMenu');m.style.display='flex';m.style.left=e.pageX+'px';m.style.top=(e.pageY+15)+'px';}
+    else document.getElementById('highlightMenu').style.display='none';
+});
+document.querySelectorAll('.hlColor').forEach(btn=>btn.addEventListener('click',function(){
+    if(!selectedText) return;
+    const span=document.createElement('span');span.style.backgroundColor=this.dataset.color;
+    try{selectedText.surroundContents(span);}catch(e){}
+    document.getElementById('highlightMenu').style.display='none';window.getSelection().removeAllRanges();
+}));
+document.getElementById('removeColor').addEventListener('click',()=>{
+    if(!selectedText) return;
+    let node=selectedText.startContainer;
+    while(node&&node.nodeType!==1)node=node.parentNode;
+    if(node&&node.tagName==='SPAN')node.outerHTML=node.innerHTML;
+    document.getElementById('highlightMenu').style.display='none';window.getSelection().removeAllRanges();
+});
+
+// ===== TOAST =====
+function showToast(msg){const t=document.getElementById('toast');t.innerText=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
+
+// ===== INIT =====
+loadPassage(0);
+</script>
+</body>
+</html>

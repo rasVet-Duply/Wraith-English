@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Reading: Invasive Species</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #007bff;
+            --bg: #f8f9fa;
+            --card: #ffffff;
+            --border: #e0e0e0;
+            --neon-green: #39FF14;
+            --neon-red: #ff3131;
+            --dark: #2d3436;
+            --text: #444;
+            --header-bg: #fff;
+            --sidebar-bg: #fff;
+            --font-size: 1.05rem;
+        }
+
+        /* ── DARK THEME ── */
+        body.theme-dark {
+            --bg: #1a1a2e; --card: #16213e; --border: #2d3561;
+            --text: #c9d1d9; --header-bg: #0f3460; --sidebar-bg: #16213e;
+            --dark: #e2e8f0;
+        }
+        body.theme-dark header { background: var(--header-bg); }
+        body.theme-dark .left-side,
+        body.theme-dark .right-side { background: var(--bg); }
+        body.theme-dark .q-card { background: var(--card); border-color: var(--border); }
+        body.theme-dark .btn-opt { background: var(--card); color: var(--text); border-color: var(--border); }
+        body.theme-dark .timer { background: #0f3460; border-color: #2d3561; color: #60a5fa; }
+        body.theme-dark .text-area { color: var(--text); background: var(--bg); }
+        body.theme-dark .text-area h1 { color: #e2e8f0; }
+        body.theme-dark .bubbles-area { background: var(--card); border-color: var(--border); }
+        body.theme-dark .action-bar { background: var(--card); border-color: var(--border); }
+        body.theme-dark .divider { background: #0f3460; border-color: var(--border); }
+        body.theme-dark th { background: #0f3460; color: #94a3b8; }
+        body.theme-dark td { border-color: var(--border); }
+        body.theme-dark .drag-options { background: #0f3460; border-color: var(--border); }
+        body.theme-dark .input-match,
+        body.theme-dark .input-summary { background: var(--card); color: var(--text); border-color: var(--border); }
+        body.theme-dark #sideMenu { background: var(--sidebar-bg); }
+        body.theme-dark .menu-id-box,
+        body.theme-dark .admin-cmd-box { background: #0f3460; color: #e2e8f0; border-color: #2d3561; }
+        body.theme-dark .menu-star,
+        body.theme-dark .menu-top-icon,
+        body.theme-dark .admin-slash-icon { background: #0f3460; border-color: #2d3561; color: #94a3b8; }
+        body.theme-dark #teacherAnswerBox { background: #0f3460; border-color: #2d3561; }
+        body.theme-dark .ans-item { color: #94a3b8; border-color: #2d3561; }
+        body.theme-dark .description { color: #e2e8f0; }
+        body.theme-dark .attempt-tag { background: #0f3460; color: #94a3b8; border-color: #2d3561; }
+        body.theme-dark .settings-panel { background: #0f3460; border-color: #2d3561; }
+        body.theme-dark .settings-label { color: #94a3b8; }
+
+        /* ── SEPIA / READING THEME ── */
+        body.theme-sepia {
+            --bg: #f4ecd8; --card: #fdf6e3; --border: #d4b896;
+            --text: #5c4a1e; --header-bg: #ede0c8; --sidebar-bg: #fdf6e3;
+            --dark: #3e2e10;
+        }
+        body.theme-sepia header { background: var(--header-bg); }
+        body.theme-sepia .left-side,
+        body.theme-sepia .right-side { background: var(--bg); }
+        body.theme-sepia .q-card { background: var(--card); border-color: var(--border); }
+        body.theme-sepia .btn-opt { background: var(--card); color: var(--text); border-color: var(--border); }
+        body.theme-sepia .timer { background: #ede0c8; border-color: #d4b896; color: #7b5e2a; }
+        body.theme-sepia .text-area { color: var(--text); background: var(--bg); }
+        body.theme-sepia .text-area h1 { color: var(--dark); }
+        body.theme-sepia .bubbles-area { background: var(--card); border-color: var(--border); }
+        body.theme-sepia .action-bar { background: var(--card); border-color: var(--border); }
+        body.theme-sepia .divider { background: #e8d5b5; border-color: var(--border); }
+        body.theme-sepia th { background: #ede0c8; color: #7b5e2a; }
+        body.theme-sepia td { border-color: var(--border); }
+        body.theme-sepia .drag-options { background: #ede0c8; border-color: var(--border); }
+        body.theme-sepia .input-match,
+        body.theme-sepia .input-summary { background: var(--card); color: var(--text); border-color: var(--border); }
+        body.theme-sepia #sideMenu { background: var(--sidebar-bg); }
+        body.theme-sepia .settings-panel { background: #ede0c8; border-color: #d4b896; }
+        body.theme-sepia .settings-label { color: #7b5e2a; }
+
+        * { box-sizing: border-box; }
+        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Inter', 'Segoe UI', sans-serif; overflow: hidden; background: var(--bg); transition: background 0.3s, color 0.3s; }
+
+        .wrapper { display: flex; flex-direction: column; height: 100vh; }
+
+        header {
+            height: 65px; background: #fff; border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: space-between; padding: 0 25px; flex-shrink: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: background 0.3s;
+        }
+        .logo { font-weight: 800; font-size: 1.2rem; color: var(--dark); display: flex; align-items: center; gap: 10px; }
+        .logo i { color: var(--primary); }
+        .timer { font-weight: bold; background: #eef2ff; padding: 8px 25px; border-radius: 30px; border: 1px solid #d1d9ff; color: var(--primary); font-size: 1.2rem; min-width: 110px; text-align: center; transition: 0.3s; }
+
+        #menuBtn {
+            width: 38px; height: 38px; border-radius: 50%; border: 2px solid #dee2e6;
+            background: #fff; font-size: 1.3rem; cursor: pointer; display: flex;
+            align-items: center; justify-content: center; font-weight: bold; color: #495057; transition: 0.2s;
+        }
+        #menuBtn:hover { background: #f0f7ff; border-color: var(--primary); color: var(--primary); }
+
+        .main { display: flex; flex: 1; overflow: hidden; }
+
+        .left-side { width: 50%; display: flex; flex-direction: column; background: #fff; border-right: 1px solid var(--border); transition: background 0.3s; }
+        .text-area { flex: 1; overflow-y: auto; padding: 40px; line-height: 1.8; color: var(--text); font-size: var(--font-size); transition: font-size 0.2s, color 0.3s; }
+        .text-area h1 { color: var(--dark); font-size: 2.2rem; margin-bottom: 20px; }
+        .bubbles-area {
+            height: 100px; border-top: 1px solid var(--border); background: #fff;
+            padding: 15px 25px; overflow-y: auto; flex-shrink: 0; transition: background 0.3s;
+        }
+        .bubbles-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+        .bubble {
+            width: 36px; height: 36px; border-radius: 50%; border: 2px solid #dee2e6;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; color: #adb5bd; font-size: 0.9rem; transition: 0.3s;
+        }
+        .bubble.active { border-color: var(--primary); color: var(--primary); background: #eef2ff; }
+        .bubble.solved { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+        .divider { width: 12px; background: #f1f3f5; cursor: col-resize; flex-shrink: 0; position: relative; border-left: 1px solid #e9ecef; border-right: 1px solid #e9ecef; }
+        .divider::after { content: '||'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #adb5bd; font-size: 0.8rem; letter-spacing: 1px; }
+
+        .right-side { flex: 1; display: flex; flex-direction: column; background: var(--bg); min-width: 300px; transition: background 0.3s; }
+
+        .action-bar {
+            background: #fff; border-bottom: 1px solid var(--border); padding: 0 20px;
+            display: flex; align-items: center; justify-content: space-between; gap: 15px;
+            height: 65px; flex-shrink: 0; transition: background 0.3s;
+        }
+
+        .attempts-row { display: flex; gap: 10px; overflow-x: auto; flex: 1; min-width: 0; align-items: center; height: 100%; }
+        .attempt-tag { background: #f8f9fa; border: 1px solid #e9ecef; padding: 8px 15px; border-radius: 8px; font-size: 0.85rem; white-space: nowrap; color: #495057; font-weight: 600; }
+
+        .btn-submit { background: var(--primary); color: #fff; border: none; padding: 12px 30px; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s; box-shadow: 0 4px 15px rgba(0,123,255,0.3); }
+        .btn-submit:hover { background: #0069d9; transform: translateY(-1px); }
+
+        .questions-area { flex: 1; overflow-y: auto; padding: 30px; font-size: var(--font-size); transition: font-size 0.2s; }
+        .q-card { background: #fff; padding: 30px; border-radius: 12px; border: 1px solid #e9ecef; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: background 0.3s; }
+
+        .description { font-weight: 800; color: #2d3436; margin-bottom: 20px; display: block; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; border-left: 5px solid var(--primary); padding-left: 15px; }
+
+        .btn-opt { padding: 10px 18px; border: 1.5px solid #dee2e6; border-radius: 8px; cursor: pointer; margin: 5px 8px 5px 0; display: inline-block; background: #fff; font-weight: 500; transition: 0.2s; }
+        .btn-opt.selected { border-color: var(--primary); color: var(--primary); background: #f0f7ff; }
+
+        .correct-neon { border: 2px solid var(--neon-green) !important; box-shadow: 0 0 15px var(--neon-green) !important; background-color: #fafff5 !important; pointer-events: none; }
+        .wrong-neon { border: 2px solid var(--neon-red) !important; box-shadow: 0 0 15px var(--neon-red) !important; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #eee; padding: 15px; text-align: left; }
+        th { background: #f8f9fa; color: #6c757d; font-size: 0.8rem; text-transform: uppercase; font-weight: 700; }
+
+        .input-match { width: 100%; padding: 10px; text-align: center; border: 2px dashed #ced4da; border-radius: 6px; font-weight: 700; outline: none; transition: 0.3s; }
+        .input-summary { border: none; border-bottom: 2px solid #dee2e6; width: 150px; text-align: center; outline: none; font-weight: 700; padding: 5px; transition: 0.3s; }
+
+        .drag-options { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; background: #f8f9fa; padding: 20px; border-radius: 10px; border: 1px solid #e9ecef; }
+        .drag-item { background: var(--dark); color: #fff; padding: 10px 15px; border-radius: 6px; cursor: grab; font-weight: 600; font-size: 0.85rem; }
+
+        /* MODAL */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(5px); }
+        .modal-content { background: #fff; border-radius: 20px; width: 500px; max-width: 95%; text-align: center; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.4); animation: modalIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        @keyframes modalIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .modal-header { background: var(--dark); color: #fff; padding: 30px; }
+        .modal-header h2 { margin: 0; font-size: 2.5rem; font-weight: 900; }
+        .modal-body { padding: 25px; background: #fff; }
+        .res-list { text-align: left; max-height: 350px; overflow-y: auto; }
+        .res-card { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; margin-bottom: 12px; border-radius: 10px; font-weight: 700; font-size: 1rem; border: 2px solid transparent; transition: 0.3s; }
+        .res-card.correct-row { border-color: var(--neon-green); box-shadow: 0 0 15px var(--neon-green); background: #fafff5; color: #2d6a4f; }
+        .res-card.wrong-row { border-color: var(--neon-red); box-shadow: 0 0 15px var(--neon-red); background: #fff5f5; color: #a4161a; }
+        .modal-footer { padding: 25px; background: #f8f9fa; }
+
+        /* OVERLAY */
+        #overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); display: none; z-index: 1500;
+            backdrop-filter: blur(2px);
+        }
+        #overlay.show { display: block; }
+
+        /* SIDE MENU */
+        #sideMenu {
+            position: fixed; top: 0; right: -26%;
+            width: 25%; height: 100%;
+            background: #fff; z-index: 1600;
+            transition: right 0.3s cubic-bezier(0.4,0,0.2,1);
+            padding: 0;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.2);
+            display: flex; flex-direction: column;
+            overflow: hidden;
+        }
+        #sideMenu.open { right: 0; }
+
+        .menu-header {
+            background: var(--dark); color: #fff;
+            padding: 25px 20px 20px;
+            display: flex; align-items: center; justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .menu-header h2 { margin: 0; font-size: 1.3rem; font-weight: 800; }
+        #closeMenuBtn { background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer; padding: 0; line-height: 1; }
+
+        .menu-body { flex: 1; overflow-y: auto; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+
+        /* Settings panel */
+        .settings-panel {
+            background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 14px;
+            padding: 16px; display: flex; flex-direction: column; gap: 14px;
+            transition: background 0.3s;
+        }
+        .settings-label {
+            font-size: 0.72rem; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 0.8px; color: #6c757d; margin-bottom: 4px;
+        }
+
+        /* Font size slider */
+        .font-slider-row { display: flex; align-items: center; gap: 10px; }
+        .font-slider-row span { font-size: 0.8rem; color: #adb5bd; min-width: 18px; text-align: center; }
+        input[type=range] {
+            flex: 1; -webkit-appearance: none; height: 4px; border-radius: 4px;
+            background: #dee2e6; outline: none; cursor: pointer;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%;
+            background: var(--primary); cursor: pointer; box-shadow: 0 2px 6px rgba(0,123,255,0.4);
+        }
+
+        /* Theme buttons */
+        .theme-row { display: flex; gap: 8px; }
+        .theme-btn {
+            flex: 1; padding: 9px 6px; border-radius: 10px; border: 2px solid #dee2e6;
+            cursor: pointer; font-size: 0.78rem; font-weight: 700; transition: 0.2s;
+            background: #fff; color: #495057; text-align: center;
+        }
+        .theme-btn:hover { border-color: var(--primary); color: var(--primary); }
+        .theme-btn.active { border-color: var(--primary); background: #eef2ff; color: var(--primary); }
+        .theme-btn .tb-icon { font-size: 1.1rem; display: block; margin-bottom: 3px; }
+
+        /* About button */
+        .btn-about {
+            width: 100%; padding: 11px; border-radius: 10px;
+            border: 2px solid #dee2e6; background: #fff; cursor: pointer;
+            font-weight: 700; font-size: 0.85rem; color: #495057;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            transition: 0.2s;
+        }
+        .btn-about:hover { border-color: var(--primary); color: var(--primary); background: #eef2ff; }
+
+        /* About modal */
+        #aboutModal {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); z-index: 2000; justify-content: center; align-items: center;
+            backdrop-filter: blur(4px);
+        }
+        #aboutModal.show { display: flex; }
+        .about-card {
+            background: #fff; border-radius: 20px; width: 340px; max-width: 90%;
+            overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+            animation: modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+            text-align: center;
+        }
+        .about-top {
+            background: linear-gradient(135deg, #007bff, #0056cc);
+            padding: 30px 20px 25px; color: #fff;
+        }
+        .about-avatar {
+            width: 64px; height: 64px; border-radius: 50%;
+            background: rgba(255,255,255,0.25); border: 3px solid rgba(255,255,255,0.6);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; margin: 0 auto 12px;
+        }
+        .about-top h3 { margin: 0 0 4px; font-size: 1.4rem; font-weight: 900; }
+        .about-top p { margin: 0; opacity: 0.8; font-size: 0.85rem; }
+        .about-body { padding: 20px; }
+        .about-body p { color: #6c757d; font-size: 0.88rem; line-height: 1.6; margin: 0 0 14px; }
+        .about-tag {
+            display: inline-block; background: #eef2ff; color: var(--primary);
+            border-radius: 20px; padding: 6px 16px; font-weight: 700; font-size: 0.85rem;
+            margin-bottom: 16px;
+        }
+        .btn-close-about {
+            width: 100%; padding: 12px; background: var(--primary); color: #fff;
+            border: none; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 0.9rem;
+        }
+
+        /* ID row */
+        .menu-top-icon {
+            width: 44px; height: 44px; border-radius: 50%;
+            border: 2px solid #dee2e6; background: #f8f9fa;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; color: #495057; cursor: pointer; transition: 0.2s; align-self: flex-start;
+        }
+        .menu-top-icon:hover { background: #eef2ff; border-color: var(--primary); color: var(--primary); }
+
+        .menu-mid-row { display: flex; align-items: center; gap: 10px; }
+        .menu-star {
+            width: 44px; height: 44px; border-radius: 50%;
+            border: 2px solid #dee2e6; background: #f8f9fa;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; color: #495057; font-weight: bold; flex-shrink: 0;
+        }
+        .menu-id-box {
+            flex: 1; border: 2px solid #dee2e6; border-radius: 12px;
+            padding: 10px 14px; font-size: 1rem; font-weight: 600;
+            outline: none; transition: border-color 0.2s; letter-spacing: 2px;
+        }
+        .menu-id-box:focus { border-color: var(--primary); }
+        .menu-id-box::placeholder { letter-spacing: 0; font-weight: 400; color: #adb5bd; }
+
+        .id-status { font-size: 0.82rem; color: #adb5bd; padding-left: 4px; display: none; }
+        .id-status.show { display: block; }
+        .id-status.ok { color: #2d6a4f; }
+        .id-status.err { color: #a4161a; }
+
+        #teacherAnswerBox {
+            background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 12px;
+            padding: 12px; display: none;
+        }
+        #teacherAnswerBox .drop-header {
+            display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; font-weight: 700; font-size: 0.9rem; color: var(--dark);
+        }
+        #teacherAnswerBox .drop-content { max-height: 180px; overflow-y: auto; margin-top: 10px; display: none; }
+        #teacherAnswerBox .drop-content.open { display: block; }
+        .ans-item { padding: 8px 10px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; color: #495057; border-bottom: 1px solid #e9ecef; }
+        .ans-item:last-child { border-bottom: none; }
+
+        #adminRow { display: none; margin-top: 4px; }
+        .admin-mid-row { display: flex; align-items: center; gap: 10px; }
+        .admin-slash-icon {
+            width: 44px; height: 44px; border-radius: 50%;
+            border: 2px solid #dee2e6; background: #f8f9fa;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; color: #495057; font-weight: bold; flex-shrink: 0;
+        }
+        .admin-cmd-box {
+            flex: 1; border: 2px solid #dee2e6; border-radius: 12px;
+            padding: 10px 14px; font-size: 0.95rem; font-weight: 600; outline: none; transition: border-color 0.2s;
+        }
+        .admin-cmd-box:focus { border-color: #ff3131; }
+        .admin-cmd-box::placeholder { font-weight: 400; color: #adb5bd; }
+        .btn-run-cmd {
+            padding: 10px 16px; background: var(--dark); color: #fff;
+            border: none; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 0.85rem; transition: 0.2s;
+        }
+        .btn-run-cmd:hover { background: #ff3131; }
+        #cmdFeedback { font-size: 0.82rem; padding-left: 4px; color: #adb5bd; display: none; }
+        #cmdFeedback.show { display: block; }
+        #cmdFeedback.ok { color: #2d6a4f; }
+        #cmdFeedback.err { color: #a4161a; }
+
+        .menu-footer {
+            padding: 15px 20px; border-top: 1px solid #e9ecef; text-align: center; flex-shrink: 0;
+        }
+        .tg-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--primary); font-weight: 700; font-size: 0.9rem;
+            text-decoration: none; padding: 10px 18px; border-radius: 10px;
+            background: #eef2ff; transition: 0.2s;
+        }
+        .tg-link:hover { background: #d1d9ff; }
+
+        /* HIGHLIGHT */
+        #highlightMenu {
+            display: none; position: fixed; background: #fff;
+            padding: 8px; border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,.2); z-index: 99999;
+            gap: 8px; align-items: center;
+        }
+        .hlColor { width: 28px; height: 28px; border-radius: 50%; cursor: pointer; border: 2px solid white; }
+        #removeColor { width: 28px; height: 28px; border-radius: 50%; background: white; border: 2px solid #999; display: flex; align-items: center; justify-content: center; cursor: pointer; font-weight: bold; }
+
+        /* PROOFING BUTTON */
+        #proofingBtn {
+            padding: 8px 18px; border-radius: 30px;
+            border: 2px solid #007bff; background: #007bff;
+            color: #fff; font-weight: 700; font-size: 0.85rem;
+            cursor: pointer; transition: 0.2s; letter-spacing: 0.3px;
+        }
+        #proofingBtn:hover { background: #0056cc; border-color: #0056cc; }
+        #proofingBtn.active { background: #fff; color: #007bff; border-color: #007bff; }
+
+        
+        @keyframes flashText {
+            0%  {
+                color: #fff;
+                text-shadow:
+                    -4px -4px 0 #000,
+                     4px -4px 0 #000,
+                    -4px  4px 0 #000,
+                     4px  4px 0 #000,
+                     0    0  20px #000;
+            }
+            50% {
+                color: #000;
+                text-shadow:
+                    -4px -4px 0 #fff,
+                     4px -4px 0 #fff,
+                    -4px  4px 0 #fff,
+                     4px  4px 0 #fff,
+                     0    0  20px #fff;
+            }
+        }
+
+        /* TOAST */
+        #toast {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
+            background: var(--dark); color: #fff; padding: 12px 24px; border-radius: 30px;
+            font-weight: 700; font-size: 0.9rem; z-index: 9999; transition: transform 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        #toast.show { transform: translateX(-50%) translateY(0); }
+    
+/* === universal theme & readability fixes (auto-appended) === */
+#sideMenu{ will-change: right; }
+#overlay, #highlightMenu, .modal { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+
+body.theme-dark { background: var(--bg) !important; }
+body.theme-dark .content-area, body.theme-dark .content-row,
+body.theme-dark .wrapper, body.theme-dark .main,
+body.theme-dark .left-side, body.theme-dark .right-side,
+body.theme-dark .transcript-col, body.theme-dark .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-dark header, body.theme-dark .action-bar, body.theme-dark .passage-nav {
+  background: #0f3460 !important; border-color:#2d3561 !important;
+}
+body.theme-dark .bubbles-area, body.theme-dark .q-card, body.theme-dark .modal-content,
+body.theme-dark .modal-body, body.theme-dark .about-card, body.theme-dark .about-body,
+body.theme-dark #sideMenu, body.theme-dark .menu-body, body.theme-dark .modal-footer,
+body.theme-dark .drop-content, body.theme-dark #teacherAnswerBox, body.theme-dark #adminAnswerBox,
+body.theme-dark #highlightMenu, body.theme-dark #removeColor, body.theme-dark #toast,
+body.theme-dark .menu-footer, body.theme-dark .modal-col, body.theme-dark .proof-toast-box,
+body.theme-dark .audio-player, body.theme-dark .settings-panel {
+  background: var(--card) !important;
+}
+body.theme-dark, body.theme-dark .text-area, body.theme-dark .questions-area,
+body.theme-dark .q-card, body.theme-dark .q-card p, body.theme-dark .q-card li,
+body.theme-dark .description, body.theme-dark .passage-label, body.theme-dark .nav-btn,
+body.theme-dark label, body.theme-dark .ans-item, body.theme-dark .attempt-tag,
+body.theme-dark .settings-label, body.theme-dark .about-body p, body.theme-dark .btn-opt,
+body.theme-dark .modal-header h2, body.theme-dark .modal-total, body.theme-dark .proof-note,
+body.theme-dark .modal-col-title, body.theme-dark .drop-header, body.theme-dark .menu-header h2,
+body.theme-dark .transcript-inner, body.theme-dark .transcript-inner p, body.theme-dark .badge,
+body.theme-dark .id-status, body.theme-dark #cmdFeedback, body.theme-dark .about-top h3,
+body.theme-dark .res-card {
+  color: #ffffff !important;
+}
+body.theme-dark .input-summary, body.theme-dark .input-match, body.theme-dark input[type=text] {
+  color: #ffffff !important; background: transparent !important;
+}
+body.theme-dark .btn-opt.selected, body.theme-dark .nav-btn.active-arrow { color: #60a5fa !important; }
+body.theme-sepia .btn-opt.selected, body.theme-sepia .nav-btn.active-arrow { color: #a13a1c !important; background: #f9e6c8 !important; border-color: #a13a1c !important; font-weight: 700 !important; }
+body.theme-dark .correct-neon { color:#0b3d19 !important; }
+body.theme-dark .wrong-row, body.theme-dark .correct-row { color: inherit !important; }
+
+body.theme-sepia .content-area, body.theme-sepia .content-row,
+body.theme-sepia .wrapper, body.theme-sepia .main,
+body.theme-sepia .left-side, body.theme-sepia .right-side,
+body.theme-sepia .transcript-col, body.theme-sepia .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-sepia header, body.theme-sepia .action-bar, body.theme-sepia .passage-nav {
+  background:#ede0c8 !important; border-color:#d4b896 !important;
+}
+body.theme-sepia .bubbles-area, body.theme-sepia .q-card, body.theme-sepia .modal-content,
+body.theme-sepia .modal-body, body.theme-sepia .about-card, body.theme-sepia .about-body,
+body.theme-sepia #sideMenu, body.theme-sepia .menu-body, body.theme-sepia .modal-footer,
+body.theme-sepia .drop-content, body.theme-sepia #teacherAnswerBox, body.theme-sepia #adminAnswerBox,
+body.theme-sepia #highlightMenu, body.theme-sepia #removeColor, body.theme-sepia #toast,
+body.theme-sepia .menu-footer, body.theme-sepia .modal-col, body.theme-sepia .proof-toast-box,
+body.theme-sepia .audio-player, body.theme-sepia .settings-panel {
+  background: var(--card) !important;
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+    <header>
+        <div class="logo"><i class="fas fa-feather-alt"></i> IELTS READING</div>
+        <div style="display:flex;align-items:center;gap:10px;">
+            <div class="timer" id="timer">00:00</div>
+            <button id="proofingBtn" title="Proofing mode — disables cheat detection" onclick="toggleProofing()">Proofing</button>
+            <button id="menuBtn" title="Menu">⋮</button>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="left-side" id="leftSide">
+            <div class="text-area" id="textArea">
+                <h1>Invasive species</h1>
+                <p>Britain's rivers and estuaries are being invaded at an alarming rate by a small furry-clawed crab all the way from China. So how did a crab travel so far and why are naturalists so concerned? The mitten crab first arrived in Europe on ships sailing from Asia. It then spread rapidly from Portugal to Sweden and was first reported in the River Thames in 1935. From the Thames, it spread across the United Kingdom at a very rapid rate: by 1999 mitten crabs had spread across 448 km of British coastline, sometimes walking miles overland to reach the next river. A team from the University of Newcastle found that UK rivers are being invaded three times faster today than in 1935. And there's little wonder – a single female crab can carry between 250,000 and 1,000,000 eggs so mitten crab colonies expand very rapidly. Furthermore, cleaning up pollution from Britain's rivers is simply helping the invaders.</p>
+                <p>The mitten crab is one example of many invasive species that have found their way from their original habitat into foreign lands. There are several ways invasive species move from country to country: they may expand their territory naturally as their colony grows; but far more frequently an invasion is associated with human activity. The main causes include shipping, deliberate introduction for hunting or work, and the escape of pets into the wild. The introduction of the mitten crab to Europe was probably accidental: ships taking on water to use as ballast to keep the vessel steady on its journey from Asia to Europe also took on the unwanted guests and carried them to new areas to colonise. Elsewhere, invasive species have been purposefully introduced by man. In 1859, 24 rabbits were introduced into Australia by Thomas Austin so that he could hunt them for recreation. Unfortunately, like the mitten crab, rabbits are prolific breeders: a single pair of rabbits are able to increase to 184 individual rabbits in just one and a half years and they spread at a rate of 130 km per year. Soon the population in Australia was out of control and had spread throughout the continent. Another domestic creature introduced from India into Australia in the 1800s was the dromedary camel. Camels were initially brought to work as pack animals to carry heavy loads across the hot desert interior of Australia. By 1920 it was estimated that around 20,000 camels were being used to transport goods. However, with the arrival of trains and cars, camels were released into the wild where their numbers had increased to around one million by 2008. Finally, the trade in animals as pets can enable a species to colonise areas far away from their native land.</p>
+                <p>Between 2000 and 2006 the U.S. Fish and Wildlife Service recorded 1.5 billion animal shipments made into America. 92% of these imported animals were then sold as pets, with the rest imported for research, education and zoos. While most of these animals were fish, the imports also included reptiles and mammals. When these pets escape and begin to breed, it can create serious problems. An example of this is in Florida, where in the 1990s a number of pet Burmese pythons – a snake native to south east Asia – escaped their outdoor enclosures when a major hurricane hit the state. Today, it is estimated that up 30,000 snakes inhabit the wetlands of the Florida Everglades. Burmese pythons, which can grow up to 20 feet long, are thriving on their new diet of native species, including endangered creatures, and are more than capable of competing with the American alligator for food.</p>
+                <p>The impact of invasive species is not to be underestimated. Katherine Smith, a conservation biologist at Brown University in Providence, Rhode Island states that 'A huge amount of money goes into the myriad effects that invasive species have.' Smith continues, 'They destroy infrastructure. They cause public health threats. They harm livestock and native animals. They disrupt ecosystems. The dollar values really do increase quickly.'</p>
+                <p>When a non-native species finds its way into a new and vulnerable environment the damage can be more or less serious as the invader out-competes the local wildlife, brings in new disease or destroys the environment. The Australian dromedary camel, forming the largest herd of wild camels in the world, competes for food with native species and may have aided the local extinction of preferred species such as the quandong tree. The Australian government estimate that the camel is responsible for AUS$10 million in damage to infrastructure and competition for livestock food every year. Even more damaging is the effect rabbits are having in Australia. Apart from the economic loss to the wool industry, estimated at AUS$95 million annually, rabbits compete with sheep for food. Close grazing of grass leads to soil erosion and has significantly altered the composition of extensive areas of land. While the real impact of the mitten crab in the UK is not known at present, scientists have noted that the crab is causing riverbank erosion as it burrows into the mud, forming a network of tunnels that make the riverbanks unstable.</p>
+                <p>Invasive species are very difficult to manage once they have become established. Various methods have been tried to keep the populations under control. In Australia, 85,000 were culled and various methods have been tried to keep rabbit populations under control including poison and destruction of their warrens or homes. The latest idea in the UK to control the mitten crab is even simpler: catch them and give them to restaurants to sell as a tasty meal.</p>
+            </div>
+            <div class="bubbles-area">
+                <div style="font-weight: 800; color: #adb5bd; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 8px;">Questions Navigation</div>
+                <div class="bubbles-grid" id="bubbleGrid"></div>
+            </div>
+        </div>
+
+        <div class="divider" id="divider"></div>
+
+        <div class="right-side">
+            <div class="action-bar">
+                <div class="attempts-row" id="attemptsRow"></div>
+                <button class="btn-submit" onclick="submitTest()">SUBMIT ANSWERS</button>
+            </div>
+
+            <div class="questions-area" id="questionsArea">
+                <div class="q-card">
+                    <span class="description">Do the following statements agree with the information given? Write TRUE, FALSE or NOT GIVEN.</span>
+                    <p>1. Mitten crabs originated in Vietnam.</p>
+                    <div class="q-wrap" data-q="1">
+                        <span class="btn-opt" onclick="pick(1, 'TRUE', this)">TRUE</span>
+                        <span class="btn-opt" onclick="pick(1, 'FALSE', this)">FALSE</span>
+                        <span class="btn-opt" onclick="pick(1, 'NOT GIVEN', this)">NOT GIVEN</span>
+                    </div>
+                    <p>2. Crabs need water to spread.</p>
+                    <div class="q-wrap" data-q="2">
+                        <span class="btn-opt" onclick="pick(2, 'TRUE', this)">TRUE</span>
+                        <span class="btn-opt" onclick="pick(2, 'FALSE', this)">FALSE</span>
+                        <span class="btn-opt" onclick="pick(2, 'NOT GIVEN', this)">NOT GIVEN</span>
+                    </div>
+                    <p>3. Making rivers less dirty has aided the invasion of the mitten crab.</p>
+                    <div class="q-wrap" data-q="3">
+                        <span class="btn-opt" onclick="pick(3, 'TRUE', this)">TRUE</span>
+                        <span class="btn-opt" onclick="pick(3, 'FALSE', this)">FALSE</span>
+                        <span class="btn-opt" onclick="pick(3, 'NOT GIVEN', this)">NOT GIVEN</span>
+                    </div>
+                </div>
+
+                <div class="q-card">
+                    <span class="description">Match each item (4-7) with the reason for their introduction. Write the correct letter A-G.</span>
+                    <table>
+                        <tr><th>Animal</th><th>Reason (A-G)</th></tr>
+                        <tr><td>4. Mitten crab</td><td><input type="text" id="in4" class="input-match" readonly ondrop="drop(event, 4)" ondragover="allowDrop(event)"></td></tr>
+                        <tr><td>5. Rabbit</td><td><input type="text" id="in5" class="input-match" readonly ondrop="drop(event, 5)" ondragover="allowDrop(event)"></td></tr>
+                        <tr><td>6. Dromedary camel</td><td><input type="text" id="in6" class="input-match" readonly ondrop="drop(event, 6)" ondragover="allowDrop(event)"></td></tr>
+                        <tr><td>7. Burmese python</td><td><input type="text" id="in7" class="input-match" readonly ondrop="drop(event, 7)" ondragover="allowDrop(event)"></td></tr>
+                    </table>
+                    <div class="drag-options">
+                        <div class="drag-item" draggable="true" ondragstart="drag(event)">A: protect plants</div>
+                        <div class="drag-item" draggable="true" ondragstart="drag(event)">B: escaped pet</div>
+                        <div class="drag-item" draggable="true" ondragstart="drag(event)">D: shooting</div>
+                        <div class="drag-item" draggable="true" ondragstart="drag(event)">E: ship ballast water</div>
+                        <div class="drag-item" draggable="true" ondragstart="drag(event)">G: carry large loads</div>
+                    </div>
+                </div>
+
+                <div class="q-card">
+                    <span class="description">Complete the summary. Choose NO MORE THAN TWO WORDS from the passage.</span>
+                    <p>Non-native species can bring them into 8. <input type="text" id="in8" class="input-summary" oninput="mark(8)"> with native animals. Dromedary camels may have helped the 9. <input type="text" id="in9" class="input-summary" oninput="mark(9)"> of a native plant species. Rabbits led to 10. <input type="text" id="in10" class="input-summary" oninput="mark(10)">. Impact of crab is 11. <input type="text" id="in11" class="input-summary" oninput="mark(11)"> at present.</p>
+                </div>
+
+                <div class="q-card">
+                    <span class="description">Choose the correct letter, A, B or C.</span>
+                    <p>12. The writer views invasive species as:</p>
+                    <div class="q-wrap" data-q="12">
+                        <span class="btn-opt" onclick="pick(12, 'A', this)">A. a natural development.</span><br>
+                        <span class="btn-opt" onclick="pick(12, 'B', this)">B. very difficult to manage.</span><br>
+                        <span class="btn-opt" onclick="pick(12, 'C', this)">C. a good business opportunity.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Results Modal -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="mScore">0 / 12</h2>
+            <div style="font-weight: 500; opacity: 0.7;">TOTAL SCORE</div>
+        </div>
+        <div class="modal-body">
+            <div class="res-list" id="resList"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-submit" style="width:100%;" onclick="closeModal()">CLOSE RESULTS</button>
+        </div>
+    </div>
+</div>
+
+<!-- About Modal -->
+<div id="aboutModal">
+    <div class="about-card">
+        <div class="about-top">
+            <div class="about-avatar">🌅</div>
+            <h3>rasVet</h3>
+            <p>Creator & Developer</p>
+        </div>
+        <div class="about-body">
+            <p>This IELTS Reading practice platform was designed and built by <strong>rasVet</strong> — crafted with care to help students prepare for their exams.</p>
+            <div class="about-tag">by: rasVet</div>
+            <button class="btn-close-about" onclick="closeAbout()">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- Overlay -->
+<div id="overlay"></div>
+
+<!-- Side Menu -->
+<div id="sideMenu">
+    <div class="menu-header">
+        <h2>Menu</h2>
+        <button id="closeMenuBtn">✕</button>
+    </div>
+    <div class="menu-body">
+
+        <!-- ── SETTINGS PANEL ── -->
+        <div class="settings-panel">
+            <div>
+                <div class="settings-label">Font Size</div>
+                <div class="font-slider-row">
+                    <span style="font-size:0.75rem;">A</span>
+                    <input type="range" id="fontSlider" min="12" max="22" value="16" step="1" oninput="changeFontSize(this.value)">
+                    <span style="font-size:1.1rem;">A</span>
+                </div>
+                <div style="text-align:center;font-size:0.78rem;color:#adb5bd;margin-top:2px;" id="fontSizeLabel">16px</div>
+            </div>
+
+            <div>
+                <div class="settings-label">Theme</div>
+                <div class="theme-row">
+                    <button class="theme-btn active" id="themeLight" onclick="setTheme('light')">
+                        <span class="tb-icon">☀️</span>Light
+                    </button>
+                    <button class="theme-btn" id="themeDark" onclick="setTheme('dark')">
+                        <span class="tb-icon">🌙</span>Dark
+                    </button>
+                    <button class="theme-btn" id="themeSepia" onclick="setTheme('sepia')">
+                        <span class="tb-icon">📖</span>Reading
+                    </button>
+                </div>
+            </div>
+
+            <button class="btn-about" onclick="openAbout()">
+                <i class="fas fa-info-circle"></i> About
+            </button>
+        </div>
+
+        <!-- Top circle -->
+        <div class="menu-top-icon" title="Settings"><i class="fas fa-cog"></i></div>
+
+        <!-- Middle row: * + ID input -->
+        <div class="menu-mid-row">
+            <div class="menu-star">✱</div>
+            <input type="text" class="menu-id-box" id="idInput" placeholder="Enter ID" maxlength="6" oninput="handleIdInput()">
+        </div>
+        <div class="id-status" id="idStatus"></div>
+
+        <!-- Teacher answers dropdown -->
+        <div id="teacherAnswerBox">
+            <div class="drop-header" onclick="toggleDropdown()">
+                <span>📋 Correct Answers</span>
+                <span id="dropArrow">▼</span>
+            </div>
+            <div class="drop-content" id="dropContent"></div>
+        </div>
+
+        <!-- Admin command row -->
+        <div id="adminRow">
+            <div class="admin-mid-row">
+                <div class="admin-slash-icon">/</div>
+                <input type="text" class="admin-cmd-box" id="cmdInput" placeholder="answers / autofill / more time">
+                <button class="btn-run-cmd" onclick="runCommand()">Run</button>
+            </div>
+            <div id="cmdFeedback"></div>
+        </div>
+
+    </div>
+
+    <div class="menu-footer">
+        <a href="https://t.me/English_Wikipedia" target="_blank" class="tg-link">
+            <i class="fab fa-telegram-plane"></i> Telegram Channel
+        </a>
+    </div>
+</div>
+
+
+
+<!-- Highlight Menu -->
+<div id="highlightMenu" style="display:none;position:fixed;background:#fff;padding:8px;border-radius:20px;box-shadow:0 0 15px rgba(0,0,0,.2);z-index:99999;gap:8px;align-items:center;">
+    <div class="hlColor" data-color="#ff3131" style="background:#ff3131;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+    <div class="hlColor" data-color="#ff7a00" style="background:#ff7a00;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+    <div class="hlColor" data-color="#39FF14" style="background:#39FF14;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+    <div class="hlColor" data-color="#007bff" style="background:#007bff;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+    <div id="removeColor" style="width:28px;height:28px;border-radius:50%;background:white;border:2px solid #999;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;">✕</div>
+</div>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<script>
+    const TEACHER_IDS = ["004567", "008245", "009213"];
+    const ADMIN_ID = "000000";
+    const correctKeys = {1:"FALSE",2:"FALSE",3:"TRUE",4:"E",5:"D",6:"G",7:"B",8:"COMPETITION",9:"EXTINCTION",10:"SOIL EROSION",11:"NOT KNOWN",12:"B"};
+
+    let studentAns = {}, solvedCorrect = {}, totalSeconds = 0, attemptCount = 0;
+    let activeUserId = null, dropdownOpen = false;
+    let proofingMode = false;
+
+    // ── CHEATER DETECTION ──
+    let cheaterTimer = null;
+    const CHEATER_DURATION = 120 * 60 * 1000; // 120 minutes in ms
+
+    function isTrusted() {
+        return proofingMode || activeUserId === 'teacher' || activeUserId === 'admin';
+    }
+    function activateCheater() { /* anti-cheat removed */ }
+    function deactivateCheater() { /* anti-cheat removed */ }
+    
+
+    // ── PROOFING MODE ──
+    function toggleProofing() {
+        proofingMode = !proofingMode;
+        const btn = document.getElementById('proofingBtn');
+        const timerEl = document.getElementById('timer');
+        if(proofingMode) {
+            btn.classList.add('active');
+            btn.title = 'Proofing ON — cheat detection disabled';
+            timerEl.innerText = '∞';
+            timerEl.style.letterSpacing = '0';
+            deactivateCheater();
+        } else {
+            btn.classList.remove('active');
+            btn.title = 'Proofing mode — disables cheat detection';
+            let m = Math.floor(totalSeconds/60), s = totalSeconds%60;
+            timerEl.innerText = `${m<10?'0'+m:m}:${s<10?'0'+s:s}`;
+            timerEl.style.letterSpacing = '';
+        }
+    }
+
+    // TIMER
+    setInterval(() => {
+        totalSeconds++;
+        if(proofingMode) return;
+        let m = Math.floor(totalSeconds/60), s = totalSeconds%60;
+        document.getElementById('timer').innerText = `${m<10?'0'+m:m}:${s<10?'0'+s:s}`;
+    }, 1000);
+
+    // DIVIDER
+    const divider = document.getElementById('divider'), leftSide = document.getElementById('leftSide');
+    divider.onmousedown = () => {
+        document.onmousemove = e => {
+            let p = (e.clientX / window.innerWidth) * 100;
+            if(p > 15 && p < 85) leftSide.style.width = p + '%';
+        };
+        document.onmouseup = () => document.onmousemove = null;
+    };
+
+    // DRAG
+    function allowDrop(ev) { ev.preventDefault(); }
+    function drag(ev) { ev.dataTransfer.setData("text", ev.target.innerText[0]); }
+    function drop(ev, q) {
+        if(solvedCorrect[q]) return;
+        ev.preventDefault();
+        ev.target.value = ev.dataTransfer.getData("text");
+        document.getElementById('b'+q).classList.add('active');
+    }
+
+    // BUBBLES
+    const grid = document.getElementById('bubbleGrid');
+    for(let i=1;i<=12;i++){
+        let b = document.createElement('div');
+        b.className='bubble'; b.id='b'+i; b.innerText=i;
+        grid.appendChild(b);
+    }
+
+    function pick(q, v, el) {
+        if(solvedCorrect[q]) return;
+        studentAns[q] = v;
+        Array.from(el.parentNode.children).forEach(b => b.classList.remove('selected'));
+        el.classList.add('selected');
+        document.getElementById('b'+q).classList.add('active');
+    }
+    function mark(q) {
+        if(solvedCorrect[q]) return;
+        let val = document.getElementById('in'+q).value;
+        document.getElementById('b'+q).classList.toggle('active', val.trim() !== "");
+    }
+
+    // SUBMIT
+    function submitTest() {
+        attemptCount++;
+        let score = 0, resHtml = "";
+        let ts = document.getElementById('timer').innerText;
+        for(let i=1;i<=12;i++) {
+            let el = document.getElementById('in'+i);
+            let ans = (studentAns[i] || el?.value || "").toUpperCase().trim();
+            let ok = (ans === correctKeys[i]);
+            if(ok) { score++; solvedCorrect[i]=true; applyNeon(i,'correct'); document.getElementById('b'+i).classList.add('solved'); }
+            else { if(!solvedCorrect[i]) applyNeon(i,'wrong'); }
+            resHtml += `<div class="res-card ${ok?'correct-row':'wrong-row'}"><span>Question ${i}</span><span>${ok?'✔ CORRECT':'✘ WRONG'}</span></div>`;
+        }
+        document.getElementById('mScore').innerText = `${score} / 12`;
+        document.getElementById('resList').innerHTML = resHtml;
+        document.getElementById('attemptsRow').innerHTML += `<div class="attempt-tag">#${attemptCount}: ${score}/12 (${ts})</div>`;
+        document.getElementById('modal').style.display = 'flex';
+        document.getElementById('attemptsRow').scrollLeft = 99999;
+    }
+
+    function applyNeon(q, status) {
+        let el = document.getElementById('in'+q);
+        if(el) { el.classList.add(status+'-neon'); if(status==='correct') el.readOnly=true; }
+        else {
+            let wrap = document.querySelector(`[data-q="${q}"]`);
+            if(wrap) Array.from(wrap.children).forEach(btn => {
+                if(btn.classList.contains('selected')) btn.classList.add(status+'-neon');
+                if(status==='correct' && btn.innerText.trim().startsWith(correctKeys[q])) {
+                    btn.classList.add('correct-neon','selected');
+                }
+            });
+        }
+    }
+
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+        document.querySelectorAll('.wrong-neon').forEach(el => el.classList.remove('wrong-neon'));
+        for(let i=1;i<=12;i++) { if(!solvedCorrect[i]) document.getElementById('b'+i).classList.remove('active'); }
+    }
+
+    // MENU OPEN/CLOSE
+    document.getElementById('menuBtn').onclick = () => {
+        document.getElementById('sideMenu').classList.add('open');
+        document.getElementById('overlay').classList.add('show');
+    };
+    document.getElementById('closeMenuBtn').onclick = closeMenu;
+    document.getElementById('overlay').onclick = closeMenu;
+    function closeMenu() {
+        document.getElementById('sideMenu').classList.remove('open');
+        document.getElementById('overlay').classList.remove('show');
+    }
+
+    // ── FONT SIZE ──
+    function changeFontSize(val) {
+        document.documentElement.style.setProperty('--font-size', val + 'px');
+        document.getElementById('fontSizeLabel').innerText = val + 'px';
+    }
+
+    // ── THEME ──
+    function setTheme(theme) {
+        document.body.classList.remove('theme-dark','theme-sepia');
+        if(theme === 'dark') document.body.classList.add('theme-dark');
+        if(theme === 'sepia') document.body.classList.add('theme-sepia');
+        ['themeLight','themeDark','themeSepia'].forEach(id => document.getElementById(id).classList.remove('active'));
+        const map = {light:'themeLight', dark:'themeDark', sepia:'themeSepia'};
+        document.getElementById(map[theme]).classList.add('active');
+    }
+
+    // ── ABOUT ──
+    function openAbout() { document.getElementById('aboutModal').classList.add('show'); }
+    function closeAbout() { document.getElementById('aboutModal').classList.remove('show'); }
+
+    // ── ID LOGIC ──
+    function handleIdInput() {
+        const val = document.getElementById('idInput').value.trim();
+        const statusEl = document.getElementById('idStatus');
+        const teacherBox = document.getElementById('teacherAnswerBox');
+        const adminRow = document.getElementById('adminRow');
+
+        teacherBox.style.display = 'none';
+        adminRow.style.display = 'none';
+        statusEl.className = 'id-status';
+        statusEl.innerText = '';
+        activeUserId = null;
+
+        if(val.length < 6) return;
+
+        if(TEACHER_IDS.includes(val)) {
+            activeUserId = 'teacher';
+            statusEl.className = 'id-status show ok';
+            statusEl.innerText = '✔ Access granted — Teacher';
+            teacherBox.style.display = 'block';
+            fillTeacherAnswers();
+            document.getElementById('idInput').style.display = 'none';
+            document.querySelector('.menu-star').style.display = 'none';
+            deactivateCheater();
+        } else if(val === ADMIN_ID) {
+            activeUserId = 'admin';
+            statusEl.className = 'id-status show ok';
+            statusEl.innerText = '✔ Developer access';
+            adminRow.style.display = 'block';
+            deactivateCheater();
+        } else {
+            statusEl.className = 'id-status show err';
+            statusEl.innerText = '✘ Invalid ID';
+        }
+    }
+
+    function fillTeacherAnswers() {
+        const labels = {
+            1:"Q1 — FALSE",2:"Q2 — FALSE",3:"Q3 — TRUE",
+            4:"Q4 — E (ship ballast water)",5:"Q5 — D (shooting)",
+            6:"Q6 — G (carry large loads)",7:"Q7 — B (escaped pet)",
+            8:"Q8 — COMPETITION",9:"Q9 — EXTINCTION",
+            10:"Q10 — SOIL EROSION",11:"Q11 — NOT KNOWN",12:"Q12 — B"
+        };
+        document.getElementById('dropContent').innerHTML =
+            Object.values(labels).map(v => `<div class="ans-item">${v}</div>`).join('');
+    }
+
+    function toggleDropdown() {
+        dropdownOpen = !dropdownOpen;
+        document.getElementById('dropContent').classList.toggle('open', dropdownOpen);
+        document.getElementById('dropArrow').innerText = dropdownOpen ? '▲' : '▼';
+    }
+
+    // ── ADMIN COMMANDS ──
+    function runCommand() {
+        if(activeUserId !== 'admin') return;
+        const cmd = document.getElementById('cmdInput').value.trim().toLowerCase();
+        const fb = document.getElementById('cmdFeedback');
+
+        if(cmd === 'answers') {
+            for(let i=1;i<=12;i++) {
+                if(solvedCorrect[i]) continue;
+                let el = document.getElementById('in'+i);
+                if(el) { el.value = correctKeys[i]; el.style.color = '#007bff'; }
+                else {
+                    let wrap = document.querySelector(`[data-q="${i}"]`);
+                    if(wrap) Array.from(wrap.children).forEach(btn => {
+                        if(btn.innerText.trim().startsWith(correctKeys[i])) {
+                            btn.style.background='#eef2ff'; btn.style.borderColor='#007bff'; btn.style.color='#007bff';
+                        }
+                    });
+                }
+            }
+            fb.className='show ok'; fb.style.display='block'; fb.innerText='✔ Answers revealed';
+            showToast('📋 Correct answers shown');
+        } else if(cmd === 'autofill') {
+            for(let i=1;i<=12;i++) {
+                if(solvedCorrect[i]) continue;
+                let el = document.getElementById('in'+i);
+                if(el) { el.value=correctKeys[i]; studentAns[i]=correctKeys[i]; document.getElementById('b'+i).classList.add('active'); }
+                else {
+                    let wrap = document.querySelector(`[data-q="${i}"]`);
+                    if(wrap) Array.from(wrap.children).forEach(btn => {
+                        btn.classList.remove('selected');
+                        if(btn.innerText.trim().startsWith(correctKeys[i])) { btn.classList.add('selected'); studentAns[i]=correctKeys[i]; }
+                    });
+                    document.getElementById('b'+i).classList.add('active');
+                }
+            }
+            fb.className='show ok'; fb.style.display='block'; fb.innerText='✔ Test autofilled';
+            showToast('✏️ Autofill complete');
+        } else if(cmd === 'more time') {
+            if(totalSeconds <= 9*60) {
+                totalSeconds = 0;
+                document.getElementById('timer').innerText = '00:00';
+                fb.innerText = '✔ Timer was under 9 min → reset to 0:00';
+                showToast('⏱️ Timer reset to 0:00');
+            } else {
+                totalSeconds = Math.max(0, totalSeconds - 600);
+                let m = Math.floor(totalSeconds/60), s = totalSeconds%60;
+                document.getElementById('timer').innerText = `${m<10?'0'+m:m}:${s<10?'0'+s:s}`;
+                fb.innerText = '✔ −10 minutes applied';
+                showToast('⏱️ −10 minutes removed');
+            }
+            fb.className='show ok'; fb.style.display='block';
+        } else {
+            fb.className='show err'; fb.style.display='block'; fb.innerText='✘ Unknown command';
+            showToast('❌ Unknown: ' + cmd);
+        }
+        document.getElementById('cmdInput').value = '';
+    }
+
+    document.getElementById('cmdInput').addEventListener('keydown', e => { if(e.key==='Enter') runCommand(); });
+
+    // TOAST
+    function showToast(msg) {
+        const t = document.getElementById('toast');
+        t.innerText = msg; t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    // HIGHLIGHT
+    let selectedText = null;
+    document.addEventListener("mouseup", e => {
+        const sel = window.getSelection();
+        if(sel.toString().trim().length > 0) {
+            selectedText = sel.getRangeAt(0);
+            const m = document.getElementById("highlightMenu");
+            m.style.display = "flex"; m.style.left = e.pageX+"px"; m.style.top = (e.pageY+15)+"px";
+        } else {
+            document.getElementById("highlightMenu").style.display = "none";
+        }
+    });
+    document.querySelectorAll(".hlColor").forEach(btn => {
+        btn.addEventListener("click", function() {
+            if(!selectedText) return;
+            const span = document.createElement("span");
+            span.style.backgroundColor = this.dataset.color;
+            try { selectedText.surroundContents(span); } catch(e) {}
+            document.getElementById("highlightMenu").style.display = "none";
+            window.getSelection().removeAllRanges();
+        });
+    });
+    document.getElementById("removeColor").addEventListener("click", () => {
+        if(!selectedText) return;
+        let node = selectedText.startContainer;
+        while(node && node.nodeType !== 1) node = node.parentNode;
+        if(node && node.tagName === "SPAN") node.outerHTML = node.innerHTML;
+        document.getElementById("highlightMenu").style.display = "none";
+        window.getSelection().removeAllRanges();
+    });
+</script>
+</body>
+</html>

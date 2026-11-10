@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Reading: Mock Test 34</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root{--primary:#007bff;--bg:#f8f9fa;--card:#fff;--border:#e0e0e0;--neon-green:#39FF14;--neon-red:#ff3131;--dark:#2d3436;--text:#444;--font-size:1.05rem;}
+
+/* ── DARK THEME ── */
+body.theme-dark{--bg:#1a1a2e;--card:#16213e;--border:#2d3561;--text:#c9d1d9;--dark:#e2e8f0;}
+body.theme-dark header,body.theme-dark .action-bar{background:#0f3460;}
+body.theme-dark .left-side,body.theme-dark .right-side{background:var(--bg);}
+body.theme-dark .q-card{background:var(--card);border-color:var(--border);}
+body.theme-dark .btn-opt{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-dark .timer{background:#0f3460;border-color:#2d3561;color:#60a5fa;}
+body.theme-dark .text-area{color:var(--text);background:var(--bg);}
+body.theme-dark .text-area h1{color:#e2e8f0;}
+body.theme-dark th{background:#0f3460;color:#94a3b8;}
+body.theme-dark td{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-dark .settings-panel{background:#0f3460;border-color:#2d3561;}
+body.theme-dark #sideMenu{background:#16213e;}
+body.theme-dark .menu-body{background:#16213e;}
+body.theme-dark .bubbles-area{background:var(--card);border-color:var(--border);}
+body.theme-dark .divider{background:#0f3460;border-color:var(--border);}
+body.theme-dark .input-summary{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-dark select.input-summary{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-dark .menu-id-box,body.theme-dark .admin-cmd-box{background:#0f3460;color:#e2e8f0;border-color:#2d3561;}
+body.theme-dark .menu-star,body.theme-dark .menu-top-icon,body.theme-dark .admin-slash-icon{background:#0f3460;border-color:#2d3561;color:#94a3b8;}
+body.theme-dark #teacherAnswerBox{background:#0f3460;border-color:#2d3561;}
+body.theme-dark #teacherAnswerBox .drop-header{color:#e2e8f0;}
+body.theme-dark #adminAnswerBox .drop-header{color:#e2e8f0;}
+body.theme-dark .ans-item{color:#94a3b8;border-color:#2d3561;}
+body.theme-dark .description{color:#e2e8f0;}
+body.theme-dark .attempt-tag{background:#0f3460;color:#94a3b8;border-color:#2d3561;}
+body.theme-dark .settings-label{color:#94a3b8;}
+body.theme-dark #menuBtn{background:#0f3460;border-color:#2d3561;color:#94a3b8;}
+body.theme-dark .theme-btn{background:#16213e;border-color:#2d3561;color:#94a3b8;}
+body.theme-dark .theme-btn.active{background:#0f3460;border-color:var(--primary);color:var(--primary);}
+body.theme-dark .btn-about{background:#16213e;border-color:#2d3561;color:#94a3b8;}
+body.theme-dark .passage-nav{background:#0f3460;border-color:#2d3561;}
+body.theme-dark .nav-btn{background:#16213e;border-color:#2d3561;color:#94a3b8;}
+body.theme-dark .nav-btn.active-arrow{color:#e2e8f0;border-color:#e2e8f0;}
+body.theme-dark .passage-label{color:#94a3b8;}
+body.theme-dark .modal-content{background:var(--card);}
+body.theme-dark .modal-body{background:var(--card);}
+body.theme-dark .modal-footer{background:#0f3460;}
+body.theme-dark .modal-col-title{background:#0f3460;color:#94a3b8;}
+body.theme-dark .about-card{background:var(--card);}
+body.theme-dark .about-body{background:var(--card);}
+body.theme-dark .about-body p{color:#94a3b8;}
+body.theme-dark .about-tag{background:#0f3460;color:#60a5fa;}
+body.theme-dark .heading-drop{border-color:#2d3561;background:#0f3460;}
+body.theme-dark .drop-placeholder{color:#4a5568;}
+body.theme-dark .menu-footer{background:#16213e;border-color:#2d3561;}
+body.theme-dark .tg-link{background:#0f3460;color:#60a5fa;}
+
+/* ── SEPIA / READING THEME ── */
+body.theme-sepia{--bg:#f4ecd8;--card:#fdf6e3;--border:#d4b896;--text:#5c4a1e;--dark:#3e2e10;}
+body.theme-sepia header,body.theme-sepia .action-bar{background:#ede0c8;}
+body.theme-sepia .left-side,body.theme-sepia .right-side{background:var(--bg);}
+body.theme-sepia .q-card{background:var(--card);border-color:var(--border);}
+body.theme-sepia .timer{background:#ede0c8;border-color:#d4b896;color:#7b5e2a;}
+body.theme-sepia .text-area{color:var(--text);background:var(--bg);}
+body.theme-sepia .settings-panel{background:#ede0c8;border-color:#d4b896;}
+body.theme-sepia .bubbles-area{background:var(--card);border-color:var(--border);}
+body.theme-sepia .btn-opt{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-sepia select.input-summary{background:var(--card);color:var(--text);}
+body.theme-sepia .passage-nav{background:#ede0c8;border-color:var(--border);}
+body.theme-sepia .nav-btn{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia .nav-btn.active-arrow{color:var(--dark);border-color:var(--dark);}
+body.theme-sepia .passage-label{color:var(--text);}
+body.theme-sepia .modal-content{background:var(--card);}
+body.theme-sepia .modal-body{background:var(--card);}
+body.theme-sepia .modal-footer{background:#ede0c8;}
+body.theme-sepia .modal-col-title{background:#ede0c8;color:#7b5e2a;}
+body.theme-sepia .about-card{background:var(--card);}
+body.theme-sepia .about-body{background:var(--card);}
+body.theme-sepia .about-body p{color:#7b5e2a;}
+body.theme-sepia #menuBtn{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia .theme-btn{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia .theme-btn.active{background:#ede0c8;border-color:#7b5e2a;color:#7b5e2a;}
+body.theme-sepia .btn-about{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia #sideMenu{background:var(--card);}
+body.theme-sepia .menu-body{background:var(--card);}
+body.theme-sepia .menu-footer{background:#ede0c8;border-color:var(--border);}
+body.theme-sepia .tg-link{background:#e8d5b5;color:#7b5e2a;}
+body.theme-sepia .menu-top-icon{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia .menu-star{background:var(--card);border-color:var(--border);color:var(--text);}
+body.theme-sepia .menu-id-box{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-sepia td{background:var(--card);color:var(--text);}
+body.theme-sepia th{background:#ede0c8;color:#7b5e2a;}
+body.theme-sepia .heading-drop{border-color:var(--border);background:var(--card);}
+body.theme-sepia #teacherAnswerBox{background:#ede0c8;border-color:var(--border);}
+body.theme-sepia .ans-item{color:var(--text);border-color:var(--border);}
+body.theme-sepia .settings-label{color:#7b5e2a;}
+body.theme-sepia .attempt-tag{background:var(--card);border-color:var(--border);color:var(--text);}
+
+*{box-sizing:border-box;}
+body,html{margin:0;padding:0;height:100%;font-family:'Inter','Segoe UI',sans-serif;overflow:hidden;background:var(--bg);transition:background .3s,color .3s;}
+.wrapper{display:flex;flex-direction:column;height:100vh;}
+header{height:65px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 25px;flex-shrink:0;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:background .3s;}
+.logo{font-weight:800;font-size:1.2rem;color:var(--dark);display:flex;align-items:center;gap:10px;}
+.logo i{color:var(--primary);}
+.timer{font-weight:bold;background:#eef2ff;padding:8px 25px;border-radius:30px;border:1px solid #d1d9ff;color:var(--primary);font-size:1.2rem;min-width:110px;text-align:center;transition:.3s;}
+#menuBtn{width:38px;height:38px;border-radius:50%;border:2px solid #dee2e6;background:#fff;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#495057;transition:.2s;}
+#menuBtn:hover{background:#f0f7ff;border-color:var(--primary);color:var(--primary);}
+#proofingBtn{padding:8px 18px;border-radius:30px;border:2px solid #007bff;background:#007bff;color:#fff;font-weight:700;font-size:.85rem;cursor:pointer;transition:.2s;}
+#proofingBtn.active{background:#fff;color:#007bff;border-color:#007bff;}
+.main{display:flex;flex:1;overflow:hidden;}
+.left-side{width:50%;display:flex;flex-direction:column;background:#fff;border-right:1px solid var(--border);}
+.text-area{flex:1;overflow-y:auto;padding:40px;line-height:1.8;color:var(--text);font-size:var(--font-size);transition:font-size .2s,color .3s;}
+.text-area h1{color:var(--dark);font-size:1.8rem;margin-bottom:8px;}
+.bubbles-area{height:100px;border-top:1px solid var(--border);background:#fff;padding:15px 25px;overflow-y:auto;flex-shrink:0;transition:background .3s;}
+.bubbles-grid{display:flex;flex-wrap:wrap;gap:10px;}
+.bubble{width:36px;height:36px;border-radius:50%;border:2px solid #dee2e6;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#adb5bd;font-size:.9rem;transition:.3s;}
+.bubble.active{border-color:var(--primary);color:var(--primary);background:#eef2ff;}
+.bubble.solved{background:var(--primary);color:#fff;border-color:var(--primary);}
+.divider{width:12px;background:#f1f3f5;cursor:col-resize;flex-shrink:0;position:relative;border-left:1px solid #e9ecef;border-right:1px solid #e9ecef;}
+.divider::after{content:'||';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#adb5bd;font-size:.8rem;letter-spacing:1px;}
+.right-side{flex:1;display:flex;flex-direction:column;background:var(--bg);min-width:300px;}
+.action-bar{background:#fff;border-bottom:1px solid var(--border);padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:15px;height:65px;flex-shrink:0;transition:background .3s;}
+.attempts-row{display:flex;gap:10px;overflow-x:auto;flex:1;min-width:0;align-items:center;height:100%;}
+.attempt-tag{background:#f8f9fa;border:1px solid #e9ecef;padding:8px 15px;border-radius:8px;font-size:.85rem;white-space:nowrap;color:#495057;font-weight:600;}
+.btn-submit{background:var(--primary);color:#fff;border:none;padding:12px 30px;border-radius:8px;font-weight:700;cursor:pointer;transition:.2s;box-shadow:0 4px 15px rgba(0,123,255,.3);}
+.btn-submit:hover{background:#0069d9;transform:translateY(-1px);}
+.questions-area{flex:1;overflow-y:auto;padding:30px;font-size:var(--font-size);transition:font-size .2s;}
+.q-card{background:#fff;padding:25px 30px;border-radius:12px;border:1px solid #e9ecef;margin-bottom:25px;box-shadow:0 4px 6px rgba(0,0,0,.02);transition:background .3s;}
+.description{font-weight:800;color:#2d3436;margin-bottom:16px;display:block;font-size:.88rem;text-transform:uppercase;letter-spacing:.5px;border-left:5px solid var(--primary);padding-left:15px;}
+.btn-opt{padding:10px 18px;border:1.5px solid #dee2e6;border-radius:8px;cursor:pointer;margin:5px 8px 5px 0;display:inline-block;background:#fff;font-weight:500;transition:.2s;}
+.btn-opt.selected{border-color:var(--primary);color:var(--primary);background:#f0f7ff;}
+.correct-neon{border:2px solid var(--neon-green)!important;box-shadow:0 0 15px var(--neon-green)!important;background-color:#fafff5!important;pointer-events:none;}
+.wrong-neon{border:2px solid var(--neon-red)!important;box-shadow:0 0 15px var(--neon-red)!important;}
+table{width:100%;border-collapse:collapse;margin-top:10px;}
+th,td{border:1px solid #eee;padding:10px 14px;text-align:left;}
+th{background:#f8f9fa;color:#6c757d;font-size:.8rem;text-transform:uppercase;font-weight:700;}
+.input-summary{border:none;border-bottom:2px solid #dee2e6;width:150px;text-align:center;outline:none;font-weight:700;padding:5px;transition:.3s;background:transparent;}
+.heading-chip{display:inline-flex;align-items:center;gap:7px;background:#2d3436;color:#fff;padding:7px 12px;border-radius:8px;font-size:.82rem;font-weight:600;cursor:grab;user-select:none;transition:opacity .2s;}
+.heading-chip.used{background:#adb5bd;color:#f8f9fa;cursor:not-allowed;pointer-events:none;opacity:.55;}
+.hnum{background:rgba(255,255,255,.18);border-radius:5px;padding:1px 6px;font-weight:800;font-size:.78rem;}
+.heading-drop{min-height:42px;border:2px dashed #ced4da;border-radius:8px;padding:6px 10px;display:flex;align-items:center;transition:border-color .2s,background .2s;}
+.heading-drop.over{border-color:#007bff;background:#eef2ff;}
+.drop-placeholder{color:#adb5bd;font-size:.82rem;font-style:italic;}
+.drop-filled-chip{display:inline-flex;align-items:center;gap:7px;background:#495057;color:#fff;padding:6px 12px;border-radius:7px;font-size:.82rem;font-weight:600;cursor:grab;user-select:none;}
+.drop-filled-chip:active{cursor:grabbing;}
+.drop-filled-chip .hnum{background:rgba(255,255,255,.2);border-radius:4px;padding:1px 5px;font-weight:800;}
+.passage-nav{display:flex;align-items:center;justify-content:center;gap:16px;padding:14px 20px;border-top:1px solid #e9ecef;background:#fff;flex-shrink:0;transition:background .3s;}
+.nav-btn{width:40px;height:40px;border-radius:50%;border:2px solid #dee2e6;background:#fff;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;font-weight:bold;transition:.2s;}
+.nav-btn:hover:not(.disabled){background:#eef2ff;border-color:var(--primary);color:var(--primary);}
+.nav-btn.disabled{color:#dee2e6;border-color:#f1f3f5;cursor:default;pointer-events:none;}
+.nav-btn.active-arrow{color:#2d3436;border-color:#2d3436;}
+.passage-label{font-weight:700;font-size:.9rem;color:#495057;min-width:100px;text-align:center;}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:1000;justify-content:center;align-items:center;backdrop-filter:blur(5px);}
+.modal-content{background:#fff;border-radius:20px;width:95vw;max-width:1100px;text-align:center;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,.4);animation:modalIn .3s cubic-bezier(.34,1.56,.64,1);max-height:90vh;display:flex;flex-direction:column;}
+@keyframes modalIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-header{background:var(--dark);color:#fff;padding:20px 30px;flex-shrink:0;}
+.modal-header h2{margin:0;font-size:2rem;font-weight:900;}
+.modal-total{font-size:1rem;opacity:.8;margin-top:4px;}
+.modal-body{padding:20px;background:#fff;flex:1;overflow:hidden;}
+.modal-cols{display:flex;gap:12px;height:100%;max-height:55vh;}
+.modal-col{flex:1;display:flex;flex-direction:column;min-width:0;}
+.modal-col-title{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:#6c757d;margin-bottom:8px;text-align:center;padding:6px;background:#f8f9fa;border-radius:8px;}
+.res-list{text-align:left;overflow-y:auto;flex:1;}
+.res-card{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;margin-bottom:6px;border-radius:8px;font-weight:700;font-size:.82rem;border:2px solid transparent;transition:.3s;}
+.res-card.correct-row{border-color:var(--neon-green);box-shadow:0 0 8px var(--neon-green);background:#fafff5;color:#2d6a4f;}
+.res-card.wrong-row{border-color:var(--neon-red);box-shadow:0 0 8px var(--neon-red);background:#fff5f5;color:#a4161a;}
+.modal-footer{padding:16px 25px;background:#f8f9fa;flex-shrink:0;}
+#overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:none;z-index:1500;backdrop-filter:blur(2px);}
+#overlay.show{display:block;}
+#sideMenu{position:fixed;top:0;right:-26%;width:25%;height:100%;background:#fff;z-index:1600;transition:right .3s cubic-bezier(.4,0,.2,1);padding:0;box-shadow:-5px 0 30px rgba(0,0,0,.2);display:flex;flex-direction:column;overflow:hidden;}
+#sideMenu.open{right:0;}
+.menu-header{background:var(--dark);color:#fff;padding:25px 20px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.menu-header h2{margin:0;font-size:1.3rem;font-weight:800;}
+#closeMenuBtn{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:0;}
+.menu-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px;}
+.settings-panel{background:#f8f9fa;border:1px solid #e9ecef;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:14px;transition:background .3s;}
+.settings-label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#6c757d;margin-bottom:4px;}
+.font-slider-row{display:flex;align-items:center;gap:10px;}
+.font-slider-row span{font-size:.8rem;color:#adb5bd;min-width:18px;text-align:center;}
+input[type=range]{flex:1;-webkit-appearance:none;height:4px;border-radius:4px;background:#dee2e6;outline:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--primary);cursor:pointer;box-shadow:0 2px 6px rgba(0,123,255,.4);}
+.theme-row{display:flex;gap:8px;}
+.theme-btn{flex:1;padding:9px 6px;border-radius:10px;border:2px solid #dee2e6;cursor:pointer;font-size:.78rem;font-weight:700;transition:.2s;background:#fff;color:#495057;text-align:center;}
+.theme-btn:hover{border-color:var(--primary);color:var(--primary);}
+.theme-btn.active{border-color:var(--primary);background:#eef2ff;color:var(--primary);}
+.theme-btn .tb-icon{font-size:1.1rem;display:block;margin-bottom:3px;}
+.btn-about{width:100%;padding:11px;border-radius:10px;border:2px solid #dee2e6;background:#fff;cursor:pointer;font-weight:700;font-size:.85rem;color:#495057;display:flex;align-items:center;justify-content:center;gap:8px;transition:.2s;}
+.btn-about:hover{border-color:var(--primary);color:var(--primary);background:#eef2ff;}
+#aboutModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:2000;justify-content:center;align-items:center;backdrop-filter:blur(4px);}
+#aboutModal.show{display:flex;}
+.about-card{background:#fff;border-radius:20px;width:340px;max-width:90%;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.35);animation:modalIn .3s cubic-bezier(.34,1.56,.64,1);text-align:center;}
+.about-top{background:linear-gradient(135deg,#007bff,#0056cc);padding:30px 20px 25px;color:#fff;}
+.about-avatar{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.25);border:3px solid rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 12px;}
+.about-top h3{margin:0 0 4px;font-size:1.4rem;font-weight:900;}
+.about-top p{margin:0;opacity:.8;font-size:.85rem;}
+.about-body{padding:20px;}
+.about-body p{color:#6c757d;font-size:.88rem;line-height:1.6;margin:0 0 14px;}
+.about-tag{display:inline-block;background:#eef2ff;color:var(--primary);border-radius:20px;padding:6px 16px;font-weight:700;font-size:.85rem;margin-bottom:16px;}
+.btn-close-about{width:100%;padding:12px;background:var(--primary);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;font-size:.9rem;}
+.menu-top-icon{width:44px;height:44px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#495057;cursor:pointer;transition:.2s;align-self:flex-start;}
+.menu-top-icon:hover{background:#eef2ff;border-color:var(--primary);color:var(--primary);}
+.menu-mid-row{display:flex;align-items:center;gap:10px;}
+.menu-star{width:44px;height:44px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#495057;font-weight:bold;flex-shrink:0;}
+.menu-id-box{flex:1;border:2px solid #dee2e6;border-radius:12px;padding:10px 14px;font-size:1rem;font-weight:600;outline:none;transition:border-color .2s;letter-spacing:2px;}
+.menu-id-box:focus{border-color:var(--primary);}
+.menu-id-box::placeholder{letter-spacing:0;font-weight:400;color:#adb5bd;}
+.id-status{font-size:.82rem;color:#adb5bd;padding-left:4px;display:none;}
+.id-status.show{display:block;}
+.id-status.ok{color:#2d6a4f;}
+.id-status.err{color:#a4161a;}
+#teacherAnswerBox{background:#f8f9fa;border:1px solid #dee2e6;border-radius:12px;padding:12px;display:none;}
+#teacherAnswerBox .drop-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:.9rem;color:var(--dark);}
+#teacherAnswerBox .drop-content{max-height:180px;overflow-y:auto;margin-top:10px;display:none;}
+#teacherAnswerBox .drop-content.open{display:block;}
+.ans-item{padding:8px 10px;border-radius:8px;font-size:.85rem;font-weight:600;color:#495057;border-bottom:1px solid #e9ecef;}
+.ans-item:last-child{border-bottom:none;}
+#adminRow{display:none;margin-top:4px;}
+.admin-mid-row{display:flex;align-items:center;gap:10px;}
+.admin-slash-icon{width:44px;height:44px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#495057;font-weight:bold;flex-shrink:0;}
+.admin-cmd-box{flex:1;border:2px solid #dee2e6;border-radius:12px;padding:10px 14px;font-size:.95rem;font-weight:600;outline:none;transition:border-color .2s;}
+.admin-cmd-box:focus{border-color:#ff3131;}
+.admin-cmd-box::placeholder{font-weight:400;color:#adb5bd;}
+.btn-run-cmd{padding:10px 16px;background:var(--dark);color:#fff;border:none;border-radius:10px;cursor:pointer;font-weight:700;font-size:.85rem;transition:.2s;}
+.btn-run-cmd:hover{background:#ff3131;}
+#cmdFeedback{font-size:.82rem;padding-left:4px;color:#adb5bd;display:none;}
+#cmdFeedback.show{display:block;}
+#cmdFeedback.ok{color:#2d6a4f;}
+#cmdFeedback.err{color:#a4161a;}
+#adminAnswerBox .drop-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:.9rem;color:var(--dark);padding:6px 0;}
+#adminAnswerBox .drop-content{max-height:160px;overflow-y:auto;margin-top:6px;display:none;}
+#adminAnswerBox .drop-content.open{display:block;}
+.menu-footer{padding:15px 20px;border-top:1px solid #e9ecef;text-align:center;flex-shrink:0;}
+.tg-link{display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-weight:700;font-size:.9rem;text-decoration:none;padding:10px 18px;border-radius:10px;background:#eef2ff;transition:.2s;}
+.tg-link:hover{background:#d1d9ff;}
+
+@keyframes flashText{0%{color:#fff;text-shadow:-4px -4px 0 #000,4px -4px 0 #000,-4px 4px 0 #000,4px 4px 0 #000,0 0 20px #000}50%{color:#000;text-shadow:-4px -4px 0 #fff,4px -4px 0 #fff,-4px 4px 0 #fff,4px 4px 0 #fff,0 0 20px #fff}}
+#highlightMenu{display:none;position:fixed;background:#fff;padding:8px;border-radius:20px;box-shadow:0 0 15px rgba(0,0,0,.2);z-index:99999;gap:8px;align-items:center;}
+.hlColor{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;}
+#removeColor{width:28px;height:28px;border-radius:50%;background:white;border:2px solid #999;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;}
+#toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--dark);color:#fff;padding:12px 24px;border-radius:30px;font-weight:700;font-size:.9rem;z-index:9999;transition:transform .3s;box-shadow:0 5px 20px rgba(0,0,0,.3);}
+#toast.show{transform:translateX(-50%) translateY(0);}
+
+/* === universal theme & readability fixes (auto-appended) === */
+#sideMenu{ will-change: right; }
+#overlay, #highlightMenu, .modal { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+
+body.theme-dark { background: var(--bg) !important; }
+body.theme-dark .content-area, body.theme-dark .content-row,
+body.theme-dark .wrapper, body.theme-dark .main,
+body.theme-dark .left-side, body.theme-dark .right-side,
+body.theme-dark .transcript-col, body.theme-dark .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-dark header, body.theme-dark .action-bar, body.theme-dark .passage-nav {
+  background: #0f3460 !important; border-color:#2d3561 !important;
+}
+body.theme-dark .bubbles-area, body.theme-dark .q-card, body.theme-dark .modal-content,
+body.theme-dark .modal-body, body.theme-dark .about-card, body.theme-dark .about-body,
+body.theme-dark #sideMenu, body.theme-dark .menu-body, body.theme-dark .modal-footer,
+body.theme-dark .drop-content, body.theme-dark #teacherAnswerBox, body.theme-dark #adminAnswerBox,
+body.theme-dark #highlightMenu, body.theme-dark #removeColor, body.theme-dark #toast,
+body.theme-dark .menu-footer, body.theme-dark .modal-col, body.theme-dark .proof-toast-box,
+body.theme-dark .audio-player, body.theme-dark .settings-panel {
+  background: var(--card) !important;
+}
+body.theme-dark, body.theme-dark .text-area, body.theme-dark .questions-area,
+body.theme-dark .q-card, body.theme-dark .q-card p, body.theme-dark .q-card li,
+body.theme-dark .description, body.theme-dark .passage-label, body.theme-dark .nav-btn,
+body.theme-dark label, body.theme-dark .ans-item, body.theme-dark .attempt-tag,
+body.theme-dark .settings-label, body.theme-dark .about-body p, body.theme-dark .btn-opt,
+body.theme-dark .modal-header h2, body.theme-dark .modal-total, body.theme-dark .proof-note,
+body.theme-dark .modal-col-title, body.theme-dark .drop-header, body.theme-dark .menu-header h2,
+body.theme-dark .transcript-inner, body.theme-dark .transcript-inner p, body.theme-dark .badge,
+body.theme-dark .id-status, body.theme-dark #cmdFeedback, body.theme-dark .about-top h3,
+body.theme-dark .res-card {
+  color: #ffffff !important;
+}
+body.theme-dark .input-summary, body.theme-dark .input-match, body.theme-dark input[type=text] {
+  color: #ffffff !important; background: transparent !important;
+}
+body.theme-dark .btn-opt.selected, body.theme-dark .nav-btn.active-arrow { color: #60a5fa !important; }
+body.theme-sepia .btn-opt.selected, body.theme-sepia .nav-btn.active-arrow { color: #a13a1c !important; background: #f9e6c8 !important; border-color: #a13a1c !important; font-weight: 700 !important; }
+body.theme-dark .correct-neon { color:#0b3d19 !important; }
+body.theme-dark .wrong-row, body.theme-dark .correct-row { color: inherit !important; }
+
+body.theme-sepia .content-area, body.theme-sepia .content-row,
+body.theme-sepia .wrapper, body.theme-sepia .main,
+body.theme-sepia .left-side, body.theme-sepia .right-side,
+body.theme-sepia .transcript-col, body.theme-sepia .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-sepia header, body.theme-sepia .action-bar, body.theme-sepia .passage-nav {
+  background:#ede0c8 !important; border-color:#d4b896 !important;
+}
+body.theme-sepia .bubbles-area, body.theme-sepia .q-card, body.theme-sepia .modal-content,
+body.theme-sepia .modal-body, body.theme-sepia .about-card, body.theme-sepia .about-body,
+body.theme-sepia #sideMenu, body.theme-sepia .menu-body, body.theme-sepia .modal-footer,
+body.theme-sepia .drop-content, body.theme-sepia #teacherAnswerBox, body.theme-sepia #adminAnswerBox,
+body.theme-sepia #highlightMenu, body.theme-sepia #removeColor, body.theme-sepia #toast,
+body.theme-sepia .menu-footer, body.theme-sepia .modal-col, body.theme-sepia .proof-toast-box,
+body.theme-sepia .audio-player, body.theme-sepia .settings-panel {
+  background: var(--card) !important;
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <div class="logo"><i class="fas fa-feather-alt"></i> IELTS READING</div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="timer" id="timer">00:00</div>
+      <button id="proofingBtn" onclick="toggleProofing()">Proofing</button>
+      <button id="menuBtn">⋮</button>
+    </div>
+  </header>
+  <div class="main">
+    <div class="left-side" id="leftSide">
+      <div class="text-area" id="textArea"></div>
+      <div class="bubbles-area">
+        <div style="font-weight:800;color:#adb5bd;font-size:.7rem;text-transform:uppercase;margin-bottom:8px;">Questions Navigation</div>
+        <div class="bubbles-grid" id="bubbleGrid"></div>
+      </div>
+    </div>
+    <div class="divider" id="divider"></div>
+    <div class="right-side">
+      <div class="action-bar">
+        <div class="attempts-row" id="attemptsRow"></div>
+        <button class="btn-submit" onclick="submitTest()">SUBMIT ANSWERS</button>
+      </div>
+      <div class="questions-area" id="questionsArea"></div>
+      <div class="passage-nav">
+        <button class="nav-btn disabled" id="navLeft" onclick="goPassage(-1)">&#8592;</button>
+        <span class="passage-label" id="passageLabel">Passage 1 / 3</span>
+        <button class="nav-btn active-arrow" id="navRight" onclick="goPassage(1)">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <div class="modal-header"><h2 id="mScore">0 / 40</h2><div class="modal-total" id="modalTotal">Total score across all passages</div></div>
+    <div class="modal-body">
+      <div class="modal-cols">
+        <div class="modal-col"><div class="modal-col-title">📖 Passage 1 — Adolescents<br><span id="p1score" style="color:#007bff;">0/13</span></div><div class="res-list" id="resList1"></div></div>
+        <div class="modal-col"><div class="modal-col-title">📖 Passage 2 — Chinese Chariots<br><span id="p2score" style="color:#007bff;">0/13</span></div><div class="res-list" id="resList2"></div></div>
+        <div class="modal-col"><div class="modal-col-title">📖 Passage 3 — Homeopathy<br><span id="p3score" style="color:#007bff;">0/14</span></div><div class="res-list" id="resList3"></div></div>
+      </div>
+    </div>
+    <div class="modal-footer"><button class="btn-submit" style="width:100%;" onclick="closeModal()">CLOSE RESULTS</button></div>
+  </div>
+</div>
+
+<div id="aboutModal">
+  <div class="about-card">
+    <div class="about-top"><div class="about-avatar">🌅</div><h3>rasVet</h3><p>Creator & Developer</p></div>
+    <div class="about-body"><p>IELTS Reading practice platform built by <strong>rasVet</strong>.</p><div class="about-tag">by: rasVet</div><button class="btn-close-about" onclick="closeAbout()">Close</button></div>
+  </div>
+</div>
+
+<div id="overlay"></div>
+<div id="sideMenu">
+  <div class="menu-header"><h2>Menu</h2><button id="closeMenuBtn">✕</button></div>
+  <div class="menu-body">
+    <div class="settings-panel">
+      <div><div class="settings-label">Font Size</div><div class="font-slider-row"><span style="font-size:.75rem;">A</span><input type="range" id="fontSlider" min="12" max="22" value="16" step="1" oninput="changeFontSize(this.value)"><span style="font-size:1.1rem;">A</span></div><div style="text-align:center;font-size:.78rem;color:#adb5bd;margin-top:2px;" id="fontSizeLabel">16px</div></div>
+      <div><div class="settings-label">Theme</div><div class="theme-row"><button class="theme-btn active" id="themeLight" onclick="setTheme('light')"><span class="tb-icon">☀️</span>Light</button><button class="theme-btn" id="themeDark" onclick="setTheme('dark')"><span class="tb-icon">🌙</span>Dark</button><button class="theme-btn" id="themeSepia" onclick="setTheme('sepia')"><span class="tb-icon">📖</span>Reading</button></div></div>
+      <button class="btn-about" onclick="openAbout()"><i class="fas fa-info-circle"></i> About</button>
+    </div>
+    <div class="menu-top-icon"><i class="fas fa-cog"></i></div>
+    <div class="menu-mid-row"><div class="menu-star">✱</div><input type="text" class="menu-id-box" id="idInput" placeholder="Enter ID" maxlength="6" oninput="handleIdInput()"></div>
+    <div class="id-status" id="idStatus"></div>
+    <div id="teacherAnswerBox">
+      <div class="drop-header" onclick="toggleDropdown(0)"><span>📋 Answers P1</span><span id="dropArrow0">▼</span></div>
+      <div class="drop-content" id="dropContent0"></div>
+      <div class="drop-header" style="margin-top:8px;" onclick="toggleDropdown(1)"><span>📋 Answers P2</span><span id="dropArrow1">▼</span></div>
+      <div class="drop-content" id="dropContent1"></div>
+      <div class="drop-header" style="margin-top:8px;" onclick="toggleDropdown(2)"><span>📋 Answers P3</span><span id="dropArrow2">▼</span></div>
+      <div class="drop-content" id="dropContent2"></div>
+    </div>
+    <div id="adminRow">
+      <div class="admin-mid-row"><div class="admin-slash-icon">/</div><input type="text" class="admin-cmd-box" id="cmdInput" placeholder="answers / autofill / more time"><button class="btn-run-cmd" onclick="runCommand()">Run</button></div>
+      <div id="cmdFeedback"></div>
+      <div id="adminAnswerBox" style="margin-top:10px;">
+        <div class="drop-header" onclick="toggleDropdown(0)"><span>📋 Answers P1</span><span id="dropArrow0">▼</span></div>
+        <div class="drop-content" id="dropContent0"></div>
+        <div class="drop-header" style="margin-top:8px;" onclick="toggleDropdown(1)"><span>📋 Answers P2</span><span id="dropArrow1">▼</span></div>
+        <div class="drop-content" id="dropContent1"></div>
+        <div class="drop-header" style="margin-top:8px;" onclick="toggleDropdown(2)"><span>📋 Answers P3</span><span id="dropArrow2">▼</span></div>
+        <div class="drop-content" id="dropContent2"></div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-footer"><a href="https://t.me/English_Wikipedia" target="_blank" class="tg-link"><i class="fab fa-telegram-plane"></i> Telegram Channel</a></div>
+</div>
+
+
+<div id="highlightMenu" style="display:none;position:fixed;background:#fff;padding:8px;border-radius:20px;box-shadow:0 0 15px rgba(0,0,0,.2);z-index:99999;gap:8px;align-items:center;">
+  <div class="hlColor" data-color="#ff3131" style="background:#ff3131;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div class="hlColor" data-color="#ff7a00" style="background:#ff7a00;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div class="hlColor" data-color="#39FF14" style="background:#39FF14;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div class="hlColor" data-color="#007bff" style="background:#007bff;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div id="removeColor" style="width:28px;height:28px;border-radius:50%;background:white;border:2px solid #999;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;">✕</div>
+</div>
+<div id="toast"></div>
+
+<script>
+const TEACHER_IDS_LIST=["004567","008245","009213"],ADMIN_ID_VAL="000000";
+function buildHeadingPool(headings,poolId){
+  let h=`<div id="${poolId}" style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px;padding:14px;background:#f0f7ff;border:1px solid #c8dffe;border-radius:12px;">`;
+  h+=`<div style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:#6c757d;margin-bottom:4px;">List of Headings</div>`;
+  headings.forEach(([key,label])=>{h+=`<div class="heading-chip" draggable="true" data-heading="${key}" ondragstart="dragHeading(event)"><span class="hnum">${key}</span> ${label}</div>`;});
+  return h+'</div>';
+}
+function buildDropZone(q,label){return `<tr><td style="padding:8px 12px;border:1px solid #eee;font-weight:600;font-size:.9rem;">${label}</td><td style="padding:6px;border:1px solid #eee;"><div class="heading-drop" data-q="${q}" ondrop="dropHeading(event,${q})" ondragover="allowDropH(event)" ondragleave="leaveDrop(event)"><input type="hidden" id="in${q}"><div class="drop-placeholder">Drop here</div></div></td></tr>`;}
+
+const passages=[
+{
+  title:"The Adolescents",totalQ:13,
+  text:`<h1>The Adolescents</h1><p style="font-style:italic;color:#888;font-size:.88rem;margin-bottom:16px;">Reading Passage 1 · Questions 1–13</p><p><strong>A</strong>&nbsp; The American Academy of Pediatrics recognizes three stages of adolescence. These are early, middle and late adolescence, and each has its own developmental tasks. Teenagers move through these tasks at their own speed depending on their physical development and hormone levels. Although these stages are common to all teenagers, each child will go through them in his or her own highly individual ways.</p><p><strong>B</strong>&nbsp; During the early years young people make the first attempts to leave the dependent, secure role of a child and to establish themselves as unique individuals, independent of their parents. Early adolescence is marked by rapid physical growth and maturation. The focus of adolescents' self-concepts is thus often on their physical self and their evaluation of their physical acceptability. Early adolescence is also a period of intense conformity to peers. 'Getting along,' not being different, and being accepted seem somehow pressing to the early adolescent. The worst possibility, from the view of the early adolescent, is to be seen by peers as 'different'.</p><p><strong>C</strong>&nbsp; Middle adolescence is marked by the emergence of new thinking skills. The intellectual world of the young person is suddenly greatly expanded. Their concerns about peers are more directed toward their opposite sexed peers. It is also during this period that the move to establish psychological independence from one's parents accelerates. Delinquency behavior may emerge since parental views are no longer seen as absolutely correct by adolescents. Despite some delinquent behavior, middle adolescence is a period during which young people are oriented toward what is right and proper.</p><p><strong>D</strong>&nbsp; Late adolescence is marked by the final preparations for adult roles. The developmental demands of late adolescence often extend into the period that we think of as young adulthood. Late adolescents attempt to crystallize their vocational goals and to establish a sense of personal identity. Their needs for peer approval are diminished and they are largely psychologically independent from their parents. The shift to adulthood is nearly complete.</p><p><strong>E</strong>&nbsp; Some years ago, Professor Robert Havighurst of the University of Chicago proposed that stages in human development can best be thought of in terms of the developmental tasks that are part of the normal transition. He identified eleven developmental tasks associated with the adolescent transition. One developmental task an adolescent needs to achieve is to adjust to a new physical sense of self. At no other time since birth does an individual undergo such rapid and profound physical changes as during early adolescence.</p><p><strong>F</strong>&nbsp; Before adolescence, children's thinking is dominated by a need to have a concrete example for any problem that they solve. Their thinking is constrained to what is real and physical. During adolescence, young people begin to recognize and understand abstractions. The adolescent must adjust to increased cognitive demands at school. Adults see high school in part as a place where adolescents prepare for adult roles and responsibilities.</p><p><strong>G</strong>&nbsp; During adolescence, as teens develop increasingly complex knowledge systems and a sense of self, they also adopt an integrated set of values and morals. During the early stages of moral development, parents provide their child with a structured set of rules of what is right and wrong. Eventually, the adolescent must assess the parents' values as they come into conflict with values expressed by peers and other segments of society.</p><p><strong>H</strong>&nbsp; The adolescent must develop expanded verbal skills. As adolescents mature intellectually, as they face increased school demands, and as they prepare for adult roles, they must develop new verbal skills to accommodate more complex concepts and tasks.</p><p><strong>I</strong>&nbsp; The adolescent must establish emotional and psychological independence from his or her parents. Childhood is marked by a strong dependence on one's parents. Adolescents may yearn to keep that safe, secure, supportive, dependent relationship. Yet, to be an adult implies a sense of independence, of autonomy, of being one's own person.</p><p><strong>J</strong>&nbsp; Adolescents do not progress through these multiple developmental tasks separately. At any given time, adolescents may be dealing with several. Further, the centrality of specific developmental tasks varies with early, middle, and late periods of the transition.</p>`,
+  questionsHTML:`<div class="q-card"><span class="description">Questions 1–6 · Match the characteristics with the correct stages</span><p>1. interested in the opposite sex &nbsp;<select id="in1" class="input-summary" style="width:100px;" onchange="mark(1)"><option value="">A/B/C</option><option value="A">A. early adolescence</option><option value="B">B. middle adolescence</option><option value="C">C. late adolescence</option></select></p><p>2. exposure to danger &nbsp;<select id="in2" class="input-summary" style="width:100px;" onchange="mark(2)"><option value="">A/B/C</option><option value="A">A. early adolescence</option><option value="B">B. middle adolescence</option><option value="C">C. late adolescence</option></select></p><p>3. the same as others &nbsp;<select id="in3" class="input-summary" style="width:100px;" onchange="mark(3)"><option value="">A/B/C</option><option value="A">A. early adolescence</option><option value="B">B. middle adolescence</option><option value="C">C. late adolescence</option></select></p><p>4. beginning to form individual thinking without family context &nbsp;<select id="in4" class="input-summary" style="width:100px;" onchange="mark(4)"><option value="">A/B/C</option><option value="A">A. early adolescence</option><option value="B">B. middle adolescence</option><option value="C">C. late adolescence</option></select></p><p>5. less need the approval of friends &nbsp;<select id="in5" class="input-summary" style="width:100px;" onchange="mark(5)"><option value="">A/B/C</option><option value="A">A. early adolescence</option><option value="B">B. middle adolescence</option><option value="C">C. late adolescence</option></select></p><p>6. intellectual booming &nbsp;<select id="in6" class="input-summary" style="width:100px;" onchange="mark(6)"><option value="">A/B/C</option><option value="A">A. early adolescence</option><option value="B">B. middle adolescence</option><option value="C">C. late adolescence</option></select></p></div><div class="q-card"><span class="description">Questions 7–10 · Complete each sentence</span><p>7. One of Havighurst's research &nbsp;<input type="text" id="in7" class="input-summary" style="width:80px;" oninput="mark(7)" placeholder="A-F"></p><p>8. High School Courses &nbsp;<input type="text" id="in8" class="input-summary" style="width:80px;" oninput="mark(8)" placeholder="A-F"></p><p>9. Adolescence is a time when young people &nbsp;<input type="text" id="in9" class="input-summary" style="width:80px;" oninput="mark(9)" placeholder="A-F"></p><p>10. The developmental speed of thinking patterns &nbsp;<input type="text" id="in10" class="input-summary"</p><p>A=form personal identity with a set of morals and values</p><p>B=develops a table and productive peer relationships</p><p>C= are designed to be more challenging than some can accept</p><p>D=varies from people to people</p><p>E=focuses on creating a self-image</p><p>F=become an extension of their parents<style="width:80px;" oninput="mark(10)" placeholder="A-F"></p></div><div class="q-card"><span class="description">Questions 11–13 · TRUE / FALSE / NOT GIVEN</span><p>11. The adolescent lacks the ability to think abstractly.</p><div class="q-wrap" data-q="11"><span class="btn-opt" onclick="pick(11,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(11,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(11,'NOT GIVEN',this)">NOT GIVEN</span></div><p>12. Adolescents may have a deficit in their language ability.</p><div class="q-wrap" data-q="12"><span class="btn-opt" onclick="pick(12,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(12,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(12,'NOT GIVEN',this)">NOT GIVEN</span></div><p>13. The adolescent experiences a transition from reliance on his parents to independence.</p><div class="q-wrap" data-q="13"><span class="btn-opt" onclick="pick(13,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(13,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(13,'NOT GIVEN',this)">NOT GIVEN</span></div></div>`,
+  correctKeys:{1:"B",2:"B",3:"A",4:"A",5:"C",6:"B",7:"E",8:"C",9:"A",10:"D",11:"FALSE",12:"TRUE",13:"TRUE"},
+  teacherAnswers:["1—B","2—B","3—A","4—A","5—C","6—B","7—E","8—C","9—A","10—D","11—FALSE","12—TRUE","13—TRUE"]
+},
+{
+  title:"Ancient Chinese Chariots",totalQ:13,
+  text:`<h1>Ancient Chinese Chariots</h1><p style="font-style:italic;color:#888;font-size:.88rem;margin-bottom:16px;">Reading Passage 2 · Questions 14–26</p><p>The Shang Dynasty or Yin Dynasty, according to traditional historiography, ruled in the Yellow River valley in the second millennium BC. Archaeological work at the Ruins of Yin (near modern-day Anyang), which has been identified as the last Shang capital, uncovered eleven major Yin royal tombs and the foundations of palaces and ritual sites, containing weapons of war and remains from both animal and human sacrifices.</p><p>The Tomb of Fu Hao is an archaeological site at Yinxu, the ruins of the ancient Shang Dynasty capital Yin, within the modern city of Anyang in Henan Province, China. Discovered in 1976, it was identified as the final resting place of the queen and military general Fu Hao. The artefacts unearthed within the grave included jade objects, bone objects, bronze objects etc. These grave goods are confirmed by the oracle texts, which constitute almost all of the first hand written record we possess of the Shang Dynasty.</p><p>The Terracotta Army was discovered on 29 March 1974 to the east of Xi'an in Shaanxi. The terracotta soldiers were accidentally discovered when a group of local farmers was digging a well. Experts currently place the entire number of soldiers at 8,000 – with 130 chariots (130 cm long), 530 horses and 150 cavalry horses. In contrast, the burial of Tutankhamun yielded six complete but dismantled chariots of unparalleled richness and sophistication. Each was designed for two people (90 cm long) and had its axle sawn through to enable it to be brought along the narrow corridor into the tomb.</p><p>Excavation of ancient Chinese chariots has confirmed the descriptions of them in the earliest texts. Wheels were constructed from a variety of woods: elm provided the hub, rose-wood the spokes and oak the felloes. The hub was drilled through to form an empty space into which the tampering axle was fitted, the whole being covered with leather to retain lubricating oil. Though the number of spokes varied, a wheel by the fourth century BC usually had eighteen to thirty-two of them. Records show how elaborate was the testing of each completed wheel: flotation and weighing were regarded as the best measures of balance, but even the empty spaces in the assembly were checked with millet grains. One outstanding constructional asset of the ancient Chinese wheel was dishing. Dishing refers to the dish-like shape of an advanced wooden wheel, which looks rather like a flat cone. On occasion they chose to strengthen a dished wheel with a pair of struts running from rim to rim on each of the hub. As these extra supports were inserted separately into the felloes, they would have added even greater strength to the wheel. Leather wrapped up the edge of the wheel aimed to retain bronze.</p><p>Within a millennium, however, Chinese chariot-makers had developed a vehicle with shafts, the precursor of the true carriage or cart. This design did not make its appearance in Europe until the end of the Roman Empire. Because the shafts curved upwards, and the harness pressed against a horse's shoulders, not his neck, the shaft chariot was incredibly efficient. The halberd was also part of a chariot standard weaponry. This halberd usually measured well over 3 meters in length. The speed of chariot which was tested on the sand was quite fast.</p><p>The advantages offered by the new chariots were not entirely missed. They could see how there were literally the Warring States, whose conflicts lasted down the Qin unification of China. Qin Shi Huang was buried in the most opulent tomb complex ever constructed in China, a sprawling, city-size collection of underground caverns containing everything the emperor would need for the afterlife. Even a collection of terracotta armies called Terra-Cotta Warriors was buried in it. The ancient Chinese, along with many cultures including ancient Egyptians, believed that items and even people buried with a person could be taken with him to the afterlife.</p>`,
+  questionsHTML:`<div class="q-card"><span class="description">Questions 14–17 · TRUE / FALSE / NOT GIVEN</span><p>14. When Tomb of Fu Hao was discovered, the written records of the grave goods proved to be accurate.</p><div class="q-wrap" data-q="14"><span class="btn-opt" onclick="pick(14,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(14,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(14,'NOT GIVEN',this)">NOT GIVEN</span></div><p>15. Human skeletons in Anyang tomb were identified as soldiers who were killed in the war.</p><div class="q-wrap" data-q="15"><span class="btn-opt" onclick="pick(15,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(15,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(15,'NOT GIVEN',this)">NOT GIVEN</span></div><p>16. The Terracotta Army was discovered by people lived nearby by chance.</p><div class="q-wrap" data-q="16"><span class="btn-opt" onclick="pick(16,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(16,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(16,'NOT GIVEN',this)">NOT GIVEN</span></div><p>17. The size of the King Tutankhamun's tomb is bigger than that of in Qin Emperors' tomb.</p><div class="q-wrap" data-q="17"><span class="btn-opt" onclick="pick(17,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(17,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(17,'NOT GIVEN',this)">NOT GIVEN</span></div></div><div class="q-card"><span class="description">Questions 18–23 · Complete the sentence with ONE WORD</span><p>18. The hub is made wood from the tree of <input type="text" id="in18" class="input-summary" oninput="mark(18)"></p><p>19. The room through the hub was to put tempered axle, wrapped by leather, aiming to retain <input type="text" id="in19" class="input-summary" oninput="mark(19)"></p><p>20. The number of spokes varied from <input type="text" id="in20" class="input-summary" oninput="mark(20)"></p><p>21. The shape of wheel resembles a <input type="text" id="in21" class="input-summary" oninput="mark(21)"></p><p>22. Two <input type="text" id="in22" class="input-summary" oninput="mark(22)"> was used to strengthen the wheel.</p><p>23. The edge of the wheel was wrapped by leather aiming to retain <input type="text" id="in23" class="input-summary" oninput="mark(23)"></p></div><div class="q-card"><span class="description">Questions 24–26 · Complete the sentence with NO MORE THAN THREE WORDS</span><p>24. What body part of the horse was released the pressure from to the horse shoulder after the appearance of the shafts?<br><input type="text" id="in24" class="input-summary" style="width:220px;" oninput="mark(24)"></p><p>25. What kind of road surface did the researchers measure the speed of the chariot on?<br><input type="text" id="in25" class="input-summary" style="width:220px;" oninput="mark(25)"></p><p>26. What part of his afterlife palace was the Emperor Qin Shi Huang buried in?<br><input type="text" id="in26" class="input-summary" style="width:220px;" oninput="mark(26)"></p></div>`,
+  correctKeys:{14:"TRUE",15:"FALSE",16:"TRUE",17:"NOT GIVEN",18:"ELM",19:"LUBRICATING OIL",20:"18-32",21:"DISH",22:"STRUTS",23:"BRONZE",24:"NECK",25:"SAND",26:"TOMB COMPLEX"},
+  teacherAnswers:["14—TRUE","15—FALSE","16—TRUE","17—NOT GIVEN","18—ELM","19—LUBRICATING OIL","20—18-32","21—DISH","22—STRUTS","23—BRONZE","24—NECK","25—SAND","26—TOMB COMPLEX"]
+},
+{
+  title:"Homeopathy",totalQ:14,
+  text:`<h1>Homeopathy</h1><p style="font-style:italic;color:#888;font-size:.88rem;margin-bottom:16px;">Reading Passage 3 · Questions 27–40</p><p><strong>A</strong>&nbsp; An international protest this week aims to demonstrate the truth about homoeopathy – that there's literally nothing in it. At 10.23 am on 30 January, more than 300 activists in the UK, Canada, Australia and the US will take part in a mass homoeopathic "overdose". Skeptics will publicly swallow an entire bottle of homoeopathic pills to demonstrate to the public that homoeopathic remedies, the product of a scientifically unfounded 18th-century ritual, are simply sugar pills. Many of the sceptics will swallow 84 pills of Arsenicum album, a homoeopathic remedy based on arsenic which is used to treat a range of symptoms, including food poisoning and insomnia. The aim of the "10:23" campaign is to raise public awareness of just exactly what homeopathy is, and to put pressure on the UK's leading pharmacist, Boots, to remove the remedies from sale.</p><p><strong>B</strong>&nbsp; That such a protest is even necessary in 2010 is remarkable, but somehow the homeopathic industry has not only survived into the 21st century, but prospered. In the UK alone more than £40 million is spent annually on homoeopathic treatments, with £4 million of this being sucked from the National Health Service budget. Yet the basis for homoeopathy defies the laws of physics, and high-quality clinical trials have never been able to demonstrate that it works beyond the placebo effect.</p><p><strong>C</strong>&nbsp; The discipline is based on three "laws"; the law of similars, the law of infinitesimals and the law of succession. The law of similars states that something which causes your symptoms will cure your symptoms. Next is the law of infinitesimals, which claims that diluting a substance makes it more potent. Homoeopaths start by diluting one volume of their remedy in 99 volumes of distilled water or alcohol to create a "centesimal". They then dilute one volume of the centesimal in 99 volumes of water or alcohol, and so on, up to 30 times. Application of Avogadro's constant tells you that a dose of such a "30C" recipe is vanishingly unlikely to contain even a single molecule of the active ingredient. The third pillar of homoeopathy is the law of succession. This states that by tapping the liquid in a special way during the dilution process, a memory of the active ingredient is somehow imprinted on it.</p><p><strong>D</strong>&nbsp; The final preparation is generally dropped onto a sugar pill which the patient swallows. Homeopaths claim that the application of these three laws results in a remedy that, even though it contains not a single molecule of the original ingredient, somehow carries an "energy signature" of it that nobody can measure or detect. Unsurprisingly, when tested under rigorous scientific conditions, in randomized, controlled and double-blind trials, homoeopathic remedies have consistently been shown to be no better than a placebo. Of course, the placebo effect is quite powerful, but it's a bit like justifying building a car without any wheels on the basis that you can still enjoy the comfy leather seats and play with the gear shift.</p><p><strong>E</strong>&nbsp; Even some retailers who sell the treatments have admitted there is no evidence that they work. In November, Paul Bennett, the superintendent pharmacist at Boots, appeared before the UK parliament's Commons Science and Technology Committee's "evidence check" on homoeopathy. He was questioned by Member of Parliament Phil Willis, who asked: "Do they work beyond the placebo effect?" "I have no evidence before me to suggest that they are efficacious," Bennett replied. He defended Boots's decision to sell homoeopathic remedies on the grounds of consumer choice.</p><p><strong>F</strong>&nbsp; You might agree. You might also argue that homoeopathy is harmless: if people want to part with their money for sugar pills and nobody is breaking the law, why not let them? To some extent that's true — there's only so much damage you can do with sugar pills short of feeding them to a diabetic or dropping a large crate of them on someone's head. However, we believe there is a risk in perpetuating the notion that homoeopathy is equivalent to modern medicine. People may delay seeking appropriate treatment for themselves or their children.</p><p><strong>G</strong>&nbsp; We accept that we are unlikely to convince the true believers. Homoeopathy has many ways to sidestep awkward questions, such as rejecting the validity of randomized controlled trials, or claiming that homoeopathic remedies only work if you have symptoms of the malady they purport to cure. Our aim is to reach out to the general public with our simple message: "There is nothing in it". In the 21st century, with decades of progress behind us, it is surreal that governments are prepared to spend millions of tax pounds on homoeopathy. There really is nothing in it.</p>`,
+  questionsHTML:`<div class="q-card"><span class="description">Questions 27–33 · Choose the correct heading for each paragraph (drag to drop)</span><p style="font-size:.83rem;color:#888;"><em>Example: Paragraph A → ix</em></p>${buildHeadingPool([["i","Low probability triggers unpersuasive findings"],["ii","Understanding of intelligence remains limited"],["iii","Difficulty in accurately defining intelligence"],["iv","The purpose of illustrating the symptoms of homeopathy"],["v","The constant booming of homeopathy"],["vi","Some differences between homeopathy and placebo"],["vii","Placebo is better than homeopathy"],["viii","A example of further demonstrating the negative effect of homeopathy"],["ix","The purpose of staging a demonstration to against homeopathy"]],'headingsPool3')}<table><tr><th style="width:42%;">Paragraph</th><th>Heading</th></tr>${buildDropZone(27,'27. Paragraph A')}${buildDropZone(28,'28. Paragraph B')}${buildDropZone(29,'29. Paragraph C')}${buildDropZone(30,'30. Paragraph D')}${buildDropZone(31,'31. Paragraph E')}${buildDropZone(32,'32. Paragraph F')}${buildDropZone(33,'33. Paragraph G')}</table></div><div class="q-card"><span class="description">Questions 34–40 · TRUE / FALSE / NOT GIVEN</span><p>34. Skeptics planning to hold a demonstration in the "10.23" campaign is against UK's leading pharmacist, Boots.</p><div class="q-wrap" data-q="34"><span class="btn-opt" onclick="pick(34,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(34,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(34,'NOT GIVEN',this)">NOT GIVEN</span></div><p>35. National Health Service budget gained a small portion of homoeopathic industry</p><div class="q-wrap" data-q="35"><span class="btn-opt" onclick="pick(35,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(35,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(35,'NOT GIVEN',this)">NOT GIVEN</span></div><p>36. The example of Caffeine is to present that homoeopathy resists the laws of similars.</p><div class="q-wrap" data-q="36"><span class="btn-opt" onclick="pick(36,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(36,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(36,'NOT GIVEN',this)">NOT GIVEN</span></div><p>37. Instilling the idea to people that homoeopathy is equal to modern medicine poses danger.</p><div class="q-wrap" data-q="37"><span class="btn-opt" onclick="pick(37,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(37,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(37,'NOT GIVEN',this)">NOT GIVEN</span></div><p>38. Paul Bennett claimed effectiveness of taking the homoeopathic medicine is proved</p><div class="q-wrap" data-q="38"><span class="btn-opt" onclick="pick(38,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(38,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(38,'NOT GIVEN',this)">NOT GIVEN</span></div><p>39. The adoption of homoeopathy mainly contributes to the delay in seeking appropriate treatment for themselves or their children.</p><div class="q-wrap" data-q="39"><span class="btn-opt" onclick="pick(39,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(39,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(39,'NOT GIVEN',this)">NOT GIVEN</span></div><p>40. The campaign has exerted pressure on Boots and other retailers.</p><div class="q-wrap" data-q="40"><span class="btn-opt" onclick="pick(40,'TRUE',this)">TRUE</span><span class="btn-opt" onclick="pick(40,'FALSE',this)">FALSE</span><span class="btn-opt" onclick="pick(40,'NOT GIVEN',this)">NOT GIVEN</span></div></div>`,
+  correctKeys:{27:"IX",28:"V",29:"I",30:"IV",31:"VIII",32:"VI",33:"III",34:"TRUE",35:"FALSE",36:"TRUE",37:"TRUE",38:"FALSE",39:"FALSE",40:"NOT GIVEN"},
+  teacherAnswers:["27—ix","28—v","29—i","30—iv","31—viii","32—vi","33—iii","34—TRUE","35—FALSE","36—TRUE","37—TRUE","38—FALSE","39—FALSE","40—NOT GIVEN"]
+}
+];
+
+let currentPassage=0;
+let state=passages.map(()=>({studentAns:{},solvedCorrect:{}}));
+let totalSeconds=0,attemptCount=0,activeUserId=null,proofingMode=false,cheaterTimer=null;
+let dropdownOpen=[false,false,false];
+let draggedHeading=null;
+
+setInterval(()=>{totalSeconds++;if(proofingMode)return;let m=Math.floor(totalSeconds/60),s=totalSeconds%60;document.getElementById('timer').innerText=`${m<10?'0'+m:m}:${s<10?'0'+s:s}`;},1000);
+
+const divider=document.getElementById('divider'),leftSide=document.getElementById('leftSide');
+divider.onmousedown=()=>{document.onmousemove=e=>{let p=(e.clientX/window.innerWidth)*100;if(p>15&&p<85)leftSide.style.width=p+'%';};document.onmouseup=()=>document.onmousemove=null;};
+
+function loadPassage(idx){
+  currentPassage=idx;
+  const p=passages[idx],s=state[idx];
+  document.getElementById('textArea').innerHTML=p.text;
+  document.getElementById('questionsArea').innerHTML=p.questionsHTML;
+  document.getElementById('questionsArea').scrollTop=0;
+  const grid=document.getElementById('bubbleGrid');grid.innerHTML='';
+  Object.keys(p.correctKeys).map(Number).forEach(i=>{
+    let b=document.createElement('div');b.className='bubble';b.id='b'+i;b.innerText=i;
+    if(s.solvedCorrect[i])b.classList.add('solved');else if(s.studentAns[i])b.classList.add('active');
+    grid.appendChild(b);
+  });
+  Object.keys(p.correctKeys).map(Number).forEach(i=>{
+    const zone=document.querySelector('.heading-drop[data-q="'+i+'"]');
+    if(zone&&s.studentAns[i]){
+      const hk=s.studentAns[i].toLowerCase();
+      const hLabels=getHLabels(idx);
+      zone.innerHTML='<input type="hidden" id="in'+i+'" value="'+s.studentAns[i]+'">'+buildFilledChip(hk,i,hLabels);
+      if(s.solvedCorrect[i])applyNeonZone(zone,'correct');
+      const chip=document.querySelector('#headingsPool3 .heading-chip[data-heading="'+hk+'"]');
+      if(chip)chip.classList.add('used');
+    }
+    const el=document.getElementById('in'+i);
+    if(el&&el.type!=='hidden'){
+      if(s.studentAns[i])el.value=s.studentAns[i];
+      if(s.solvedCorrect[i])el.classList.add('correct-neon');
+    }
+    const wrap=document.querySelector('[data-q="'+i+'"]');
+    if(wrap&&s.studentAns[i]){
+      Array.from(wrap.children).forEach(btn=>{
+        btn.classList.remove('selected','correct-neon','wrong-neon');
+        if(btn.innerText.trim().startsWith(s.studentAns[i]))btn.classList.add('selected');
+        if(s.solvedCorrect[i]&&btn.innerText.trim().startsWith(s.studentAns[i]))btn.classList.add('correct-neon');
+      });
+    }
+  });
+  document.getElementById('passageLabel').innerText=`Passage ${idx+1} / 3`;
+  document.getElementById('navLeft').className='nav-btn'+(idx===0?' disabled':' active-arrow');
+  document.getElementById('navRight').className='nav-btn'+(idx===2?' disabled':' active-arrow');
+}
+function goPassage(dir){const n=currentPassage+dir;if(n<0||n>2)return;loadPassage(n);}
+
+function getHLabels(pi){if(pi===2)return {i:"Low probability triggers unpersuasive findings",ii:"Understanding of intelligence remains limited",iii:"Difficulty in accurately defining intelligence",iv:"The purpose of illustrating the symptoms of homeopathy",v:"The constant booming of homeopathy",vi:"Some differences between homeopathy and placebo",vii:"Placebo is better than homeopathy",viii:"A example of further demonstrating the negative effect of homeopathy",ix:"The purpose of staging a demonstration to against homeopathy"};return {};}
+function buildFilledChip(hk,q,hLabels){return `<div class="drop-filled-chip" draggable="true" data-heading="${hk}" data-from-zone="${q}" ondragstart="dragHeading(event)"><span class="hnum">${hk}</span> ${hLabels[hk]||''}</div>`;}
+function dragHeading(ev){
+  const chip=ev.currentTarget;
+  draggedHeading={el:chip,heading:chip.dataset.heading,fromZone:chip.dataset.fromZone?parseInt(chip.dataset.fromZone):null};
+  ev.dataTransfer.setData('heading',chip.dataset.heading);
+}
+document.addEventListener('dragover',e=>{
+  const qa=document.getElementById('questionsArea');
+  if(!qa)return;
+  const rect=qa.getBoundingClientRect();
+  const scrollTrigger=100;
+  if(e.clientY>rect.bottom-scrollTrigger&&e.clientY<rect.bottom){qa.scrollTop+=10;}
+  else if(e.clientY<rect.top+scrollTrigger&&e.clientY>rect.top){qa.scrollTop-=10;}
+});
+function allowDropH(ev){ev.preventDefault();ev.currentTarget.classList.add('over');}
+function leaveDrop(ev){ev.currentTarget.classList.remove('over');}
+function applyNeonZone(zone,status){
+  if(status==='correct'){zone.style.border='2px solid var(--neon-green)';zone.style.boxShadow='0 0 15px var(--neon-green)';zone.style.background='#fafff5';zone.style.pointerEvents='none';}
+  else{zone.style.border='2px solid var(--neon-red)';zone.style.boxShadow='0 0 15px var(--neon-red)';}
+}
+function dropHeading(ev,q){
+  ev.preventDefault();
+  if(state[currentPassage].solvedCorrect[q])return;
+  const zone=ev.currentTarget;zone.classList.remove('over');
+  if(!draggedHeading)return;
+  const newH=draggedHeading.heading,fromZone=draggedHeading.fromZone;
+  const hiddenIn=document.getElementById('in'+q),oldH=hiddenIn?hiddenIn.value.toLowerCase():'';
+  const hLabels=getHLabels(currentPassage);
+  if(oldH&&!fromZone){const old=document.querySelector('#headingsPool3 .heading-chip[data-heading="'+oldH+'"]');if(old){old.classList.remove('used');}}
+  if(fromZone&&fromZone!==q){
+    const srcZone=document.querySelector('.heading-drop[data-q="'+fromZone+'"]');
+    if(oldH){srcZone.innerHTML='<input type="hidden" id="in'+fromZone+'" value="'+oldH.toUpperCase()+'">'+buildFilledChip(oldH,fromZone,hLabels);state[currentPassage].studentAns[fromZone]=oldH.toUpperCase();document.getElementById('b'+fromZone).classList.add('active');}
+    else{srcZone.innerHTML='<input type="hidden" id="in'+fromZone+'"><div class="drop-placeholder">Drop here</div>';delete state[currentPassage].studentAns[fromZone];document.getElementById('b'+fromZone).classList.remove('active');}
+  }
+  if(fromZone===q){draggedHeading=null;return;}
+  zone.innerHTML='<input type="hidden" id="in'+q+'" value="'+newH.toUpperCase()+'">'+buildFilledChip(newH,q,hLabels);
+  state[currentPassage].studentAns[q]=newH.toUpperCase();
+  document.getElementById('b'+q).classList.add('active');
+  if(!fromZone){const poolChip=document.querySelector('#headingsPool3 .heading-chip[data-heading="'+newH+'"]');if(poolChip)poolChip.classList.add('used');}
+  draggedHeading=null;
+}
+
+function pick(q,v,el){if(state[currentPassage].solvedCorrect[q])return;state[currentPassage].studentAns[q]=v;Array.from(el.parentNode.children).forEach(b=>b.classList.remove('selected'));el.classList.add('selected');document.getElementById('b'+q).classList.add('active');}
+function mark(q){if(state[currentPassage].solvedCorrect[q])return;const el=document.getElementById('in'+q);const val=el?el.value:'';state[currentPassage].studentAns[q]=val.toUpperCase().trim()||undefined;document.getElementById('b'+q).classList.toggle('active',val.trim()!=='');}
+
+function submitTest(){
+  attemptCount++;const ts=document.getElementById('timer').innerText;let totalScore=0,totalQ=0;
+  passages.forEach((p,pi)=>{
+    const s=state[pi];let score=0,resHtml='';
+    const isCurr=(pi===currentPassage);
+    Object.keys(p.correctKeys).map(Number).forEach(i=>{
+      let ans;
+      if(isCurr){const el=document.getElementById('in'+i);ans=(s.studentAns[i]||(el&&el.type!=='hidden'?el.value:'')||'').toUpperCase().trim();}
+      else ans=(s.studentAns[i]||'').toUpperCase().trim();
+      const ok=(ans===p.correctKeys[i]);
+      if(ok){score++;s.solvedCorrect[i]=true;if(isCurr)applyNeon(i,'correct');}
+      else if(!s.solvedCorrect[i]&&isCurr)applyNeon(i,'wrong');
+      resHtml+=`<div class="res-card ${ok?'correct-row':'wrong-row'}"><span>Q${i}</span><span>${ok?'✔':'✘'}</span></div>`;
+    });
+    totalScore+=score;totalQ+=p.totalQ;
+    document.getElementById('resList'+(pi+1)).innerHTML=resHtml;
+    document.getElementById('p'+(pi+1)+'score').innerText=`${score}/${p.totalQ}`;
+  });
+  document.getElementById('mScore').innerText=`${totalScore} / ${totalQ}`;
+  document.getElementById('attemptsRow').innerHTML+=`<div class="attempt-tag">#${attemptCount}: ${totalScore}/40 (${ts})</div>`;
+  document.getElementById('modal').style.display='flex';
+  document.getElementById('attemptsRow').scrollLeft=99999;
+}
+function applyNeon(q,status){
+  const zone=document.querySelector('.heading-drop[data-q="'+q+'"]');
+  if(zone){applyNeonZone(zone,status);if(status==='correct'){zone.removeAttribute('ondrop');zone.removeAttribute('ondragover');zone.removeAttribute('ondragleave');const chip=zone.querySelector('.drop-filled-chip');if(chip){chip.draggable=false;chip.style.cursor='default';}}return;}
+  const el=document.getElementById('in'+q);
+  if(el&&el.type!=='hidden'){el.classList.add(status+'-neon');if(status==='correct')el.readOnly=true;}
+  else{const wrap=document.querySelector('[data-q="'+q+'"]');if(wrap)Array.from(wrap.children).forEach(btn=>{if(btn.classList.contains('selected'))btn.classList.add(status+'-neon');if(status==='correct'&&btn.innerText.trim().startsWith(passages[currentPassage].correctKeys[q])){btn.classList.add('correct-neon','selected');}});}
+}
+function closeModal(){
+  document.getElementById('modal').style.display='none';
+  document.querySelectorAll('.wrong-neon').forEach(el=>el.classList.remove('wrong-neon'));
+  document.querySelectorAll('.heading-drop').forEach(zone=>{const q=parseInt(zone.dataset.q);if(zone.dataset.q&&!state[currentPassage].solvedCorrect[q]){zone.style.border='';zone.style.boxShadow='';zone.style.background='';}});
+  Object.keys(passages[currentPassage].correctKeys).map(Number).forEach(i=>{if(!state[currentPassage].solvedCorrect[i]){const b=document.getElementById('b'+i);if(b)b.classList.remove('active');}});
+}
+
+document.getElementById('menuBtn').onclick=()=>{document.getElementById('sideMenu').classList.add('open');document.getElementById('overlay').classList.add('show');};
+document.getElementById('closeMenuBtn').onclick=closeMenu;
+document.getElementById('overlay').onclick=closeMenu;
+function closeMenu(){document.getElementById('sideMenu').classList.remove('open');document.getElementById('overlay').classList.remove('show');}
+function changeFontSize(v){document.documentElement.style.setProperty('--font-size',v+'px');document.getElementById('fontSizeLabel').innerText=v+'px';}
+function setTheme(t){document.body.classList.remove('theme-dark','theme-sepia');if(t==='dark')document.body.classList.add('theme-dark');if(t==='sepia')document.body.classList.add('theme-sepia');['themeLight','themeDark','themeSepia'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById({light:'themeLight',dark:'themeDark',sepia:'themeSepia'}[t]).classList.add('active');}
+function openAbout(){document.getElementById('aboutModal').classList.add('show');}
+function closeAbout(){document.getElementById('aboutModal').classList.remove('show');}
+
+function handleIdInput(){
+  const val=document.getElementById('idInput').value.trim();
+  const statusEl=document.getElementById('idStatus');
+  document.getElementById('teacherAnswerBox').style.display='none';
+  document.getElementById('adminRow').style.display='none';
+  statusEl.className='id-status';statusEl.innerText='';activeUserId=null;
+  dropdownOpen=[false,false,false];
+  ['dropContent0','dropContent1','dropContent2'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('open');});
+  ['dropArrow0','dropArrow1','dropArrow2'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerText='▼';});
+  if(val.length<6)return;
+  if(TEACHER_IDS_LIST.includes(val)){activeUserId='teacher';statusEl.className='id-status show ok';statusEl.innerText='✔ Access granted — Teacher';document.getElementById('teacherAnswerBox').style.display='block';fillTeacherAnswers();document.getElementById('idInput').style.display='none';document.querySelector('.menu-star').style.display='none';deactivateCheater();}
+  else if(val===ADMIN_ID_VAL){activeUserId='admin';statusEl.className='id-status show ok';statusEl.innerText='✔ Developer access';document.getElementById('adminRow').style.display='block';fillTeacherAnswers();deactivateCheater();}
+  else{statusEl.className='id-status show err';statusEl.innerText='✘ Invalid ID';}
+}
+function fillTeacherAnswers(){passages.forEach((p,i)=>{const el=document.getElementById('dropContent'+i);if(el)el.innerHTML=p.teacherAnswers.map(v=>`<div class="ans-item">${v}</div>`).join('');});}
+function toggleDropdown(idx){dropdownOpen[idx]=!dropdownOpen[idx];const c=document.getElementById('dropContent'+idx),a=document.getElementById('dropArrow'+idx);if(c)c.classList.toggle('open',dropdownOpen[idx]);if(a)a.innerText=dropdownOpen[idx]?'▲':'▼';}
+
+function runCommand(){
+  if(activeUserId!=='admin')return;
+  const cmd=document.getElementById('cmdInput').value.trim().toLowerCase();
+  const fb=document.getElementById('cmdFeedback');
+  const hLabels={i:"Low probability triggers unpersuasive findings",ii:"Understanding of intelligence remains limited",iii:"Difficulty in accurately defining intelligence",iv:"The purpose of illustrating the symptoms of homeopathy",v:"The constant booming of homeopathy",vi:"Some differences between homeopathy and placebo",vii:"Placebo is better than homeopathy",viii:"A example of further demonstrating the negative effect of homeopathy",ix:"The purpose of staging a demonstration to against homeopathy"};
+  if(cmd==='autofill'){
+    passages.forEach((pp,pi)=>{
+      const ss=state[pi];const isCurr=(pi===currentPassage);
+      Object.keys(pp.correctKeys).map(Number).forEach(i=>{
+        if(ss.solvedCorrect[i])return;const key=pp.correctKeys[i];ss.studentAns[i]=key;
+        if(isCurr){
+          const zone=document.querySelector('.heading-drop[data-q="'+i+'"]');
+          if(zone){const hk=key.toLowerCase();zone.innerHTML='<input type="hidden" id="in'+i+'" value="'+key+'">'+buildFilledChip(hk,i,hLabels);const chip=document.querySelector('#headingsPool3 .heading-chip[data-heading="'+hk+'"]');if(chip)chip.classList.add('used');}
+          else{const el=document.getElementById('in'+i);if(el&&el.type!=='hidden'){el.value=key;}else{const wrap=document.querySelector('[data-q="'+i+'"]');if(wrap)Array.from(wrap.children).forEach(btn=>{btn.classList.remove('selected');if(btn.innerText.trim().startsWith(key))btn.classList.add('selected');});}}
+          const b=document.getElementById('b'+i);if(b)b.classList.add('active');
+        }
+      });
+    });
+    fb.className='show ok';fb.style.display='block';fb.innerText='✔ All passages autofilled';showToast('✏️ All passages autofilled');
+  } else if(cmd==='answers'){
+    passages.forEach((pp,pi)=>{
+      const ss=state[pi];const isCurr=(pi===currentPassage);
+      Object.keys(pp.correctKeys).map(Number).forEach(i=>{
+        if(ss.solvedCorrect[i])return;const key=pp.correctKeys[i];ss.studentAns[i]=key;
+        if(isCurr){const el=document.getElementById('in'+i);if(el&&el.type!=='hidden'){el.value=key;el.style.color='#007bff';}else{const wrap=document.querySelector('[data-q="'+i+'"]');if(wrap)Array.from(wrap.children).forEach(btn=>{if(btn.innerText.trim().startsWith(key)){btn.style.background='#eef2ff';btn.style.borderColor='#007bff';btn.style.color='#007bff';}});}}
+      });
+    });
+    fb.className='show ok';fb.style.display='block';fb.innerText='✔ All answers revealed';showToast('📋 All answers shown');
+  } else if(cmd==='more time'){
+    if(totalSeconds<=9*60){totalSeconds=0;document.getElementById('timer').innerText='00:00';fb.innerText='✔ Reset to 0:00';showToast('⏱️ Timer reset');}
+    else{totalSeconds=Math.max(0,totalSeconds-600);let m=Math.floor(totalSeconds/60),sv=totalSeconds%60;document.getElementById('timer').innerText=`${m<10?'0'+m:m}:${sv<10?'0'+sv:sv}`;fb.innerText='✔ −10 min';showToast('⏱️ −10 minutes');}
+    fb.className='show ok';fb.style.display='block';
+  } else {fb.className='show err';fb.style.display='block';fb.innerText='✘ Unknown command';showToast('❌ Unknown: '+cmd);}
+  document.getElementById('cmdInput').value='';
+}
+document.getElementById('cmdInput').addEventListener('keydown',e=>{if(e.key==='Enter')runCommand();});
+
+function toggleProofing(){if(proofingMode)return;proofingMode=true;const btn=document.getElementById('proofingBtn');btn.classList.add('active');document.getElementById('timer').innerText='∞';deactivateCheater();}
+
+function isTrusted(){return proofingMode||activeUserId==='teacher'||activeUserId==='admin';}
+function activateCheater(){ /* anti-cheat removed */ }
+function deactivateCheater(){ /* anti-cheat removed */ }
+
+let selectedText=null;
+document.addEventListener('mouseup',e=>{const sel=window.getSelection();if(sel.toString().trim().length>0){selectedText=sel.getRangeAt(0);const m=document.getElementById('highlightMenu');m.style.display='flex';m.style.left=e.pageX+'px';m.style.top=(e.pageY+15)+'px';}else document.getElementById('highlightMenu').style.display='none';});
+document.querySelectorAll('.hlColor').forEach(btn=>btn.addEventListener('click',function(){if(!selectedText)return;const span=document.createElement('span');span.style.backgroundColor=this.dataset.color;try{selectedText.surroundContents(span);}catch(e){}document.getElementById('highlightMenu').style.display='none';window.getSelection().removeAllRanges();}));
+document.getElementById('removeColor').addEventListener('click',()=>{if(!selectedText)return;let node=selectedText.startContainer;while(node&&node.nodeType!==1)node=node.parentNode;if(node&&node.tagName==='SPAN')node.outerHTML=node.innerHTML;document.getElementById('highlightMenu').style.display='none';window.getSelection().removeAllRanges();});
+
+function showToast(msg){const t=document.getElementById('toast');t.innerText=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
+loadPassage(0);
+</script>
+</body>
+</html>

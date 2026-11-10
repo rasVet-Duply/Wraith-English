@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Reading: Mock Test 35</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root{--primary:#007bff;--bg:#f8f9fa;--card:#fff;--border:#e0e0e0;--neon-green:#39FF14;--neon-red:#ff3131;--dark:#2d3436;--text:#444;--font-size:1.05rem;}
+body.theme-dark{--bg:#1a1a2e;--card:#16213e;--border:#2d3561;--text:#c9d1d9;--dark:#e2e8f0;}
+body.theme-dark header,body.theme-dark .action-bar{background:#0f3460;}
+body.theme-dark .left-side,body.theme-dark .right-side{background:var(--bg);}
+body.theme-dark .q-card,.bubbles-area{background:var(--card);border-color:var(--border);}
+body.theme-dark .btn-opt{background:var(--card);color:var(--text);border-color:var(--border);}
+body.theme-dark .timer{background:#0f3460;border-color:#2d3561;color:#60a5fa;}
+body.theme-dark .text-area{color:var(--text);background:var(--bg);}
+body.theme-dark .text-area h1{color:#e2e8f0;}
+body.theme-dark th{background:#0f3460;color:#94a3b8;}
+body.theme-dark td{border-color:var(--border);}
+body.theme-dark .settings-panel{background:#0f3460;border-color:#2d3561;}
+body.theme-dark #sideMenu{background:#16213e;}
+body.theme-sepia{--bg:#f4ecd8;--card:#fdf6e3;--border:#d4b896;--text:#5c4a1e;--dark:#3e2e10;}
+body.theme-sepia header,body.theme-sepia .action-bar{background:#ede0c8;}
+body.theme-sepia .left-side,body.theme-sepia .right-side{background:var(--bg);}
+body.theme-sepia .q-card{background:var(--card);border-color:var(--border);}
+body.theme-sepia .timer{background:#ede0c8;border-color:#d4b896;color:#7b5e2a;}
+body.theme-sepia .text-area{color:var(--text);background:var(--bg);}
+body.theme-sepia .settings-panel{background:#ede0c8;border-color:#d4b896;}
+*{box-sizing:border-box;}
+body,html{margin:0;padding:0;height:100%;font-family:'Inter','Segoe UI',sans-serif;overflow:hidden;background:var(--bg);transition:background .3s,color .3s;}
+.wrapper{display:flex;flex-direction:column;height:100vh;}
+header{height:65px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 25px;flex-shrink:0;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:background .3s;}
+.logo{font-weight:800;font-size:1.2rem;color:var(--dark);display:flex;align-items:center;gap:10px;}
+.logo i{color:var(--primary);}
+.timer{font-weight:bold;background:#eef2ff;padding:8px 25px;border-radius:30px;border:1px solid #d1d9ff;color:var(--primary);font-size:1.2rem;min-width:110px;text-align:center;transition:.3s;}
+#menuBtn{width:38px;height:38px;border-radius:50%;border:2px solid #dee2e6;background:#fff;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#495057;transition:.2s;}
+#menuBtn:hover{background:#f0f7ff;border-color:var(--primary);color:var(--primary);}
+#proofingBtn{padding:8px 18px;border-radius:30px;border:2px solid #007bff;background:#007bff;color:#fff;font-weight:700;font-size:.85rem;cursor:pointer;transition:.2s;}
+#proofingBtn.active{background:#fff;color:#007bff;border-color:#007bff;}
+.main{display:flex;flex:1;overflow:hidden;}
+.left-side{width:50%;display:flex;flex-direction:column;background:#fff;border-right:1px solid var(--border);}
+.text-area{flex:1;overflow-y:auto;padding:40px;line-height:1.8;color:var(--text);font-size:var(--font-size);transition:font-size .2s,color .3s;}
+.text-area h1{color:var(--dark);font-size:1.8rem;margin-bottom:8px;}
+.bubbles-area{height:100px;border-top:1px solid var(--border);background:#fff;padding:15px 25px;overflow-y:auto;flex-shrink:0;transition:background .3s;}
+.bubbles-grid{display:flex;flex-wrap:wrap;gap:10px;}
+.bubble{width:36px;height:36px;border-radius:50%;border:2px solid #dee2e6;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#adb5bd;font-size:.9rem;transition:.3s;}
+.bubble.active{border-color:var(--primary);color:var(--primary);background:#eef2ff;}
+.bubble.solved{background:var(--primary);color:#fff;border-color:var(--primary);}
+.divider{width:12px;background:#f1f3f5;cursor:col-resize;flex-shrink:0;position:relative;border-left:1px solid #e9ecef;border-right:1px solid #e9ecef;}
+.divider::after{content:'||';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#adb5bd;font-size:.8rem;letter-spacing:1px;}
+.right-side{flex:1;display:flex;flex-direction:column;background:var(--bg);min-width:300px;}
+.action-bar{background:#fff;border-bottom:1px solid var(--border);padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:15px;height:65px;flex-shrink:0;transition:background .3s;}
+.attempts-row{display:flex;gap:10px;overflow-x:auto;flex:1;min-width:0;align-items:center;height:100%;}
+.attempt-tag{background:#f8f9fa;border:1px solid #e9ecef;padding:8px 15px;border-radius:8px;font-size:.85rem;white-space:nowrap;color:#495057;font-weight:600;}
+.btn-submit{background:var(--primary);color:#fff;border:none;padding:12px 30px;border-radius:8px;font-weight:700;cursor:pointer;transition:.2s;box-shadow:0 4px 15px rgba(0,123,255,.3);}
+.btn-submit:hover{background:#0069d9;transform:translateY(-1px);}
+.questions-area{flex:1;overflow-y:auto;padding:30px;font-size:var(--font-size);transition:font-size .2s;}
+.q-card{background:#fff;padding:25px 30px;border-radius:12px;border:1px solid #e9ecef;margin-bottom:25px;box-shadow:0 4px 6px rgba(0,0,0,.02);transition:background .3s;}
+.description{font-weight:800;color:#2d3436;margin-bottom:16px;display:block;font-size:.88rem;text-transform:uppercase;letter-spacing:.5px;border-left:5px solid var(--primary);padding-left:15px;}
+.btn-opt{padding:10px 18px;border:1.5px solid #dee2e6;border-radius:8px;cursor:pointer;margin:5px 8px 5px 0;display:inline-block;background:#fff;font-weight:500;transition:.2s;}
+.btn-opt.selected{border-color:var(--primary);color:var(--primary);background:#f0f7ff;}
+.correct-neon{border:2px solid var(--neon-green)!important;box-shadow:0 0 15px var(--neon-green)!important;background-color:#fafff5!important;pointer-events:none;}
+.wrong-neon{border:2px solid var(--neon-red)!important;box-shadow:0 0 15px var(--neon-red)!important;}
+table{width:100%;border-collapse:collapse;margin-top:10px;}
+th,td{border:1px solid #eee;padding:10px 14px;text-align:left;}
+th{background:#f8f9fa;color:#6c757d;font-size:.8rem;text-transform:uppercase;font-weight:700;}
+.input-summary{border:none;border-bottom:2px solid #dee2e6;width:150px;text-align:center;outline:none;font-weight:700;padding:5px;transition:.3s;background:transparent;}
+/* HEADING DRAG */
+.heading-chip{display:inline-flex;align-items:center;gap:7px;background:#2d3436;color:#fff;padding:7px 12px;border-radius:8px;font-size:.82rem;font-weight:600;cursor:grab;user-select:none;transition:opacity .2s;}
+.heading-chip.used{background:#adb5bd;color:#f8f9fa;cursor:not-allowed;pointer-events:none;opacity:.55;}
+.hnum{background:rgba(255,255,255,.18);border-radius:5px;padding:1px 6px;font-weight:800;font-size:.78rem;}
+.heading-drop{min-height:42px;border:2px dashed #ced4da;border-radius:8px;padding:6px 10px;display:flex;align-items:center;transition:border-color .2s,background .2s;}
+.heading-drop.over{border-color:#007bff;background:#eef2ff;}
+.drop-placeholder{color:#adb5bd;font-size:.82rem;font-style:italic;}
+.drop-filled-chip{display:inline-flex;align-items:center;gap:7px;background:#495057;color:#fff;padding:6px 12px;border-radius:7px;font-size:.82rem;font-weight:600;cursor:grab;user-select:none;}
+.drop-filled-chip:active{cursor:grabbing;}
+.drop-filled-chip .hnum{background:rgba(255,255,255,.2);border-radius:4px;padding:1px 5px;font-weight:800;}
+/* PASSAGE NAV */
+.passage-nav{display:flex;align-items:center;justify-content:center;gap:16px;padding:14px 20px;border-top:1px solid #e9ecef;background:#fff;flex-shrink:0;}
+.nav-btn{width:40px;height:40px;border-radius:50%;border:2px solid #dee2e6;background:#fff;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;font-weight:bold;transition:.2s;}
+.nav-btn:hover:not(.disabled){background:#eef2ff;border-color:var(--primary);color:var(--primary);}
+.nav-btn.disabled{color:#dee2e6;border-color:#f1f3f5;cursor:default;pointer-events:none;}
+.nav-btn.active-arrow{color:#2d3436;border-color:#2d3436;}
+.passage-label{font-weight:700;font-size:.9rem;color:#495057;min-width:100px;text-align:center;}
+/* MODAL */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:1000;justify-content:center;align-items:center;backdrop-filter:blur(5px);}
+.modal-content{background:#fff;border-radius:20px;width:95vw;max-width:1100px;text-align:center;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,.4);animation:modalIn .3s cubic-bezier(.34,1.56,.64,1);max-height:90vh;display:flex;flex-direction:column;}
+@keyframes modalIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-header{background:var(--dark);color:#fff;padding:20px 30px;flex-shrink:0;}
+.modal-header h2{margin:0;font-size:2rem;font-weight:900;}
+.modal-total{font-size:1rem;opacity:.8;margin-top:4px;}
+.modal-body{padding:20px;background:#fff;flex:1;overflow:hidden;}
+.modal-cols{display:flex;gap:12px;height:100%;max-height:55vh;}
+.modal-col{flex:1;display:flex;flex-direction:column;min-width:0;}
+.modal-col-title{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:#6c757d;margin-bottom:8px;text-align:center;padding:6px;background:#f8f9fa;border-radius:8px;}
+.res-list{text-align:left;overflow-y:auto;flex:1;}
+.res-card{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;margin-bottom:6px;border-radius:8px;font-weight:700;font-size:.82rem;border:2px solid transparent;transition:.3s;}
+.res-card.correct-row{border-color:var(--neon-green);box-shadow:0 0 8px var(--neon-green);background:#fafff5;color:#2d6a4f;}
+.res-card.wrong-row{border-color:var(--neon-red);box-shadow:0 0 8px var(--neon-red);background:#fff5f5;color:#a4161a;}
+.modal-footer{padding:16px 25px;background:#f8f9fa;flex-shrink:0;}
+/* OVERLAY & MENU */
+#overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:none;z-index:1500;backdrop-filter:blur(2px);}
+#overlay.show{display:block;}
+#sideMenu{position:fixed;top:0;right:-26%;width:25%;height:100%;background:#fff;z-index:1600;transition:right .3s cubic-bezier(.4,0,.2,1);padding:0;box-shadow:-5px 0 30px rgba(0,0,0,.2);display:flex;flex-direction:column;overflow:hidden;}
+#sideMenu.open{right:0;}
+.menu-header{background:var(--dark);color:#fff;padding:25px 20px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.menu-header h2{margin:0;font-size:1.3rem;font-weight:800;}
+#closeMenuBtn{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:0;}
+.menu-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px;}
+.settings-panel{background:#f8f9fa;border:1px solid #e9ecef;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:14px;transition:background .3s;}
+.settings-label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#6c757d;margin-bottom:4px;}
+.font-slider-row{display:flex;align-items:center;gap:10px;}
+.font-slider-row span{font-size:.8rem;color:#adb5bd;min-width:18px;text-align:center;}
+input[type=range]{flex:1;-webkit-appearance:none;height:4px;border-radius:4px;background:#dee2e6;outline:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--primary);cursor:pointer;box-shadow:0 2px 6px rgba(0,123,255,.4);}
+.theme-row{display:flex;gap:8px;}
+.theme-btn{flex:1;padding:9px 6px;border-radius:10px;border:2px solid #dee2e6;cursor:pointer;font-size:.78rem;font-weight:700;transition:.2s;background:#fff;color:#495057;text-align:center;}
+.theme-btn:hover{border-color:var(--primary);color:var(--primary);}
+.theme-btn.active{border-color:var(--primary);background:#eef2ff;color:var(--primary);}
+.theme-btn .tb-icon{font-size:1.1rem;display:block;margin-bottom:3px;}
+.btn-about{width:100%;padding:11px;border-radius:10px;border:2px solid #dee2e6;background:#fff;cursor:pointer;font-weight:700;font-size:.85rem;color:#495057;display:flex;align-items:center;justify-content:center;gap:8px;transition:.2s;}
+.btn-about:hover{border-color:var(--primary);color:var(--primary);background:#eef2ff;}
+#aboutModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:2000;justify-content:center;align-items:center;backdrop-filter:blur(4px);}
+#aboutModal.show{display:flex;}
+.about-card{background:#fff;border-radius:20px;width:340px;max-width:90%;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.35);animation:modalIn .3s cubic-bezier(.34,1.56,.64,1);text-align:center;}
+.about-top{background:linear-gradient(135deg,#007bff,#0056cc);padding:30px 20px 25px;color:#fff;}
+.about-avatar{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.25);border:3px solid rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 12px;}
+.about-top h3{margin:0 0 4px;font-size:1.4rem;font-weight:900;}
+.about-top p{margin:0;opacity:.8;font-size:.85rem;}
+.about-body{padding:20px;}
+.about-body p{color:#6c757d;font-size:.88rem;line-height:1.6;margin:0 0 14px;}
+.about-tag{display:inline-block;background:#eef2ff;color:var(--primary);border-radius:20px;padding:6px 16px;font-weight:700;font-size:.85rem;margin-bottom:16px;}
+.btn-close-about{width:100%;padding:12px;background:var(--primary);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;font-size:.9rem;}
+.menu-top-icon{width:44px;height:44px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#495057;cursor:pointer;transition:.2s;align-self:flex-start;}
+.menu-top-icon:hover{background:#eef2ff;border-color:var(--primary);color:var(--primary);}
+.menu-mid-row{display:flex;align-items:center;gap:10px;}
+.menu-star{width:44px;height:44px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#495057;font-weight:bold;flex-shrink:0;}
+.menu-id-box{flex:1;border:2px solid #dee2e6;border-radius:12px;padding:10px 14px;font-size:1rem;font-weight:600;outline:none;transition:border-color .2s;letter-spacing:2px;}
+.menu-id-box:focus{border-color:var(--primary);}
+.menu-id-box::placeholder{letter-spacing:0;font-weight:400;color:#adb5bd;}
+.id-status{font-size:.82rem;color:#adb5bd;padding-left:4px;display:none;}
+.id-status.show{display:block;}
+.id-status.ok{color:#2d6a4f;}
+.id-status.err{color:#a4161a;}
+#teacherAnswerBox{background:#f8f9fa;border:1px solid #dee2e6;border-radius:12px;padding:12px;display:none;}
+#teacherAnswerBox .drop-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:.9rem;color:var(--dark);}
+#teacherAnswerBox .drop-content{max-height:180px;overflow-y:auto;margin-top:10px;display:none;}
+#teacherAnswerBox .drop-content.open{display:block;}
+.ans-item{padding:8px 10px;border-radius:8px;font-size:.85rem;font-weight:600;color:#495057;border-bottom:1px solid #e9ecef;}
+.ans-item:last-child{border-bottom:none;}
+#adminRow{display:none;margin-top:4px;}
+.admin-mid-row{display:flex;align-items:center;gap:10px;}
+.admin-slash-icon{width:44px;height:44px;border-radius:50%;border:2px solid #dee2e6;background:#f8f9fa;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#495057;font-weight:bold;flex-shrink:0;}
+.admin-cmd-box{flex:1;border:2px solid #dee2e6;border-radius:12px;padding:10px 14px;font-size:.95rem;font-weight:600;outline:none;transition:border-color .2s;}
+.admin-cmd-box:focus{border-color:#ff3131;}
+.admin-cmd-box::placeholder{font-weight:400;color:#adb5bd;}
+.btn-run-cmd{padding:10px 16px;background:var(--dark);color:#fff;border:none;border-radius:10px;cursor:pointer;font-weight:700;font-size:.85rem;transition:.2s;}
+.btn-run-cmd:hover{background:#ff3131;}
+#cmdFeedback{font-size:.82rem;padding-left:4px;color:#adb5bd;display:none;}
+#cmdFeedback.show{display:block;}
+#cmdFeedback.ok{color:#2d6a4f;}
+#cmdFeedback.err{color:#a4161a;}
+#adminAnswerBox .drop-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:.9rem;color:var(--dark);padding:6px 0;}
+#adminAnswerBox .drop-content{max-height:160px;overflow-y:auto;margin-top:6px;display:none;}
+#adminAnswerBox .drop-content.open{display:block;}
+.menu-footer{padding:15px 20px;border-top:1px solid #e9ecef;text-align:center;flex-shrink:0;}
+.tg-link{display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-weight:700;font-size:.9rem;text-decoration:none;padding:10px 18px;border-radius:10px;background:#eef2ff;transition:.2s;}
+.tg-link:hover{background:#d1d9ff;}
+
+@keyframes flashText{0%{color:#fff;text-shadow:-4px -4px 0 #000,4px -4px 0 #000,-4px 4px 0 #000,4px 4px 0 #000,0 0 20px #000}50%{color:#000;text-shadow:-4px -4px 0 #fff,4px -4px 0 #fff,-4px 4px 0 #fff,4px 4px 0 #fff,0 0 20px #fff}}
+#highlightMenu{display:none;position:fixed;background:#fff;padding:8px;border-radius:20px;box-shadow:0 0 15px rgba(0,0,0,.2);z-index:99999;gap:8px;align-items:center;}
+.hlColor{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;}
+#removeColor{width:28px;height:28px;border-radius:50%;background:white;border:2px solid #999;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;}
+#toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--dark);color:#fff;padding:12px 24px;border-radius:30px;font-weight:700;font-size:.9rem;z-index:9999;transition:transform .3s;box-shadow:0 5px 20px rgba(0,0,0,.3);}
+#toast.show{transform:translateX(-50%) translateY(0);}
+
+/* === universal theme & readability fixes (auto-appended) === */
+#sideMenu{ will-change: right; }
+#overlay, #highlightMenu, .modal { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+
+body.theme-dark { background: var(--bg) !important; }
+body.theme-dark .content-area, body.theme-dark .content-row,
+body.theme-dark .wrapper, body.theme-dark .main,
+body.theme-dark .left-side, body.theme-dark .right-side,
+body.theme-dark .transcript-col, body.theme-dark .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-dark header, body.theme-dark .action-bar, body.theme-dark .passage-nav {
+  background: #0f3460 !important; border-color:#2d3561 !important;
+}
+body.theme-dark .bubbles-area, body.theme-dark .q-card, body.theme-dark .modal-content,
+body.theme-dark .modal-body, body.theme-dark .about-card, body.theme-dark .about-body,
+body.theme-dark #sideMenu, body.theme-dark .menu-body, body.theme-dark .modal-footer,
+body.theme-dark .drop-content, body.theme-dark #teacherAnswerBox, body.theme-dark #adminAnswerBox,
+body.theme-dark #highlightMenu, body.theme-dark #removeColor, body.theme-dark #toast,
+body.theme-dark .menu-footer, body.theme-dark .modal-col, body.theme-dark .proof-toast-box,
+body.theme-dark .audio-player, body.theme-dark .settings-panel {
+  background: var(--card) !important;
+}
+body.theme-dark, body.theme-dark .text-area, body.theme-dark .questions-area,
+body.theme-dark .q-card, body.theme-dark .q-card p, body.theme-dark .q-card li,
+body.theme-dark .description, body.theme-dark .passage-label, body.theme-dark .nav-btn,
+body.theme-dark label, body.theme-dark .ans-item, body.theme-dark .attempt-tag,
+body.theme-dark .settings-label, body.theme-dark .about-body p, body.theme-dark .btn-opt,
+body.theme-dark .modal-header h2, body.theme-dark .modal-total, body.theme-dark .proof-note,
+body.theme-dark .modal-col-title, body.theme-dark .drop-header, body.theme-dark .menu-header h2,
+body.theme-dark .transcript-inner, body.theme-dark .transcript-inner p, body.theme-dark .badge,
+body.theme-dark .id-status, body.theme-dark #cmdFeedback, body.theme-dark .about-top h3,
+body.theme-dark .res-card {
+  color: #ffffff !important;
+}
+body.theme-dark .input-summary, body.theme-dark .input-match, body.theme-dark input[type=text] {
+  color: #ffffff !important; background: transparent !important;
+}
+body.theme-dark .btn-opt.selected, body.theme-dark .nav-btn.active-arrow { color: #60a5fa !important; }
+body.theme-sepia .btn-opt.selected, body.theme-sepia .nav-btn.active-arrow { color: #a13a1c !important; background: #f9e6c8 !important; border-color: #a13a1c !important; font-weight: 700 !important; }
+body.theme-dark .correct-neon { color:#0b3d19 !important; }
+body.theme-dark .wrong-row, body.theme-dark .correct-row { color: inherit !important; }
+
+body.theme-sepia .content-area, body.theme-sepia .content-row,
+body.theme-sepia .wrapper, body.theme-sepia .main,
+body.theme-sepia .left-side, body.theme-sepia .right-side,
+body.theme-sepia .transcript-col, body.theme-sepia .transcript-inner {
+  background: var(--bg) !important;
+}
+body.theme-sepia header, body.theme-sepia .action-bar, body.theme-sepia .passage-nav {
+  background:#ede0c8 !important; border-color:#d4b896 !important;
+}
+body.theme-sepia .bubbles-area, body.theme-sepia .q-card, body.theme-sepia .modal-content,
+body.theme-sepia .modal-body, body.theme-sepia .about-card, body.theme-sepia .about-body,
+body.theme-sepia #sideMenu, body.theme-sepia .menu-body, body.theme-sepia .modal-footer,
+body.theme-sepia .drop-content, body.theme-sepia #teacherAnswerBox, body.theme-sepia #adminAnswerBox,
+body.theme-sepia #highlightMenu, body.theme-sepia #removeColor, body.theme-sepia #toast,
+body.theme-sepia .menu-footer, body.theme-sepia .modal-col, body.theme-sepia .proof-toast-box,
+body.theme-sepia .audio-player, body.theme-sepia .settings-panel {
+  background: var(--card) !important;
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <div class="logo"><i class="fas fa-feather-alt"></i> IELTS READING</div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="timer" id="timer">00:00</div>
+      <button id="proofingBtn" onclick="toggleProofing()">Proofing</button>
+      <button id="menuBtn">⋮</button>
+    </div>
+  </header>
+  <div class="main">
+    <div class="left-side" id="leftSide">
+      <div class="text-area" id="textArea"></div>
+      <div class="bubbles-area">
+        <div style="font-weight:800;color:#adb5bd;font-size:.7rem;text-transform:uppercase;margin-bottom:8px;">Questions Navigation</div>
+        <div class="bubbles-grid" id="bubbleGrid"></div>
+      </div>
+    </div>
+    <div class="divider" id="divider"></div>
+    <div class="right-side">
+      <div class="action-bar">
+        <div class="attempts-row" id="attemptsRow"></div>
+        <button class="btn-submit" onclick="submitTest()">SUBMIT ANSWERS</button>
+      </div>
+      <div class="questions-area" id="questionsArea"></div>
+      <div class="passage-nav">
+        <button class="nav-btn disabled" id="navLeft" onclick="goPassage(-1)">&#8592;</button>
+        <span class="passage-label" id="passageLabel">Passage 1 / 3</span>
+        <button class="nav-btn active-arrow" id="navRight" onclick="goPassage(1)">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <div class="modal-header"><h2 id="mScore">0 / 40</h2><div class="modal-total" id="modalTotal">Total score across all passages</div></div>
+    <div class="modal-body">
+      <div class="modal-cols">
+        <div class="modal-col"><div class="modal-col-title">📖 Passage 1 — Intelligence<br><span id="p1score" style="color:#007bff;">0/13</span></div><div class="res-list" id="resList1"></div></div>
+        <div class="modal-col"><div class="modal-col-title">📖 Passage 2 — Shower Power<br><span id="p2score" style="color:#007bff;">0/13</span></div><div class="res-list" id="resList2"></div></div>
+        <div class="modal-col"><div class="modal-col-title">📖 Passage 3 — Tattoo on Tikopia<br><span id="p3score" style="color:#007bff;">0/14</span></div><div class="res-list" id="resList3"></div></div>
+      </div>
+    </div>
+    <div class="modal-footer"><button class="btn-submit" style="width:100%;" onclick="closeModal()">CLOSE RESULTS</button></div>
+  </div>
+</div>
+
+<div id="aboutModal">
+  <div class="about-card">
+    <div class="about-top"><div class="about-avatar">🌅</div><h3>rasVet</h3><p>Creator & Developer</p></div>
+    <div class="about-body"><p>IELTS Reading practice platform built by <strong>rasVet</strong>.</p><div class="about-tag">by: rasVet</div><button class="btn-close-about" onclick="closeAbout()">Close</button></div>
+  </div>
+</div>
+
+<div id="overlay"></div>
+<div id="sideMenu">
+  <div class="menu-header"><h2>Menu</h2><button id="closeMenuBtn">✕</button></div>
+  <div class="menu-body">
+    <div class="settings-panel">
+      <div><div class="settings-label">Font Size</div><div class="font-slider-row"><span style="font-size:.75rem;">A</span><input type="range" id="fontSlider" min="12" max="22" value="16" step="1" oninput="changeFontSize(this.value)"><span style="font-size:1.1rem;">A</span></div><div style="text-align:center;font-size:.78rem;color:#adb5bd;margin-top:2px;" id="fontSizeLabel">16px</div></div>
+      <div><div class="settings-label">Theme</div><div class="theme-row"><button class="theme-btn active" id="themeLight" onclick="setTheme('light')"><span class="tb-icon">☀️</span>Light</button><button class="theme-btn" id="themeDark" onclick="setTheme('dark')"><span class="tb-icon">🌙</span>Dark</button><button class="theme-btn" id="themeSepia" onclick="setTheme('sepia')"><span class="tb-icon">📖</span>Reading</button></div></div>
+      <button class="btn-about" onclick="openAbout()"><i class="fas fa-info-circle"></i> About</button>
+    </div>
+    <div class="menu-top-icon"><i class="fas fa-cog"></i></div>
+    <div class="menu-mid-row"><div class="menu-star">✱</div><input type="text" class="menu-id-box" id="idInput" placeholder="Enter ID" maxlength="6" oninput="handleIdInput()"></div>
+    <div class="id-status" id="idStatus"></div>
+    <div id="teacherAnswerBox">
+      <div class="drop-header" onclick="toggleDropdown(0)"><span>📋 Answers P1</span><span id="dropArrow0">▼</span></div>
+      <div class="drop-content" id="dropContent0"></div>
+      <div class="drop-header" style="margin-top:8px;" onclick="toggleDropdown(1)"><span>📋 Answers P2</span><span id="dropArrow1">▼</span></div>
+      <div class="drop-content" id="dropContent1"></div>
+      <div class="drop-header" style="margin-top:8px;" onclick="toggleDropdown(2)"><span>📋 Answers P3</span><span id="dropArrow2">▼</span></div>
+      <div class="drop-content" id="dropContent2"></div>
+    </div>
+    <div id="adminRow">
+      <div class="admin-mid-row"><div class="admin-slash-icon">/</div><input type="text" class="admin-cmd-box" id="cmdInput" placeholder="answers / autofill / more time"><button class="btn-run-cmd" onclick="runCommand()">Run</button></div>
+      <div id="cmdFeedback"></div>
+      <div id="adminAnswerBox" style="margin-top:10px;">
+        <div class="drop-header" onclick="toggleDropdown(0)"><span>📋 Answers P1</span><span id="dropArrow0">▼</span></div>
+        <div class="drop-content" id="dropContent0"></div>
+        <div class="drop-header" style="margin-top:8px;" onclick="toggleDropdown(1)"><span>📋 Answers P2</span><span id="dropArrow1">▼</span></div>
+        <div class="drop-content" id="dropContent1"></div>
+        <div class="drop-header" style="margin-top:8px;" onclick="toggleDropdown(2)"><span>📋 Answers P3</span><span id="dropArrow2">▼</span></div>
+        <div class="drop-content" id="dropContent2"></div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-footer"><a href="https://t.me/English_Wikipedia" target="_blank" class="tg-link"><i class="fab fa-telegram-plane"></i> Telegram Channel</a></div>
+</div>
+
+
+<div id="highlightMenu" style="display:none;position:fixed;background:#fff;padding:8px;border-radius:20px;box-shadow:0 0 15px rgba(0,0,0,.2);z-index:99999;gap:8px;align-items:center;">
+  <div class="hlColor" data-color="#ff3131" style="background:#ff3131;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div class="hlColor" data-color="#ff7a00" style="background:#ff7a00;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div class="hlColor" data-color="#39FF14" style="background:#39FF14;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div class="hlColor" data-color="#007bff" style="background:#007bff;width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid white;"></div>
+  <div id="removeColor" style="width:28px;height:28px;border-radius:50%;background:white;border:2px solid #999;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;">✕</div>
+</div>
+<div id="toast"></div>
+
+<script>
+const TEACHER_IDS=["004567","008245","009213"],ADMIN_ID="000000";
+
+// Helper to build heading drag pool
+function buildHeadingPool(headings,poolId){
+  let h=`<div id="${poolId}" style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px;padding:14px;background:#f0f7ff;border:1px solid #c8dffe;border-radius:12px;">`;
+  h+=`<div style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:#6c757d;margin-bottom:4px;">List of Headings</div>`;
+  headings.forEach(([key,label])=>{
+    h+=`<div class="heading-chip" draggable="true" data-heading="${key}" ondragstart="dragHeading(event)"><span class="hnum">${key}</span> ${label}</div>`;
+  });
+  return h+'</div>';
+}
+function buildDropZone(q,label){
+  return `<tr><td style="padding:8px 12px;border:1px solid #eee;font-weight:600;font-size:.9rem;">${label}</td><td style="padding:6px;border:1px solid #eee;"><div class="heading-drop" data-q="${q}" ondrop="dropHeading(event,${q})" ondragover="allowDropH(event)" ondragleave="leaveDrop(event)"><input type="hidden" id="in${q}"><div class="drop-placeholder">Drop here</div></div></td></tr>`;
+}
+
+const passages=[
+{
+  title:"The Research for Intelligence",totalQ:13,
+  text:`<h1>The Research for Intelligence</h1>
+<p style="font-style:italic;color:#888;font-size:.88rem;margin-bottom:16px;">Reading Passage 1 · Questions 1–13</p>
+<p><strong>A</strong>&nbsp; In Robert Plomin's line of work, patience is essential. Plomin, a behavioral geneticist at the Institute of Psychiatry in London, wants to understand the nature of intelligence. As part of his research, he has been watching thousands of children grow up. Plomin asks the children questions such as "What do water and milk have in common?" and "In what direction does the sun set?" At first he and his colleagues quizzed the children in person or over the telephone. Today many of those children are in their early teens, and they take their tests on the Internet. In one sense, the research has been a rousing success. The children who take the tests are all twins, and throughout the study identical twins have tended to get scores closer to each other than those of non-identical twins, who in turn have closer scores than unrelated children. These results make clear to the scientists that genes have an important influence on how children score on intelligence tests.</p>
+<p><strong>B</strong>&nbsp; But Plomin wants to know more. He wants to find the specific genes that are doing the influencing. And now he has a tool for pinpointing genes that he could not have even dreamed of when he began quizzing children. Plomin and his colleagues have been scanning the genes of his subjects with a device called a micro array, a small chip that can recognize half a million distinctive snippets of DNA. The combination of this powerful tool with a huge number of children to study meant that he could detect genes that had only a tiny effect on the variation in scores.</p>
+<p><strong>C</strong>&nbsp; Still, when Plomin and his co-workers unveiled the results of their micro-array study—the biggest dragnet for intelligence-linked genes ever undertaken—they were underwhelming. The researchers found only six genetic markers that showed any sign of having an influence on the test scores. When they ran stringent statistical tests to see if the results were flukes, only one gene passed. It accounted for 0.4 percent of variation in the scores. And to cap it all off, no one knows what the gene does in the body. "It's a real drag in some ways," Plomin says.</p>
+<p><strong>D</strong>&nbsp; Plomin's experience is a typical one for scientists who study intelligence. Along with using micro-arrays, they are employing brain scans and other sophisticated technologies to document some of the intricate dance steps that genes and environment take together in the development of intelligence. They are beginning to see how differences in intelligence are reflected in the structure and function of the brain. Some scientists have even begun to build a new vision of intelligence as a reflection of the ways in which information flows through the brain. But for all these advances, intelligence remains a profound mystery. "It's amazing the extent to which we know very little," says Wendy Johnson, a psychologist at the University of Minnesota.</p>
+<p><strong>E</strong>&nbsp; In some ways, intelligence is very simple. "It's something that everybody observes in others," says Eric Turkheimer of the University of Virginia. Everybody knows that some people are smarter than others, whatever it means technically. "Yet that kind of gut instinct does not translate easily into a scientific definition. In 1996 the American Psychological Association issued a report on intelligence, which stated only that individuals differ from one another in their ability to understand complex ideas, to adapt effectively to the environment, to learn from experience, to engage in various forms of reasoning, to overcome obstacles by taking thought."</p>
+<p><strong>F</strong>&nbsp; To measure these differences, psychologists in the early 1900s invented tests of various kinds of thought, such as math, spatial reasoning and verbal skills. The most familiar measure is the intelligence quotient, which is produced by setting the average score at 100. IQ scores are not arbitrary numbers. Psychologists can use them to make strong predictions about other features of people's lives. People with high IQs even tend to live longer than average. "If you have an IQ score, does that tell you everything about a person's cognitive strengths and weaknesses? No," says Richard J. Haier of the University of California, Irvine. "When you go see your doctor, what's the first thing that happens? Somebody takes your blood pressure and temperature. No one would say blood pressure and temperature summarize everything about your health, but they are key numbers."</p>
+<p><strong>G</strong>&nbsp; Then what underlies an intelligence score? The most influential theory is more than a century old. In 1904 psychologist Charles Spearman observed that people who did well on one kind of test tended to do well on others. He declared that it was the result of something he called a g factor, short for general intelligence factor. Roughly speaking, there are two possible sources for variations: environmental influences and genes. Genes may shape the brain in ways that make individuals better or worse at answering questions on intelligence tests.</p>`,
+  questionsHTML:``,  // built below
+  correctKeys:{1:"V",2:"I",3:"II",4:"III",5:"VII",6:"X",7:"E",8:"A",9:"F",10:"D",11:"MICRO-ARRAYS",12:"INTRICATE DANCE STEPS",13:"A REFLECTION"},
+  teacherAnswers:["1—v","2—i","3—ii","4—iii","5—vii","6—x","7—E","8—A","9—F","10—D","11—MICRO-ARRAYS","12—INTRICATE DANCE STEPS","13—A REFLECTION"]
+},
+{
+  title:"The Sweet Scent of Success",totalQ:13,
+  text:`<h1>The Sweet Scent of Success</h1>
+<p style="font-style:italic;color:#888;font-size:.88rem;margin-bottom:16px;">Reading Passage 2 · Questions 14–26</p>
+<p><strong>A</strong>&nbsp; Innovation and entrepreneurship, in the right mix, can bring spectacular results and propel a business ahead of the pack. Across a diverse range of commercial successes, from the Hills Hoist clothes line to the Cochlear ear implant, it is hard to generalize beyond saying the creators tapped into something consumers could not wait to get their hands on. However, most ideas never make it to the market. Grant Kearney, chief executive of the Innovation Xchange, says "Ideas by themselves are absolutely useless. An idea only becomes innovation when it is connected to the right resources and capabilities."</p>
+<p><strong>B</strong>&nbsp; One of Australia's latest innovation successes stems from a lemon-scented bathroom cleaner called Shower Power, the formula for which was concocted in a factory in Yatala, Queensland. In 1995, Tom Quinn and John Heron bought a struggling cleaning products business, OzKleen, for $250,000. It was selling 100 different kinds of cleaning products, mainly in bulk. The business was in bad shape, the cleaning formulas were ineffective and environmentally harsh, and there were few regular clients. Now Shower Power is claimed to be the top-selling bathroom cleaning product in the country. In the past 12 months, almost four million bottles of OzKleen's Power products have been sold.</p>
+<p><strong>C</strong>&nbsp; OzKleen's turnaround began when Quinn and Heron hired an industrial chemist to revitalize the product line. Market research showed that people were looking for a better cleaner for the bathroom, universally regarded as the hardest room in the home to clean. One of Tom Quinn's sons, Peter, aged 24 at the time, began working with the chemist on the formulas, looking at the potential for citrus-based cleaning products. He detested all the chlorine-based cleaning products that dominated the market. Peter looked at citrus ingredients, such as orange peel, to replace the petroleum by-products in cleaners. He is credited with finding the Shower Power formula.</p>
+<p><strong>D</strong>&nbsp; To begin with, Shower Power was sold only in commercial quantities but Tom Quinn decided to sell it in 750ml bottles after the constant "raves" from customers at their retail store at Beenleigh, near Brisbane. Customers were travelling long distances to buy supplies. "We did a dummy label and went to see Woolworths," Tom Quinn says. The Woolworths buyer took a bottle home and was able to remove a stain from her basin that had been impossible to shift. From that point on, she championed the product and OzKleen had its first supermarket order, for a palette of Shower Power worth $3000.</p>
+<p><strong>E</strong>&nbsp; Shower Power was released in Australian supermarkets in 1997 and became the top-selling product in its category within six months. It was all hands on deck at the factory, labelling and bottling Shower Power to keep up with demand. OzKleen ditched all other products and rebuilt the business around Shower Power. This stage was very tough. "It was hand-to-mouth, cash flow was very difficult," recalls McDonnell. OzKleen had to pay new-line fees to supermarket chains, which also squeezed margins.</p>
+<p><strong>F</strong>&nbsp; OzKleen's next big break came when the daughter of a Coles Myer executive used the product while on holidays in Queensland and convinced her father that Shower Power should be in Coles supermarkets. Peter Quinn says the company was wary of how long the sales would last and hesitated to spend money on upgrading the manufacturing process. As a result, he remembers long periods of working round the clock to keep up with orders. Eventually a new bottling machine was bought for $50,000. Since then, he has been developing a new automated bottling machine — "I love coming up with new ideas."</p>
+<p><strong>G</strong>&nbsp; Peter Quinn says OzKleen's approach to research and development is open slather. "If I need it, I get it. It is about doing something simple that no one else is doing." With a tried and tested product, OzKleen is expanding overseas and developing more Power-brand household products. Tom Quinn says: "We are competing with the same market all over the world." Shower Power, known as Bath Power in Britain, was launched four years ago with the help of an export development grant from the Federal Government. OzKleen is already number three in the British market, and the next stop is France. OzKleen has been approached with offers to buy the company, but Tom Quinn says "We're having too much fun."</p>`,
+  questionsHTML:``,
+  correctKeys:{14:"F",15:"E",16:"C",17:"B",18:"G",19:"D",20:"A",21:"C",22:"A",23:"D",24:"B",25:"B",26:"D"},
+  teacherAnswers:["14—F","15—E","16—C","17—B","18—G","19—D","20—A","21—C","22—A","23—D","24—B","25—B","26—D"]
+},
+{
+  title:"Tattoo on Tikopia",totalQ:14,
+  text:`<h1>Tattoo on Tikopia</h1>
+<p style="font-style:italic;color:#888;font-size:.88rem;margin-bottom:16px;">Reading Passage 3 · Questions 27–40</p>
+<p><strong>A</strong>&nbsp; There are still debates about the origins of Polynesian culture, but one thing we can ensure is that Polynesia is not a single tribe but a complex one. Polynesians, which include Marquesans, Samoans, Niueans, Tongans, Cook Islanders, Hawaiians, Tahitians, and Maori, are genetically linked to indigenous peoples of parts of Southeast Asia. It is a sub-region of Oceania, comprising a large grouping of over 1,000 islands scattered over the central and southern Pacific Ocean, within a triangle that has New Zealand, Hawaii and Easter Island as its corners.</p>
+<p><strong>B</strong>&nbsp; Polynesian history has fascinated the western world since Pacific cultures were first contacted by European explorers in the late 18th century. The small island of Tikopia, for many people — even for many Solomon Islanders — is so far away that it seems like a mythical land. Raymond Firth is one of those people captured by the alluring attraction of Tikopia. As a result, he had made a number of trips to the island since the 1920s and recorded his experiences, observations, and reflections on Tikopia, its people, cultures and the changes that have occurred.</p>
+<p><strong>C</strong>&nbsp; While engaged in the study of the kinship and religious life of the people of Tikopia, Firth made a few observations on their tattooing. The origin of the English word 'tattoo' actually comes from the Tikopia word 'tatau'. The word for tattoo marks, in general, is <em>tau</em>, and the operation of tattooing is known as <em>ta tau</em>, ta being the generic term for the act of striking.</p>
+<p><strong>D</strong>&nbsp; The technique of tattooing was similar throughout Polynesia. Traditional tattoo artists create their indelible tattoos using pigment made from the candlenut or kukui nut. First, they burn the nut inside a bowl made of half a coconut shell. They then scrape out the soot and use a pestle to mix it with liquid. Bluing is sometimes added to counteract the reddish hue of the carbon-based pigment.</p>
+<p><strong>E</strong>&nbsp; For the instruments used when tattooing, specialists used a range of chisels made from albatross wing bone which were hafted onto a handle made from the heart wood of the bush and struck with a mallet. The tattooer began by sketching with charcoal a design on the supine subject, whose skin was stretched taut by apprentices. The tattooer then dipped the appropriate points into the ink and tapped it into the subject's skin. The blood that usually trickled from the punctures was wiped away. The process was inevitably painful — a test of fortitude. In fact, tattoos nearly always festered and often led to sickness — and in some cases death.</p>
+<p><strong>F</strong>&nbsp; In ancient Polynesian society, nearly everyone was tattooed. It was an integral part of ancient culture and was much more than a body ornament. Tattooing indicated one's genealogy and/or rank in society. It was a sign of wealth, of strength and of the ability to endure pain. Those who went without them were seen as persons of lower social status. As such, chiefs and warriors generally had the most elaborate tattoos. Receiving tattoos constituted an important milestone between childhood and adulthood, and was accompanied by many rites and rituals.</p>
+<p><strong>G</strong>&nbsp; The male facial tattoo is generally divided into eight sections of the face. The center of the forehead designated a person's general rank. The area around the brows designated his position. The area around the eyes and the nose designated his <em>hapu</em>, or sub-tribe rank. The area around the temples served to detail his signature. The cheek area designated the nature of the person's work. The chin area showed the person's mana. The jaw area designated a person's birth status.</p>
+<p><strong>H</strong>&nbsp; A person's ancestry is indicated on each side of the face. The left side is generally the father's side, and the right side was the mother's. The manutahi design is worked on the men's back. It consists of two vertical lines drawn down the spine, with short vertical lines between them. When a man had the manutahi on his back, he took pride in himself. And rows of triangles design on the men's chest indicate his bravery.</p>
+<p><strong>I</strong>&nbsp; Tattoo was a way delivering information of its owner. It's also a traditional method to fetch spiritual power, protection and strength. The Polynesians use this as a sign of character, position and levels in a hierarchy. Polynesian peoples believe that a person's mana, their spiritual power or life force, is displayed through their tattoo.</p>`,
+  questionsHTML:``,
+  correctKeys:{27:"YES",28:"NO",29:"NOT GIVEN",30:"YES",31:"COCONUT SHELL",32:"SOOT",33:"LIQUID",34:"HEART WOOD",35:"WING BONE",36:"FOREHEAD",37:"CHIN AREA",38:"MOTHERS ANCESTRY",39:"VERTICAL LINES",40:"TRIANGLES"},
+  teacherAnswers:["27—YES","28—NO","29—NOT GIVEN","30—YES","31—COCONUT SHELL","32—SOOT","33—LIQUID","34—HEART WOOD","35—WING BONE","36—FOREHEAD","37—CHIN AREA","38—MOTHER'S ANCESTRY","39—VERTICAL LINES","40—TRIANGLES"]
+}
+];
+
+// Build P1 questions - heading match drag/drop Q1-6, person match Q7-10, summary Q11-13
+passages[0].questionsHTML = (()=>{
+  const headings=[
+    ["i","Low probability triggers unpersuasive findings"],
+    ["ii","Understanding of intelligence remains limited"],
+    ["iii","Difficulty in accurately defining intelligence"],
+    ["iv","People with high IQ seldom fall sick"],
+    ["v","An innovative appliance to improve the probe"],
+    ["vi","The financial cost of a new research"],
+    ["vii","Why an indicator is imperfect but referable"],
+    ["viii","Genes mean extra when compared with environment"],
+    ["ix","A vital indicator for kids' intelligence performance"],
+    ["x","Multiple factors involved in intelligence"]
+  ];
+  let html=`<div class="q-card">
+  <span class="description">Questions 1–6 · Choose the correct heading for paragraphs B–G (drag to drop)</span>
+  <p style="font-size:.83rem;color:#888;"><em>Example: Paragraph A → ix</em></p>
+  ${buildHeadingPool(headings,'headingsPool1')}
+  <table><tr><th style="width:42%;">Paragraph</th><th>Heading</th></tr>
+  ${buildDropZone(1,'1. Paragraph B')}
+  ${buildDropZone(2,'2. Paragraph C')}
+  ${buildDropZone(3,'3. Paragraph D')}
+  ${buildDropZone(4,'4. Paragraph E')}
+  ${buildDropZone(5,'5. Paragraph F')}
+  ${buildDropZone(6,'6. Paragraph G')}
+  </table></div>`;
+  html+=`<div class="q-card">
+  <span class="description">Questions 7–10 · Match each person with the correct statement</span>
+  <p style="font-size:.83rem;color:#6c757d;margin-bottom:12px;"><strong>A</strong> Plomin &nbsp;<strong>B</strong> Philip Shaw &nbsp;<strong>C</strong> Eric Turkheimer &nbsp;<strong>D</strong> Charles Spearman &nbsp;<strong>E</strong> Richard J. Haier &nbsp;<strong>F</strong> Wendy Johnson</p>
+  <p>7. A full conclusion can be hardly reached just by the one example in IQ test.<br><input type="text" id="in7" class="input-summary" style="width:80px;" oninput="mark(7)" placeholder="A-F"></p>
+  <p>8. It is not easy to exclude the occasionality existed in the research.<br><input type="text" id="in8" class="input-summary" style="width:80px;" oninput="mark(8)" placeholder="A-F"></p>
+  <p>9. Humans still have more to explore in terms of the real nature of intelligence.<br><input type="text" id="in9" class="input-summary" style="width:80px;" oninput="mark(9)" placeholder="A-F"></p>
+  <p>10. It is quite difficult to find the real origins where the general intelligence comes.<br><input type="text" id="in10" class="input-summary" style="width:80px;" oninput="mark(10)" placeholder="A-F"></p>
+  </div>`;
+  html+=`<div class="q-card">
+  <span class="description">Questions 11–13 · Summary — NO MORE THAN THREE WORDS</span>
+  <p>Many researchers including Plomin have faced the typical challenge when <strong>11.</strong> <input type="text" id="in11" class="input-summary" oninput="mark(11)"> are implemented. They try to record certain <strong>12.</strong> <input type="text" id="in12" class="input-summary" oninput="mark(12)"> performed both by genes and environment. What's more, intelligence is regarded to be <strong>13.</strong> <input type="text" id="in13" class="input-summary" oninput="mark(13)"> of how messages transmit in the brain.</p>
+  </div>`;
+  return html;
+})();
+
+// Build P2 questions - paragraph matching Q14-20, person match Q21-24, MCQ Q25-26
+passages[1].questionsHTML = `
+<div class="q-card">
+  <span class="description">Questions 14–20 · Which paragraph (A–G) contains the following information?</span>
+  <p><strong>14.</strong> Description of one family member persuading another of selling cleaning products &nbsp;<input type="text" id="in14" class="input-summary" style="width:60px;" oninput="mark(14)" placeholder="A-G"></p>
+  <p><strong>15.</strong> An account of the cooperation of all factory staff to cope with sales increase &nbsp;<input type="text" id="in15" class="input-summary" style="width:60px;" oninput="mark(15)" placeholder="A-G"></p>
+  <p><strong>16.</strong> An account of the creation of the formula of Shower Power &nbsp;<input type="text" id="in16" class="input-summary" style="width:60px;" oninput="mark(16)" placeholder="A-G"></p>
+  <p><strong>17.</strong> An account of buying the original OzKleen company &nbsp;<input type="text" id="in17" class="input-summary" style="width:60px;" oninput="mark(17)" placeholder="A-G"></p>
+  <p><strong>18.</strong> Description of Shower Power's international expansion &nbsp;<input type="text" id="in18" class="input-summary" style="width:60px;" oninput="mark(18)" placeholder="A-G"></p>
+  <p><strong>19.</strong> The reason for changing the packaging size of Shower Power &nbsp;<input type="text" id="in19" class="input-summary" style="width:60px;" oninput="mark(19)" placeholder="A-G"></p>
+  <p><strong>20.</strong> An example of some innovative ideas &nbsp;<input type="text" id="in20" class="input-summary" style="width:60px;" oninput="mark(20)" placeholder="A-G"></p>
+</div>
+<div class="q-card">
+  <span class="description">Questions 21–24 · Match each person with the correct statement (A–E)</span>
+  <p style="font-size:.83rem;color:#6c757d;margin-bottom:10px;"><strong>A</strong> Described his story of selling his product to a chain store &nbsp;<strong>B</strong> Explained there was a shortage of money when sales suddenly increased &nbsp;<strong>C</strong> Believes innovations need support to succeed &nbsp;<strong>D</strong> Believes new products like Shower Power may incur risks &nbsp;<strong>E</strong> Says business won't succeed with innovations</p>
+  <p>21. Grant Kearney &nbsp;<input type="text" id="in21" class="input-summary" style="width:60px;" oninput="mark(21)" placeholder="A-E"></p>
+  <p>22. Tom Quinn &nbsp;<input type="text" id="in22" class="input-summary" style="width:60px;" oninput="mark(22)" placeholder="A-E"></p>
+  <p>23. Peter Quinn &nbsp;<input type="text" id="in23" class="input-summary" style="width:60px;" oninput="mark(23)" placeholder="A-E"></p>
+  <p>24. Belinda McDonnell &nbsp;<input type="text" id="in24" class="input-summary" style="width:60px;" oninput="mark(24)" placeholder="A-E"></p>
+</div>
+<div class="q-card">
+  <span class="description">Questions 25–26 · Choose the correct letter A, B, C or D</span>
+  <p>25. Tom Quinn changed the bottle size to 750ml to make Shower Power</p>
+  <div class="q-wrap" data-q="25">
+    <span class="btn-opt" onclick="pick(25,'A',this)">A. easier to package.</span><br>
+    <span class="btn-opt" onclick="pick(25,'B',this)">B. appealing to individual customers.</span><br>
+    <span class="btn-opt" onclick="pick(25,'C',this)">C. popular in foreign markets.</span><br>
+    <span class="btn-opt" onclick="pick(25,'D',this)">D. attractive to supermarkets.</span>
+  </div>
+  <p>26. Why did Tom Quinn decide not to sell OzKleen?</p>
+  <div class="q-wrap" data-q="26">
+    <span class="btn-opt" onclick="pick(26,'A',this)">A. No one wanted to buy OzKleen.</span><br>
+    <span class="btn-opt" onclick="pick(26,'B',this)">B. New products were being developed.</span><br>
+    <span class="btn-opt" onclick="pick(26,'C',this)">C. He couldn't agree on the price.</span><br>
+    <span class="btn-opt" onclick="pick(26,'D',this)">D. He wanted to keep things unchanged.</span>
+  </div>
+</div>`;
+
+// Build P3 questions - YES/NO/NG Q27-30, label diagram Q31-35, table Q36-40
+passages[2].questionsHTML = `
+<div class="q-card">
+  <span class="description">Questions 27–30 · YES / NO / NOT GIVEN</span>
+  <p>27. Scientists like to do research in Tikopia because this tiny place is of great remoteness.</p>
+  <div class="q-wrap" data-q="27"><span class="btn-opt" onclick="pick(27,'YES',this)">YES</span><span class="btn-opt" onclick="pick(27,'NO',this)">NO</span><span class="btn-opt" onclick="pick(27,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>28. Firth was the first scholar to study on Tikopia.</p>
+  <div class="q-wrap" data-q="28"><span class="btn-opt" onclick="pick(28,'YES',this)">YES</span><span class="btn-opt" onclick="pick(28,'NO',this)">NO</span><span class="btn-opt" onclick="pick(28,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>29. Firth studied the culture differences on Tikopia as well as on some other islands of Pacific.</p>
+  <div class="q-wrap" data-q="29"><span class="btn-opt" onclick="pick(29,'YES',this)">YES</span><span class="btn-opt" onclick="pick(29,'NO',this)">NO</span><span class="btn-opt" onclick="pick(29,'NOT GIVEN',this)">NOT GIVEN</span></div>
+  <p>30. The English word 'tattoo' is evolved from the local language of the island.</p>
+  <div class="q-wrap" data-q="30"><span class="btn-opt" onclick="pick(30,'YES',this)">YES</span><span class="btn-opt" onclick="pick(30,'NO',this)">NO</span><span class="btn-opt" onclick="pick(30,'NOT GIVEN',this)">NOT GIVEN</span></div>
+</div>
+<div class="q-card">
+  <span class="description">Questions 31–35 · Label the diagram — NO MORE THAN TWO WORDS</span>
+  <p style="font-size:.85rem;color:#6c757d;">bowl made of <strong>31.</strong> <input type="text" id="in31" class="input-summary" oninput="mark(31)"> — burn the material inside to get <strong>32.</strong> <input type="text" id="in32" class="input-summary" oninput="mark(32)"> — stir in the <strong>33.</strong> <input type="text" id="in33" class="input-summary" oninput="mark(33)"></p>
+  <p style="font-size:.85rem;color:#6c757d;">Handle produced from <strong>34.</strong> <input type="text" id="in34" class="input-summary" oninput="mark(34)"> of small trees</p>
+  <p style="font-size:.85rem;color:#6c757d;">Chisel produced from <strong>35.</strong> <input type="text" id="in35" class="input-summary" oninput="mark(35)"> of seabird</p>
+</div>
+<div class="q-card">
+  <span class="description">Questions 36–40 · Complete the notes — NO MORE THAN TWO WORDS</span>
+  <table>
+    <tr><th>Location on the body</th><th>Significance</th><th>Geometric Patterns</th></tr>
+    <tr><td><strong>36.</strong> <input type="text" id="in36" class="input-summary" style="width:120px;" oninput="mark(36)"> of male face</td><td>general rank</td><td></td></tr>
+    <tr><td><strong>37.</strong> <input type="text" id="in37" class="input-summary" style="width:120px;" oninput="mark(37)"> of male face</td><td>prestige / mana</td><td></td></tr>
+    <tr><td>Female's right side of the face</td><td><strong>38.</strong> <input type="text" id="in38" class="input-summary" style="width:160px;" oninput="mark(38)"></td><td></td></tr>
+    <tr><td>male back</td><td>sense of pride</td><td><strong>39.</strong> <input type="text" id="in39" class="input-summary" style="width:130px;" oninput="mark(39)"></td></tr>
+    <tr><td>male chest</td><td>bravery</td><td><strong>40.</strong> <input type="text" id="in40" class="input-summary" style="width:130px;" oninput="mark(40)"></td></tr>
+  </table>
+</div>`;
+
+// ===== STATE =====
+const TEACHER_IDS_LIST=["004567","008245","009213"],ADMIN_ID_VAL="000000";
+let currentPassage=0;
+let state=passages.map(()=>({studentAns:{},solvedCorrect:{}}));
+let totalSeconds=0,attemptCount=0,activeUserId=null,proofingMode=false,cheaterTimer=null;
+let dropdownOpen=[false,false,false];
+let draggedHeading=null;
+
+// TIMER
+setInterval(()=>{totalSeconds++;if(proofingMode)return;let m=Math.floor(totalSeconds/60),s=totalSeconds%60;document.getElementById('timer').innerText=`${m<10?'0'+m:m}:${s<10?'0'+s:s}`;},1000);
+
+// DIVIDER
+const divider=document.getElementById('divider'),leftSide=document.getElementById('leftSide');
+divider.onmousedown=()=>{document.onmousemove=e=>{let p=(e.clientX/window.innerWidth)*100;if(p>15&&p<85)leftSide.style.width=p+'%';};document.onmouseup=()=>document.onmousemove=null;};
+
+// LOAD PASSAGE
+function loadPassage(idx){
+  currentPassage=idx;
+  const p=passages[idx],s=state[idx];
+  document.getElementById('textArea').innerHTML=p.text;
+  document.getElementById('questionsArea').innerHTML=p.questionsHTML;
+  document.getElementById('questionsArea').scrollTop=0;
+  const grid=document.getElementById('bubbleGrid');grid.innerHTML='';
+  Object.keys(p.correctKeys).map(Number).forEach(i=>{
+    let b=document.createElement('div');b.className='bubble';b.id='b'+i;b.innerText=i;
+    if(s.solvedCorrect[i])b.classList.add('solved');else if(s.studentAns[i])b.classList.add('active');
+    grid.appendChild(b);
+  });
+  // Restore answers
+  Object.keys(p.correctKeys).map(Number).forEach(i=>{
+    const zone=document.querySelector('.heading-drop[data-q="'+i+'"]');
+    if(zone&&s.studentAns[i]){
+      const hk=s.studentAns[i].toLowerCase();
+      const hLabels=getHLabels(idx);
+      zone.innerHTML='<input type="hidden" id="in'+i+'" value="'+s.studentAns[i]+'">'+buildFilledChip(hk,i,hLabels);
+      if(s.solvedCorrect[i])applyNeonZone(zone,'correct');
+      const chip=document.querySelector('#headingsPool1 .heading-chip[data-heading="'+hk+'"]');
+      if(chip)chip.classList.add('used');
+    }
+    const el=document.getElementById('in'+i);
+    if(el&&el.type!=='hidden'){
+      if(s.studentAns[i])el.value=s.studentAns[i];
+      if(s.solvedCorrect[i])el.classList.add('correct-neon');
+    }
+    const wrap=document.querySelector('[data-q="'+i+'"]');
+    if(wrap&&s.studentAns[i]){
+      Array.from(wrap.children).forEach(btn=>{
+        btn.classList.remove('selected','correct-neon','wrong-neon');
+        if(btn.innerText.trim().startsWith(s.studentAns[i]))btn.classList.add('selected');
+        if(s.solvedCorrect[i]&&btn.innerText.trim().startsWith(s.studentAns[i]))btn.classList.add('correct-neon');
+      });
+    }
+  });
+  document.getElementById('passageLabel').innerText=`Passage ${idx+1} / 3`;
+  document.getElementById('navLeft').className='nav-btn'+(idx===0?' disabled':' active-arrow');
+  document.getElementById('navRight').className='nav-btn'+(idx===2?' disabled':' active-arrow');
+}
+function goPassage(dir){const n=currentPassage+dir;if(n<0||n>2)return;loadPassage(n);}
+
+// HEADING DRAG & DROP
+function getHLabels(pi){
+  if(pi===0)return {i:"Low probability triggers unpersuasive findings",ii:"Understanding of intelligence remains limited",iii:"Difficulty in accurately defining intelligence",iv:"People with high IQ seldom fall sick",v:"An innovative appliance to improve the probe",vi:"The financial cost of a new research",vii:"Why an indicator is imperfect but referable",viii:"Genes mean extra when compared with environment",ix:"A vital indicator for kids' intelligence performance",x:"Multiple factors involved in intelligence"};
+  return {};
+}
+function buildFilledChip(hk,q,hLabels){
+  return `<div class="drop-filled-chip" draggable="true" data-heading="${hk}" data-from-zone="${q}" ondragstart="dragHeading(event)"><span class="hnum">${hk}</span> ${hLabels[hk]||''}</div>`;
+}
+function dragHeading(ev){
+  const chip=ev.currentTarget;
+  draggedHeading={el:chip,heading:chip.dataset.heading,fromZone:chip.dataset.fromZone?parseInt(chip.dataset.fromZone):null};
+  ev.dataTransfer.setData('heading',chip.dataset.heading);
+}
+document.addEventListener('dragover',e=>{
+  const qa=document.getElementById('questionsArea');
+  if(!qa)return;
+  const rect=qa.getBoundingClientRect();
+  const scrollTrigger=100;
+  if(e.clientY>rect.bottom-scrollTrigger&&e.clientY<rect.bottom){qa.scrollTop+=10;}
+  else if(e.clientY<rect.top+scrollTrigger&&e.clientY>rect.top){qa.scrollTop-=10;}
+});
+function allowDropH(ev){ev.preventDefault();ev.currentTarget.classList.add('over');}
+function leaveDrop(ev){ev.currentTarget.classList.remove('over');}
+function applyNeonZone(zone,status){
+  if(status==='correct'){zone.style.border='2px solid var(--neon-green)';zone.style.boxShadow='0 0 15px var(--neon-green)';zone.style.background='#fafff5';zone.style.pointerEvents='none';}
+  else{zone.style.border='2px solid var(--neon-red)';zone.style.boxShadow='0 0 15px var(--neon-red)';}
+}
+function dropHeading(ev,q){
+  ev.preventDefault();
+  if(state[currentPassage].solvedCorrect[q])return;
+  const zone=ev.currentTarget;zone.classList.remove('over');
+  if(!draggedHeading)return;
+  const newH=draggedHeading.heading,fromZone=draggedHeading.fromZone;
+  const hiddenIn=document.getElementById('in'+q),oldH=hiddenIn?hiddenIn.value.toLowerCase():'';
+  const hLabels=getHLabels(currentPassage);
+  if(oldH&&!fromZone){const old=document.querySelector('#headingsPool1 .heading-chip[data-heading="'+oldH+'"]');if(old){old.classList.remove('used');}}
+  if(fromZone&&fromZone!==q){
+    const srcZone=document.querySelector('.heading-drop[data-q="'+fromZone+'"]');
+    if(oldH){srcZone.innerHTML='<input type="hidden" id="in'+fromZone+'" value="'+oldH.toUpperCase()+'">'+buildFilledChip(oldH,fromZone,hLabels);state[currentPassage].studentAns[fromZone]=oldH.toUpperCase();document.getElementById('b'+fromZone).classList.add('active');}
+    else{srcZone.innerHTML='<input type="hidden" id="in'+fromZone+'"><div class="drop-placeholder">Drop here</div>';delete state[currentPassage].studentAns[fromZone];document.getElementById('b'+fromZone).classList.remove('active');}
+  }
+  if(fromZone===q){draggedHeading=null;return;}
+  zone.innerHTML='<input type="hidden" id="in'+q+'" value="'+newH.toUpperCase()+'">'+buildFilledChip(newH,q,hLabels);
+  state[currentPassage].studentAns[q]=newH.toUpperCase();
+  document.getElementById('b'+q).classList.add('active');
+  if(!fromZone){const poolChip=document.querySelector('#headingsPool1 .heading-chip[data-heading="'+newH+'"]');if(poolChip)poolChip.classList.add('used');}
+  draggedHeading=null;
+}
+
+// PICK / MARK
+function pick(q,v,el){if(state[currentPassage].solvedCorrect[q])return;state[currentPassage].studentAns[q]=v;Array.from(el.parentNode.children).forEach(b=>b.classList.remove('selected'));el.classList.add('selected');document.getElementById('b'+q).classList.add('active');}
+function mark(q){if(state[currentPassage].solvedCorrect[q])return;const el=document.getElementById('in'+q);const val=el?el.value:'';state[currentPassage].studentAns[q]=val.toUpperCase().trim()||undefined;document.getElementById('b'+q).classList.toggle('active',val.trim()!=='');}
+
+// SUBMIT
+function submitTest(){
+  attemptCount++;const ts=document.getElementById('timer').innerText;let totalScore=0,totalQ=0;
+  passages.forEach((p,pi)=>{
+    const s=state[pi];let score=0,resHtml='';
+    const isCurr=(pi===currentPassage);
+    Object.keys(p.correctKeys).map(Number).forEach(i=>{
+      let ans;
+      if(isCurr){const el=document.getElementById('in'+i);ans=(s.studentAns[i]||(el&&el.type!=='hidden'?el.value:'')||'').toUpperCase().trim();}
+      else ans=(s.studentAns[i]||'').toUpperCase().trim();
+      const ok=(ans===p.correctKeys[i]);
+      if(ok){score++;s.solvedCorrect[i]=true;if(isCurr)applyNeon(i,'correct');}
+      else if(!s.solvedCorrect[i]&&isCurr)applyNeon(i,'wrong');
+      resHtml+=`<div class="res-card ${ok?'correct-row':'wrong-row'}"><span>Q${i}</span><span>${ok?'✔':'✘'}</span></div>`;
+    });
+    totalScore+=score;totalQ+=p.totalQ;
+    document.getElementById('resList'+(pi+1)).innerHTML=resHtml;
+    document.getElementById('p'+(pi+1)+'score').innerText=`${score}/${p.totalQ}`;
+  });
+  document.getElementById('mScore').innerText=`${totalScore} / ${totalQ}`;
+  document.getElementById('attemptsRow').innerHTML+=`<div class="attempt-tag">#${attemptCount}: ${totalScore}/40 (${ts})</div>`;
+  document.getElementById('modal').style.display='flex';
+  document.getElementById('attemptsRow').scrollLeft=99999;
+}
+function applyNeon(q,status){
+  const zone=document.querySelector('.heading-drop[data-q="'+q+'"]');
+  if(zone){applyNeonZone(zone,status);if(status==='correct'){zone.removeAttribute('ondrop');zone.removeAttribute('ondragover');zone.removeAttribute('ondragleave');const chip=zone.querySelector('.drop-filled-chip');if(chip){chip.draggable=false;chip.style.cursor='default';}}return;}
+  const el=document.getElementById('in'+q);
+  if(el&&el.type!=='hidden'){el.classList.add(status+'-neon');if(status==='correct')el.readOnly=true;}
+  else{const wrap=document.querySelector('[data-q="'+q+'"]');if(wrap)Array.from(wrap.children).forEach(btn=>{if(btn.classList.contains('selected'))btn.classList.add(status+'-neon');if(status==='correct'&&btn.innerText.trim().startsWith(passages[currentPassage].correctKeys[q])){btn.classList.add('correct-neon','selected');}});}
+}
+function closeModal(){
+  document.getElementById('modal').style.display='none';
+  document.querySelectorAll('.wrong-neon').forEach(el=>el.classList.remove('wrong-neon'));
+  document.querySelectorAll('.heading-drop').forEach(zone=>{const q=parseInt(zone.dataset.q);if(zone.dataset.q&&!state[currentPassage].solvedCorrect[q]){zone.style.border='';zone.style.boxShadow='';zone.style.background='';}});
+  Object.keys(passages[currentPassage].correctKeys).map(Number).forEach(i=>{if(!state[currentPassage].solvedCorrect[i]){const b=document.getElementById('b'+i);if(b)b.classList.remove('active');}});
+}
+
+// MENU
+document.getElementById('menuBtn').onclick=()=>{document.getElementById('sideMenu').classList.add('open');document.getElementById('overlay').classList.add('show');};
+document.getElementById('closeMenuBtn').onclick=closeMenu;
+document.getElementById('overlay').onclick=closeMenu;
+function closeMenu(){document.getElementById('sideMenu').classList.remove('open');document.getElementById('overlay').classList.remove('show');}
+function changeFontSize(v){document.documentElement.style.setProperty('--font-size',v+'px');document.getElementById('fontSizeLabel').innerText=v+'px';}
+function setTheme(t){document.body.classList.remove('theme-dark','theme-sepia');if(t==='dark')document.body.classList.add('theme-dark');if(t==='sepia')document.body.classList.add('theme-sepia');['themeLight','themeDark','themeSepia'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById({light:'themeLight',dark:'themeDark',sepia:'themeSepia'}[t]).classList.add('active');}
+function openAbout(){document.getElementById('aboutModal').classList.add('show');}
+function closeAbout(){document.getElementById('aboutModal').classList.remove('show');}
+
+// ID
+function handleIdInput(){
+  const val=document.getElementById('idInput').value.trim();
+  const statusEl=document.getElementById('idStatus');
+  document.getElementById('teacherAnswerBox').style.display='none';
+  document.getElementById('adminRow').style.display='none';
+  statusEl.className='id-status';statusEl.innerText='';activeUserId=null;
+  dropdownOpen=[false,false,false];
+  ['dropContent0','dropContent1','dropContent2'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('open');});
+  ['dropArrow0','dropArrow1','dropArrow2'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerText='▼';});
+  if(val.length<6)return;
+  if(TEACHER_IDS_LIST.includes(val)){activeUserId='teacher';statusEl.className='id-status show ok';statusEl.innerText='✔ Access granted — Teacher';document.getElementById('teacherAnswerBox').style.display='block';fillTeacherAnswers();document.getElementById('idInput').style.display='none';document.querySelector('.menu-star').style.display='none';deactivateCheater();}
+  else if(val===ADMIN_ID_VAL){activeUserId='admin';statusEl.className='id-status show ok';statusEl.innerText='✔ Developer access';document.getElementById('adminRow').style.display='block';fillTeacherAnswers();deactivateCheater();}
+  else{statusEl.className='id-status show err';statusEl.innerText='✘ Invalid ID';}
+}
+function fillTeacherAnswers(){passages.forEach((p,i)=>{const el=document.getElementById('dropContent'+i);if(el)el.innerHTML=p.teacherAnswers.map(v=>`<div class="ans-item">${v}</div>`).join('');});}
+function toggleDropdown(idx){dropdownOpen[idx]=!dropdownOpen[idx];const c=document.getElementById('dropContent'+idx),a=document.getElementById('dropArrow'+idx);if(c)c.classList.toggle('open',dropdownOpen[idx]);if(a)a.innerText=dropdownOpen[idx]?'▲':'▼';}
+
+// ADMIN COMMANDS
+function runCommand(){
+  if(activeUserId!=='admin')return;
+  const cmd=document.getElementById('cmdInput').value.trim().toLowerCase();
+  const fb=document.getElementById('cmdFeedback');
+  const hLabels={i:"Low probability triggers unpersuasive findings",ii:"Understanding of intelligence remains limited",iii:"Difficulty in accurately defining intelligence",iv:"People with high IQ seldom fall sick",v:"An innovative appliance to improve the probe",vi:"The financial cost of a new research",vii:"Why an indicator is imperfect but referable",viii:"Genes mean extra when compared with environment",ix:"A vital indicator for kids' intelligence performance",x:"Multiple factors involved in intelligence"};
+  if(cmd==='autofill'){
+    passages.forEach((pp,pi)=>{
+      const ss=state[pi];const isCurr=(pi===currentPassage);
+      Object.keys(pp.correctKeys).map(Number).forEach(i=>{
+        if(ss.solvedCorrect[i])return;const key=pp.correctKeys[i];ss.studentAns[i]=key;
+        if(isCurr){
+          const zone=document.querySelector('.heading-drop[data-q="'+i+'"]');
+          if(zone){const hk=key.toLowerCase();zone.innerHTML='<input type="hidden" id="in'+i+'" value="'+key+'">'+buildFilledChip(hk,i,hLabels);const chip=document.querySelector('#headingsPool1 .heading-chip[data-heading="'+hk+'"]');if(chip)chip.classList.add('used');}
+          else{const el=document.getElementById('in'+i);if(el&&el.type!=='hidden'){el.value=key;}else{const wrap=document.querySelector('[data-q="'+i+'"]');if(wrap)Array.from(wrap.children).forEach(btn=>{btn.classList.remove('selected');if(btn.innerText.trim().startsWith(key))btn.classList.add('selected');});}}
+          const b=document.getElementById('b'+i);if(b)b.classList.add('active');
+        }
+      });
+    });
+    fb.className='show ok';fb.style.display='block';fb.innerText='✔ All passages autofilled';showToast('✏️ All passages autofilled');
+  } else if(cmd==='answers'){
+    passages.forEach((pp,pi)=>{
+      const ss=state[pi];const isCurr=(pi===currentPassage);
+      Object.keys(pp.correctKeys).map(Number).forEach(i=>{
+        if(ss.solvedCorrect[i])return;const key=pp.correctKeys[i];ss.studentAns[i]=key;
+        if(isCurr){const el=document.getElementById('in'+i);if(el&&el.type!=='hidden'){el.value=key;el.style.color='#007bff';}else{const wrap=document.querySelector('[data-q="'+i+'"]');if(wrap)Array.from(wrap.children).forEach(btn=>{if(btn.innerText.trim().startsWith(key)){btn.style.background='#eef2ff';btn.style.borderColor='#007bff';btn.style.color='#007bff';}});}}
+      });
+    });
+    fb.className='show ok';fb.style.display='block';fb.innerText='✔ All answers revealed';showToast('📋 All answers shown');
+  } else if(cmd==='more time'){
+    if(totalSeconds<=9*60){totalSeconds=0;document.getElementById('timer').innerText='00:00';fb.innerText='✔ Reset to 0:00';showToast('⏱️ Timer reset');}
+    else{totalSeconds=Math.max(0,totalSeconds-600);let m=Math.floor(totalSeconds/60),sv=totalSeconds%60;document.getElementById('timer').innerText=`${m<10?'0'+m:m}:${sv<10?'0'+sv:sv}`;fb.innerText='✔ −10 min';showToast('⏱️ −10 minutes');}
+    fb.className='show ok';fb.style.display='block';
+  } else {fb.className='show err';fb.style.display='block';fb.innerText='✘ Unknown command';showToast('❌ Unknown: '+cmd);}
+  document.getElementById('cmdInput').value='';
+}
+document.getElementById('cmdInput').addEventListener('keydown',e=>{if(e.key==='Enter')runCommand();});
+
+// PROOFING
+function toggleProofing(){if(proofingMode)return;proofingMode=true;const btn=document.getElementById('proofingBtn');btn.classList.add('active');document.getElementById('timer').innerText='∞';deactivateCheater();}
+
+// CHEATER
+function isTrusted(){return proofingMode||activeUserId==='teacher'||activeUserId==='admin';}
+function activateCheater(){ /* anti-cheat removed */ }
+function deactivateCheater(){ /* anti-cheat removed */ }
+
+
+let selectedText=null;
+document.addEventListener('mouseup',e=>{const sel=window.getSelection();if(sel.toString().trim().length>0){selectedText=sel.getRangeAt(0);const m=document.getElementById('highlightMenu');m.style.display='flex';m.style.left=e.pageX+'px';m.style.top=(e.pageY+15)+'px';}else document.getElementById('highlightMenu').style.display='none';});
+document.querySelectorAll('.hlColor').forEach(btn=>btn.addEventListener('click',function(){if(!selectedText)return;const span=document.createElement('span');span.style.backgroundColor=this.dataset.color;try{selectedText.surroundContents(span);}catch(e){}document.getElementById('highlightMenu').style.display='none';window.getSelection().removeAllRanges();}));
+document.getElementById('removeColor').addEventListener('click',()=>{if(!selectedText)return;let node=selectedText.startContainer;while(node&&node.nodeType!==1)node=node.parentNode;if(node&&node.tagName==='SPAN')node.outerHTML=node.innerHTML;document.getElementById('highlightMenu').style.display='none';window.getSelection().removeAllRanges();});
+
+function showToast(msg){const t=document.getElementById('toast');t.innerText=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
+loadPassage(0);
+</script>
+</body>
+</html>
